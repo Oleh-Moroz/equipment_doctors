@@ -7,18 +7,21 @@ for (let i = 0; i < accordion.length; i++) {
     const label = e.target,
           parentElement = label.parentElement,
           listElement = label.nextElementSibling,
-          listChild = listElement.querySelectorAll('li');
+          listChild = listElement.children;
 
     let minHeight = 0;
+    let minHeightNew = 0;
 
-    listChild.forEach(childElement => {
-      let childHeight = childElement.offsetHeight;
 
-      for (let i = 0; i < listElement.length; i++) {
-        minHeight = minHeight + childHeight;
-        console.log(minHeight);
+    for (let i = 0; i < listChild.length; i++) {
+      minHeightNew = 10;
+      if (minHeightNew > minHeight) {
+        minHeightNew = listChild[i].offsetHeight + minHeightNew;
+        console.log(minHeightNew);
       }
-    });
+    }
+
+    console.log(minHeightNew);
   
     if ( parentElement.classList.contains('filter-is-open') ) {
       parentElement.classList.remove('filter-is-open');
@@ -39,22 +42,22 @@ const categoryMenu = document.querySelector("#category-menu"),
       menuWrap = document.querySelector(".category-navbar"),
       menuItem = document.querySelectorAll(".category-navbar ul li");
 
-categoryButton.addEventListener('mouseover', () => {
+function openMenu(item) {
+  item.addEventListener('mouseover', () => {
     categoryButton.classList.add('button-active');
+    document.querySelector('body').classList.add('body-oveflow');
     categoryMenu.style.height = `${menuWrap.offsetHeight}px`;
 
     minHeight();
-});
+  });
+}
 
-categoryMenu.addEventListener('mouseover', () => {
-  categoryButton.classList.add('button-active');
-  categoryMenu.style.height = `${menuWrap.offsetHeight}px`;
-
-  minHeight();
-});
+openMenu(categoryButton);
+openMenu(categoryMenu);
 
 categoryMenu.addEventListener('mouseout', () => {
   categoryButton.classList.remove('button-active');
+  document.querySelector('body').classList.remove('body-oveflow');
   categoryMenu.style.height = `0px`;
 });
 
@@ -80,3 +83,68 @@ menuItem.forEach(item => {
     minHeight();
   });
 });
+
+
+
+/*
+Slider dots
+
+----------------------------------- */
+
+
+let checked = null;
+let changer = null;
+let clickStopper = false;
+let slide = null;
+
+const dotChanger = (event) => {
+  if (clickStopper) return false;
+  else clickStopper = true;
+  let target = event.target;
+  changer.style.setProperty('visibility', 'visible');
+  if (slide.getAttribute('data-swiper-slide-index') < checked.indexOf(dot)) 
+    changer.style.setProperty('width', `${target.offsetLeft - checked.offsetLeft + checked.offsetWidth}px`);
+  else {
+    changer.style.setProperty('left', `${target.offsetLeft}px`);
+    changer.style.setProperty('width', `${checked.offsetLeft - target.offsetLeft + target.offsetWidth}px`);
+  };
+  setTimeout(()=>{
+    if (checked.offsetLeft < target.offsetLeft) changer.style.setProperty('left', `${target.offsetLeft}px`);
+    changer.style.removeProperty('width');
+    setTimeout(()=>{
+      changer.style.removeProperty('visibility');
+      checked = target;
+      clickStopper = false;
+    }, 500);
+  }, 500)
+}
+
+document.querySelectorAll('.swiper-slide').forEach(slide=>{
+//  dot.addEventListener('click', dotChanger);
+
+  if (clickStopper) return false;
+    else clickStopper = true;
+    let target = event.target;
+    changer.style.setProperty('visibility', 'visible');
+    if (slide.getAttribute('data-swiper-slide-index') < checked.indexOf()) 
+      changer.style.setProperty('width', `${target.offsetLeft - checked.offsetLeft + checked.offsetWidth}px`);
+    else {
+      changer.style.setProperty('left', `${target.offsetLeft}px`);
+      changer.style.setProperty('width', `${checked.offsetLeft - target.offsetLeft + target.offsetWidth}px`);
+    };
+    setTimeout(()=>{
+      if (checked.offsetLeft < target.offsetLeft) changer.style.setProperty('left', `${target.offsetLeft}px`);
+      changer.style.removeProperty('width');
+      setTimeout(()=>{
+        changer.style.removeProperty('visibility');
+        checked = target;
+        clickStopper = false;
+      }, 500);
+    }, 500)
+});
+
+
+checked = document.querySelector('.swiper-pagination-bullet-active');
+changer = document.querySelector('.slider__dots__changer');
+changer.style.setProperty('left', `${checked.offsetLeft}px`);
+
