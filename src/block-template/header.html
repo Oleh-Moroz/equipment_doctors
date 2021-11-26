@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-    <link href="css/main.min.css" rel="stylesheet" />
+    <link href="/css/main.min.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/86e4fa7ed4.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <title>Equipment doctors</title>
@@ -30,7 +30,7 @@
         <div class="row">
             <div class="logo_wrap">
                 <a href="/">
-                    <img src="img/common/logo.png" alt="Equipment doctors" width="135" height="43">
+                    <img src="/img/common/logo.png" alt="Equipment doctors" width="135" height="43">
                 </a>
             </div>
 
@@ -44,7 +44,27 @@
                 <form class="header-search_form">
                     <button class="header-search_button"><i class="fas fa-search"></i></button>
                     <input class="header-search_input" placeholder="Search" value="">
+                    <div class="clear_search-input"><i class="far fa-times-circle"></i></div>
                 </form>
+                <div class="header-search-dropdown">
+                    <div class="header-search-list">
+                        <ul>
+
+                        </ul>
+                    </div>
+                    <div class="header-search-no-result">
+                        <div class="no-result-image">
+                            <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M49.084 44.3333H46.5824L45.6957 43.4783C48.9063 39.7544 50.6709 35.0002 50.6674 30.0833C50.6674 24.6243 48.4988 19.3888 44.6387 15.5287C40.7785 11.6686 35.5431 9.5 30.084 9.5C19.254 9.5 10.3874 17.86 9.5957 28.5H15.9924C16.784 21.375 22.7374 15.8333 30.084 15.8333C37.969 15.8333 44.334 22.1983 44.334 30.0833C44.334 37.9683 37.969 44.3333 30.084 44.3333C29.5457 44.3333 29.039 44.2383 28.5007 44.175V50.5717C29.039 50.635 29.5457 50.6667 30.084 50.6667C35.1824 50.6667 39.869 48.7983 43.479 45.695L44.334 46.5817V49.0833L60.1674 64.885L64.8857 60.1667L49.084 44.3333V44.3333Z" fill="#CCCCCC"/>
+                                <path d="M20.4891 34.2634L12.6674 42.0851L4.84575 34.2634L2.59741 36.5118L10.4191 44.3334L2.59741 52.1551L4.84575 54.4034L12.6674 46.5818L20.4891 54.4034L22.7374 52.1551L14.9157 44.3334L22.7374 36.5118L20.4891 34.2634Z" fill="#CCCCCC"/>
+                            </svg>
+                        </div>
+                        <div class="no-result-text">
+                            We couldn't find a Part with that name on our shop.
+                            Check the name for typos or leave us a message using the <a href="/tempalte/page/contacts.html">contacts</a> below.
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="header-contact">

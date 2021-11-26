@@ -1,3 +1,4 @@
+window.addEventListener('DOMContentLoaded', () => {
 const accordion = document.getElementsByClassName("filter__label");
 
       
@@ -84,6 +85,8 @@ menuItem.forEach(item => {
   });
 });
 
+});
+
 
 
 /*
@@ -92,7 +95,7 @@ Slider dots
 ----------------------------------- */
 
 
-let checked = null;
+/*let checked = null;
 let changer = null;
 let clickStopper = false;
 let slide = null;
@@ -146,5 +149,5 @@ document.querySelectorAll('.swiper-slide').forEach(slide=>{
 
 checked = document.querySelector('.swiper-pagination-bullet-active');
 changer = document.querySelector('.slider__dots__changer');
-changer.style.setProperty('left', `${checked.offsetLeft}px`);
+changer.style.setProperty('left', `${checked.offsetLeft}px`);*/
 
