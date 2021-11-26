@@ -8,7 +8,7 @@ function openedSearchDropdown() {
     let inputValue = searchInput.value;
 
     searchForm.classList.add('search-active');
-    searchResults.innerHTML = `<li><a href="/build/page/search.html?s=${inputValue}">${inputValue}</a></li>`;
+    searchResults.innerHTML = `<li><a href="/page/search.html?s=${inputValue}">${inputValue}</a></li>`;
     if (searchDropdown.classList.contains('open-no-results')) {
         searchDropdown.classList.remove('open-no-results');
         searchDropdown.classList.add('open');
@@ -33,7 +33,7 @@ searchForm.addEventListener('submit', (e) => {
     
     let inputValue = searchInput.value;
     if (searchInput.value) {
-        window.location.href=`/build/page/search.html?s=${inputValue}`;
+        window.location.href=`/page/search.html?s=${inputValue}`;
     } else {
         searchForm.classList.add('search-active');
         searchDropdown.classList.add('open-no-results');
