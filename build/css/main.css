@@ -746,6 +746,10 @@ footer {
   margin: 15px 0;
   overflow: hidden;
   border-radius: 6px 6px 0 0;
+  position: relative;
+}
+.main-slider:hover .swiper-button-prev, .main-slider:hover .swiper-button-next {
+  opacity: 1;
 }
 .main-slider .swiper-wrapper .swiper-slide {
   height: 100%;
@@ -2227,8 +2231,4 @@ footer {
   font-size: 14px;
   line-height: 16px;
   color: #221E1E;
-}
-.sort-dropdown .sort-list option {
-  background: #fff;
-  border: none;
 }
