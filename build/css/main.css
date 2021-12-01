@@ -441,6 +441,20 @@ header .container .row {
   font-weight: 500;
   font-size: 26px;
   line-height: 77%;
+  transition: all 0.4s linear;
+}
+.header-contact a:hover {
+  color: #BEA063;
+}
+
+.header-cart_link {
+  position: relative;
+}
+.header-cart_link svg * {
+  transition: all 0.4s linear;
+}
+.header-cart_link:hover svg * {
+  fill: #BEA063;
 }
 
 .header-account_wrap {

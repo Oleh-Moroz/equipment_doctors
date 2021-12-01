@@ -462,6 +462,31 @@ header {
        font-weight: 500;
        font-size: 26px;
        line-height: 77%;
+       transition: all .4s linear;
+
+       &:hover {
+           color: $gold;
+       }
+    }
+
+
+}
+
+.header-cart_link {
+    position: relative;
+
+    svg {
+        * {
+            transition: all .4s linear;
+        }
+    }
+
+    &:hover {
+        svg {
+            * {
+               fill: $gold;
+            }
+        }
     }
 }
 
