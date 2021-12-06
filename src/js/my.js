@@ -7,28 +7,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
       const label = e.target,
             parentElement = label.parentElement,
-            listElement = label.nextElementSibling,
-            listChild = listElement.children;
-
-      let minHeight = 0;
-      let minHeightNew = 0;
-
-
-      for (let i = 0; i < listChild.length; i++) {
-        minHeightNew = 10;
-        if (minHeightNew > minHeight) {
-          minHeightNew = listChild[i].offsetHeight + minHeightNew;
-          console.log(minHeightNew);
-        }
-      }
-
-      console.log(minHeightNew);
+            listElement = label.nextElementSibling;
     
       if ( parentElement.classList.contains('filter-is-open') ) {
         parentElement.classList.remove('filter-is-open');
+        listElement.style.maxHeight = '0px';
       }
       else {
         parentElement.classList.add('filter-is-open');
+        listElement.style.maxHeight = '1000px';
       }
 
       this.classList.toggle("filter-active");
@@ -49,6 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
       document.querySelector('body').classList.add('body-oveflow');
       categoryMenu.style.height = `${menuWrap.offsetHeight}px`;
       categoryMenu.style.setProperty('border', '1px solid #CCCCCC');
+      categoryMenu.classList.add('active');
 
       minHeight();
     });
@@ -60,8 +48,9 @@ window.addEventListener('DOMContentLoaded', () => {
   categoryMenu.addEventListener('mouseout', () => {
     categoryButton.classList.remove('button-active');
     document.querySelector('body').classList.remove('body-oveflow');
-    categoryMenu.style.height = `0px`;
+    categoryMenu.style.height = `${menuWrap.offsetHeight}px`;
     categoryMenu.style.setProperty('border', '0px solid transparent');
+    categoryMenu.classList.remove('active');
   });
 
   function minHeight() {
