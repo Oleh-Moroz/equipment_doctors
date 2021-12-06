@@ -1790,13 +1790,11 @@ footer {
   max-height: 98vh;
   opacity: 0;
   visibility: hidden;
-  display: none;
 }
 .category-menu.active {
   opacity: 1;
   visibility: visible;
   z-index: 3;
-  display: block;
 }
 .category-menu ul {
   list-style: none;

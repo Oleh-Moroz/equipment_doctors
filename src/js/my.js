@@ -35,6 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
       categoryButton.classList.add('button-active');
       document.querySelector('body').classList.add('body-oveflow');
       /*categoryMenu.style.height = `${menuWrap.offsetHeight}px`;*/
+      categoryMenu.style.setProperty('display', 'block');
       categoryMenu.style.setProperty('border', '1px solid #CCCCCC');
       categoryMenu.classList.add('active');
 
@@ -49,6 +50,7 @@ window.addEventListener('DOMContentLoaded', () => {
     categoryButton.classList.remove('button-active');
     document.querySelector('body').classList.remove('body-oveflow');
     /*categoryMenu.style.height = `${menuWrap.offsetHeight}px`;*/
+    categoryMenu.style.setProperty('display', 'none');
     categoryMenu.style.setProperty('border', '0px solid transparent');
     categoryMenu.classList.remove('active');
   });

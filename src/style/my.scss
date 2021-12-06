@@ -1884,13 +1884,11 @@ footer {
     max-height: 98vh;
     opacity: 0;
     visibility: hidden;
-    display: none;
 
     &.active {
         opacity: 1;
         visibility: visible;
         z-index: 3;
-        display: block;
     }
     
     ul {
