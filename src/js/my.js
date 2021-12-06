@@ -34,11 +34,11 @@ window.addEventListener('DOMContentLoaded', () => {
     item.addEventListener('mouseover', () => {
       categoryButton.classList.add('button-active');
       document.querySelector('body').classList.add('body-oveflow');
-      categoryMenu.style.height = `${menuWrap.offsetHeight}px`;
+      /*categoryMenu.style.height = `${menuWrap.offsetHeight}px`;*/
       categoryMenu.style.setProperty('border', '1px solid #CCCCCC');
       categoryMenu.classList.add('active');
 
-      minHeight();
+      /*minHeight();*/
     });
   }
 
@@ -48,12 +48,12 @@ window.addEventListener('DOMContentLoaded', () => {
   categoryMenu.addEventListener('mouseout', () => {
     categoryButton.classList.remove('button-active');
     document.querySelector('body').classList.remove('body-oveflow');
-    categoryMenu.style.height = `${menuWrap.offsetHeight}px`;
+    /*categoryMenu.style.height = `${menuWrap.offsetHeight}px`;*/
     categoryMenu.style.setProperty('border', '0px solid transparent');
     categoryMenu.classList.remove('active');
   });
 
-  function minHeight() {
+  /*function minHeight() {
     let menuChildItem = document.querySelector(".show ul").offsetHeight,
     minHeight = 50;
 
@@ -61,7 +61,7 @@ window.addEventListener('DOMContentLoaded', () => {
       minHeight = menuChildItem;
       menuWrap.style.minHeight = `${minHeight}px`;
     }
-  }
+  }*/
 
   menuItem.forEach(item => {
     item.addEventListener('click', () => {
@@ -72,7 +72,7 @@ window.addEventListener('DOMContentLoaded', () => {
       });
       
       item.classList.add('show');
-      minHeight();
+      /*minHeight();*/
     });
   });
 

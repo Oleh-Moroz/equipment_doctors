@@ -208,7 +208,7 @@ body {
         &::after {
           visibility: visible;
           opacity: 1;
-          z-index: 2;
+          z-index: 0;
         }
     }
 }
@@ -217,6 +217,8 @@ body {
     width: 95%;
     margin: 0 auto;
     max-width: 1440px;
+    position: relative;
+    z-index: 0;
 }
 
 .container-small {
@@ -245,7 +247,7 @@ header {
     background: $white;
     padding: 21px 0;
     border-bottom: 1px solid #CCCCCC;
-    z-index: 3;
+    z-index: 2;
     position: relative;
 
     .container {
@@ -1870,7 +1872,7 @@ footer {
     position: absolute;
     left: 0;
     top: 22px;
-    z-index: 3;
+    z-index: -3;
     transition: all .4s linear;
     overflow: hidden;
     overflow-y: auto;
@@ -1882,10 +1884,13 @@ footer {
     max-height: 98vh;
     opacity: 0;
     visibility: hidden;
+    display: none;
 
     &.active {
         opacity: 1;
         visibility: visible;
+        z-index: 3;
+        display: block;
     }
     
     ul {
