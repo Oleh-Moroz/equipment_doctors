@@ -857,6 +857,7 @@ footer {
   -ms-flex-pack: end;
       justify-content: flex-end;
   margin: 35px 0 0;
+  z-index: 1;
 }
 .slider-button button {
   position: relative;
