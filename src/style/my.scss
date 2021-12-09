@@ -276,6 +276,23 @@ header {
 }
 
 .header-category_button {
+    outline: none;
+    box-sizing: border-box;
+    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $gold;
+    color: $white;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 114%;
+    letter-spacing: 0.5px;
+    transition: all .4s linear;
+    cursor: pointer;
+
     &::after {
         content: '\f078';
         font-family: "Font Awesome 5 Free"; 
@@ -284,6 +301,11 @@ header {
         font-size: 11px;
         margin-left: 7px;
         transition: all .3s linear;
+    }
+
+    &:hover {
+        color: #fff;
+        background: #dcbc78;
     }
 
     &.button-active {
@@ -782,13 +804,11 @@ footer {
     max-width: calc(100% - (100% / 4.5));
     box-sizing: border-box;
     padding-left: 15px;
-}
 
-/*.slider-wrap {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 6px 6px 0 0;
-}*/
+    .page-description-block {
+        max-width: 95%;
+    }
+}
 
 .main-slider {
     width: 100%;
@@ -1677,7 +1697,7 @@ footer {
 
     ----------------------------------------------*/
 
-.product-filter {
+.product-filter, .col-menu {
     width: 100%;
     margin: 15px 0;
     background: $white;
@@ -1981,7 +2001,7 @@ footer {
   .category-navbar > ul > li > ul > li{
     display:block;
     width:100%;
-    float:right;
+    float:left;
   }
   .category-navbar > ul > li > ul > li.col3 {
     width: calc((100% / 3) + 1px);
@@ -2146,6 +2166,7 @@ footer {
 
   .breadcrumbs-block {
     margin-top: 16px; 
+    width: 100%;
 
     ul {
         display: flex;
@@ -2245,6 +2266,10 @@ footer {
         line-height: 267%;
         letter-spacing: 0.5px;
         color: $black; 
+
+        span {
+            color: $gold;
+        }
     }
 
     button.filter-clean-button {
@@ -2407,12 +2432,17 @@ input:checked ~ label::before {
 
 .sort-drop {
     width: 100%;
-    background: #fff;
+    background: $white;
     color: #000;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    &:hover {
+        background: $white;
+        color: $dark-black;
+    }
 }
 
 .sort-dropdown-content {
@@ -2558,5 +2588,325 @@ input:checked ~ label::before {
 
     to {
         transform: translateX(70px);
+    }
+}
+
+
+/* 
+
+    Page Category Style 
+
+    ----------------------------------*/
+
+.category-page_menu__child {
+    overflow: visible;
+    overflow-y: hidden;
+    transition: all .4s linear;
+}
+
+.category-result-text {
+    width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 267%;
+    letter-spacing: 0.5px;
+
+    span {
+        color: $gold;
+    }
+}
+
+.show-more {
+    background: transparent;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    color: $gold;
+    margin: 5px 15px 5px auto;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    transition: all .4s linear;
+
+    &::after {
+        content: "\f054";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: $gold;
+        font-size: 11px;
+        margin-left: 7px;
+        transition: all .4s linear;
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #F8F8F8;
+        border-radius: 50%;
+    }
+
+    &:hover {
+        background: transparent;
+        color: $gold;
+    }
+}
+
+.category-hidden {
+    
+    .show-more {
+        display: flex;
+    }
+}
+
+.tab-content {
+    display: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 15px 0;
+
+    &.tab-show {
+        display: flex;
+    }
+
+    .col3 {
+        width: calc(33.3333333333% - 30px);
+        border: 1px solid transparent;
+        padding: 24px 0 16px;
+        margin: 0 0 30px 30px;
+        background: #fff;
+        border-radius: 8px;
+        transition: all .4s linear;
+
+        a {
+            box-sizing: border-box;
+            padding: 0 15px 0 20px;
+            display: flex;
+        }
+
+        &:hover {
+            border: 1px solid $gold;
+
+            .show-more {
+                font-weight: 700;
+
+                &::after {
+                    background: $gold;
+                    color: #F8F8F8;
+                }
+            }
+        }
+        ul li a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 143%;
+            color: $black;
+            transition: all .3s linear;
+            margin: 8px 0;
+            position: relative;
+
+            &:hover {
+                color: $gold;
+            }
+        }
+
+        ul li a::before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: -1px;
+            width: 2px;
+            height: 100%;
+            background: transparent;
+            transition: all .4s linear;
+        }
+        ul li a:hover::before {
+            background: $gold;
+        }
+    }
+}
+
+.col-menu {
+    padding: 26px 0 30px 0;
+
+    h3 {
+        padding-left: 21px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: $black;
+        margin-bottom: 25px;
+    }
+
+    ul li>div {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 10px 12px 24px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: $black;
+        transition: all .4s linear;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-left: 2px solid transparent;
+        border-right: 1px solid rgba(220,188,120,.2);
+        margin-right: -1px;
+        cursor: pointer;
+
+        &::after {
+            content: "\f054";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #ccc;
+            font-size: 11px;
+            margin-left: auto;
+            transition: all .4s linear;
+        }
+
+        .category-navbar-logo {
+            max-width: 80px;
+            box-sizing: border-box;
+            padding: 15px;
+            background: #fff;
+            margin-right: 30px;
+            overflow: hidden;
+            max-height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    ul li.show>div {
+        color: $gold;
+        background: rgba(220,188,120,.2);
+        border-left: 2px solid $gold;
+
+        &::after {
+            color: $gold;
+        }
+    }
+}
+
+.vendor-col-menu ul li > div {
+    text-transform: none;
+}
+
+
+/* 
+
+    Single trucks page 
+
+    -------------------------------*/
+
+.trucks-banner {
+    width: 100%;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 125px 0;
+    margin: 15px 0;
+    text-align: center;
+    color: $white;
+
+    h1 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 114%;
+        color: $white;   
+    }
+}
+
+.page-description-block {
+    max-width: 90%;
+    margin: 30px auto;
+
+    h2 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 114%;
+        color: $black;
+        margin-bottom: 45px;
+    }
+
+    h3 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 120%;
+        color: #000000;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: #000000;
+        margin-bottom: 20px;
+    }
+
+
+}
+
+/* 
+
+    Vendor Page 
+
+    ------------------------------*/
+
+    .vendor-row {
+        margin-top: 15px;
+
+        h1 {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 114%;
+            letter-spacing: 0.5px;
+            color: $black;
+            margin: 45px 0;
+            width: 100%;
+        }
+
+        .vendor-item {
+            flex: 1 0 calc((100% / 4 ) - 30px);
+            max-width: calc((100% / 4 ) - 30px);
+        }
+    }
+
+
+
+/*
+
+    Single vendor Menu
+
+--------------------------------*/
+
+.vendor-menu-logo {
+    width: 100%;
+
+    img {
+        max-width: 100%;
     }
 }

@@ -25,15 +25,17 @@ function removedSearchDropdown() {
     } else {
         searchDropdown.classList.remove('open');
     }
-    searchResults.querySelectorAll('li').forEach(item => {item.remove()});
+    searchResults.querySelectorAll('li').forEach(item => {
+        item.remove()
+    });
 }
 
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     let inputValue = searchInput.value;
     if (searchInput.value) {
-        window.location.href=`/page/search.html?s=${inputValue}`;
+        window.location.href = `/page/search.html?s=${inputValue}`;
     } else {
         searchForm.classList.add('search-active');
         searchDropdown.classList.add('open-no-results');
