@@ -13632,62 +13632,57 @@ Slider dots
 
 ----------------------------------- */
 
+var firstImg, observerConfig, firstImgObserver;
 
-/*let checked = null;
-let changer = null;
-let clickStopper = false;
-let slide = null;
+firstImg = document.querySelectorAll('.slider-pagination span');
 
-const dotChanger = (event) => {
-  if (clickStopper) return false;
-  else clickStopper = true;
-  let target = event.target;
-  changer.style.setProperty('visibility', 'visible');
-  if (slide.getAttribute('data-swiper-slide-index') < checked.indexOf(dot)) 
-    changer.style.setProperty('width', `${target.offsetLeft - checked.offsetLeft + checked.offsetWidth}px`);
-  else {
-    changer.style.setProperty('left', `${target.offsetLeft}px`);
-    changer.style.setProperty('width', `${checked.offsetLeft - target.offsetLeft + target.offsetWidth}px`);
-  };
-  setTimeout(()=>{
-    if (checked.offsetLeft < target.offsetLeft) changer.style.setProperty('left', `${target.offsetLeft}px`);
-    changer.style.removeProperty('width');
-    setTimeout(()=>{
-      changer.style.removeProperty('visibility');
-      checked = target;
-      clickStopper = false;
-    }, 500);
-  }, 500)
-}
+observerConfig = {
+   attributes: true
+};
 
-document.querySelectorAll('.swiper-slide').forEach(slide=>{
-//  dot.addEventListener('click', dotChanger);
+let changer = document.querySelector('.slider__dots__changer'),
+    checked = document.querySelector('.swiper-pagination-bullet-active');
 
-  if (clickStopper) return false;
-    else clickStopper = true;
-    let target = event.target;
-    changer.style.setProperty('visibility', 'visible');
-    if (slide.getAttribute('data-swiper-slide-index') < checked.indexOf()) 
-      changer.style.setProperty('width', `${target.offsetLeft - checked.offsetLeft + checked.offsetWidth}px`);
-    else {
-      changer.style.setProperty('left', `${target.offsetLeft}px`);
-      changer.style.setProperty('width', `${checked.offsetLeft - target.offsetLeft + target.offsetWidth}px`);
-    };
-    setTimeout(()=>{
-      if (checked.offsetLeft < target.offsetLeft) changer.style.setProperty('left', `${target.offsetLeft}px`);
-      changer.style.removeProperty('width');
-      setTimeout(()=>{
-        changer.style.removeProperty('visibility');
-        checked = target;
-        clickStopper = false;
-      }, 500);
-    }, 500)
+    changer.style.setProperty('left', `${checked.offsetLeft}px`);
+
+firstImgObserver = new MutationObserver(function(mutations) {
+   mutations.forEach(function(mutation) {
+    let changer = document.querySelector('.slider__dots__changer');
+
+      if (mutation.attributeName === "aria-current") {
+
+        changer.style.setProperty('visibility', 'visible');
+
+        console.log(mutation.target, mutation.target.offsetLeft, changer.offsetLeft );
+
+        if (changer.offsetLeft < mutation.target.offsetLeft) {
+          changer.style.setProperty('width', `${mutation.target.offsetLeft - changer.offsetLeft + changer.offsetWidth}px`);
+          
+          setTimeout(() => {
+            changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
+            changer.style.setProperty('width',  '10px');
+          }, 500);
+        
+        } else {
+          changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
+          changer.style.setProperty('width', `${changer.offsetLeft - mutation.target.offsetLeft + changer.offsetWidth}px`);
+        }
+
+        setTimeout(()=>{
+          if (changer.offsetLeft < mutation.target.offsetLeft) changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
+          changer.style.setProperty('width',  '10px');
+          setTimeout(()=>{
+            changer.style.removeProperty('visibility');
+          }, 500);
+        }, 500)
+
+      }
+   });
 });
 
-
-checked = document.querySelector('.swiper-pagination-bullet-active');
-changer = document.querySelector('.slider__dots__changer');
-changer.style.setProperty('left', `${checked.offsetLeft}px`);*/
+firstImg.forEach((item) => {
+  firstImgObserver.observe(item, observerConfig);
+});
 const searchInput = document.querySelector('.header-search_input'),
     clearButton = document.querySelector('.clear_search-input'),
     searchDropdown = document.querySelector('.header-search-dropdown'),

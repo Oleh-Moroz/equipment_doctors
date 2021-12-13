@@ -1010,7 +1010,6 @@ footer {
 }
 .slider-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: #BEA063;
-  width: 22px;
 }
 
 /*
@@ -2825,4 +2824,16 @@ input:checked ~ label::before {
 }
 .vendor-menu-logo img {
   max-width: 100%;
+}
+
+.slider__dots__changer {
+  position: absolute;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: #BEA063;
+  transition: left 0.5s ease-out, width 0.5s ease-out;
+  margin-top: 29px;
+  z-index: 1;
 }
