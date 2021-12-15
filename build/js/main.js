@@ -13534,7 +13534,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  
+
 
   /*  Category menu */
 
@@ -13584,7 +13584,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   categoryChild.forEach((item) => {
     const childNodes = item.querySelectorAll('li'),
-          btnShowMore = item.parentElement.querySelector('.show-more');
+      btnShowMore = item.parentElement.querySelector('.show-more');
 
     if (childNodes.length > 5) {
 
@@ -13596,34 +13596,34 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     btnShowMore.addEventListener('click', () => {
-        item.style.cssText = `
+      item.style.cssText = `
           max-height:1000px;
         `;
 
-        item.parentElement.classList.remove('category-hidden');
+      item.parentElement.classList.remove('category-hidden');
     });
   });
 
 });
 
 const colMenuWrap = document.querySelectorAll('.col-menu ul li'),
-      contentWrap = document.querySelectorAll('.tab-content');
+  contentWrap = document.querySelectorAll('.tab-content');
 
-      for (let i = 0; i < colMenuWrap.length; i++) {
-        colMenuWrap[i].addEventListener('click', () => {
-          colMenuWrap.forEach((item) => {
-            item.classList.remove('show');
-          }); 
+for (let i = 0; i < colMenuWrap.length; i++) {
+  colMenuWrap[i].addEventListener('click', () => {
+    colMenuWrap.forEach((item) => {
+      item.classList.remove('show');
+    });
 
-          contentWrap.forEach((item) => {
-            item.classList.remove('tab-show');
-          }); 
+    contentWrap.forEach((item) => {
+      item.classList.remove('tab-show');
+    });
 
-          colMenuWrap[i].classList.add('show');
+    colMenuWrap[i].classList.add('show');
 
-          contentWrap[i].classList.add('tab-show');
-        });      
-      }
+    contentWrap[i].classList.add('tab-show');
+  });
+}
 
 
 
@@ -13632,12 +13632,13 @@ Slider dots
 
 ----------------------------------- */
 
-var firstImg, observerConfig, firstImgObserver;
+let dots, observerConfig, dotsObserver;
 
-firstImg = document.querySelectorAll('.slider-pagination span');
+dots = document.querySelectorAll('.slider-pagination span');
 
 observerConfig = {
-   attributes: true
+  attributes: true,
+  attributeOldValue: false,
 };
 
 let changer = document.querySelector('.slider__dots__changer'),
@@ -13645,43 +13646,40 @@ let changer = document.querySelector('.slider__dots__changer'),
 
     changer.style.setProperty('left', `${checked.offsetLeft}px`);
 
-firstImgObserver = new MutationObserver(function(mutations) {
-   mutations.forEach(function(mutation) {
+dotsObserver = new MutationObserver(function (mutations) {
+  mutations.forEach(function (mutation) {
     let changer = document.querySelector('.slider__dots__changer');
 
-      if (mutation.attributeName === "aria-current") {
+    if (mutation.attributeName === "aria-current") {
+
+      if (changer.offsetLeft < mutation.target.offsetLeft) {
+        changer.style.setProperty('width', `${mutation.target.offsetLeft - changer.offsetLeft + changer.offsetWidth}px`);
+
+        setTimeout(() => {
+          changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
+          changer.style.setProperty('width', '10px');
+        }, 150);
 
         changer.style.setProperty('visibility', 'visible');
 
-        console.log(mutation.target, mutation.target.offsetLeft, changer.offsetLeft );
-
-        if (changer.offsetLeft < mutation.target.offsetLeft) {
-          changer.style.setProperty('width', `${mutation.target.offsetLeft - changer.offsetLeft + changer.offsetWidth}px`);
-          
-          setTimeout(() => {
-            changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
-            changer.style.setProperty('width',  '10px');
-          }, 500);
-        
-        } else {
-          changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
-          changer.style.setProperty('width', `${changer.offsetLeft - mutation.target.offsetLeft + changer.offsetWidth}px`);
-        }
-
-        setTimeout(()=>{
-          if (changer.offsetLeft < mutation.target.offsetLeft) changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
-          changer.style.setProperty('width',  '10px');
-          setTimeout(()=>{
-            changer.style.removeProperty('visibility');
-          }, 500);
-        }, 500)
-
       }
-   });
+
+      if (changer.offsetLeft > mutation.target.offsetLeft) {
+        changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
+        changer.style.setProperty('width', `${changer.offsetLeft - mutation.target.offsetLeft + changer.offsetWidth}px`);
+
+        changer.style.setProperty('visibility', 'visible');
+
+        setTimeout(() => {
+          changer.style.setProperty('width', '10px');
+        }, 150);
+      }
+    }
+  });
 });
 
-firstImg.forEach((item) => {
-  firstImgObserver.observe(item, observerConfig);
+dots.forEach((item) => {
+  dotsObserver.observe(item, observerConfig);
 });
 const searchInput = document.querySelector('.header-search_input'),
     clearButton = document.querySelector('.clear_search-input'),

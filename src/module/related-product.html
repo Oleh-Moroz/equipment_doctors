@@ -1,15 +1,11 @@
 <div class="popular-wrap">
     <div class="title-row">
         <h3>
-            Popular parts Block
+            Related product
         </h3>
-
-        <a class="button-show-all" href="#">
-            Show all parts
-        </a>
     </div>
 
-    <div class="product-slider slider" id="popular-slide-num">
+    <div class="product-slider slider" id="related-slide-num">
         <div class="swiper-wrapper">
             <div class="product__item swiper-slide">
                 <div class="product-icon__row">
@@ -241,8 +237,8 @@
 </div>
 
 <script>
-    const popularSwiper = new Swiper(document.getElementById('popular-slide-num'), {
-        slidesPerView: 3,
+    const relatedSwiper = new Swiper(document.getElementById('related-slide-num'), {
+        slidesPerView: 4,
         spaceBetween: 30,
         loop: true,
         navigation: {
