@@ -2,7 +2,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const accordion = document.getElementsByClassName("filter__label");
 
-
   for (let i = 0; i < accordion.length; i++) {
     accordion[i].addEventListener("click", function (e) {
 
@@ -25,7 +24,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-  /*  Category menu */
+/*  Category menu 
+  
+---------------------------*/
 
   const categoryMenu = document.querySelector("#category-menu"),
     categoryButton = document.querySelector("#category-menu_button"),
@@ -67,7 +68,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-  /* Category page menu */
+/* 
+Category page menu 
+
+--------------------------------*/
 
   const categoryChild = document.querySelectorAll('.category-page_menu__child');
 
@@ -93,27 +97,24 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-});
+  const colMenuWrap = document.querySelectorAll('.col-menu ul li'),
+    contentWrap = document.querySelectorAll('.tab-content');
 
-const colMenuWrap = document.querySelectorAll('.col-menu ul li'),
-  contentWrap = document.querySelectorAll('.tab-content');
+  for (let i = 0; i < colMenuWrap.length; i++) {
+    colMenuWrap[i].addEventListener('click', () => {
+      colMenuWrap.forEach((item) => {
+        item.classList.remove('show');
+      });
 
-for (let i = 0; i < colMenuWrap.length; i++) {
-  colMenuWrap[i].addEventListener('click', () => {
-    colMenuWrap.forEach((item) => {
-      item.classList.remove('show');
+      contentWrap.forEach((item) => {
+        item.classList.remove('tab-show');
+      });
+
+      colMenuWrap[i].classList.add('show');
+
+      contentWrap[i].classList.add('tab-show');
     });
-
-    contentWrap.forEach((item) => {
-      item.classList.remove('tab-show');
-    });
-
-    colMenuWrap[i].classList.add('show');
-
-    contentWrap[i].classList.add('tab-show');
-  });
-}
-
+  }
 
 
 /*
@@ -121,52 +122,92 @@ Slider dots
 
 ----------------------------------- */
 
-let dots, observerConfig, dotsObserver;
+function sliderDotsChanger() {
+  let dots, observerConfig, dotsObserver;
 
-dots = document.querySelectorAll('.slider-pagination span');
+  dots = document.querySelectorAll('.slider-pagination span');
 
-observerConfig = {
-  attributes: true,
-  attributeOldValue: false,
+  observerConfig = {
+    attributes: true,
+    attributeOldValue: false,
+  };
+
+  let changer = document.querySelector('.slider__dots__changer'),
+      checked = document.querySelector('.swiper-pagination-bullet-active');
+
+  if (changer) {
+    changer.style.setProperty('left', `${checked.offsetLeft}px`);
+  }
+
+  dotsObserver = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      let changer = document.querySelector('.slider__dots__changer');
+
+      if (mutation.attributeName === "aria-current") {
+
+        if (changer.offsetLeft < mutation.target.offsetLeft) {
+          changer.style.setProperty('width', `${mutation.target.offsetLeft - changer.offsetLeft + changer.offsetWidth}px`);
+
+          setTimeout(() => {
+            changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
+            changer.style.setProperty('width', '10px');
+          }, 150);
+
+          changer.style.setProperty('visibility', 'visible');
+
+        }
+
+        if (changer.offsetLeft > mutation.target.offsetLeft) {
+          changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
+          changer.style.setProperty('width', `${changer.offsetLeft - mutation.target.offsetLeft + changer.offsetWidth}px`);
+
+          changer.style.setProperty('visibility', 'visible');
+
+          setTimeout(() => {
+            changer.style.setProperty('width', '10px');
+          }, 150);
+        }
+      }
+    });
+  });
+
+  dots.forEach((item) => {
+    dotsObserver.observe(item, observerConfig);
+  });
 };
 
-let changer = document.querySelector('.slider__dots__changer'),
-    checked = document.querySelector('.swiper-pagination-bullet-active');
 
-    changer.style.setProperty('left', `${checked.offsetLeft}px`);
+sliderDotsChanger();
 
-dotsObserver = new MutationObserver(function (mutations) {
-  mutations.forEach(function (mutation) {
-    let changer = document.querySelector('.slider__dots__changer');
+/* 
+Lightbox
 
-    if (mutation.attributeName === "aria-current") {
+--------------------------------*/
 
-      if (changer.offsetLeft < mutation.target.offsetLeft) {
-        changer.style.setProperty('width', `${mutation.target.offsetLeft - changer.offsetLeft + changer.offsetWidth}px`);
-
-        setTimeout(() => {
-          changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
-          changer.style.setProperty('width', '10px');
-        }, 150);
-
-        changer.style.setProperty('visibility', 'visible');
-
-      }
-
-      if (changer.offsetLeft > mutation.target.offsetLeft) {
-        changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
-        changer.style.setProperty('width', `${changer.offsetLeft - mutation.target.offsetLeft + changer.offsetWidth}px`);
-
-        changer.style.setProperty('visibility', 'visible');
-
-        setTimeout(() => {
-          changer.style.setProperty('width', '10px');
-        }, 150);
-      }
-    }
+  lightbox.option({
+    'resizeDuration': 150,
+    'wrapAround': true
   });
-});
 
-dots.forEach((item) => {
-  dotsObserver.observe(item, observerConfig);
+
+
+  const tabs = document.querySelectorAll('.product-tab-row ul li'),
+        tabsContent = document.querySelectorAll('.tab-content');
+
+  for (let i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener('click', () => {
+      tabs.forEach((item) => {
+        item.classList.remove('active');
+      });
+
+      tabsContent.forEach((item) => {
+        item.classList.remove('tab-show');
+      });
+
+      tabs[i].classList.add('active');
+
+      tabsContent[i].classList.add('tab-show');
+    });
+  }
+
 });

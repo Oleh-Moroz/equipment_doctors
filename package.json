@@ -12,6 +12,7 @@
     "bootstrap": "^4.2.1",
     "gulp-file-include": "^2.3.0",
     "jquery": "^3.3.1",
+    "lightbox2": "^2.11.3",
     "node-sass": "^6.0.1",
     "popper.js": "^1.14.6",
     "saas": "^1.0.0",
