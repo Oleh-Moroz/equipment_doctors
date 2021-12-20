@@ -13766,6 +13766,24 @@ Lightbox
   }
 
 });
+/*
+  redirect 
+
+  --------------------------*/
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const searchTitleValue = window.location.href.toString(),
+            searchTitle = searchTitleValue.split("equipment_doctors")[1];
+
+    window.location.href = `https://oleh-moroz.github.io/equipment_doctors/build/${searchTitle}`;
+});
+
+/*
+    end redirect
+
+    -----------------------------*/
+
+
 const searchInput = document.querySelector('.header-search_input'),
     clearButton = document.querySelector('.clear_search-input'),
     searchDropdown = document.querySelector('.header-search-dropdown'),
