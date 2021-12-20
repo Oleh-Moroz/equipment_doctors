@@ -5,7 +5,7 @@
 
   window.addEventListener('DOMContentLoaded', () => {
     const oldLink = window.location.href.toString(),
-            pageLink = searchTitleValue.split("build")[1],
+            pageLink = oldLink.split("build")[1],
             newLink = `https://oleh-moroz.github.io/equipment_doctors/build${pageLink}`;
 
     if (oldLink != newLink) {
