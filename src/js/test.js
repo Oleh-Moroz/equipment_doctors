@@ -3,16 +3,16 @@
 
   --------------------------*/
 
-  window.addEventListener('DOMContentLoaded', () => {
+ /* window.addEventListener('DOMContentLoaded', () => {
     const oldLink = window.location.href.toString(),
-            pageLink = oldLink.split("build")[1],
-            newLink = `https://oleh-moroz.github.io/equipment_doctors/build${pageLink}`;
+        pageLink = oldLink.split("build")[1],
+        newLink = `https://oleh-moroz.github.io/equipment_doctors/build${pageLink}`;
 
     if (oldLink != newLink) {
         console.log(newLink);
         window.location.href = newLink;
     }
-});
+});*/
 
 /*
     end redirect
