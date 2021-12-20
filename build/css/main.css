@@ -1758,7 +1758,7 @@ footer {
   padding: 8px 8px 8px 25px;
 }
 .filter-has-children .filter__list li.filter-has-children .filter__list {
-  margin-top: 1px;
+  margin: 1px 0;
   transition: all 0.4s linear;
 }
 .filter-has-children .filter__list li.filter-has-children .filter__list li {
@@ -1784,7 +1784,7 @@ footer {
   background: #F8F8F8;
   max-height: 270px !important;
   overflow: hidden;
-  overflow-y: auto;
+  /*overflow-y: auto;*/
 }
 
 .filter-has-children {
@@ -1797,6 +1797,10 @@ footer {
 }
 .filter-has-children.filter-is-open > .filter__list {
   max-height: 1000px;
+}
+
+.main-filter .filter-has-children .filter__list li.filter-has-children.filter-is-open .filter__list {
+  overflow-y: auto;
 }
 
 .category-menu {
@@ -1815,8 +1819,9 @@ footer {
   border-radius: 0px 0px 6px 6px;
   height: auto;
   max-height: 98vh;
-  opacity: 0;
-  visibility: hidden;
+  /*opacity: 0;
+  visibility: hidden;*/
+  display: none;
 }
 .category-menu.active {
   opacity: 1;
@@ -2273,6 +2278,7 @@ input:checked ~ label::before {
   background: #F4F6F8;
   border-radius: 8px;
   position: relative;
+  left: 1px;
 }
 .filter-input-wrap input {
   width: 100%;
@@ -2286,6 +2292,37 @@ input:checked ~ label::before {
   line-height: 150%;
   color: #42474C;
   margin-left: -20%;
+  transition: all 0.4s linear;
+}
+.filter-input-wrap input:hover, .filter-input-wrap input:focus {
+  border: 1px solid #BEA063;
+}
+
+.filter-button-wrap input {
+  width: 100%;
+  outline: 0;
+  border: none;
+  box-sizing: border-box;
+  padding: 12px 10px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: center;
+  background: #BEA063;
+  color: #fff;
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 114%;
+  letter-spacing: 0.5px;
+  transition: all 0.4s linear;
+  cursor: pointer;
+}
+.filter-button-wrap input:hover {
+  background: #DCBC78;
 }
 
 .price-filter-second ul {
@@ -2303,7 +2340,7 @@ input:checked ~ label::before {
 
 .sort-dropdown {
   height: auto;
-  max-height: 60px;
+  max-height: 50px;
   margin: 0 0 0 auto;
   background: #fff;
   box-sizing: border-box;
@@ -2383,6 +2420,10 @@ input:checked ~ label::before {
   line-height: 16px;
   color: #221E1E;
   margin: 5px 0;
+  transition: all 0.4s linear;
+}
+.sort-dropdown-content a:hover, .sort-dropdown-content button:hover {
+  color: #BEA063;
 }
 
 .sort-dropdown:hover .sort-dropdown-content {
@@ -2536,7 +2577,19 @@ input:checked ~ label::before {
 .category-page_menu__child {
   overflow: visible;
   overflow-y: hidden;
-  transition: all 0.4s linear;
+  transition: all 0.3s linear;
+}
+
+.menu-row {
+  -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+  min-width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
 }
 
 .category-result-text {
@@ -2593,9 +2646,29 @@ input:checked ~ label::before {
   color: #BEA063;
 }
 
-.category-hidden .show-more {
+.category-more-child .show-more {
   display: -ms-flexbox;
   display: flex;
+}
+.category-more-child.category-more-child-active .show-more::after {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.category-more-child .category-page_menu__child {
+  position: relative;
+}
+.category-more-child .category-page_menu__child::after {
+  content: "";
+  width: 100%;
+  height: 45px;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  background-image: linear-gradient(to top, #fff, transparent);
+}
+.category-more-child.category-more-child-active .category-page_menu__child::after {
+  display: none;
 }
 
 .tab-content {
@@ -3397,4 +3470,31 @@ input:checked ~ label::before {
   font-size: 14px;
   line-height: 143%;
   color: #BEA063;
+}
+
+.caption-vendor-info {
+  height: 40vh;
+  overflow: hidden;
+  margin: auto 0;
+}
+.caption-vendor-info .product-vendor-logo {
+  height: 55%;
+}
+.caption-vendor-info .product-vendor-logo a {
+  height: 100%;
+}
+.caption-vendor-info .product-vendor-logo a img {
+  height: 100%;
+}
+
+@media screen and (max-width: 1537px) {
+  .caption-vendor-info {
+    height: 25vh;
+  }
+}
+.float-row .product-col-left {
+  float: left;
+}
+.float-row .product-col-right {
+  float: right;
 }
