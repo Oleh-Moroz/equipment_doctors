@@ -13775,8 +13775,9 @@ Lightbox
     const searchTitleValue = window.location.href.toString(),
             searchTitle = searchTitleValue.split("build")[1],
             newLink = `https://oleh-moroz.github.io/equipment_doctors/build/${searchTitle}`;
+
     if (searchTitleValue != newLink) {
-        console.log(`https://oleh-moroz.github.io/equipment_doctors/build/${searchTitle}`);
+        console.log(`https://oleh-moroz.github.io/equipment_doctors/build${searchTitle}`);
         /*window.location.href = `https://oleh-moroz.github.io/equipment_doctors/build/${searchTitle}`;*/
     }
 });
