@@ -13772,13 +13772,13 @@ Lightbox
   --------------------------*/
 
   window.addEventListener('DOMContentLoaded', () => {
-    const searchTitleValue = window.location.href.toString(),
-            searchTitle = searchTitleValue.split("build")[1],
-            newLink = `https://oleh-moroz.github.io/equipment_doctors/build${searchTitle}`;
+    const oldLink = window.location.href.toString(),
+            pageLink = searchTitleValue.split("build")[1],
+            newLink = `https://oleh-moroz.github.io/equipment_doctors/build${pageLink}`;
 
-    if (searchTitleValue != newLink) {
+    if (oldLink != newLink) {
         console.log(newLink);
-        /*window.location.href = `https://oleh-moroz.github.io/equipment_doctors/build/${searchTitle}`;*/
+        window.location.href = newLink;
     }
 });
 
