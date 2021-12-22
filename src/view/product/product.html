@@ -6,7 +6,7 @@
         @@include('../common/breadcrumbs.html')
 
     <div class="float-row">
-        <div class="product-col-left">
+        <div class="product-col-left image-product-block">
             <div thumbsSlider="" class="product-thumb-slider" id="product-thumb-slider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -53,7 +53,7 @@
             </div>
         </div>
 
-        <div class="product-col-right">
+        <div class="product-col-right text-product-block">
             <div class="product-caption">
                 <h1>
                     GDB03562 TRW ABS BREAKING SYSTEM
@@ -355,7 +355,7 @@
                     <div class="row row-testimonial">
                         <h3>All reviews</h3>
 
-                        <button class="add-feedback">
+                        <button class="add-feedback" onclick="openModal('#feedback-pop-up')">
                             Write a Feedback
                         </button>
                     </div>
@@ -386,7 +386,45 @@
                         </div>
                         <div class="testimonial-footer">
                             <div class="reply-button">
-                                <button>
+                                <button onclick="openModal('#reply-feedback')">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <use href="#reply-arrow"></use>
+                                    </svg>
+                                    Reply
+                                </button>
+                            </div>
+                            <div class="reply-answer">
+                                <span>3</span> answers
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-item-header">
+                            <div class="testimonial-item-name">
+                                John Dou
+                            </div>
+                            <div class="testimonial-item-status">
+                                buyer
+                            </div>
+                        </div>
+                        <div class="testimonial-item-body">
+                            <div class="testimonial-date">
+                                Today
+                            </div>
+                            <div class="testimonial-item-stars">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                            </div>
+                            <div class="testimonial-item-text">
+                                <p>The headset only comes with the headset controllers and some other parts such as an adapter for eyeglasses, power cord and wall charger. The 699 ones are bundles that have extra accessories that are not required to use your quest. I purchase the headset only 256 gig version. I did buy a couple accessories for my de</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-footer">
+                            <div class="reply-button">
+                                <button onclick="openModal('#reply-feedback')">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <use href="#reply-arrow"></use>
                                     </svg>
@@ -413,6 +451,146 @@
 
         @@include('../modules/popular-product-category.html')
 
+    </div>
+</div>
+
+<div class="pop-up-wrap" id="feedback-pop-up">
+    <div class="pop-up-content">
+        <div class="pop-up-header">
+            <div class="pop-up-title">
+                Leave feedback
+            </div>
+            <button class="close-pop-up" data-close>
+                <i class="far fa-times-circle"></i>
+            </button>
+        </div>
+
+        <div class="pop-up-form">
+            <form>
+                <div class="form-group">
+                    <div class="form-stars-chekbox-title">
+                        *Rate the product
+                    </div>
+                    <ul class="form-stars-chekboxs">
+                        <li>
+                            <input type="radio" id="Bad" name="feedback-stars" value="1">
+                            <label for="Bad">
+                                Bad
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" id="can-be" name="feedback-stars" value="2">
+                            <label for="can-be">
+                                Can be   
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" id="normal" name="feedback-stars" value="3">
+                            <label for="normal">
+                                Bad
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" id="good" name="feedback-stars" value="4">
+                            <label for="good">
+                                Good
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" id="great" name="feedback-stars" value="5">
+                            <label for="great">
+                                Great
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">
+                        *Your Name
+                    </label>
+                    <input type="text" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="comment">
+                        *Your comment
+                    </label>
+                    <textarea name="*Your comment"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="name">
+                        Your Email
+                    </label>
+                    <input type="email" name="mail">
+                </div>
+
+                <div class="form-group subscribe-checkbox">
+                    <input type="checkbox" id="subscribe" name="subscribe">
+                    <label for="subscribe">
+                        Notify of replies by email
+                    </label>
+                </div>
+                <div class="form-group">
+                    <p>In order for your review or comment to be moderated and published, please read <a href="#">our rules.</a></p>
+                </div>
+
+                <div class="button-group pop-up-button-group">
+                    <button class="cancel-button" data-close>Cancel</button>
+                    <input type="submit" class="base-button" value="Leave feedback">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="pop-up-wrap" id="reply-feedback">
+    <div class="pop-up-content">
+        <div class="pop-up-header">
+            <div class="pop-up-title">
+                Reply to John Dou
+            </div>
+            <button class="close-pop-up" data-close>
+                <i class="far fa-times-circle"></i>
+            </button>
+        </div>
+
+        <div class="pop-up-form">
+            <form>
+                <div class="form-group">
+                    <label for="name">
+                        *Your Name
+                    </label>
+                    <input type="text" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="comment">
+                        *Your comment
+                    </label>
+                    <textarea name="*Your comment"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="name">
+                        Your Email
+                    </label>
+                    <input type="email" name="mail">
+                </div>
+
+                <div class="form-group subscribe-checkbox">
+                    <input type="checkbox" id="subscribe-reply" name="subscribe-reply">
+                    <label for="subscribe-reply">
+                        Notify of replies by email
+                    </label>
+                </div>
+                <div class="form-group">
+                    <p>In order for your review or comment to be moderated and published, please read <a href="#">our rules.</a></p>
+                </div>
+
+                <div class="button-group pop-up-button-group">
+                    <button class="cancel-button" data-close>Cancel</button>
+                    <input type="submit" class="base-button" value="Reply Message">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 

@@ -241,3 +241,75 @@ Lightbox
   }
 
 });
+
+/*
+Pop up
+
+-----------------------------*/
+
+const modalCloseBtn = document.querySelectorAll('[data-close]'),
+      popUps = document.querySelectorAll('.pop-up-wrap');
+
+function openModal(popUp) {
+    popUps.forEach(item => {
+      item.classList.remove('active');
+    });
+
+    document.querySelector(popUp).classList.add('active');
+
+    document.querySelectorAll('.pop-up-wrap.active').forEach(item => {
+      item.addEventListener('click', (e) => {
+        if (e.target === item) {
+            closeModal();
+        }
+      });
+    });
+}
+
+function closeModal() {
+  popUps.forEach(item => {
+    item.classList.remove('active');
+  });
+}
+
+modalCloseBtn.forEach(btn => {
+  btn.addEventListener('click', closeModal);
+});
+
+document.addEventListener('keydown', (e) => {
+  popUps.forEach(active => {
+    if (e.code === 'Escape' && active.classList.contains('active')) {
+      closeModal();
+    }
+  });
+});
+
+
+
+function quickView() {
+
+  const request = new XMLHttpRequest();  
+  
+  request.open('GET', '/view/product/product.html');
+  
+  request.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      const doc = new DOMParser().parseFromString(this.responseText, "text/html"),
+            imageBlock = doc.querySelector('.image-product-block'),
+            textBlock = doc.querySelector('.text-product-block');
+
+      const viewPopUp = document.createElement('div'),
+            viewPopUpContent = document.createElement('div');
+
+            viewPopUp.classList.add('pop-up-wrap', 'active');
+            viewPopUpContent.classList.add('pop-up-content');
+
+            document.body.append(viewPopUp);
+
+            viewPopUp.appendChild(viewPopUpContent);
+            viewPopUpContent.appendChild(imageBlock);
+            viewPopUpContent.appendChild(textBlock);
+    }
+  }
+  request.send(null);
+}

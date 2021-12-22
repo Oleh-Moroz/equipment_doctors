@@ -146,7 +146,7 @@ input[type="color"].form-control {
     height: 30px;
 }
 
-button {
+button, .base-button {
     outline: none;
     box-sizing: border-box;
     padding: 12px 10px;
@@ -162,6 +162,7 @@ button {
     line-height: 114%;
     letter-spacing: 0.5px;
     transition: all .4s linear;
+    border: none;
 
     &:hover {
         cursor: pointer;
@@ -3635,4 +3636,248 @@ input:checked ~ label::before {
     .product-col-right {
         float: right;
     }
+}
+
+/* 
+    Pop up Style
+
+    -------------------------------*/
+
+.pop-up-wrap {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+
+    &.active {
+        display: flex;
+    }
+}
+
+
+.pop-up-content {
+    width: 90%;
+    background: #fff;
+    max-width: 630px;
+    border-radius: 10px;
+    max-height: 98vh;
+    overflow: hidden;
+    overflow-y: auto;
+
+    .pop-up-header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 24px 30px;
+        border-bottom: 1px solid #F8F8F8;
+
+        .pop-up-title {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 120%;
+            color: $black;       
+        }
+
+        button,
+        .close-pop-up {
+            background: transparent;
+            color: $gold;
+            padding: 0;
+            font-size: 26px;
+        }
+    }
+
+    .pop-up-form {
+        box-sizing: border-box;
+        padding: 24px 30px;
+    }
+}
+
+.form-stars-chekbox-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $dark-black;
+}
+
+.form-stars-chekboxs {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 2%;
+    background: #F8F8F8;
+    border-radius: 6px;
+    margin: 25px auto;
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        input {
+            display: none;
+        }
+
+        label {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 150%;
+            color: #97A0A9;
+            transition: all .4s linear;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            cursor: pointer;
+
+            &::before {
+                content: "\f005";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                color: #97A0A9;
+                font-size: 25px;
+                background: transparent;
+                border: none;
+                margin-bottom: 10px;
+                transition: all .4s linear;
+            }
+        }
+
+        input:checked~label::before {
+            color: $gold;
+        }
+
+        input:checked~label {
+            font-weight: 600;
+            color: $dark-black;
+        }
+    }
+}
+
+.form-group {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 25px auto;
+
+    label {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 133%;
+        color: $black;  
+        margin-bottom: 10px;
+    }
+
+    input[type="text"], input[type="email"], textarea {
+        max-width: 100%;
+        min-width: 100%;
+        width: 100%;
+        background: $white;
+        border: 1px solid #CCCCCC;
+        box-sizing: border-box;
+        border-radius: 6px;
+        transition: all .4s linear;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 143%;
+        color: $dark-black;
+        padding: 10px 17px;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: 1px solid $gold;
+        }
+    }
+
+    p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 133%;
+        color: #97A0A9;
+        a {
+            color: $gold;
+        }
+    }
+}
+
+.subscribe-checkbox {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 143%;
+    color: $base-black;
+
+    input {
+        display: none;
+    }
+
+    label {
+        margin-bottom: 0;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 143%;
+        color: $base-black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+
+        &::before {
+            content: "";
+            border: 2px solid #42474c;
+            width: 14px;
+            height: 14px;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            border-radius: 3px;
+            transition: all .4s linear;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: $white;
+            font-size: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.pop-up-button-group {
+    justify-content: flex-end;
+
+    button.cancel-button {
+        background: #CCCCCC;
+        border-radius: 6px;
+        max-width: 85px;
+        margin-right: 32px;
+        transition: all .4s linear;
+
+        &:hover {
+            background: #a7a6a6;
+        }
+    }
+    
 }
