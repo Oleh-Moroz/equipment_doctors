@@ -3892,6 +3892,9 @@ input:checked ~ label::before {
 }
 
 .pop-up-content {
+    position: relative;
+    overflow: visible;
+
     .image-product-block {
         max-width: 50%;
         flex: 0 0 50%;
@@ -3900,15 +3903,28 @@ input:checked ~ label::before {
         .product-image-slider {
             max-width: 100%;
         }
+
+        .product-thumb-slider {
+            max-width: 100%;
+        }
     }
 
     .product-col-right {
-        max-width: 50%;
-        flex: 0 0 50%;
+        max-width: calc(50% - 20px);
+        flex: 0 0 calc(50% - 20px);
         padding: 20px 20px 20px 0;
         
         .caption-vendor-info {
             display: none;
         }
+    }
+
+    .close-pop-up {
+        position: absolute;
+        right: -35px;
+        top: -30px;
+        background: transparent;
+        color: $gold;
+        font-size: 20px;
     }
 }

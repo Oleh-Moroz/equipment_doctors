@@ -1,25 +1,25 @@
 window.addEventListener('DOMContentLoaded', () => {
 
   const accordion = document.getElementsByClassName("filter__label");
-    
+
 
   for (let i = 0; i < accordion.length; i++) {
     accordion[i].addEventListener("click", function (e) {
 
       const label = e.target,
-            parentElement = label.parentElement,
-            listElement = label.nextElementSibling;
+        parentElement = label.parentElement,
+        listElement = label.nextElementSibling;
 
       if (parentElement.classList.contains('filter-is-open')) {
-          parentElement.classList.remove('filter-is-open');
-          listElement.style.maxHeight = '0px';
+        parentElement.classList.remove('filter-is-open');
+        listElement.style.maxHeight = '0px';
 
-          listElement.style.cssText = `
+        listElement.style.cssText = `
             overflow-y: hidden;
           `;
       } else {
         parentElement.classList.add('filter-is-open');
-        
+
         listElement.style.cssText = `
           max-height: 1000px;
         `;
@@ -39,9 +39,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-/*  Category menu 
-  
----------------------------*/
+  /*  Category menu 
+    
+  ---------------------------*/
 
   const categoryMenu = document.querySelector("#category-menu"),
     categoryButton = document.querySelector("#category-menu_button"),
@@ -83,16 +83,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-/* 
-Category page menu 
+  /* 
+  Category page menu 
 
---------------------------------*/
+  --------------------------------*/
 
   const categoryChild = document.querySelectorAll('.category-page_menu__child');
 
   categoryChild.forEach((item) => {
     const childNodes = item.querySelectorAll('li'),
-          btnShowMore = item.parentElement.querySelector('.show-more');
+      btnShowMore = item.parentElement.querySelector('.show-more');
 
     if (childNodes.length > 5) {
 
@@ -128,7 +128,7 @@ Category page menu
   });
 
   const colMenuWrap = document.querySelectorAll('.col-menu ul li'),
-        contentWrap = document.querySelectorAll('.tab-content');
+    contentWrap = document.querySelectorAll('.tab-content');
 
   for (let i = 0; i < colMenuWrap.length; i++) {
     colMenuWrap[i].addEventListener('click', () => {
@@ -147,85 +147,85 @@ Category page menu
   }
 
 
-/*
-Slider dots
+  /*
+  Slider dots
 
------------------------------------ */
+  ----------------------------------- */
 
-function sliderDotsChanger() {
-  let dots, observerConfig, dotsObserver;
+  function sliderDotsChanger() {
+    let dots, observerConfig, dotsObserver;
 
-  dots = document.querySelectorAll('.slider-pagination span');
+    dots = document.querySelectorAll('.slider-pagination span');
 
-  observerConfig = {
-    attributes: true,
-    attributeOldValue: false,
-  };
+    observerConfig = {
+      attributes: true,
+      attributeOldValue: false,
+    };
 
-  let changer = document.querySelector('.slider__dots__changer'),
+    let changer = document.querySelector('.slider__dots__changer'),
       checked = document.querySelector('.swiper-pagination-bullet-active');
 
-  if (changer) {
-    changer.style.setProperty('left', `${checked.offsetLeft}px`);
-  }
+    if (changer) {
+      changer.style.setProperty('left', `${checked.offsetLeft}px`);
+    }
 
-  dotsObserver = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-      let changer = document.querySelector('.slider__dots__changer');
+    dotsObserver = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        let changer = document.querySelector('.slider__dots__changer');
 
-      if (mutation.attributeName === "aria-current") {
+        if (mutation.attributeName === "aria-current") {
 
-        if (changer.offsetLeft < mutation.target.offsetLeft) {
-          changer.style.setProperty('width', `${mutation.target.offsetLeft - changer.offsetLeft + changer.offsetWidth}px`);
+          if (changer.offsetLeft < mutation.target.offsetLeft) {
+            changer.style.setProperty('width', `${mutation.target.offsetLeft - changer.offsetLeft + changer.offsetWidth}px`);
 
-          setTimeout(() => {
+            setTimeout(() => {
+              changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
+              changer.style.setProperty('width', '10px');
+            }, 150);
+
+            changer.style.setProperty('visibility', 'visible');
+
+          }
+
+          if (changer.offsetLeft > mutation.target.offsetLeft) {
             changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
-            changer.style.setProperty('width', '10px');
-          }, 150);
+            changer.style.setProperty('width', `${changer.offsetLeft - mutation.target.offsetLeft + changer.offsetWidth}px`);
 
-          changer.style.setProperty('visibility', 'visible');
+            changer.style.setProperty('visibility', 'visible');
 
+            setTimeout(() => {
+              changer.style.setProperty('width', '10px');
+            }, 150);
+          }
         }
-
-        if (changer.offsetLeft > mutation.target.offsetLeft) {
-          changer.style.setProperty('left', `${mutation.target.offsetLeft}px`);
-          changer.style.setProperty('width', `${changer.offsetLeft - mutation.target.offsetLeft + changer.offsetWidth}px`);
-
-          changer.style.setProperty('visibility', 'visible');
-
-          setTimeout(() => {
-            changer.style.setProperty('width', '10px');
-          }, 150);
-        }
-      }
+      });
     });
-  });
 
-  dots.forEach((item) => {
-    dotsObserver.observe(item, observerConfig);
-  });
-};
+    dots.forEach((item) => {
+      dotsObserver.observe(item, observerConfig);
+    });
+  };
 
-sliderDotsChanger();
+  sliderDotsChanger();
 
-/* 
-Lightbox
+  /* 
+  Lightbox
 
---------------------------------*/
+  --------------------------------*/
 
-lightbox.option({
-  'resizeDuration': 150,
+  lightbox.option({
+    'resizeDuration': 150,
     'wrapAround': true
-});
+  });
 
 
-/* 
-Tabs
+  /* 
+  Tabs
 
---------------------------------*/
+  --------------------------------*/
 
   const tabs = document.querySelectorAll('.product-tab-row ul li'),
-        tabsContent = document.querySelectorAll('.tab-content');
+    tabsContent = document.querySelectorAll('.tab-content');
 
   for (let i = 0; i < tabs.length; i++) {
     tabs[i].addEventListener('click', () => {
@@ -251,22 +251,15 @@ Pop up
 -----------------------------*/
 
 const modalCloseBtn = document.querySelectorAll('[data-close]'),
-      popUps = document.querySelectorAll('.pop-up-wrap');
+  popUps = document.querySelectorAll('.pop-up-wrap');
 
 function openModal(popUp) {
-    popUps.forEach(item => {
-      item.classList.remove('active');
-    });
+  popUps.forEach(item => {
+    item.classList.remove('active');
+  });
 
-    document.querySelector(popUp).classList.add('active');
+  document.querySelector(popUp).classList.add('active');
 
-    document.querySelectorAll('.pop-up-wrap.active').forEach(item => {
-      item.addEventListener('click', (e) => {
-        if (e.target === item) {
-            closeModal();
-        }
-      });
-    });
 }
 
 function closeModal() {
@@ -287,6 +280,7 @@ document.addEventListener('keydown', (e) => {
   });
 });
 
+
 /*
 
   Pop up quickView
@@ -295,29 +289,40 @@ document.addEventListener('keydown', (e) => {
 
 function quickView() {
 
-  const request = new XMLHttpRequest();  
-  
+  const request = new XMLHttpRequest();
+
+  const viewPopUp = document.createElement('div'),
+    viewPopUpContent = document.createElement('div'),
+    viewPopUpClose = document.createElement('button');
+
+  viewPopUp.classList.add('pop-up-wrap', 'active', 'pop-up-quick-view');
+  viewPopUpContent.classList.add('pop-up-content');
+  viewPopUpClose.classList.add('close-pop-up');
+  viewPopUpClose.setAttribute('data-close', '');
+
+  document.body.append(viewPopUp);
+  viewPopUp.appendChild(viewPopUpContent);
+  viewPopUpContent.appendChild(viewPopUpClose);
+
+  viewPopUpClose.innerHTML = '<i class="far fa-times-circle" aria-hidden="true"></i>';
+
+  viewPopUpClose.addEventListener('click', () => {viewPopUp.remove();});
+
   request.open('GET', '/view/product/product.html');
-  
+
   request.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       const doc = new DOMParser().parseFromString(this.responseText, "text/html"),
-            imageBlock = doc.querySelector('.image-product-block'),
-            textBlock = doc.querySelector('.text-product-block');
+        imageBlock = doc.querySelector('.image-product-block'),
+        textBlock = doc.querySelector('.text-product-block');
 
-      const viewPopUp = document.createElement('div'),
-            viewPopUpContent = document.createElement('div');
+      viewPopUpContent.appendChild(imageBlock);
+      viewPopUpContent.appendChild(textBlock);
 
-            viewPopUp.classList.add('pop-up-wrap', 'active', 'pop-up-quick-view');
-            viewPopUpContent.classList.add('pop-up-content');
-
-            document.body.append(viewPopUp);
-
-            viewPopUp.appendChild(viewPopUpContent);
-            viewPopUpContent.appendChild(imageBlock);
-            viewPopUpContent.appendChild(textBlock);
+      productImageSlider('horizontal');
     }
   }
+
   request.send(null);
 }
 
@@ -325,18 +330,21 @@ function quickView() {
   Product page slider
 
 --------------------------------------*/
+function productImageSlider(direction) {
+  let swiperThumb = new Swiper(document.getElementById('product-thumb-slider'), {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    direction: direction,
+    mousewheel: true,
+  });
+  let swiperImage = new Swiper(document.getElementById('product-image-slider'), {
+    spaceBetween: 10,
+    direction: direction,
+    mousewheel: true,
+    thumbs: {
+      swiper: swiperThumb,
+    },
+  });
+}
 
-let swiperThumb = new Swiper(document.getElementById('product-thumb-slider'), {
-  spaceBetween: 10,
-  slidesPerView: 4,
-  direction: "vertical",
-  mousewheel: true,
-});
-let swiperImage = new Swiper(document.getElementById('product-image-slider'), {
-  spaceBetween: 10,
-  direction: "vertical",
-  mousewheel: true,
-  thumbs: {
-  swiper: swiperThumb,
-},
-});
+productImageSlider('vertical');
