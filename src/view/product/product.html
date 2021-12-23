@@ -594,22 +594,5 @@
     </div>
 </div>
 
-<script>
-    let swiperThumb = new Swiper(document.getElementById('product-thumb-slider'), {
-        spaceBetween: 10,
-        slidesPerView: 4,
-        direction: "vertical",
-        mousewheel: true,
-    });
-    let swiperImage = new Swiper(document.getElementById('product-image-slider'), {
-        spaceBetween: 10,
-        direction: "vertical",
-        mousewheel: true,
-        thumbs: {
-        swiper: swiperThumb,
-      },
-    });
-</script>
-
 <!-- Start footer -->
 @@include('../common/footer-page.html')
