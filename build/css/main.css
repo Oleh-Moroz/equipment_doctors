@@ -2823,7 +2823,7 @@ input:checked ~ label::before {
     Single trucks page 
 
     -------------------------------*/
-.trucks-banner {
+.page-banner {
   width: 100%;
   border-radius: 8px;
   box-sizing: border-box;
@@ -2832,12 +2832,23 @@ input:checked ~ label::before {
   text-align: center;
   color: #fff;
 }
-.trucks-banner h1 {
+.page-banner h1 {
   font-style: normal;
   font-weight: 500;
   font-size: 28px;
   line-height: 114%;
   color: #fff;
+}
+.page-banner p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #fff;
+  margin: 15px auto;
+  max-width: 50%;
+  text-align: center;
 }
 
 .page-description-block {
@@ -3793,7 +3804,8 @@ input:checked ~ label::before {
 
 ------------------------------------------*/
 .page-contact-container {
-  max-width: 60%;
+  width: 90%;
+  max-width: 750px;
   margin: 30px auto;
 }
 .page-contact-container h1 {
@@ -3851,4 +3863,140 @@ input:checked ~ label::before {
 }
 .contact-form input[type=submit]:disabled:hover {
   background: #BEA063;
+}
+
+/*
+    Style About us page
+
+----------------------------------------------*/
+.page-main-banner {
+  padding: 80px 0 100px;
+}
+.page-main-banner h1 {
+  font-size: 42px;
+  line-height: 105%;
+  letter-spacing: 0.5px;
+}
+
+.float-right {
+  float: right;
+  margin-left: 30px;
+}
+
+.page-content {
+  width: 90%;
+  max-width: 930px;
+  margin: 25px auto;
+}
+.page-content h2 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 114%;
+  letter-spacing: 0.5px;
+  color: #42474C;
+  margin-bottom: 35px;
+}
+.page-content p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 143%;
+  color: #42474C;
+}
+.page-content h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 114%;
+  letter-spacing: 0.5px;
+  color: #42474C;
+}
+
+.content-banner {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 50px auto;
+  padding: 110px 0;
+  text-align: center;
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 114%;
+  letter-spacing: 0.5px;
+}
+.content-banner h3 {
+  text-align: center;
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 114%;
+  letter-spacing: 0.5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.about-asset-row {
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin: 30px auto;
+  padding: 40px 30px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
+.asset-item {
+  -ms-flex: 0 0 calc(25% - 30px);
+      flex: 0 0 calc(25% - 30px);
+  margin: 0 30px 0 0;
+}
+.asset-item h5 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000;
+  margin: 15px 0 8px;
+}
+.asset-item p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 143%;
+  color: #000;
+}
+
+.img-full-width {
+  width: 100%;
+  object-fit: cover;
+  margin: 25px auto 50px;
+}
+
+.about-us-footer-block {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.about-us-footer-block p {
+  color: #97A0A9;
+  max-width: 70%;
+  margin: 0 auto 25px;
+}
+.about-us-footer-block a, .about-us-footer-block .base-buton {
+  margin: 0 auto;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
