@@ -3857,11 +3857,12 @@ input:checked ~ label::before {
       flex: 0 0 32%;
   max-width: 32%;
 }
-.contact-form input[type=submit]:disabled {
+
+input[type=submit]:disabled {
   opacity: 0.5;
   cursor: default;
 }
-.contact-form input[type=submit]:disabled:hover {
+input[type=submit]:disabled:hover {
   background: #BEA063;
 }
 
@@ -3999,4 +4000,203 @@ input:checked ~ label::before {
   margin: 0 auto;
   display: -ms-inline-flexbox;
   display: inline-flex;
+}
+
+/* 
+    Style Blog
+
+-------------------------------------*/
+.search-block {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  box-sizing: border-box;
+  margin: 20px auto 40px;
+  width: 90%;
+  max-width: 450px;
+}
+.search-block form {
+  width: 100%;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  z-index: 1;
+}
+.search-block form button {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  background: 0 0;
+  color: #221e1e;
+  transition: all 0.3s linear;
+}
+.search-block form input {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 6px;
+  color: #221e1e;
+  padding: 10px 40px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+}
+
+.row-wrap .news__item {
+  width: calc(25% - 23px);
+  margin: 0 30px 30px 0;
+}
+.row-wrap .news__item:nth-child(3n) {
+  margin: 0 30px 30px 0;
+}
+.row-wrap .news__item:nth-child(4n) {
+  margin: 0 0px 30px 0;
+}
+
+.blog-category-tabs {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  list-style: none;
+  margin-top: 40px;
+}
+.blog-category-tabs li {
+  margin: 0 4px;
+}
+.blog-category-tabs li a {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 114%;
+  letter-spacing: 0.5px;
+  color: #BEA063;
+  transition: all 0.4s linear;
+  box-sizing: border-box;
+  padding: 10px 25px;
+  border-radius: 17.5px;
+  background: #fff;
+}
+.blog-category-tabs li.active a {
+  background: #BEA063;
+  color: #fff;
+}
+
+/* 
+    Style Pagination 
+
+-----------------------------------------*/
+.paginaton-row {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin: 20px auto;
+}
+.paginaton-row nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+.paginaton-row nav .nav-links {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+.paginaton-row nav .nav-links a, .paginaton-row nav .nav-links span {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  box-sizing: border-box;
+  padding: 22px 18px;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0 2px;
+  overflow: hidden;
+  transition: all 0.4s linear;
+}
+.paginaton-row nav .nav-links a:hover, .paginaton-row nav .nav-links span:hover {
+  background: #DCBC78;
+  color: #fff;
+}
+.paginaton-row nav .nav-links a.dots:hover, .paginaton-row nav .nav-links span.dots:hover {
+  color: #000;
+  background: #fff;
+}
+.paginaton-row nav .nav-links span.current {
+  color: #fff;
+  background: #BEA063;
+}
+
+/* 
+    Subscribe Form
+
+---------------------------------------------------*/
+.news-subscribe-form-block {
+  width: 100%;
+  background: #fff;
+  margin-bottom: -35px;
+  box-sizing: border-box;
+  padding: 32px 0;
+}
+.news-subscribe-form-block .container .row {
+  max-width: 1050px;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin: 0 auto;
+}
+.news-subscribe-form-block .container .row h4 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 105%;
+  letter-spacing: 0.5px;
+  color: #BEA063;
+}
+.news-subscribe-form-block .container .row .subscribe-news-form {
+  width: 35%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.news-subscribe-form-block .container .row .subscribe-news-form .form-group {
+  margin: 0 10px 0;
+  width: 75%;
+}
+.news-subscribe-form-block .container .row .subscribe-news-form .button-group {
+  margin-top: 25px;
 }

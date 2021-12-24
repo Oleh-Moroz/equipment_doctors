@@ -306,7 +306,9 @@ function quickView() {
 
   viewPopUpClose.innerHTML = '<i class="far fa-times-circle" aria-hidden="true"></i>';
 
-  viewPopUpClose.addEventListener('click', () => {viewPopUp.remove();});
+  viewPopUpClose.addEventListener('click', () => {
+    viewPopUp.remove();
+  });
 
   request.open('GET', '/view/product/product.html');
 
@@ -355,12 +357,28 @@ productImageSlider('vertical');
 --------------------------------------------*/
 
 const checkboxPolicy = document.querySelector('#checked-policy'),
-      formButton = document.querySelector('.button-group input[type="submit"]');
+  formButton = document.querySelector('.button-group input[type="submit"]');
 
-checkboxPolicy.addEventListener('click', () => {
-  if (checkboxPolicy.checked == true){
-    formButton.removeAttribute('disabled');
-  } else {
-    formButton.setAttribute('disabled', '');
-  }
-});   
+if (checkboxPolicy) {
+  checkboxPolicy.addEventListener('click', () => {
+    if (checkboxPolicy.checked == true) {
+      formButton.removeAttribute('disabled');
+    } else {
+      formButton.setAttribute('disabled', '');
+    }
+  });
+}
+
+const inputSubscribe = document.querySelector('.subscribe-news-form .form-group input[type="email"]');
+
+if (inputSubscribe) {
+  inputSubscribe.addEventListener('input', () => {
+    let inputSubscribeValue = inputSubscribe.value;
+
+    if (inputSubscribeValue) {
+      formButton.removeAttribute('disabled');
+    } else {
+      formButton.setAttribute('disabled', '');
+    }
+  });
+}
