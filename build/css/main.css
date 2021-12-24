@@ -3787,3 +3787,68 @@ input:checked ~ label::before {
   color: #BEA063;
   font-size: 20px;
 }
+
+/*
+    Style Contact page
+
+------------------------------------------*/
+.page-contact-container {
+  max-width: 60%;
+  margin: 30px auto;
+}
+.page-contact-container h1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 105%;
+  letter-spacing: 0.5px;
+  color: #42474C;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.page-contact-container p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #97A0A9;
+  text-align: center;
+}
+
+.contact-form {
+  box-sizing: border-box;
+  padding: 32px 30px 25px;
+  background: #fff;
+  border-radius: 8px;
+  margin: 25px auto;
+}
+.contact-form p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 133%;
+  color: #42474C;
+  text-align: left;
+  margin-top: 15px;
+}
+.contact-form .form-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #97A0A9;
+}
+.contact-form .row .form-group {
+  margin: 25px 2% 25px 0;
+  -ms-flex: 0 0 32%;
+      flex: 0 0 32%;
+  max-width: 32%;
+}
+.contact-form input[type=submit]:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.contact-form input[type=submit]:disabled:hover {
+  background: #BEA063;
+}

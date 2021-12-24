@@ -1,0 +1,55 @@
+@@include('../common/header-page.html')
+<!-- End header section-->
+
+<div class="container">
+    <div class="row">
+        <div class="page-contact-container">
+            <h1>Contact US</h1>
+            <p>Submit the form below if you have problems with your payment, want to request a feature, make a partnership proposal or report a bug. We’re more than happy to help.</p>
+        
+            <div class="contact-form">
+                <form>
+                    <div class="form-title">How may we reach you back?</div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="name">
+                                Name
+                            </label>
+                            <input type="text" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="mail">
+                                Email
+                            </label>
+                            <input type="email" name="mail">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">
+                                Phone
+                            </label>
+                            <input type="text" name="phone">
+                        </div>
+                    </div>
+                    <div class="form-title">Tell us everything you want to.</div>
+                    <p>We do love feedbacks, partnership requests and even just 'hi'.</p>
+                    <div class="form-group">
+                        <textarea name="comment"></textarea>
+                    </div>
+                    <div class="form-group subscribe-checkbox">
+                        <input type="checkbox" id="checked-policy" name="checked-policy">
+                        <label for="checked-policy">
+                            By sending this form you agree to our Terms and Privacy policy (required)
+                        </label>
+                    </div>
+
+                    <div class="button-group pop-up-button-group">
+                        <input type="submit" class="base-button" value="Send" disabled>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Start footer -->
+@@include('../common/footer-page.html')

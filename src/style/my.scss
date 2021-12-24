@@ -3928,3 +3928,77 @@ input:checked ~ label::before {
         font-size: 20px;
     }
 }
+
+/*
+    Style Contact page
+
+------------------------------------------*/
+
+.page-contact-container {
+    max-width: 60%;
+    margin: 30px auto;
+
+    h1 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 105%;
+        letter-spacing: 0.5px;
+        color: $black;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+        color: #97A0A9;
+        text-align: center;
+    }
+}
+
+.contact-form {
+    box-sizing: border-box;
+    padding: 32px 30px 25px;
+    background: $white;
+    border-radius: 8px;
+    margin: 25px auto;
+
+    p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 133%;
+        color: $black;
+        text-align: left;
+        margin-top: 15px;
+    }
+
+    .form-title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: #97A0A9;
+    }
+
+    .row {
+        .form-group {
+            margin: 25px 2% 25px 0;
+            flex: 0 0 32%;
+            max-width: 32%;
+        }
+    }
+
+    input[type='submit']:disabled {
+        opacity: .5;
+        cursor: default;
+
+        &:hover {
+            background: $gold;
+        }
+    }
+}

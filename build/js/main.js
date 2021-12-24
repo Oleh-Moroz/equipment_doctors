@@ -13873,6 +13873,22 @@ function productImageSlider(direction) {
 }
 
 productImageSlider('vertical');
+
+
+/* Contact form checked Privacy Policy
+
+--------------------------------------------*/
+
+const checkboxPolicy = document.querySelector('#checked-policy'),
+      formButton = document.querySelector('.button-group input[type="submit"]');
+
+checkboxPolicy.addEventListener('click', () => {
+  if (checkboxPolicy.checked == true){
+    formButton.removeAttribute('disabled');
+  } else {
+    formButton.setAttribute('disabled', '');
+  }
+});
 /*
   redirect 
 
