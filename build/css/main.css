@@ -1206,11 +1206,6 @@ footer {
 
 /*
 
-    Home advertising row end
-
-    ---------------------------------------------*/
-/*
-
     Popular-product 
 
     --------------------------------------------------*/
@@ -2074,6 +2069,15 @@ footer {
   color: #42474C;
   max-width: 80%;
   margin: 20px auto;
+}
+
+/*
+
+  News slider
+
+-------------------------------------------*/
+.news-wrap {
+  max-width: 100%;
 }
 
 /*
@@ -3884,6 +3888,11 @@ input[type=submit]:disabled:hover {
   margin-left: 30px;
 }
 
+.float-left {
+  float: left;
+  margin-right: 30px;
+}
+
 .page-content {
   width: 90%;
   max-width: 930px;
@@ -4199,4 +4208,111 @@ input[type=submit]:disabled:hover {
 }
 .news-subscribe-form-block .container .row .subscribe-news-form .button-group {
   margin-top: 25px;
+}
+
+/*
+
+    Style single article page
+
+---------------------------------------------*/
+.article-block {
+  width: 100%;
+  background: #fff;
+  margin: 20px auto;
+}
+
+.article-content .row .news-info-row {
+  width: auto;
+  margin: 0 0 0 auto;
+}
+.article-content .row .news-info-row .news-item-author {
+  margin-right: 10px;
+}
+.article-content .article-thumbnail {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 20px auto;
+  overflow: hidden;
+}
+.article-content .article-thumbnail img {
+  width: 100%;
+  object-fit: cover;
+}
+.article-content h1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 114%;
+  letter-spacing: 0.5px;
+  color: #42474C;
+  margin: 24px 0;
+}
+.article-content h2, .article-content h3, .article-content h4 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: #42474C;
+  margin: 24px 0;
+}
+.article-content p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 143%;
+  color: #42474C;
+  margin-bottom: 30px;
+}
+
+.gallery-wrap {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 40px 0;
+}
+.gallery-wrap .gallery__item a {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 100%;
+}
+.gallery-wrap .gallery__item a img {
+  width: 100%;
+  object-fit: contain;
+  max-height: 215px;
+}
+
+.no-found-article-block {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  text-align: center;
+  margin: 40px auto;
+}
+.no-found-article-block .no-found-article-image {
+  margin: 0 auto 25px;
+}
+.no-found-article-block p {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 143%;
+  text-align: center;
+  color: #42474C;
+}
+.no-found-article-block p a {
+  color: #BEA063;
+  transition: all 0.4s linear;
+}
+.no-found-article-block p a:hover {
+  color: #DCBC78;
 }

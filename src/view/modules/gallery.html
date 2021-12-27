@@ -1,0 +1,48 @@
+<div class="gallery-wrap">
+    <div class="gallery-slider slider" id="gallery-slide-num">
+        <div class="swiper-wrapper">
+            <div class="gallery__item swiper-slide">
+                <a href="../../img/content/article-img-1.png" data-lightbox="roadtrip">
+                    <img src="../../img/content/article-img-1.png" loading="lazy" alt="Breking system for volvo l67"
+                            title="Breking system for volvo l67" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="gallery__item swiper-slide">
+                <a href="../../img/content/article-img-2.png" data-lightbox="roadtrip">
+                    <img src="../../img/content/article-img-2.png" loading="lazy" alt="Breking system for volvo l67"
+                            title="Breking system for volvo l67" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="gallery__item swiper-slide">
+                <a href="../../img/content/article-img-3.png" data-lightbox="roadtrip">
+                    <img src="../../img/content/article-img-3.png" loading="lazy" alt="Breking system for volvo l67"
+                            title="Breking system for volvo l67" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="gallery__item swiper-slide">
+                <a href="../../img/content/article-img-1.png" data-lightbox="roadtrip">
+                    <img src="../../img/content/article-img-1.png" loading="lazy" alt="Breking system for volvo l67"
+                            title="Breking system for volvo l67" class="img-responsive">
+                </a>
+            </div>
+
+        </div>
+        <button class="swiper-button-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="swiper-button-next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</div>
+
+<script>
+    const popularSwiper = new Swiper(document.getElementById('gallery-slide-num'), {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>

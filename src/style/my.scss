@@ -1267,13 +1267,6 @@ footer {
 
 /*
 
-    Home advertising row end
-
-    ---------------------------------------------*/
-
-
-/*
-
     Popular-product 
 
     --------------------------------------------------*/
@@ -2173,6 +2166,16 @@ footer {
         margin: 20px auto;
     }
   }
+
+/*
+
+  News slider
+
+-------------------------------------------*/
+.news-wrap {
+    max-width: 100%;
+}
+
 
 /*
   Breadcrumbs style
@@ -4036,6 +4039,11 @@ input[type='submit']:disabled {
     margin-left: 30px;
 }
 
+.float-left {
+    float: left;
+    margin-right: 30px;
+}
+
 .page-content {
     width: 90%;
     max-width: 930px;
@@ -4360,4 +4368,123 @@ input[type='submit']:disabled {
         }
     }
 
+}
+
+/*
+
+    Style single article page
+
+---------------------------------------------*/
+
+.article-block {
+    width: 100%;
+    background: $white;
+    margin: 20px auto;
+}
+
+.article-content {
+    .row {
+        .news-info-row {
+            width: auto;
+            margin: 0 0 0 auto;
+
+            .news-item-author {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .article-thumbnail {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 20px auto;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    h1 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 114%;
+        letter-spacing: 0.5px;
+        color: $black;
+        margin: 24px 0;
+    }
+
+    h2, h3, h4 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 120%;
+        color: $black;
+        margin: 24px 0;
+    }
+
+    p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 143%;
+        color: $black;
+        margin-bottom: 30px;
+    }
+}
+
+.gallery-wrap {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 40px 0;
+
+    .gallery__item {
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            img {
+                width: 100%;
+                object-fit: contain;
+                max-height: 215px;
+            }
+        }
+    }
+}
+
+.no-found-article-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 40px auto;
+
+    .no-found-article-image {
+        margin: 0 auto 25px;
+    }
+
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 143%;
+        text-align: center;
+        color: $black;
+
+        a {
+            color: $gold;
+            transition: all .4s linear;
+
+            &:hover {
+                color: $gold-hover;
+            }
+        }
+    }
 }
