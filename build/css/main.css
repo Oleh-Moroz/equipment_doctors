@@ -513,6 +513,25 @@ header .container .row {
   margin-left: 7px;
 }
 
+.dropdown-item > a {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.dropdown-item > a span {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin-left: 7px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 114%;
+  letter-spacing: 0.5px;
+}
+
 .dropdown {
   list-style: none;
   padding: 0;
@@ -3669,7 +3688,10 @@ input:checked ~ label::before {
   color: #42474C;
   margin-bottom: 10px;
 }
-.form-group input[type=text], .form-group input[type=email], .form-group textarea {
+.form-group input[type=text],
+.form-group input[type=email],
+.form-group input[type=password],
+.form-group textarea {
   max-width: 100%;
   min-width: 100%;
   width: 100%;
@@ -3685,7 +3707,16 @@ input:checked ~ label::before {
   color: #000;
   padding: 10px 17px;
 }
-.form-group input[type=text]:hover, .form-group input[type=text]:focus, .form-group input[type=text]:active, .form-group input[type=email]:hover, .form-group input[type=email]:focus, .form-group input[type=email]:active, .form-group textarea:hover, .form-group textarea:focus, .form-group textarea:active {
+.form-group input[type=text]:hover, .form-group input[type=text]:focus, .form-group input[type=text]:active,
+.form-group input[type=email]:hover,
+.form-group input[type=email]:focus,
+.form-group input[type=email]:active,
+.form-group input[type=password]:hover,
+.form-group input[type=password]:focus,
+.form-group input[type=password]:active,
+.form-group textarea:hover,
+.form-group textarea:focus,
+.form-group textarea:active {
   border: 1px solid #BEA063;
 }
 .form-group p {
@@ -4315,4 +4346,135 @@ input[type=submit]:disabled:hover {
 }
 .no-found-article-block p a:hover {
   color: #DCBC78;
+}
+
+/*
+
+    Style for account
+
+-----------------------------------------*/
+.account-form-wrap {
+  min-height: 50vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.account-form {
+  box-sizing: border-box;
+  padding-bottom: 30px;
+  margin: 20px auto;
+  max-height: none;
+  max-width: 510px;
+}
+.account-form .pop-up-header {
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+.account-form .pop-up-header .pop-up-title {
+  text-align: center;
+}
+.account-form .media-login-row {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  box-sizing: border-box;
+  padding: 20px 0;
+  border-bottom: 1px solid #f8f8f8;
+}
+.account-form .media-login-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  box-sizing: border-box;
+  padding: 9px 13px;
+  background: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #757575;
+  margin: 0 25px;
+  transition: all 0.4s linear;
+}
+.account-form .media-login-item:hover {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+}
+.account-form .media-login-item img {
+  margin-right: 13px;
+}
+.account-form .form-title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: #42474C;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px 0 0;
+}
+.account-form .forgot-link a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 133%;
+  color: #BEA063;
+}
+.account-form .form-text {
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 133%;
+  color: #000;
+}
+.account-form .form-text a {
+  color: #BEA063;
+}
+.account-form .row .form-group {
+  margin: 25px 5% 25px 0;
+  min-width: 75%;
+}
+.account-form .row .button-group {
+  margin-top: 27px;
+}
+
+.registration-form form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.registration-form .form-group {
+  max-width: calc(50% - 30px);
+  margin-right: 30px;
+}
+.registration-form .form-group:nth-child(2n) {
+  margin-right: 0;
+}
+.registration-form .button-group {
+  width: 100%;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
+.form-text-margin-top {
+  margin: 25px auto 0;
+  max-width: 80%;
 }

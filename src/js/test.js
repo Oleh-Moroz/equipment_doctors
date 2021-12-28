@@ -86,14 +86,16 @@ clearButton.addEventListener('click', () => {
 --------------------------------------*/
 const searchArticleInput = document.querySelector('.article-search_input'),
     searchArticleForm = document.querySelector('.search-block_form');
-
-searchArticleForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    let inputValue = searchArticleInput.value;
-    if (searchArticleInput.value) {
-        window.location.href = `/view/blog/blog-category.html?s=${inputValue}`;
-    } else {
-        window.location.href = `/view/blog/blog-no-result.html`;
-    }
-});
+    
+if (searchArticleInput) {
+    searchArticleForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+    
+        let inputValue = searchArticleInput.value;
+        if (searchArticleInput.value) {
+            window.location.href = `/view/blog/blog-category.html?s=${inputValue}`;
+        } else {
+            window.location.href = `/view/blog/blog-no-result.html`;
+        }
+    });
+}
