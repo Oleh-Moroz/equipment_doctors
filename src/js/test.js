@@ -99,3 +99,64 @@ if (searchArticleInput) {
         }
     });
 }
+
+
+/*
+    Test forgot password
+
+----------------------------------------------*/
+const forgotEmailInput = document.querySelector('input[data-name="forgot-email"]'),
+        verificationInput = document.querySelector('input[data-name="verification-code"]'),
+        resendButton = document.querySelector('.resend-code'),
+        passwordInput = document.querySelector('input[name="password"]'),
+        reenterPasswordInput = document.querySelector('input[name="reenter-password"]'),
+        baseForm = document.querySelector('.pop-up-form');
+
+if (forgotEmailInput) {
+    baseForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+    
+        let forgotEmailInputValue = forgotEmailInput.value;
+        if (forgotEmailInput.value) {
+            window.location.href = `/view/account/forgot-password-verification.html?email=${forgotEmailInputValue}`;
+        } else {
+            forgotEmailInput.classList.add('error');
+        }
+    });
+}
+
+if (verificationInput) {
+    baseForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+    
+        if (verificationInput.value.length >= 4) {
+            window.location.href = `/view/account/forgot-password-aprove.html`;
+        } else {
+            verificationInput.classList.add('error');
+        }
+    });
+
+    resendButton.addEventListener('click', () => {
+        window.location.href = `/view/account/forgot-password.html`;
+    });
+}
+
+if (reenterPasswordInput) {
+    baseForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+    
+        if (passwordInput.value > 1 && reenterPasswordInput.value > 1 && reenterPasswordInput.value == passwordInput.value) {
+            window.location.href = `/view/account/login.html`;
+        } else {
+            if (passwordInput.value < 1) {
+                passwordInput.classList.add('error');
+            } else if (reenterPasswordInput.value < 1 && passwordInput.value > 1) {
+                passwordInput.classList.remove('error');
+                reenterPasswordInput.classList.add('error');
+            } else {
+                passwordInput.classList.add('error');
+                reenterPasswordInput.classList.add('error');
+            }
+        }
+    });
+}

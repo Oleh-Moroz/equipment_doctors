@@ -357,6 +357,10 @@ header .container .row {
   font-weight: normal;
   font-size: 14px;
   line-height: 143%;
+  transition: all 0.4s linear;
+}
+.header-search form input.error {
+  border: 1px solid #DE3618;
 }
 .header-search .clear_search-input {
   left: auto;
@@ -2321,6 +2325,9 @@ input:checked ~ label::before {
 .filter-input-wrap input:hover, .filter-input-wrap input:focus {
   border: 1px solid #BEA063;
 }
+.filter-input-wrap input.error {
+  border: 1px solid #DE3618;
+}
 
 .filter-button-wrap input {
   width: 100%;
@@ -2347,6 +2354,9 @@ input:checked ~ label::before {
 }
 .filter-button-wrap input:hover {
   background: #DCBC78;
+}
+.filter-button-wrap input.error {
+  border: 1px solid #DE3618;
 }
 
 .price-filter-second ul {
@@ -3679,6 +3689,7 @@ input:checked ~ label::before {
   -ms-flex-direction: column;
       flex-direction: column;
   margin: 25px auto;
+  position: relative;
 }
 .form-group label {
   font-style: normal;
@@ -3719,6 +3730,12 @@ input:checked ~ label::before {
 .form-group textarea:active {
   border: 1px solid #BEA063;
 }
+.form-group input[type=text].error,
+.form-group input[type=email].error,
+.form-group input[type=password].error,
+.form-group textarea.error {
+  border: 1px solid #DE3618;
+}
 .form-group p {
   font-style: normal;
   font-weight: normal;
@@ -3728,6 +3745,16 @@ input:checked ~ label::before {
 }
 .form-group p a {
   color: #BEA063;
+}
+.form-group .resend-code {
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  background: transparent;
+  color: #BEA063;
+}
+.form-group .resend-code:hover {
+  color: #DCBC78;
 }
 
 .subscribe-checkbox {
@@ -3797,35 +3824,32 @@ input:checked ~ label::before {
   -ms-flex-pack: justify;
       justify-content: space-between;
   max-width: 820px;
-}
-
-.pop-up-content {
   position: relative;
   overflow: visible;
 }
-.pop-up-content .image-product-block {
+.pop-up-quick-view .pop-up-content .image-product-block {
   max-width: 50%;
   -ms-flex: 0 0 50%;
       flex: 0 0 50%;
   -ms-flex-direction: column-reverse;
       flex-direction: column-reverse;
 }
-.pop-up-content .image-product-block .product-image-slider {
+.pop-up-quick-view .pop-up-content .image-product-block .product-image-slider {
   max-width: 100%;
 }
-.pop-up-content .image-product-block .product-thumb-slider {
+.pop-up-quick-view .pop-up-content .image-product-block .product-thumb-slider {
   max-width: 100%;
 }
-.pop-up-content .product-col-right {
+.pop-up-quick-view .pop-up-content .product-col-right {
   max-width: calc(50% - 20px);
   -ms-flex: 0 0 calc(50% - 20px);
       flex: 0 0 calc(50% - 20px);
   padding: 20px 20px 20px 0;
 }
-.pop-up-content .product-col-right .caption-vendor-info {
+.pop-up-quick-view .pop-up-content .product-col-right .caption-vendor-info {
   display: none;
 }
-.pop-up-content .close-pop-up {
+.pop-up-quick-view .pop-up-content .close-pop-up {
   position: absolute;
   right: -35px;
   top: -30px;
@@ -4462,11 +4486,14 @@ input[type=submit]:disabled:hover {
       flex-wrap: wrap;
 }
 .registration-form .form-group {
-  max-width: calc(50% - 30px);
-  margin-right: 30px;
+  max-width: calc(50% - 15px);
+  width: calc(50% - 15px);
+  margin-right: 15px;
+  margin-left: 0;
 }
 .registration-form .form-group:nth-child(2n) {
   margin-right: 0;
+  margin-left: 15px;
 }
 .registration-form .button-group {
   width: 100%;
@@ -4477,4 +4504,24 @@ input[type=submit]:disabled:hover {
 .form-text-margin-top {
   margin: 25px auto 0;
   max-width: 80%;
+}
+
+.error-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 133%;
+  color: #DE3618;
+  margin-top: 10px;
+  display: none;
+  position: absolute;
+  bottom: -10px;
+  opacity: 0;
+  transition: all 0.4s linear;
+}
+
+input.error ~ .error-text {
+  display: block;
+  opacity: 1;
+  bottom: -22px;
 }
