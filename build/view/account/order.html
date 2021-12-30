@@ -869,93 +869,213 @@
 </header>
 
 <body>
+
 <!-- End header section-->
-
 <div class="container">
-    <div class="row row-wrap account-form-wrap">
+    <div class="row row-wrap">
+        <div class="left-col">
 
-        <div class="pop-up-content account-form">
-            <div class="pop-up-header">
-                <div class="pop-up-title">
-                    Create your account
+            <nav class="account-menu">
+    <div class="user-info">
+        <div class="user-image">
+            <img src="../../img/common/user-avatar.png" alt="UserName">
+        </div>
+        <div class="user-content">
+            <div class="user-name">Hi <span>UserName</span></div>
+            <a class="user-mail" href="mailto:email_example@example.com">email_example@example.com</a>
+            <p>Thanks for being a Equipmentdoctor customer</p>
+        </div>
+    </div>
+    <ul>
+        <li>
+            <h3>General</h3>
+            <ul>
+                <li class="show">
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="fill" href="#orders"></use>
+                            </svg>                                    
+                        </span>
+                        Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="stroke" href="#returns"></use>
+                            </svg>                                                                    
+                        </span>
+                        Returns
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="fill" href="#wallet"></use>
+                            </svg>                                    
+                        </span>
+                        Wallet
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <h3>Manage Account</h3>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="fill" href="#personal-info"></use>
+                            </svg>                                                                       
+                        </span>
+                        Personal info
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="stroke" href="#addresses"></use>
+                            </svg>                                                                                                       
+                        </span>
+                        Addresses
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <h3>My Items</h3>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="stroke" href="#wishlist"></use>
+                            </svg>                                    
+                        </span>
+                        Wish List
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="stroke" href="#viewed"></use>
+                            </svg>                                    
+                        </span>
+                        Recently Viewed
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <button>
+                <div class="account-menu-ico">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <use data-bg="fill" href="#log-out"></use>
+                    </svg>
+                </div>
+                Log out
+            </button>
+        </li>
+    </ul>
+  </nav>
+
+        </div>
+    
+        <div class="content">
+            <div class="account-container">
+                <div class="account-container-header">
+                    <div class="orders-filter-tabs">
+                        <ul>
+                            <li class="active">
+                                <a href="#all-orders">All orders</a>
+                            </li>
+                            <li>
+                                <a href="#in-progress">In progress</a>
+                            </li>
+                            <li>
+                                <a href="#done">Done</a>
+                            </li>
+                            <li>
+                                <a href="#rejected">Rejected</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="account-orders-table">
+                    <ul class="filter__list">
+
+                        <li class="filter-has-children">
+                            <div class="filter__label">
+                                new order
+                            </div>
+
+                            <ul class="filter__list">
+                                <li>order info</li>
+                            </ul>
+                        </li>
+
+                        <li class="filter-has-children">
+                            <div class="filter__label">
+                                new order
+                            </div>
+
+                            <ul class="filter__list">
+                                <li>order info</li>
+                            </ul>
+                        </li>
+
+                        <li class="filter-has-children">
+                            <div class="filter__label">
+                                new order
+                            </div>
+
+                            <ul class="filter__list">
+                                <li>order info</li>
+                            </ul>
+                        </li>
+
+                        <li class="filter-has-children">
+                            <div class="filter__label">
+                                new order
+                            </div>
+
+                            <ul class="filter__list">
+                                <li>order info</li>
+                            </ul>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
-
-            <div class="media-login-row">
-                <a class="media-login-item" href="#">
-                    <img src="../../img/common/google-ico.svg" alt="google login ico">
-                    Sign in with Google
-                </a>
-                <a class="media-login-item" href="#">
-                    <img src="../../img/common/facebook-ico.svg" alt="facebook login ico">
-                    Sign in with Facebook
-                </a>
-            </div>
-
-            <div class="form-title">
-                Or Sign Up with Email
-            </div>
-    
-            <div class="pop-up-form registration-form">
-                <form>
-                    <div class="form-group">
-                        <label for="name">
-                            First name
-                        </label>
-                        <input type="text" name="name">
-                        <div class="error-text">*Validation text</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="last-name">
-                            Last name
-                        </label>
-                        <input type="text" name="last-name">
-                        <div class="error-text">*Validation text</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">
-                            Phone number
-                        </label>
-                        <input type="text" name="phone">
-                        <div class="error-text">*Validation text</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mail">
-                            Your Email
-                        </label>
-                        <input type="email" name="mail">
-                        <div class="error-text">*Validation text</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">
-                            Password
-                        </label>
-                        <input type="password" name="password">
-                        <div class="error-text">*Validation text</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="confirm-password">
-                            Confirm password
-                        </label>
-                        <input type="password" name="confirm-password">
-                        <div class="error-text">*Validation text</div>
-                    </div>
-    
-                    <div class="button-group pop-up-button-group">
-                        <div class="form-text">
-                            Already have an account?  <a href="/view/account/login.html">Sign In</a>
-                        </div>
-                        <input type="submit" class="base-button" value="Sign In">
-                    </div>
-                </form>
-            </div>
+            <div class="paginaton-row">
+	<nav class="navigation pagination" role="navigation">
+        <div class="nav-links">
+            <a class="prev page-numbers" href="#">
+                Previous
+            </a>
+            <span aria-current="page" class="page-numbers current" >1</span>
+            <a class="page-numbers" href="#">2</a>
+            <a class="page-numbers" href="#">3</a>
+            <span class="page-numbers dots">…</span>
+            <a class="page-numbers" href="#">31</a>
+            <a class="next page-numbers" href="#">
+                Next
+            </a>
         </div>
-
+	</nav>    
+</div>
+        </div>
     </div>
 </div>
 

@@ -150,8 +150,8 @@ button, .base-button {
   outline: none;
   box-sizing: border-box;
   padding: 12px 10px;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: justify;
@@ -1653,7 +1653,9 @@ footer {
     Product filter
 
     ----------------------------------------------*/
-.product-filter, .col-menu {
+.product-filter,
+.col-menu,
+.account-menu {
   width: 100%;
   margin: 15px 0;
   background: #fff;
@@ -1661,7 +1663,9 @@ footer {
   box-sizing: border-box;
   padding: 26px 6px 30px 21px;
 }
-.product-filter ul, .col-menu ul {
+.product-filter ul,
+.col-menu ul,
+.account-menu ul {
   list-style: none;
 }
 
@@ -2776,10 +2780,12 @@ input:checked ~ label::before {
   background: #BEA063;
 }
 
-.col-menu {
+.col-menu,
+.account-menu {
   padding: 26px 0 30px 0;
 }
-.col-menu h3 {
+.col-menu h3,
+.account-menu h3 {
   padding-left: 21px;
   font-style: normal;
   font-weight: 600;
@@ -2789,7 +2795,8 @@ input:checked ~ label::before {
   color: #42474C;
   margin-bottom: 25px;
 }
-.col-menu ul li > div {
+.col-menu ul li > div,
+.account-menu ul li > div {
   width: 100%;
   box-sizing: border-box;
   padding: 12px 10px 12px 24px;
@@ -2811,7 +2818,8 @@ input:checked ~ label::before {
   margin-right: -1px;
   cursor: pointer;
 }
-.col-menu ul li > div::after {
+.col-menu ul li > div::after,
+.account-menu ul li > div::after {
   content: "\f054";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -2820,7 +2828,8 @@ input:checked ~ label::before {
   margin-left: auto;
   transition: all 0.4s linear;
 }
-.col-menu ul li > div .category-navbar-logo {
+.col-menu ul li > div .category-navbar-logo,
+.account-menu ul li > div .category-navbar-logo {
   max-width: 80px;
   box-sizing: border-box;
   padding: 15px;
@@ -2835,15 +2844,18 @@ input:checked ~ label::before {
   -ms-flex-pack: center;
       justify-content: center;
 }
-.col-menu ul li > div .category-navbar-logo img {
+.col-menu ul li > div .category-navbar-logo img,
+.account-menu ul li > div .category-navbar-logo img {
   max-width: 100%;
 }
-.col-menu ul li.show > div {
+.col-menu ul li.show > div,
+.account-menu ul li.show > div {
   color: #BEA063;
   background: rgba(220, 188, 120, 0.2);
   border-left: 2px solid #BEA063;
 }
-.col-menu ul li.show > div::after {
+.col-menu ul li.show > div::after,
+.account-menu ul li.show > div::after {
   color: #BEA063;
 }
 
@@ -4524,4 +4536,299 @@ input.error ~ .error-text {
   display: block;
   opacity: 1;
   bottom: -22px;
+}
+
+/* 
+    Account menu
+
+--------------------------------------------*/
+.account-menu {
+  border-radius: 8px 8px 0 0;
+  padding-bottom: 5px;
+}
+.account-menu .user-info {
+  width: 100%;
+  border-bottom: 1px solid #F8F8F8;
+  box-sizing: border-box;
+  padding: 0 0 20px 20px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+}
+.account-menu .user-image {
+  width: 42px;
+  height: 42px;
+  background: #F8F8F8;
+  border-radius: 50%;
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin-right: 5px;
+}
+.account-menu .user-image img {
+  object-fit: cover;
+  max-width: 100%;
+}
+.account-menu .user-content {
+  width: calc(100% - 47px);
+}
+.account-menu .user-content .user-name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 120%;
+  color: #221E1E;
+}
+.account-menu .user-content .user-mail {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 133%;
+  color: #221E1E;
+}
+.account-menu .user-content p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 133%;
+  color: #97A0A9;
+}
+.account-menu h3 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 133%;
+  color: #221E1E;
+  margin: 25px 0;
+  text-transform: none;
+}
+.account-menu ul li ul li a, .account-menu ul li button {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px 8px 16px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #42474C;
+  transition: all 0.4s linear;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-left: 2px solid transparent;
+  cursor: pointer;
+  border-radius: 0;
+  background: transparent;
+}
+.account-menu ul li ul li a:hover, .account-menu ul li button:hover {
+  color: #BEA063;
+  background: rgba(220, 188, 120, 0.2);
+  border-left: 2px solid #BEA063;
+}
+.account-menu ul li ul li.show a, .account-menu ul li.show button {
+  color: #BEA063;
+  background: rgba(220, 188, 120, 0.2);
+  border-left: 2px solid #BEA063;
+}
+.account-menu .account-menu-ico {
+  width: 42px;
+  height: 42px;
+  background: #F8F8F8;
+  border-radius: 50%;
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin-right: 12px;
+}
+.account-menu .account-menu-ico svg *[data-bg=fill] {
+  fill: #42474C !important;
+}
+.account-menu .account-menu-ico svg *[data-bg=stroke] {
+  stroke: #42474C !important;
+}
+.account-menu ul li ul li.show a .account-menu-ico,
+.account-menu ul li ul li.show button .account-menu-ico {
+  background: #fff;
+}
+.account-menu ul li ul li.show a .account-menu-ico svg *[data-bg=fill],
+.account-menu ul li ul li.show button .account-menu-ico svg *[data-bg=fill] {
+  fill: #BEA063 !important;
+}
+.account-menu ul li ul li.show a .account-menu-ico svg *[data-bg=stroke],
+.account-menu ul li ul li.show button .account-menu-ico svg *[data-bg=stroke] {
+  stroke: #BEA063 !important;
+}
+.account-menu ul li ul li a:hover .account-menu-ico,
+.account-menu ul li ul li button:hover .account-menu-ico {
+  background: #fff;
+}
+.account-menu ul li ul li a:hover .account-menu-ico svg *[data-bg=fill],
+.account-menu ul li ul li button:hover .account-menu-ico svg *[data-bg=fill] {
+  fill: #BEA063 !important;
+}
+.account-menu ul li ul li a:hover .account-menu-ico svg *[data-bg=stroke],
+.account-menu ul li ul li button:hover .account-menu-ico svg *[data-bg=stroke] {
+  stroke: #BEA063 !important;
+}
+.account-menu > ul > li:last-child {
+  margin-top: 50px;
+}
+
+.account-container {
+  background: #fff;
+  -ms-flex: 1 0 100%;
+      flex: 1 0 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 15px 0 15px 15px;
+  border-radius: 8px 8px 0 0;
+  padding: 1px 0;
+  box-sizing: border-box;
+}
+.account-container-header {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  border-bottom: 1px solid #F8F8F8;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.account-container-header h1 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: #42474C;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg) scale(1);
+            transform: rotate(-10deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(0) scale(1.05);
+            transform: rotate(0) scale(1.05);
+  }
+  75% {
+    -webkit-transform: rotate(10deg) scale(1);
+            transform: rotate(10deg) scale(1);
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg) scale(1);
+            transform: rotate(-10deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(0) scale(1.05);
+            transform: rotate(0) scale(1.05);
+  }
+  75% {
+    -webkit-transform: rotate(10deg) scale(1);
+            transform: rotate(10deg) scale(1);
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+  }
+}
+.accounts-empty-block {
+  width: 100%;
+  height: 90%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  text-align: center;
+  margin: 25vh auto 30vh;
+}
+.accounts-empty-block .accounts-empty-ico {
+  -webkit-animation: rotate 3s linear;
+          animation: rotate 3s linear;
+}
+.accounts-empty-block .account-empty-text {
+  margin: 30px auto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 29px;
+  text-align: center;
+  color: #42474C;
+}
+
+.orders-filter-tabs ul {
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  margin-left: 40px;
+}
+.orders-filter-tabs ul li a {
+  box-sizing: border-box;
+  padding: 20px 20px 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #42474C;
+  margin-bottom: -16px;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+.orders-filter-tabs ul li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  display: block;
+  background: #BEA063;
+  position: absolute;
+  bottom: -1px;
+  transition: all 0.4s linear;
+}
+.orders-filter-tabs ul li.active a::after {
+  width: 100%;
 }

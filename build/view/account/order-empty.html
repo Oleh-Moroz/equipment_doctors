@@ -869,95 +869,155 @@
 </header>
 
 <body>
+
 <!-- End header section-->
-
 <div class="container">
-    <div class="row row-wrap account-form-wrap">
+  <div class="row row-wrap">
+    <div class="left-col">
 
-        <div class="pop-up-content account-form">
-            <div class="pop-up-header">
-                <div class="pop-up-title">
-                    Create your account
-                </div>
-            </div>
-
-            <div class="media-login-row">
-                <a class="media-login-item" href="#">
-                    <img src="../../img/common/google-ico.svg" alt="google login ico">
-                    Sign in with Google
-                </a>
-                <a class="media-login-item" href="#">
-                    <img src="../../img/common/facebook-ico.svg" alt="facebook login ico">
-                    Sign in with Facebook
-                </a>
-            </div>
-
-            <div class="form-title">
-                Or Sign Up with Email
-            </div>
-    
-            <div class="pop-up-form registration-form">
-                <form>
-                    <div class="form-group">
-                        <label for="name">
-                            First name
-                        </label>
-                        <input type="text" name="name">
-                        <div class="error-text">*Validation text</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="last-name">
-                            Last name
-                        </label>
-                        <input type="text" name="last-name">
-                        <div class="error-text">*Validation text</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">
-                            Phone number
-                        </label>
-                        <input type="text" name="phone">
-                        <div class="error-text">*Validation text</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mail">
-                            Your Email
-                        </label>
-                        <input type="email" name="mail">
-                        <div class="error-text">*Validation text</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">
-                            Password
-                        </label>
-                        <input type="password" name="password">
-                        <div class="error-text">*Validation text</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="confirm-password">
-                            Confirm password
-                        </label>
-                        <input type="password" name="confirm-password">
-                        <div class="error-text">*Validation text</div>
-                    </div>
-    
-                    <div class="button-group pop-up-button-group">
-                        <div class="form-text">
-                            Already have an account?  <a href="/view/account/login.html">Sign In</a>
-                        </div>
-                        <input type="submit" class="base-button" value="Sign In">
-                    </div>
-                </form>
-            </div>
+        <nav class="account-menu">
+    <div class="user-info">
+        <div class="user-image">
+            <img src="../../img/common/user-avatar.png" alt="UserName">
         </div>
+        <div class="user-content">
+            <div class="user-name">Hi <span>UserName</span></div>
+            <a class="user-mail" href="mailto:email_example@example.com">email_example@example.com</a>
+            <p>Thanks for being a Equipmentdoctor customer</p>
+        </div>
+    </div>
+    <ul>
+        <li>
+            <h3>General</h3>
+            <ul>
+                <li class="show">
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="fill" href="#orders"></use>
+                            </svg>                                    
+                        </span>
+                        Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="stroke" href="#returns"></use>
+                            </svg>                                                                    
+                        </span>
+                        Returns
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="fill" href="#wallet"></use>
+                            </svg>                                    
+                        </span>
+                        Wallet
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <h3>Manage Account</h3>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="fill" href="#personal-info"></use>
+                            </svg>                                                                       
+                        </span>
+                        Personal info
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="stroke" href="#addresses"></use>
+                            </svg>                                                                                                       
+                        </span>
+                        Addresses
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <h3>My Items</h3>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="stroke" href="#wishlist"></use>
+                            </svg>                                    
+                        </span>
+                        Wish List
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="stroke" href="#viewed"></use>
+                            </svg>                                    
+                        </span>
+                        Recently Viewed
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <button>
+                <div class="account-menu-ico">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <use data-bg="fill" href="#log-out"></use>
+                    </svg>
+                </div>
+                Log out
+            </button>
+        </li>
+    </ul>
+  </nav>
 
     </div>
+
+    <div class="content">
+        <div class="account-container">
+            <div class="account-container-header">
+                <h1>Orders</h1>
+                <a class="base-button" href="#">Go to the Shop</a>
+              </div>  
+        
+              <div class="accounts-empty-block">
+                  <div class="accounts-empty-ico">
+                    <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28.75 86.25C31.9256 86.25 34.5 83.6756 34.5 80.5C34.5 77.3244 31.9256 74.75 28.75 74.75C25.5744 74.75 23 77.3244 23 80.5C23 83.6756 25.5744 86.25 28.75 86.25Z" fill="#DCBC78"/>
+                        <path d="M69 86.25C72.1756 86.25 74.75 83.6756 74.75 80.5C74.75 77.3244 72.1756 74.75 69 74.75C65.8244 74.75 63.25 77.3244 63.25 80.5C63.25 83.6756 65.8244 86.25 69 86.25Z" fill="#DCBC78"/>
+                        <path d="M14.3175 8.0615C14.1873 7.41 13.8354 6.8237 13.3218 6.4023C12.8081 5.9809 12.1644 5.7504 11.5 5.75H0V11.5H9.1425L20.1825 66.6885C20.3127 67.34 20.6646 67.9263 21.1782 68.3477C21.6919 68.7691 22.3356 68.9996 23 69H74.75V63.25H25.3575L23.0575 51.75H74.75C75.404 51.7499 76.0384 51.5268 76.5486 51.1175C77.0587 50.7083 77.4141 50.1373 77.556 49.4989L84.0765 20.125H78.1914L72.4443 46H21.9075L14.3175 8.0615Z" fill="#DCBC78"/>
+                        <path d="M34.5 17.25V23H63.25V17.25H34.5Z" fill="#DCBC78"/>
+                    </svg>                
+                  </div>
+                  <div class="account-empty-text">
+                    This window empty, because<br>
+                    you didn’d do any activities
+                  </div>
+              </div>
+        </div>
+    </div>
+  </div>
 </div>
+
+
+
 
 <!-- Start footer -->
 <footer>

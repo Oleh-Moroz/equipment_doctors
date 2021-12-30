@@ -1,0 +1,86 @@
+@@include('../common/header-page.html')
+
+<!-- End header section-->
+<div class="container">
+    <div class="row row-wrap">
+        <div class="left-col">
+
+            @@include('account-menu.html')
+
+        </div>
+    
+        <div class="content">
+            <div class="account-container">
+                <div class="account-container-header">
+                    <div class="orders-filter-tabs">
+                        <ul>
+                            <li class="active">
+                                <a href="#all-orders">All orders</a>
+                            </li>
+                            <li>
+                                <a href="#in-progress">In progress</a>
+                            </li>
+                            <li>
+                                <a href="#done">Done</a>
+                            </li>
+                            <li>
+                                <a href="#rejected">Rejected</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="account-orders-table">
+                    <ul class="filter__list">
+
+                        <li class="filter-has-children">
+                            <div class="filter__label">
+                                new order
+                            </div>
+
+                            <ul class="filter__list">
+                                <li>order info</li>
+                            </ul>
+                        </li>
+
+                        <li class="filter-has-children">
+                            <div class="filter__label">
+                                new order
+                            </div>
+
+                            <ul class="filter__list">
+                                <li>order info</li>
+                            </ul>
+                        </li>
+
+                        <li class="filter-has-children">
+                            <div class="filter__label">
+                                new order
+                            </div>
+
+                            <ul class="filter__list">
+                                <li>order info</li>
+                            </ul>
+                        </li>
+
+                        <li class="filter-has-children">
+                            <div class="filter__label">
+                                new order
+                            </div>
+
+                            <ul class="filter__list">
+                                <li>order info</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            @@include('../common/pagination.html')
+        </div>
+    </div>
+</div>
+
+<!-- Start footer -->
+@@include('../common/footer-page.html')

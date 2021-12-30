@@ -150,7 +150,7 @@ button, .base-button {
     outline: none;
     box-sizing: border-box;
     padding: 12px 10px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: space-between;
     background: $gold;
@@ -1713,7 +1713,9 @@ footer {
 
     ----------------------------------------------*/
 
-.product-filter, .col-menu {
+.product-filter,
+.col-menu,
+.account-menu {
     width: 100%;
     margin: 15px 0;
     background: $white;
@@ -2856,7 +2858,8 @@ input:checked ~ label::before {
     }
 }
 
-.col-menu {
+.col-menu,
+.account-menu {
     padding: 26px 0 30px 0;
 
     h3 {
@@ -4696,4 +4699,288 @@ input.error ~ .error-text {
     display: block;
     opacity: 1;
     bottom: -22px;
+}
+
+
+/* 
+    Account menu
+
+--------------------------------------------*/
+
+.account-menu {
+    border-radius: 8px 8px 0 0;
+    padding-bottom: 5px;
+
+    .user-info {
+        width: 100%;
+        border-bottom: 1px solid #F8F8F8;
+        box-sizing: border-box;
+        padding: 0 0 20px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .user-image {
+        width: 42px;
+        height: 42px;
+        background: #F8F8F8;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 5px;
+
+        img {
+            object-fit: cover;
+            max-width: 100%;
+        }
+    }
+
+    .user-content {
+        width: calc(100% - 47px);
+
+        .user-name {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 120%;
+            color: $base-black;
+            
+        }
+
+        .user-mail {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 133%;
+            color: $base-black;
+        }
+
+        p {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 133%;
+            color: #97A0A9;
+        }
+    }
+
+    h3 {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 133%;
+        color: $base-black;
+        margin: 25px 0;
+        text-transform: none;
+    }
+
+    ul li ul li a, ul li button  {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px 10px 8px 16px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        color: $black;
+        transition: all .4s linear;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        border-left: 2px solid transparent;
+        cursor: pointer;
+        border-radius: 0;
+        background: transparent;
+         
+        &:hover {
+            color: $gold;
+            background: rgba(220,188,120,.2);
+            border-left: 2px solid $gold;
+        }
+    }
+
+    ul li ul li.show a, ul li.show button {
+        color: $gold;
+        background: rgba(220,188,120,.2);
+        border-left: 2px solid $gold;
+    }
+
+    .account-menu-ico {
+        width: 42px;
+        height: 42px;
+        background: #F8F8F8;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+
+        svg *[data-bg="fill"] {
+            fill: #42474C !important;
+        }
+
+        svg *[data-bg="stroke"] {
+            stroke: #42474C !important;
+        }
+    }
+
+    ul li ul li.show a .account-menu-ico,
+    ul li ul li.show button .account-menu-ico {
+        background: $white;
+
+        svg *[data-bg="fill"] {
+            fill: $gold !important;
+        }
+
+        svg *[data-bg="stroke"] {
+            stroke: $gold !important;
+        }
+    }
+
+    ul li ul li a:hover .account-menu-ico,
+    ul li ul li button:hover .account-menu-ico {
+        background: $white;
+
+        svg *[data-bg="fill"] {
+            fill: $gold !important;
+        }
+
+        svg *[data-bg="stroke"] {
+            stroke: $gold !important;
+        }
+    }
+
+    > ul {
+       > li {
+            &:last-child {
+                margin-top: 50px;
+            }
+        }
+    }
+}
+
+.account-container {
+    background: $white;
+    flex: 1 0 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 15px 0 15px 15px;
+    border-radius: 8px 8px 0 0;
+    padding: 1px 0;
+    box-sizing: border-box;
+
+    &-header {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px 30px;
+        border-bottom: 1px solid #F8F8F8;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        h1 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 120%;
+            color: $black;               
+        }
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0) scale(1);
+    }
+    25% {
+        transform: rotate(-10deg) scale(1);
+    }
+    50% {
+        transform: rotate(0) scale(1.05);
+    }
+    75% {
+        transform: rotate(10deg) scale(1);
+    }
+    100% {
+        transform: rotate(0) scale(1);
+    }
+}
+
+.accounts-empty-block {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 25vh auto 30vh;
+
+    .accounts-empty-ico {
+        animation: rotate 3s linear;
+    }
+
+    .account-empty-text {
+        margin: 30px auto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 29px;
+        text-align: center;
+        color: $black;
+    }
+
+}
+
+.orders-filter-tabs {
+    ul {
+        display: flex;
+        list-style: none;
+        align-items: flex-end;
+        justify-content: flex-start;
+        margin-left: 40px;
+
+        li {
+            a {
+                box-sizing: border-box;
+                padding: 20px 20px 24px;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 150%;
+                color: $black;
+                margin-bottom: -16px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &::after {
+                    content: "";
+                    width: 0%;
+                    height: 2px;
+                    display: block;
+                    background: $gold;
+                    position: absolute;
+                    bottom: -1px;
+                    transition: all .4s linear;
+                }
+            }
+
+            &.active {
+                a {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
