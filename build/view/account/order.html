@@ -996,16 +996,39 @@
                     <div class="orders-filter-tabs">
                         <ul>
                             <li class="active">
-                                <a href="#all-orders">All orders</a>
+                                <a href="#all-orders">
+                                    <div class="status-circle-block">
+                                        <div class="in-progres-circle"></div>
+                                        <div class="done-circle"></div>
+                                        <div class="rejected-circle"></div>
+                                    </div>
+                                    
+                                    All orders
+                                </a>
                             </li>
                             <li>
-                                <a href="#in-progress">In progress</a>
+                                <a href="#in-progress">
+                                    <div class="status-circle-block">
+                                        <div class="in-progres-circle"></div>
+                                    </div>
+                                    In progress
+                                </a>
                             </li>
                             <li>
-                                <a href="#done">Done</a>
+                                <a href="#done">
+                                    <div class="status-circle-block">
+                                        <div class="done-circle"></div>
+                                    </div>
+                                    Done
+                                </a>
                             </li>
                             <li>
-                                <a href="#rejected">Rejected</a>
+                                <a href="#rejected">
+                                    <div class="status-circle-block">
+                                        <div class="rejected-circle"></div>
+                                    </div>
+                                    Rejected
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -1013,46 +1036,163 @@
 
 
                 <div class="account-orders-table">
-                    <ul class="filter__list">
+                    <ul class="accordion__list">
 
-                        <li class="filter-has-children">
-                            <div class="filter__label">
-                                new order
+                        <li class="accordion-has-children">
+                            <div class="accordion__label order-info-header">
+                                <div class="status-circle-block">
+                                    <div class="in-progres-circle"></div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title order-info-status">In progress</div>
+                                    <div class="order-info-id">456475112323234</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Order date</div>
+                                    <div class="order-info-date">02/06/2021</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Order amount</div>
+                                    <div class="order-info-price price">$5,725.00</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-image-block">
+                                        <img src="../../img/common/order-info-img.png" alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                        <img src="../../img/common/order-info-img.png" alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                        <img src="../../img/common/order-info-img.png" alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                        <span class="order-more-image-text">+5</span>
+                                    </div>
+                                </div>
                             </div>
 
-                            <ul class="filter__list">
-                                <li>order info</li>
-                            </ul>
+                            <div class="accordion__list order-info-expansion">
+                                <div class="order-info-expansion-col order-info-left-col">
+                                    <div class="order-info-block">
+                                        <div class="account-container-header">
+                                            <h3>Shiping Information</h3>
+                                        </div>
+                                        <div class="order-shiping-info">
+                                            <div class="order-shiping-info-row">
+                                                <div class="order-shiping-info-col">Customer Name:</div>
+                                                <div class="order-shiping-info-col">Some Name</div>
+                                            </div>
+                                            <div class="order-shiping-info-row">
+                                                <div class="order-shiping-info-col">Customer Email:</div>
+                                                <div class="order-shiping-info-col">test@test.com</div>
+                                            </div>
+                                            <div class="order-shiping-info-row">
+                                                <div class="order-shiping-info-col">Customer Phone:</div>
+                                                <div class="order-shiping-info-col">+188888888</div>
+                                            </div>
+                                            <div class="order-shiping-info-row">
+                                                <div class="order-shiping-info-col">State/Province:</div>
+                                                <div class="order-shiping-info-col">Alabama </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="order-info-block">
+                                        <div class="account-container-header">
+                                            <h3>Order Status</h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="order-info-expansion-col order-info-right-col">
+                                    <div class="order-info-block">
+                                        <div class="account-container-header">
+                                            <h3>Part Description</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
 
-                        <li class="filter-has-children">
-                            <div class="filter__label">
-                                new order
+                        <li class="accordion-has-children">
+                            <div class="accordion__label order-info-header">
+                                <div class="status-circle-block">
+                                    <div class="done-circle"></div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title order-info-status">Done</div>
+                                    <div class="order-info-id">456475112323234</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Order date</div>
+                                    <div class="order-info-date">02/06/2021</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Order amount</div>
+                                    <div class="order-info-price price">$5,725.00</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-image-block">
+                                        <img src="../../img/common/order-info-img.png" alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                    </div>
+                                </div>
                             </div>
 
-                            <ul class="filter__list">
-                                <li>order info</li>
-                            </ul>
+                            <div class="accordion__list order-info-expansion">
+                                order info
+                            </div>
                         </li>
 
-                        <li class="filter-has-children">
-                            <div class="filter__label">
-                                new order
+                        <li class="accordion-has-children">
+                            <div class="accordion__label order-info-header">
+                                <div class="status-circle-block">
+                                    <div class="done-circle"></div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title order-info-status">Done</div>
+                                    <div class="order-info-id">456475112323234</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Order date</div>
+                                    <div class="order-info-date">02/06/2021</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Order amount</div>
+                                    <div class="order-info-price price">$1,725.00</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-image-block">
+                                        <img src="../../img/common/order-info-img.png" alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                    </div>
+                                </div>
                             </div>
 
-                            <ul class="filter__list">
-                                <li>order info</li>
-                            </ul>
+                            <div class="accordion__list order-info-expansion">
+                                order info
+                            </div>
                         </li>
 
-                        <li class="filter-has-children">
-                            <div class="filter__label">
-                                new order
+                        <li class="accordion-has-children">
+                            <div class="accordion__label order-info-header">
+                                <div class="status-circle-block">
+                                    <div class="rejected-circle"></div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title order-info-status">Rejected</div>
+                                    <div class="order-info-id">456475112323234</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Order date</div>
+                                    <div class="order-info-date">02/06/2021</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Order amount</div>
+                                    <div class="order-info-price price">$1,725.00</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-image-block">
+                                        <img src="../../img/common/order-info-img.png" alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                    </div>
+                                </div>
                             </div>
 
-                            <ul class="filter__list">
-                                <li>order info</li>
-                            </ul>
+                            <div class="accordion__list order-info-expansion">
+                                order info
+                            </div>
                         </li>
 
                     </ul>

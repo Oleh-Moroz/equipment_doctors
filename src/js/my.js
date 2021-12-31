@@ -1,24 +1,26 @@
+'use strict'
+
 window.addEventListener('DOMContentLoaded', () => {
 
-  const accordion = document.getElementsByClassName("filter__label");
+  const accordion = document.getElementsByClassName("accordion__label");
 
 
   for (let i = 0; i < accordion.length; i++) {
     accordion[i].addEventListener("click", function (e) {
 
       const label = e.target,
-        parentElement = label.parentElement,
-        listElement = label.nextElementSibling;
+        parentElement = this.parentElement,
+        listElement = this.nextElementSibling;
 
-      if (parentElement.classList.contains('filter-is-open')) {
-        parentElement.classList.remove('filter-is-open');
+      if (parentElement.classList.contains('accordion-is-open')) {
+        parentElement.classList.remove('accordion-is-open');
         listElement.style.maxHeight = '0px';
 
         listElement.style.cssText = `
             overflow-y: hidden;
           `;
       } else {
-        parentElement.classList.add('filter-is-open');
+        parentElement.classList.add('accordion-is-open');
 
         listElement.style.cssText = `
           max-height: 1000px;
@@ -32,7 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       }
 
-      this.classList.toggle("filter-active");
+      this.classList.toggle("accordion-active");
 
     });
   }

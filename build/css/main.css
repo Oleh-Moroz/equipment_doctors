@@ -1669,6 +1669,11 @@ footer {
   list-style: none;
 }
 
+.accordion__label {
+  cursor: pointer;
+  transition: all 0.4s linear;
+}
+
 .filter__label {
   font-style: normal;
   font-weight: 600;
@@ -1691,7 +1696,7 @@ footer {
   color: #BEA063;
 }
 
-.filter-has-children > .filter__label::after {
+.accordion-has-children > .filter__label::after {
   content: "+";
   color: #BEA063;
   font-weight: 900;
@@ -1701,23 +1706,23 @@ footer {
           transform: rotate(90deg);
 }
 
-.filter-has-children.filter-is-open > .filter__label::after {
+.accordion-has-children.accordion-is-open > .filter__label::after {
   content: "-";
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
 }
 
-.filter-has-children {
+.accordion-has-children {
   border-bottom: 1px solid transparent;
 }
-.filter-has-children.filter-is-open {
+.accordion-has-children.accordion-is-open {
   border-bottom: 1px solid #F8F8F8;
   padding-bottom: 15px;
 }
-.filter-has-children .filter__list li {
+.accordion-has-children .accordion__list li {
   padding: 0 8px 0 25px;
 }
-.filter-has-children .filter__list li a {
+.accordion-has-children .accordion__list li a {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1732,10 +1737,10 @@ footer {
       justify-content: space-between;
   transition: all 0.4s linear;
 }
-.filter-has-children .filter__list li a:hover {
+.accordion-has-children .accordion__list li a:hover {
   color: #BEA063;
 }
-.filter-has-children .filter__list li a span {
+.accordion-has-children .accordion__list li a span {
   margin-left: 5px;
   font-style: normal;
   font-weight: normal;
@@ -1743,7 +1748,7 @@ footer {
   line-height: 150%;
   color: #97A0A9;
 }
-.filter-has-children .filter__list .filter-has-children .filter__label {
+.accordion-has-children .accordion__list .accordion-has-children .filter__label {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1752,10 +1757,10 @@ footer {
   text-transform: none;
   padding: 8px 0;
 }
-.filter-has-children .filter__list .filter-has-children .filter__label:hover {
+.accordion-has-children .accordion__list .accordion-has-children .filter__label:hover {
   color: #BEA063;
 }
-.filter-has-children .filter__list .filter-has-children .filter__label::after {
+.accordion-has-children .accordion__list .accordion-has-children .filter__label::after {
   content: "\f078";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -1766,43 +1771,43 @@ footer {
   -webkit-transform: rotate(0);
           transform: rotate(0);
 }
-.filter-has-children .filter__list .filter-has-children.filter-is-open .filter__label {
+.accordion-has-children .accordion__list .accordion-has-children.accordion-is-open .filter__label {
   color: #BEA063;
 }
-.filter-has-children .filter__list .filter-has-children.filter-is-open .filter__label::after {
+.accordion-has-children .accordion__list .accordion-has-children.accordion-is-open .filter__label::after {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   color: #BEA063;
 }
-.filter-has-children .filter__list li.filter-has-children {
+.accordion-has-children .accordion__list li.accordion-has-children {
   padding: 0;
 }
-.filter-has-children .filter__list li.filter-has-children .filter__label {
+.accordion-has-children .accordion__list li.accordion-has-children .filter__label {
   padding: 8px 8px 8px 25px;
 }
-.filter-has-children .filter__list li.filter-has-children .filter__list {
+.accordion-has-children .accordion__list li.accordion-has-children .accordion__list {
   margin: 1px 0;
   transition: all 0.4s linear;
 }
-.filter-has-children .filter__list li.filter-has-children .filter__list li {
+.accordion-has-children .accordion__list li.accordion-has-children .accordion__list li {
   max-height: 270px !important;
   overflow: hidden;
   overflow-y: auto;
 }
-.filter-has-children .filter__list li.filter-has-children .filter__list li a {
+.accordion-has-children .accordion__list li.accordion-has-children .accordion__list li a {
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 162%;
   color: #42474C;
 }
-.filter-has-children .filter__list li.filter-has-children .filter__list li a:hover {
+.accordion-has-children .accordion__list li.accordion-has-children .accordion__list li a:hover {
   color: #BEA063;
 }
-.filter-has-children .filter__list li.filter-has-children.filter-is-open .filter__label {
+.accordion-has-children .accordion__list li.accordion-has-children.accordion-is-open .filter__label {
   background: #F8F8F8;
 }
-.filter-has-children .filter__list li.filter-has-children.filter-is-open .filter__list {
+.accordion-has-children .accordion__list li.accordion-has-children.accordion-is-open .accordion__list {
   padding-top: 10px;
   background: #F8F8F8;
   max-height: 270px !important;
@@ -1810,19 +1815,19 @@ footer {
   /*overflow-y: auto;*/
 }
 
-.filter-has-children {
+.accordion-has-children {
   transition: all 0.2s linear;
 }
-.filter-has-children .filter__list {
+.accordion-has-children .accordion__list {
   max-height: 0px;
   overflow: hidden;
   transition: all 0.4s linear;
 }
-.filter-has-children.filter-is-open > .filter__list {
+.accordion-has-children.accordion-is-open > .accordion__list {
   max-height: 1000px;
 }
 
-.main-filter .filter-has-children .filter__list li.filter-has-children.filter-is-open .filter__list {
+.main-filter .accordion-has-children .accordion__list li.accordion-has-children.accordion-is-open .accordion__list {
   overflow-y: auto;
 }
 
@@ -2229,7 +2234,7 @@ footer {
   background: transparent;
 }
 
-.filter__list li label {
+.accordion__list li label {
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -2243,7 +2248,7 @@ footer {
       justify-content: space-between;
   cursor: pointer;
 }
-.filter__list li label > span {
+.accordion__list li label > span {
   width: 90%;
   display: -ms-flexbox;
   display: flex;
@@ -2252,10 +2257,10 @@ footer {
   -ms-flex-pack: justify;
       justify-content: space-between;
 }
-.filter__list li label > span span {
+.accordion__list li label > span span {
   color: #97A0A9;
 }
-.filter__list li label::before {
+.accordion__list li label::before {
   content: "";
   border: 2px solid #42474C;
   width: 14px;
@@ -2274,7 +2279,7 @@ footer {
   font-size: 10px;
 }
 
-.filter__list li input {
+.accordion__list li input {
   display: none;
 }
 
@@ -4831,4 +4836,208 @@ input.error ~ .error-text {
 }
 .orders-filter-tabs ul li.active a::after {
   width: 100%;
+}
+
+.status-circle-block {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  margin-right: 8px;
+}
+.status-circle-block div {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: relative;
+  z-index: 1;
+}
+.status-circle-block div:nth-child(2), .status-circle-block div:nth-child(3) {
+  margin-left: -3px;
+  z-index: 2;
+}
+.status-circle-block div.in-progres-circle {
+  background: #FFB217;
+}
+.status-circle-block div.done-circle {
+  background: #00C12B;
+}
+.status-circle-block div.rejected-circle {
+  background: #DE3618;
+}
+
+.account-orders-table {
+  margin: 25px auto;
+  width: 95%;
+}
+.account-orders-table .accordion__list {
+  list-style: none;
+}
+.account-orders-table .accordion__list .accordion-has-children .order-info-header {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  position: relative;
+  box-sizing: border-box;
+  padding: 10px 8px 10px 15px;
+  background: #F8F8F8;
+  margin-bottom: 1px;
+}
+.account-orders-table .accordion__list .accordion-has-children .order-info-header::after {
+  content: "\f078";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #BEA063;
+  font-size: 11px;
+  margin: auto 0 auto 7px;
+  transition: all 0.3s linear;
+}
+.account-orders-table .accordion__list .accordion-has-children .order-info-header.accordion-active::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.account-orders-table .accordion__list .accordion-has-children .order-info-header .status-circle-block {
+  margin: auto 10px auto 0;
+}
+.account-orders-table .accordion__list .accordion-has-children .order-info-header .status-circle-block div {
+  width: 16px;
+  height: 16px;
+}
+.account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 143%;
+  color: #42474C;
+  margin-right: 5%;
+}
+.account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col:nth-child(3) {
+  margin-right: 10%;
+}
+.account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col:last-child {
+  margin: auto 1% auto auto;
+}
+.account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col-title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 133%;
+  color: #97A0A9;
+  margin-bottom: 5px;
+}
+.account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-image-block {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  margin: auto 0;
+  position: relative;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 114%;
+  letter-spacing: 0.5px;
+  color: #000000;
+}
+.account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-image-block img {
+  width: 34px;
+  max-height: 34px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+.account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-image-block img:nth-child(2), .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-image-block img:nth-child(3) {
+  margin-left: -15px;
+  z-index: 1;
+}
+.account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-image-block img:nth-child(3) {
+  z-index: 0;
+  margin-right: 8px;
+}
+.account-orders-table .accordion__list .accordion-has-children:nth-child(2n) .order-info-header {
+  background: #fff;
+}
+.account-orders-table .accordion__list .accordion-has-children:nth-child(2n).accordion-is-open .order-info-header {
+  background: #F8F8F8;
+}
+.account-orders-table .order-info-expansion {
+  background: #F8F8F8;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.account-orders-table .order-info-expansion-col {
+  -ms-flex: 0 0 48%;
+      flex: 0 0 48%;
+  max-width: 48%;
+}
+.account-orders-table .order-info-expansion-col.order-info-left-col {
+  margin: 25px 1% 25px 15px;
+}
+.account-orders-table .order-info-expansion-col.order-info-right-col {
+  margin: 25px 15px 25px 1%;
+}
+.account-orders-table .order-info-block {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+.account-orders-table .order-info-block .account-container-header {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 21px;
+  border-bottom: 1px solid #f8f8f8;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.account-orders-table .order-info-block .account-container-header h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #42474C;
+}
+.account-orders-table .order-shiping-info {
+  box-sizing: border-box;
+  padding: 1px 21px;
+  width: 100%;
+}
+.account-orders-table .order-shiping-info .order-shiping-info-row {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin: 10px 0;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 133%;
+  color: #42474C;
+}
+.account-orders-table .order-shiping-info .order-shiping-info-row .order-shiping-info-col:nth-child(2) {
+  color: #221E1E;
+  font-weight: 500;
 }
