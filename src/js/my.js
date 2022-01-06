@@ -2,44 +2,44 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
-  const accordion = document.getElementsByClassName("accordion__label");
+  const accordion = document.querySelectorAll(".accordion__label");
 
+  function openAccordion(item) {
 
-  for (let i = 0; i < accordion.length; i++) {
-    accordion[i].addEventListener("click", function (e) {
+    const label = item,
+      parentElement = label.parentElement,
+      listElement = label.nextElementSibling;
 
-      const label = e.target,
-        parentElement = this.parentElement,
-        listElement = this.nextElementSibling;
+    if (parentElement.classList.contains('accordion-is-open')) {
+      parentElement.classList.remove('accordion-is-open');
+      listElement.style.maxHeight = '0px';
 
-      if (parentElement.classList.contains('accordion-is-open')) {
-        parentElement.classList.remove('accordion-is-open');
-        listElement.style.maxHeight = '0px';
-
-        listElement.style.cssText = `
-            overflow-y: hidden;
-          `;
-      } else {
-        parentElement.classList.add('accordion-is-open');
-
-        listElement.style.cssText = `
-          max-height: 1000px;
+      listElement.style.cssText = `
+          overflow-y: hidden;
         `;
+    } else {
+      parentElement.classList.add('accordion-is-open');
 
-        setTimeout(() => {
-          listElement.style.cssText = `
-            overflow-y: auto;
-          `;
-        }, 400);
+      listElement.style.cssText = `
+        max-height: 1000px;
+      `;
 
-      }
+      setTimeout(() => {
+        listElement.style.cssText = `
+          overflow-y: auto;
+        `;
+      }, 400);
 
-      this.classList.toggle("accordion-active");
+    }
 
-    });
+    label.classList.toggle("accordion-active");
   }
 
-
+  accordion.forEach(item => {
+    item.addEventListener('click', () => {
+      openAccordion(item);
+    });
+  });
 
   /*  Category menu 
     
@@ -245,142 +245,180 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-});
+  /*
+  Pop up
 
-/*
-Pop up
+  -----------------------------*/
 
------------------------------*/
+  const modalCloseBtn = document.querySelectorAll('[data-close]'),
+    popUps = document.querySelectorAll('.pop-up-wrap');
 
-const modalCloseBtn = document.querySelectorAll('[data-close]'),
-  popUps = document.querySelectorAll('.pop-up-wrap');
+  function openModal(popUp) {
+    popUps.forEach(item => {
+      item.classList.remove('active');
+    });
 
-function openModal(popUp) {
-  popUps.forEach(item => {
-    item.classList.remove('active');
-  });
+    document.querySelector(popUp).classList.add('active');
 
-  document.querySelector(popUp).classList.add('active');
-
-}
-
-function closeModal() {
-  popUps.forEach(item => {
-    item.classList.remove('active');
-  });
-}
-
-modalCloseBtn.forEach(btn => {
-  btn.addEventListener('click', closeModal);
-});
-
-document.addEventListener('keydown', (e) => {
-  popUps.forEach(active => {
-    if (e.code === 'Escape' && active.classList.contains('active')) {
-      closeModal();
-    }
-  });
-});
-
-
-/*
-
-  Pop up quickView
-
--------------------------------------*/
-
-function quickView() {
-
-  const request = new XMLHttpRequest();
-
-  const viewPopUp = document.createElement('div'),
-    viewPopUpContent = document.createElement('div'),
-    viewPopUpClose = document.createElement('button');
-
-  viewPopUp.classList.add('pop-up-wrap', 'active', 'pop-up-quick-view');
-  viewPopUpContent.classList.add('pop-up-content');
-  viewPopUpClose.classList.add('close-pop-up');
-  viewPopUpClose.setAttribute('data-close', '');
-
-  document.body.append(viewPopUp);
-  viewPopUp.appendChild(viewPopUpContent);
-  viewPopUpContent.appendChild(viewPopUpClose);
-
-  viewPopUpClose.innerHTML = '<i class="far fa-times-circle" aria-hidden="true"></i>';
-
-  viewPopUpClose.addEventListener('click', () => {
-    viewPopUp.remove();
-  });
-
-  request.open('GET', '/view/product/product.html');
-
-  request.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      const doc = new DOMParser().parseFromString(this.responseText, "text/html"),
-        imageBlock = doc.querySelector('.image-product-block'),
-        textBlock = doc.querySelector('.text-product-block');
-
-      viewPopUpContent.appendChild(imageBlock);
-      viewPopUpContent.appendChild(textBlock);
-
-      productImageSlider('horizontal');
-    }
   }
 
-  request.send(null);
-}
+  function closeModal() {
+    popUps.forEach(item => {
+      item.classList.remove('active');
+    });
+  }
 
-/*
-  Product page slider
-
---------------------------------------*/
-function productImageSlider(direction) {
-  let swiperThumb = new Swiper(document.getElementById('product-thumb-slider'), {
-    spaceBetween: 10,
-    slidesPerView: 4,
-    direction: direction,
-    mousewheel: true,
+  modalCloseBtn.forEach(btn => {
+    btn.addEventListener('click', closeModal);
   });
-  let swiperImage = new Swiper(document.getElementById('product-image-slider'), {
-    spaceBetween: 10,
-    direction: direction,
-    mousewheel: true,
-    thumbs: {
-      swiper: swiperThumb,
-    },
+
+  document.addEventListener('keydown', (e) => {
+    popUps.forEach(active => {
+      if (e.code === 'Escape' && active.classList.contains('active')) {
+        closeModal();
+      }
+    });
   });
-}
-
-productImageSlider('vertical');
 
 
-/* Contact form checked Privacy Policy
+  /*
 
---------------------------------------------*/
+    Pop up quickView
 
-const checkboxPolicy = document.querySelector('#checked-policy'),
-  formButton = document.querySelector('.button-group input[type="submit"]');
+  -------------------------------------*/
 
-if (checkboxPolicy) {
-  checkboxPolicy.addEventListener('click', () => {
-    if (checkboxPolicy.checked == true) {
-      formButton.removeAttribute('disabled');
-    } else {
-      formButton.setAttribute('disabled', '');
+  function quickView() {
+
+    const request = new XMLHttpRequest();
+
+    const viewPopUp = document.createElement('div'),
+      viewPopUpContent = document.createElement('div'),
+      viewPopUpClose = document.createElement('button');
+
+    viewPopUp.classList.add('pop-up-wrap', 'active', 'pop-up-quick-view');
+    viewPopUpContent.classList.add('pop-up-content');
+    viewPopUpClose.classList.add('close-pop-up');
+    viewPopUpClose.setAttribute('data-close', '');
+
+    document.body.append(viewPopUp);
+    viewPopUp.appendChild(viewPopUpContent);
+    viewPopUpContent.appendChild(viewPopUpClose);
+
+    viewPopUpClose.innerHTML = '<i class="far fa-times-circle" aria-hidden="true"></i>';
+
+    viewPopUpClose.addEventListener('click', () => {
+      viewPopUp.remove();
+    });
+
+    request.open('GET', '/view/product/product.html');
+
+    request.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        const doc = new DOMParser().parseFromString(this.responseText, "text/html"),
+          imageBlock = doc.querySelector('.image-product-block'),
+          textBlock = doc.querySelector('.text-product-block');
+
+        viewPopUpContent.appendChild(imageBlock);
+        viewPopUpContent.appendChild(textBlock);
+
+        productImageSlider('horizontal');
+      }
     }
-  });
-}
 
-const inputSubscribe = document.querySelector('.subscribe-news-form .form-group input[type="email"]');
+    request.send(null);
+  }
 
-if (inputSubscribe) {
-  inputSubscribe.addEventListener('input', () => {
-    let inputSubscribeValue = inputSubscribe.value;
+  /*
+    Product page slider
 
-    if (inputSubscribeValue) {
-      formButton.removeAttribute('disabled');
-    } else {
-      formButton.setAttribute('disabled', '');
-    }
-  });
-}
+  --------------------------------------*/
+  function productImageSlider(direction) {
+    let swiperThumb = new Swiper(document.getElementById('product-thumb-slider'), {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      direction: direction,
+      mousewheel: true,
+    });
+    let swiperImage = new Swiper(document.getElementById('product-image-slider'), {
+      spaceBetween: 10,
+      direction: direction,
+      mousewheel: true,
+      thumbs: {
+        swiper: swiperThumb,
+      },
+    });
+  }
+
+  productImageSlider('vertical');
+
+
+  /* Contact form checked Privacy Policy
+
+  --------------------------------------------*/
+
+  const checkboxPolicy = document.querySelector('#checked-policy'),
+    formButton = document.querySelector('.button-group input[type="submit"]');
+
+  if (checkboxPolicy) {
+    checkboxPolicy.addEventListener('click', () => {
+      if (checkboxPolicy.checked == true) {
+        formButton.removeAttribute('disabled');
+      } else {
+        formButton.setAttribute('disabled', '');
+      }
+    });
+  }
+
+  const inputSubscribe = document.querySelector('.subscribe-news-form .form-group input[type="email"]');
+
+  if (inputSubscribe) {
+    inputSubscribe.addEventListener('input', () => {
+      let inputSubscribeValue = inputSubscribe.value;
+
+      if (inputSubscribeValue) {
+        formButton.removeAttribute('disabled');
+      } else {
+        formButton.setAttribute('disabled', '');
+      }
+    });
+  }
+
+
+  /* 
+    Order tabs filter
+
+  --------------------------------------*/
+
+  const filterTabs = document.querySelectorAll('.orders-filter-tabs ul li a'),
+        filterItem = document.querySelectorAll('.account-orders-table .accordion__list > li');
+
+        for (let i = 0; i < filterTabs.length; i++) {
+          filterTabs[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            let tabLocation = filterTabs[i].getAttribute("href").slice(1);
+
+            filterTabs.forEach(item => {
+              item.parentElement.classList.remove('active');
+            });
+
+            filterTabs[i].parentElement.classList.add('active');
+
+            if (tabLocation == 'all-orders') {
+              filterItem.forEach(item => {
+                item.classList.add('active');
+              });
+            } else {
+              filterItem.forEach(item => {
+                item.classList.remove('active');
+              });
+            }
+
+            const filterItemActive = document.querySelectorAll(`[data-status='${tabLocation}']`);
+
+            filterItemActive.forEach(item => {
+              item.classList.add('active');
+            });
+          })
+        }
+
+});

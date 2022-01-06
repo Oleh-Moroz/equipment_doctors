@@ -4975,6 +4975,7 @@ input.error ~ .error-text {
                     background: $gold;
                     position: absolute;
                     bottom: -1px;
+                    left: 0;
                     transition: all .4s linear;
                 }
             }
@@ -5030,6 +5031,12 @@ input.error ~ .error-text {
     .accordion__list {
         list-style: none;
         .accordion-has-children {
+            display: none;
+            
+            &.active {
+                display: block;
+            }
+
             .order-info-header {
                 width: 100%;
                 display: flex;
