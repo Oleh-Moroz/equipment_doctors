@@ -872,250 +872,842 @@
 
 <!-- End header section-->
 <div class="container">
-  <div class="row row-wrap">
-    <div class="breadcrumbs-block">
+    <div class="row row-wrap">
+        <div class="left-col">
+
+            <nav class="account-menu">
+    <div class="user-info">
+        <div class="user-image">
+            <img src="../../img/common/user-avatar.png" alt="UserName">
+        </div>
+        <div class="user-content">
+            <div class="user-name">Hi <span>UserName</span></div>
+            <a class="user-mail" href="mailto:email_example@example.com">email_example@example.com</a>
+            <p>Thanks for being a Equipmentdoctor customer</p>
+        </div>
+    </div>
     <ul>
         <li>
-            <a href="/">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M18.7892 11.8904L12.7517 5.85605L12.347 5.45136C12.2548 5.35976 12.1301 5.30835 12.0001 5.30835C11.8701 5.30835 11.7454 5.35976 11.6532 5.45136L5.21105 11.8904C5.11657 11.9845 5.0419 12.0966 4.99145 12.2201C4.94099 12.3435 4.91578 12.4758 4.9173 12.6092C4.92355 13.1592 5.38136 13.5982 5.93136 13.5982H6.59543V18.6873H17.4048V13.5982H18.0829C18.3501 13.5982 18.6017 13.4935 18.7907 13.3045C18.8838 13.2117 18.9576 13.1013 19.0077 12.9798C19.0579 12.8584 19.0835 12.7281 19.0829 12.5967C19.0829 12.331 18.9782 12.0795 18.7892 11.8904ZM12.8751 17.5623H11.1251V14.3748H12.8751V17.5623ZM16.2798 12.4732V17.5623H13.8751V13.9998C13.8751 13.6545 13.5954 13.3748 13.2501 13.3748H10.7501C10.4048 13.3748 10.1251 13.6545 10.1251 13.9998V17.5623H7.72043V12.4732H6.22043L12.0017 6.69667L12.3626 7.05761L17.7814 12.4732H16.2798Z"
-                        fill="black" />
-                </svg>
-            </a>
+            <h3>General</h3>
+            <ul>
+                <li>
+                    <a href="/view/account/order.html">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="fill" href="#orders"></use>
+                            </svg>                                    
+                        </span>
+                        Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="/view/account/empty.html?url=returns">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="stroke" href="#returns"></use>
+                            </svg>                                                                    
+                        </span>
+                        Returns
+                    </a>
+                </li>
+                <li>
+                    <a href="/view/account/empty.html?url=wallets">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="fill" href="#wallet"></use>
+                            </svg>                                    
+                        </span>
+                        Wallet
+                    </a>
+                </li>
+            </ul>
         </li>
+
         <li>
-            <a href="#">
-                Category name
-            </a>
+            <h3>Manage Account</h3>
+            <ul>
+                <li>
+                    <a href="/view/account/personal-info.html">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="fill" href="#personal-info"></use>
+                            </svg>                                                                       
+                        </span>
+                        Personal info
+                    </a>
+                </li>
+                <li>
+                    <a href="/view/account/empty.html?url=addresses">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="stroke" href="#addresses"></use>
+                            </svg>                                                                                                       
+                        </span>
+                        Addresses
+                    </a>
+                </li>
+            </ul>
         </li>
+
         <li>
-            <span>
-                Sab Category name
-            </span>
+            <h3>My Items</h3>
+            <ul>
+                <li>
+                    <a href="/view/account/empty.html?url=wish-list">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="stroke" href="#wishlist"></use>
+                            </svg>                                    
+                        </span>
+                        Wish List
+                    </a>
+                </li>
+                <li>
+                    <a href="/view/account/empty.html?url=recently-viewed">
+                        <span class="account-menu-ico">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use data-bg="stroke" href="#viewed"></use>
+                            </svg>                                    
+                        </span>
+                        Recently Viewed
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <button>
+                <div class="account-menu-ico">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <use data-bg="fill" href="#log-out"></use>
+                    </svg>
+                </div>
+                Log out
+            </button>
         </li>
     </ul>
-</div>
+  </nav>
 
-    <div class="category-result-text">
-      Found <span>126393</span> spare parts and auto products for your car.
+        </div>
+
+        <div class="content">
+            <div class="account-container">
+                <div class="account-container-header">
+                    <h1>Select items or orders which need to return</h1>
+
+                    <button class="base-button return-button">Return Items</button>
+                </div>
+
+                <div class="account-orders-table">
+                    <ul class="accordion__list returns-list">
+
+                        <li class="accordion-has-children">
+                            <div class="accordion__label order-info-header">
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title order-info-status">Order number: </div>
+                                    <div class="order-info-id order-info-returns-id">456475112323234</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Order date</div>
+                                    <div class="order-info-date">02/06/2021</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Shipping address: </div>
+                                    <div class="order-info-address">-</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Payment Method: </div>
+                                    <div class="order-info-payment-method">Visa ****9879</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Status: </div>
+                                    <div class="order-info-returns-status" data-status="error">Received by the
+                                        Diagnostic Department</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion__list order-info-expansion returns-item-detail">
+                                <ul class="order-status-list">
+                                    <li class="order-status" data-status="done">
+                                        <div class="items-for-returns">
+                                            <span class="order-status-name">Items for return</span>
+                                            <ul>
+                                                <li>
+                                                    <div class="order-info-col">
+                                                        <div class="order-info-image-block">
+                                                            <img src="../../img/common/order-info-img.png"
+                                                                alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                                        </div>
+                                                    </div>
+                                                    <div class="order-info-col">
+                                                        <h3 class="order-product-title">GDB03562 TRW ABS BREAKING SYSTEM
+                                                        </h3>
+                                                        <div class="row">
+                                                            <div class="order-info-quantity">Quantity: <span>1</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="order-status-process">Done</span>
+                                    </li>
+                                    <li class="order-status" data-status="done">
+                                        <span class="order-status-name">Accepted by delivery</span>
+                                        <span class="order-status-process">Done</span>
+                                    </li>
+                                    <li class="order-status" data-status="done">
+                                        <span class="order-status-name">Delivered to Equipment doctor</span>
+                                        <span class="order-status-process">Done</span>
+                                    </li>
+                                    <li class="order-status" data-status="error">
+                                        <div class="return-report-block">
+                                            <span class="order-status-name">Received by the Diagnostic Department</span>
+                                            <div class="report-comment">
+                                                <div class="report-title">Report:</div>
+                                                <div class="report-text">
+                                                    The diagnostics department indicated a breakdown on the client's
+                                                    side.
+                                                    <a href="/view/info/contact.html">Contact us</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="order-status-process">Failed</span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <div class="return-payment-method">
+                                            <span class="order-status-name">Method of return payment</span>
+                                            <form class="return-payment-method_list">
+                                                <select>
+                                                    <option>Visa ****9879</option>
+                                                    <option>Visa ****9878</option>
+                                                    <option>Visa ****9877</option>
+                                                </select>
+                                                <button type="submit" id="change-payment-method">Change</button>
+                                            </form>
+                                        </div>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <span class="order-status-name">Confirmation & Summary</span>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="accordion-has-children">
+                            <div class="accordion__label order-info-header">
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title order-info-status">Order number: </div>
+                                    <div class="order-info-id order-info-returns-id">456475112323234</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Order date</div>
+                                    <div class="order-info-date">02/06/2021</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Shipping address: </div>
+                                    <div class="order-info-address">-</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Payment Method: </div>
+                                    <div class="order-info-payment-method">Visa ****9879</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Status: </div>
+                                    <div class="order-info-returns-status">Accepted by delivery</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion__list order-info-expansion returns-item-detail">
+                                <ul class="order-status-list">
+                                    <li class="order-status" data-status="done">
+                                        <div class="items-for-returns">
+                                            <span class="order-status-name">Items for return</span>
+                                            <ul>
+                                                <li>
+                                                    <div class="order-info-col">
+                                                        <div class="order-info-image-block">
+                                                            <img src="../../img/common/order-info-img.png"
+                                                                alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                                        </div>
+                                                    </div>
+                                                    <div class="order-info-col">
+                                                        <h3 class="order-product-title">GDB03562 TRW ABS BREAKING SYSTEM
+                                                        </h3>
+                                                        <div class="row">
+                                                            <div class="order-info-quantity">Quantity: <span>1</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="order-status-process">Done</span>
+                                    </li>
+                                    <li class="order-status" data-status="done">
+                                        <span class="order-status-name">Accepted by delivery</span>
+                                        <span class="order-status-process">Done</span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <span class="order-status-name">Delivered to Equipment doctor</span>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <div class="return-report-block">
+                                            <span class="order-status-name">Received by the Diagnostic Department</span>
+                                            <div class="report-comment">
+                                                <div class="report-title">Report:</div>
+                                                <div class="report-text">
+                                                    The diagnostics department indicated a breakdown on the client's
+                                                    side.
+                                                    <a href="/view/info/contact.html">Contact us</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <div class="return-payment-method">
+                                            <span class="order-status-name">Method of return payment</span>
+                                            <div class="return-payment-method_list">
+                                                <ul>
+                                                    <li>Visa ****9879</li>
+                                                </ul>
+                                                <button>Change</button>
+                                            </div>
+                                        </div>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <span class="order-status-name">Confirmation & Summary</span>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="accordion-has-children">
+                            <div class="accordion__label order-info-header">
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title order-info-status">Order number: </div>
+                                    <div class="order-info-id order-info-returns-id">456475112323234</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Order date</div>
+                                    <div class="order-info-date">02/06/2021</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Shipping address: </div>
+                                    <div class="order-info-address">-</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Payment Method: </div>
+                                    <div class="order-info-payment-method">Visa ****9879</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Status: </div>
+                                    <div class="order-info-returns-status">Accepted by delivery</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion__list order-info-expansion returns-item-detail">
+                                <ul class="order-status-list">
+                                    <li class="order-status" data-status="done">
+                                        <div class="items-for-returns">
+                                            <span class="order-status-name">Items for return</span>
+                                            <ul>
+                                                <li>
+                                                    <div class="order-info-col">
+                                                        <div class="order-info-image-block">
+                                                            <img src="../../img/common/order-info-img.png"
+                                                                alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                                        </div>
+                                                    </div>
+                                                    <div class="order-info-col">
+                                                        <h3 class="order-product-title">GDB03562 TRW ABS BREAKING SYSTEM
+                                                        </h3>
+                                                        <div class="row">
+                                                            <div class="order-info-quantity">Quantity: <span>1</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="order-status-process">Done</span>
+                                    </li>
+                                    <li class="order-status" data-status="done">
+                                        <span class="order-status-name">Accepted by delivery</span>
+                                        <span class="order-status-process">Done</span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <span class="order-status-name">Delivered to Equipment doctor</span>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <div class="return-report-block">
+                                            <span class="order-status-name">Received by the Diagnostic Department</span>
+                                            <div class="report-comment">
+                                                <div class="report-title">Report:</div>
+                                                <div class="report-text">
+                                                    The diagnostics department indicated a breakdown on the client's
+                                                    side.
+                                                    <a href="/view/info/contact.html">Contact us</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <div class="return-payment-method">
+                                            <span class="order-status-name">Method of return payment</span>
+                                            <div class="return-payment-method_list">
+                                                <ul>
+                                                    <li>Visa ****9879</li>
+                                                </ul>
+                                                <button>Change</button>
+                                            </div>
+                                        </div>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <span class="order-status-name">Confirmation & Summary</span>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="accordion-has-children">
+                            <div class="accordion__label order-info-header">
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title order-info-status">Order number: </div>
+                                    <div class="order-info-id order-info-returns-id">456475112323234</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Order date</div>
+                                    <div class="order-info-date">02/06/2021</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Shipping address: </div>
+                                    <div class="order-info-address">-</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Payment Method: </div>
+                                    <div class="order-info-payment-method">Visa ****9879</div>
+                                </div>
+                                <div class="order-info-col">
+                                    <div class="order-info-col-title">Status: </div>
+                                    <div class="order-info-returns-status">Accepted by delivery</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion__list order-info-expansion returns-item-detail">
+                                <ul class="order-status-list">
+                                    <li class="order-status" data-status="done">
+                                        <div class="items-for-returns">
+                                            <span class="order-status-name">Items for return</span>
+                                            <ul>
+                                                <li>
+                                                    <div class="order-info-col">
+                                                        <div class="order-info-image-block">
+                                                            <img src="../../img/common/order-info-img.png"
+                                                                alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                                        </div>
+                                                    </div>
+                                                    <div class="order-info-col">
+                                                        <h3 class="order-product-title">GDB03562 TRW ABS BREAKING SYSTEM
+                                                        </h3>
+                                                        <div class="row">
+                                                            <div class="order-info-quantity">Quantity: <span>1</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="order-status-process">Done</span>
+                                    </li>
+                                    <li class="order-status" data-status="done">
+                                        <span class="order-status-name">Accepted by delivery</span>
+                                        <span class="order-status-process">Done</span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <span class="order-status-name">Delivered to Equipment doctor</span>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <div class="return-report-block">
+                                            <span class="order-status-name">Received by the Diagnostic Department</span>
+                                            <div class="report-comment">
+                                                <div class="report-title">Report:</div>
+                                                <div class="report-text">
+                                                    The diagnostics department indicated a breakdown on the client's
+                                                    side.
+                                                    <a href="/view/info/contact.html">Contact us</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <div class="return-payment-method">
+                                            <span class="order-status-name">Method of return payment</span>
+                                            <div class="return-payment-method_list">
+                                                <ul>
+                                                    <li>Visa ****9879</li>
+                                                </ul>
+                                                <button>Change</button>
+                                            </div>
+                                        </div>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                    <li class="order-status" data-status="next">
+                                        <span class="order-status-name">Confirmation & Summary</span>
+                                        <span class="order-status-process"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
     </div>
+</div>
 
-    <div class="menu-row">
-<div class="left-col">
-    <nav class="col-menu">
-      <ul>
-        <li class="show">
-          <div>
-            Service and maintenance
-          </div>
-        </li>
-        <li>
-          <div>
-            Engine. engine mouting
-            and equipment
-          </div>
-        </li>
-        <li>
-          <div>
-            Electric systems and
-            instruments
-          </div>
-        </li>
-        <li>
-          <div>
-            Brakes
-          </div>
-        </li>
-        <li>
-          <div>
-            Frame, springs, shocks
-            and wheels
-          </div>
-        </li>
-        <li>
-          <div>
-            Axles,Suspensions
-            and steeting
-          </div>
-        </li>
-        <li>
-          <div>
-            Body, can and interior
-          </div>
-        </li>
-        <li>
-          <div>
-            Miscellaneous
-          </div>
-        </li>
-        <li>
-          <div>
-            Tires
-          </div>
-        </li>
-        <li>
-          <div>
-            After Treatment
-          </div>
-        </li>
-        <li>
-          <div>
-            APU
-          </div>
-        </li>
-        <li>
-          <div>
-            Trallers
-          </div>
-        </li>
-        <li>
-          <div>
-            Shop supply
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </div>
+<!-- Start returns modal window -->
 
-  <div class="content">
-    <div class="tab-content tab-show">
-      <div class="col3 menu__grid-item">
-        <a href="../../view/product/single-category.html">
-          Parts for fastening, spacing,
-          locking and support
-        </a>
-        <ul class="category-navbar_menu__child category-page_menu__child">
-          <li><a href="#">Pin,unthreaded bolt, rivet, nail <span>49</span></a></li>
-          <li><a href="#">Screw <span>62</span></a></li>
-          <li><a href="#">Nut <span>1549</span></a></li>
-          <li><a href="#">Spacing and locking parts <span>320</span></a></li>
-          <li><a href="#">Supporting and clamping parts <span>70</span></a></li>
-          <li><a href="#">Other fasteners <span>27</span></a></li>
-          <li><a href="#">Pin,unthreaded bolt, rivet, nail <span>49</span></a></li>
-          <li><a href="#">Screw <span>62</span></a></li>
-          <li><a href="#">Nut <span>1549</span></a></li>
-          <li><a href="#">Spacing and locking parts <span>320</span></a></li>
-          <li><a href="#">Supporting and clamping parts <span>70</span></a></li>
-          <li><a href="#">Other fasteners <span>27</span></a></li>
-        </ul>
-        <button class="show-more category-show-more">Show more</button>
-      </div>
+<div class="pop-up-wrap returns-pop-up">
+    <div class="container">
+        <div class="row row-wrap">
+            <div class="left-col"></div>
+            <div class="content">
+                <form class="account-container modal-returns">
+                    <div class="account-container-header">
+                        <h1>Select items or orders which need to return</h1>
 
-      <div class="col3 menu__grid-item">
-        <a href="#">
-          Parts for transm, transfer,
-          steering, springing,damping
-        </a>
-        <ul class="category-navbar_menu__child category-page_menu__child">
-          <li><a href="#">Bar, lever, joint,handle <span>49</span></a></li>
-          <li><a href="#">Belt, cable, lifting eye <span>62</span></a></li>
-          <li><a href="#">Nut <span>1549</span></a></li>
-          <li><a href="#">Parts for springing, damping, movement
-              limitation <span>320</span></a></li>
-        </ul>
-        <button class="show-more category-show-more">Show more</button>
-      </div>
+                        <div class="return-steps">
+                            Step <div class="returnt-current-step" data-step="1">1</div> / <div
+                                class="return-all-steps">4</div>
+                        </div>
+                    </div>
 
-      <div class="col3 menu__grid-item">
-        <a href="#">
-          Parts for rotary
-          movements
-        </a>
-        <ul class="category-navbar_menu__child category-page_menu__child">
-          <li><a href="#">Bearing <span>49</span></a></li>
-          <li><a href="#">Key, shaft <span>62</span></a></li>
-          <li><a href="#">Parts for lubrication <span>1549</span></a></li>
-        </ul>
-        <button class="show-more category-show-more">Show more</button>
-      </div>
+                    <div class="returns-form-step">
+                        <div class="account-orders-table account-rerurns-table">
+                            <ul>
+                                <li>
+                                    <div class="order-returs-header">
+                                        <input type="checkbox" id="order-id-456475112323234" name="order-id-456475112323234"
+                                            value="Order number: 456475112323234">
+                                        <label for="order-id-456475112323234">
+                                            Order number: <b>456475112323234</b>
+                                        </label>
+                                    </div>
+                                    <ul class="returs-order-list">
+                                        <li>
+                                            <input type="checkbox" id="product-id-4" name="product-id-4"
+                                                value="GDB03562 TRW ABS BREAKING SYSTEM">
+                                            <label for="product-id-4">
+                                                <div class="order-info-col">
+                                                    <div class="order-info-image-block">
+                                                        <img src="../../img/common/order-info-img.png"
+                                                            alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                                    </div>
+                                                </div>
+                                                <div class="order-info-col">
+                                                    <h3 class="order-product-title">GDB03562 TRW ABS BREAKING SYSTEM</h3>
+                                                    <div class="row">
+                                                        <div class="order-info-price price">$5,725.00</div>
+                                                        <div class="order-info-quantity">Quantity: <span>1</span></div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+    
+                                        <li>
+                                            <input type="checkbox" id="product-id-5" name="product-id-5"
+                                                value="GDB03562 TRW ABS BREAKING SYSTEM">
+                                            <label for="product-id-5">
+                                                <div class="order-info-col">
+                                                    <div class="order-info-image-block">
+                                                        <img src="../../img/common/order-info-img.png"
+                                                            alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                                    </div>
+                                                </div>
+                                                <div class="order-info-col">
+                                                    <h3 class="order-product-title">GDB03562 TRW ABS BREAKING SYSTEM</h3>
+                                                    <div class="row">
+                                                        <div class="order-info-price price">$5,725.00</div>
+                                                        <div class="order-info-quantity">Quantity: <span>1</span></div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+    
+                                        <li>
+                                            <input type="checkbox" id="product-id-6" name="product-id-6"
+                                                value="GDB03562 TRW ABS BREAKING SYSTEM">
+                                            <label for="product-id-6">
+                                                <div class="order-info-col">
+                                                    <div class="order-info-image-block">
+                                                        <img src="../../img/common/order-info-img.png"
+                                                            alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                                    </div>
+                                                </div>
+                                                <div class="order-info-col">
+                                                    <h3 class="order-product-title">GDB03562 TRW ABS BREAKING SYSTEM</h3>
+                                                    <div class="row">
+                                                        <div class="order-info-price price">$5,725.00</div>
+                                                        <div class="order-info-quantity">Quantity: <span>1</span></div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </li>
+    
+                                <li>
+                                    <div class="order-returs-header">
+                                        <input type="checkbox" id="order-id-45647511232323" name="order-id-45647511232323"
+                                            value="Order number: 45647511232323">
+                                        <label for="order-id-45647511232323">
+                                            Order number: <b>45647511232323</b>
+                                        </label>
+                                    </div>
+                                    <ul class="returs-order-list">
+                                        <li>
+                                            <input type="checkbox" id="product-id-7" name="product-id-7"
+                                                value="GDB03562 TRW ABS BREAKING SYSTEM">
+                                            <label for="product-id-7">
+                                                <div class="order-info-col">
+                                                    <div class="order-info-image-block">
+                                                        <img src="../../img/common/order-info-img.png"
+                                                            alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                                    </div>
+                                                </div>
+                                                <div class="order-info-col">
+                                                    <h3 class="order-product-title">GDB03562 TRW ABS BREAKING SYSTEM</h3>
+                                                    <div class="row">
+                                                        <div class="order-info-price price">$5,725.00</div>
+                                                        <div class="order-info-quantity">Quantity: <span>1</span></div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </li>
+    
+                                <li>
+                                    <div class="order-returs-header">
+                                        <input type="checkbox" id="order-id-4564751123232" name="order-id-4564751123232"
+                                            value="Order number: 4564751123232">
+                                        <label for="order-id-4564751123232">
+                                            Order number: <b>4564751123232</b>
+                                        </label>
+                                    </div>
+                                    <ul class="returs-order-list">
+                                        <li>
+                                            <input type="checkbox" id="product-id-8" name="product-id-8"
+                                                value="GDB03562 TRW ABS BREAKING SYSTEM">
+                                            <label for="product-id-8">
+                                                <div class="order-info-col">
+                                                    <div class="order-info-image-block">
+                                                        <img src="../../img/common/order-info-img.png"
+                                                            alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                                    </div>
+                                                </div>
+                                                <div class="order-info-col">
+                                                    <h3 class="order-product-title">GDB03562 TRW ABS BREAKING SYSTEM</h3>
+                                                    <div class="row">
+                                                        <div class="order-info-price price">$5,725.00</div>
+                                                        <div class="order-info-quantity">Quantity: <span>1</span></div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+    
+                                        <li>
+                                            <input type="checkbox" id="product-id-9" name="product-id-9"
+                                                value="GDB03562 TRW ABS BREAKING SYSTEM">
+                                            <label for="product-id-9">
+                                                <div class="order-info-col">
+                                                    <div class="order-info-image-block">
+                                                        <img src="../../img/common/order-info-img.png"
+                                                            alt="GDB03562 TRW ABS BREAKING SYSTEM">
+                                                    </div>
+                                                </div>
+                                                <div class="order-info-col">
+                                                    <h3 class="order-product-title">GDB03562 TRW ABS BREAKING SYSTEM</h3>
+                                                    <div class="row">
+                                                        <div class="order-info-price price">$5,725.00</div>
+                                                        <div class="order-info-quantity">Quantity: <span>1</span></div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-      <div class="col3 menu__grid-item">
-        <a href="#">
-          Parts for transportation and
-          storage of liquids and gases
-        </a>
-        <ul class="category-navbar_menu__child category-page_menu__child">
-          <li><a href="#">Tube, tube part, hose <span>49</span></a></li>
-        </ul>
-        <button class="show-more category-show-more">Show more</button>
-      </div>
+                    <div class="returns-form-step">
+                       <div class="returns-form-group">
+                           <div class="returns-form-title">
+                                <span>1.</span> Returned items
+                           </div>
+                           <div class="returns-form-item-list">
+                               <ul>
+                                   <li>
+                                        <div class="order-info-col">
+                                            <div class="order-info-col-title order-info-status">Order number: </div>
+                                            <div class="order-info-id order-info-returns-id">456475112323234</div>
+                                        </div>
+                                        <div class="order-info-col">
+                                            <div class="order-info-col-title">Order date</div>
+                                            <div class="order-info-date">02/06/2021</div>
+                                        </div>
+                                        <button>Change</button>
+                                   </li>
+                               </ul>
+                           </div>
+                       </div> 
 
-      <div class="col3 menu__grid-item">
-        <a href="#">
-          Parts for sealing, protection
-          and marking
-        </a>
-        <ul class="category-navbar_menu__child category-page_menu__child">
-          <li><a href="#">General <span>49</span></a></li>
-          <li><a href="#">Parts for sealing and protection <span>62</span></a></li>
-          <li><a href="#">Plate, marketing washer, indicator, scales <span>1549</span></a></li>
-        </ul>
-        <button class="show-more category-show-more">Show more</button>
-      </div>
+                       <div class="returns-form-group">
+                            <div class="returns-form-title">
+                                <span>2.</span> Reason for return
+                            </div>
+                            <label>Specify Reason for Return</label>
+                            <textarea></textarea>
+                            <div class="reason-text">
+                                <p></p>
+                                <button>Change</button>
+                            </div>
+                        </div>
 
-      <div class="col3 menu__grid-item">
-        <a href="#">
-          Electrical standard
-          parts
-        </a>
-        <ul class="category-navbar_menu__child category-page_menu__child">
-          <li><a href="#">GenCable, connector, cable terminaleral<span>49</span></a></li>
-          <li><a href="#">Parts for electric insulation <span>62</span></a></li>
-          <li><a href="#">Swich, relay, fuse <span>1549</span></a></li>
-          <li><a href="#">Illumination material <span>320</span></a></li>
-        </ul>
-        <button class="show-more category-show-more">Show more</button>
-      </div>
+                        <div class="returns-form-group">
+                            <div class="returns-form-title">
+                                <span>3.</span> Shipping
+                            </div>
 
-      <div class="col3 menu__grid-item">
-        <a href="#">
-          Service and maintenance
-        </a>
-        <ul class="category-navbar_menu__child category-page_menu__child">
-          <li><a href="#">General <span>49</span></a></li>
-          <li><a href="#">Delivery service <span>62</span></a></li>
-          <li><a href="#">Warranty service <span>1549</span></a></li>
-          <li><a href="#">Maintenance service Cars, basic service <span>320</span></a></li>
-          <li><a href="#">Maintenance service Cars, supplement
-              and adjusting <span>70</span></a></li>
-          <li><a href="#">Lube service with oil changes <span>27</span></a></li>
-        </ul>
-        <button class="show-more category-show-more">Show more</button>
-      </div>
+                            <div class="returns-address-block">
+                                <div class="returns-address-block">
+                                    <div class="returns-adress_ico">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <use data-bg="stroke" href="#addresses"></use>
+                                        </svg>     
+                                    </div>
 
-      <div class="col3 menu__grid-item">
-        <a href="#">
-          Vehicle body care, finish
-          and protection
-        </a>
-        <ul class="category-navbar_menu__child category-page_menu__child">
-          <li><a href="#">General <span>49</span></a></li>
-          <li><a href="#">Body washing, and internal cleaning <span>62</span></a></li>
-          <li><a href="#">Rustproofing <span>1549</span></a></li>
-          <li><a href="#">Lubricants <span>320</span></a></li>
-          <li><a href="#">Anti-freeze, concentrated coolant <span>70</span></a></li>
-          <li><a href="#">Brake and hydraulic fluids <span>27</span></a></li>
-        </ul>
-        <button class="show-more category-show-more">Show more</button>
-      </div>
+                                    <div class="returns-address-empty-text">
+                                        Add your address   
+                                    </div>
 
-      <div class="col3 menu__grid-item">
-        <a href="#">
-          Miscellaneous
-        </a>
-        <ul class="category-navbar_menu__child category-page_menu__child">
-          <li><a href="#">General <span>49</span></a></li>
-          <li><a href="#">Safety equipment <span>62</span></a></li>
-          <li><a href="#">Service for broken-down truck <span>1549</span></a></li>
-        </ul>
-        <button class="show-more category-show-more">Show more</button>
-      </div>
+                                    <div class="returns-address">
+                                        40 Wood Ave, Secaucus, NJ 07094, USA
+                                    </div>
+
+                                    <button class="change-returns-address">
+                                        Change
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="return-address-form">
+                                <div class="form-group">
+                                    <label for="returns-street">Street Address</label>
+                                    <input type="text" name="returns-street">
+                                </div>
+                                <div class="form-group">
+                                    <label for="returns-apt">Apt or unit </label>
+                                    <input type="text" name="returns-apt">
+                                </div>
+                                <div class="form-group">
+                                    <label for="returns-city">City</label>
+                                    <input type="text" name="returns-city">
+                                </div>
+                                <div class="form-group">
+                                    <label for="returns-state">State</label>
+                                    <div class="select-list">
+                                        <input class="select-active-item" name="returns-state" value="Alabama">
+                                        <ul>
+                                            <li>Alabama</li>
+                                            <li>Alaska</li>
+                                            <li>Arizona</li>
+                                            <li>Arkansas</li>
+                                            <li>California</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="returns-zip-code">Zip Code</label>
+                                    <input type="text" name="returns-zip-code">
+                                </div>
+                            </div>
+
+                            <div class="returns-adress-list">
+                                <div class="form-group">
+                                    <div class="select-list">
+                                        <input class="select-active-item" name="returns-state" value="40 Wood Ave, Secaucus, NJ 07094, USA">
+                                        <ul>
+                                            <li>40 Wood Ave, Secaucus, NJ 07094, USA</li>
+                                            <li>40 Wood Ave, Secaucus, NJ 07094, USA</li>
+                                            <li>
+                                                <button>+Add new address</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="returns-form-group">
+                            <div class="returns-form-title">
+                                <span>4.</span> Payment method
+                            </div>
+                            <div class="form-group">
+                                <div class="select-list">
+                                    <input class="select-active-item" name="returns-payment" value="Visa  ****9879">
+                                    <ul>
+                                        <li>Visa  ****9879</li>
+                                        <li>Visa  ****9879</li>
+                                        <li>
+                                            <button>+Add new payment method</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p>* Selected automatically. Specified by the user when paying for the goods</p>
+                        </div>
+
+                    </div>
+
+                    <div class="account-container-footer">
+                        <div class="button-group pop-up-button-group">
+                            <button class="cancel-button" data-close="">Cancel</button>
+                            <button class="base-button">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
-  </div>
-</div>
+<!-- End returns modal window -->
+
+
 
 <!-- Start footer -->
 <footer>

@@ -169,6 +169,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (changer) {
       changer.style.setProperty('left', `${checked.offsetLeft}px`);
+      document.querySelector('.slider-pagination').appendChild(changer);
     }
 
     dotsObserver = new MutationObserver(function (mutations) {
@@ -390,35 +391,242 @@ window.addEventListener('DOMContentLoaded', () => {
   --------------------------------------*/
 
   const filterTabs = document.querySelectorAll('.orders-filter-tabs ul li a'),
-        filterItem = document.querySelectorAll('.account-orders-table .accordion__list > li');
+    filterItem = document.querySelectorAll('.account-orders-table .accordion__list > li');
 
-        for (let i = 0; i < filterTabs.length; i++) {
-          filterTabs[i].addEventListener('click', (e) => {
-            e.preventDefault();
-            let tabLocation = filterTabs[i].getAttribute("href").slice(1);
+  for (let i = 0; i < filterTabs.length; i++) {
+    filterTabs[i].addEventListener('click', (e) => {
+      e.preventDefault();
+      let tabLocation = filterTabs[i].getAttribute("href").slice(1);
 
-            filterTabs.forEach(item => {
-              item.parentElement.classList.remove('active');
-            });
+      filterTabs.forEach(item => {
+        item.parentElement.classList.remove('active');
+      });
 
-            filterTabs[i].parentElement.classList.add('active');
+      filterTabs[i].parentElement.classList.add('active');
 
-            if (tabLocation == 'all-orders') {
-              filterItem.forEach(item => {
-                item.classList.add('active');
-              });
-            } else {
-              filterItem.forEach(item => {
-                item.classList.remove('active');
-              });
-            }
+      if (tabLocation == 'all-orders') {
+        filterItem.forEach(item => {
+          item.classList.add('active');
+        });
+      } else {
+        filterItem.forEach(item => {
+          item.classList.remove('active');
+        });
+      }
 
-            const filterItemActive = document.querySelectorAll(`[data-status='${tabLocation}']`);
+      const filterItemActive = document.querySelectorAll(`[data-status='${tabLocation}']`);
 
-            filterItemActive.forEach(item => {
-              item.classList.add('active');
-            });
-          })
+      filterItemActive.forEach(item => {
+        item.classList.add('active');
+      });
+    })
+  }
+
+/*
+    Returns checkbox 
+
+----------------------------------------*/
+
+const mainReturnsCheckbox = document.querySelectorAll('.order-returs-header input[type="checkbox"]'),
+      seconndProductCheckbox = document.querySelectorAll('.returs-order-list li input[type="checkbox"]');
+
+  mainReturnsCheckbox.forEach(input => {
+    input.addEventListener('click', () => {
+     let parentReturnsCheckbox = input.parentElement,
+        parentReturnsSibling = parentReturnsCheckbox.nextElementSibling,
+        childReturnsCheckbox = parentReturnsSibling.querySelectorAll('li input[type="checkbox"]');
+
+      if (input.checked) {
+        childReturnsCheckbox.forEach(childInputs => {
+          childInputs.checked = true;
+        })
+      } else {
+        childReturnsCheckbox.forEach(childInputs => {
+          childInputs.checked = false;
+        })
+      }
+    });
+  });
+
+
+  seconndProductCheckbox.forEach(checkbox => {
+    checkbox.addEventListener('click', () => {
+      let parentReturnsCheckbox = checkbox.parentElement.parentElement,
+          checkboxArray = parentReturnsCheckbox.querySelectorAll('input[type="checkbox"]'),
+          checkboxCheckedArray = parentReturnsCheckbox.querySelectorAll('input[type="checkbox"]:checked'),
+          mainGroupCheckbox = parentReturnsCheckbox.previousElementSibling.querySelector('input[type="checkbox"]');
+
+      if (checkboxArray.length == checkboxCheckedArray.length) {
+        mainGroupCheckbox.checked = true;
+      } else {
+        mainGroupCheckbox.checked = false;
+      }
+
+    });
+  });
+
+
+  /*
+          Empty account page script
+
+  ------------------------------*/
+
+  const pageTitle = document.querySelector('.account-container-header h1'),
+    pageIco = document.querySelector('.accounts-empty-ico'),
+    pageText = document.querySelector('.account-empty-text'),
+    pageButton = document.querySelector('.account-container-header a'),
+    pageLink = window.location.href.toString().split("?url=")[1];
+
+  function changesEmpryContent(url) {
+    if (url == 'order') {
+      pageTitle.innerText = 'Orders';
+      pageText.innerHTML = `This window empty, because<br> you didn’d do any activities`;
+      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use href="#order-empty"></use>
+          </svg>`;
+    } else if (url == 'returns') {
+      pageTitle.innerText = 'Returned order detail';
+      pageText.innerHTML = `This window empty, because<br> you didn’d retun any items`;
+      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use href="#order-empty"></use>
+          </svg>`;
+      pageButton.innerText = 'Return Items';
+
+      pageButton.setAttribute('href', '/view/account/returns.html?url=new-return');
+    } else if (url == 'wallets') {
+      pageTitle.innerText = 'My wallets';
+      pageText.innerHTML = `This window empty, because<br> you didn’d add payment method`;
+      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use href="#order-wallets"></use>
+          </svg>`;
+    } else if (url == 'addresses') {
+      pageTitle.innerText = 'Delivery Addresses';
+      pageText.innerHTML = `This window empty, because<br> you didn’d add address`;
+      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use href="#order-addresses"></use>
+          </svg>`;
+    } else if (url == 'wish-list') {
+      pageTitle.innerText = 'Wish List';
+      pageText.innerHTML = `This window empty, because<br> you didn’d add it`;
+      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use href="#order-wish-list"></use>
+          </svg>`;
+    } else if (url == 'recently-viewed') {
+      pageTitle.innerText = 'Recently Viewed';
+      pageText.innerHTML = `This window empty, because<br> you didn’d view product`;
+      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use href="#order-recently-viewed"></use>
+          </svg>`;
+    } else if (url == 'new-return') {
+      document.querySelector('.pop-up-wrap').classList.add('active');
+    }
+  }
+
+  changesEmpryContent(pageLink);
+
+  /*
+      Account menu 
+
+  ------------------------------------------*/
+
+  const activeLink = document.querySelectorAll('.account-menu ul li ul li a'),
+    pageUrl = window.location.href.toString().split("/account/")[1];
+
+  function changesActiveItem(url) {
+    if (url == 'order.html' || url == 'empty.html?url=order') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/order.html') {
+          item.parentElement.classList.add('show');
         }
+      });
+    } else if (url == 'returns.html' || url == 'empty.html?url=returns') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/empty.html?url=returns') {
+          item.parentElement.classList.add('show');
+        }
+      });
+    } else if (url == 'wallets.html' || url == 'empty.html?url=wallets') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/empty.html?url=wallets') {
+          item.parentElement.classList.add('show');
+        }
+      });
+    } else if (url == 'personal-info.html') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/personal-info.html') {
+          item.parentElement.classList.add('show');
+        }
+      });
+    } else if (url == 'addresses.html' || url == 'empty.html?url=addresses') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/empty.html?url=addresses') {
+          item.parentElement.classList.add('show');
+        }
+      });
+    } else if (url == 'wish-list.html' || url == 'empty.html?url=wish-list') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/empty.html?url=wish-list') {
+          item.parentElement.classList.add('show');
+        }
+      });
+    } else if (url == 'recently-viewed.html' || url == 'empty.html?url=recently-viewed') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/empty.html?url=recently-viewed') {
+          item.parentElement.classList.add('show');
+        }
+      });
+    }
+  }
 
+  changesActiveItem(pageUrl);
+
+
+  /*
+          Add listener for buttons
+
+  ------------------------------*/
+
+  function addedListener() {
+    const quickViewButton = document.querySelectorAll('.button-view'),
+      addFeedbackButton = document.querySelector('.add-feedback'),
+      replyFeedbackButton = document.querySelectorAll('.reply-button button'),
+      returnButton = document.querySelector('.return-button');
+
+    if (addFeedbackButton) {
+      addFeedbackButton.addEventListener('click', () => {
+        openModal('#feedback-pop-up');
+      });
+    }
+
+    if (quickViewButton) {
+      quickViewButton.forEach(button => {
+        button.addEventListener('click', () => {
+          quickView();
+        })
+      });
+    }
+
+    if (replyFeedbackButton) {
+      replyFeedbackButton.forEach(button => {
+        button.addEventListener('click', () => {
+          openModal('#reply-feedback');
+        });
+      })
+    }
+
+    if (returnButton) {
+      returnButton.addEventListener('click', () => {
+        document.querySelector('.pop-up-wrap').classList.add('active');
+      });
+    }
+  }
+
+  addedListener();
 });
