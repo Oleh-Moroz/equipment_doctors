@@ -270,7 +270,11 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   modalCloseBtn.forEach(btn => {
-    btn.addEventListener('click', closeModal);
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      closeModal();
+    });
   });
 
   document.addEventListener('keydown', (e) => {
@@ -586,6 +590,99 @@ const mainReturnsCheckbox = document.querySelectorAll('.order-returs-header inpu
   }
 
   changesActiveItem(pageUrl);
+
+
+  /*
+    Select list 
+
+  ---------------------------------------*/
+
+  const selectList = document.querySelectorAll('.select-list');
+
+  function showSelectDropdown() {
+    selectList.forEach(list => {
+      const selectInput = list.querySelector('input'),
+            selectDropdown = list.querySelector('ul'),
+            selectDropdownItem = selectDropdown.querySelectorAll('li'); 
+
+      selectInput.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        selectDropdown.parentElement.classList.toggle('active');
+        selectDropdown.classList.toggle('show');
+      });
+
+      selectDropdownItem.forEach(item => {
+        item.addEventListener('click', () => {
+          selectInput.value = item.innerText;
+          item.classList.add('active');
+          selectDropdown.classList.toggle('show');
+          selectDropdown.parentElement.classList.toggle('active');
+        });
+      });
+
+      window.addEventListener('click', function (e) {
+        if (!selectDropdown.contains(e.target) && !selectInput.contains(e.target)) {
+            selectDropdown.classList.remove('show');
+            selectDropdown.parentElement.classList.remove('active');
+        }
+      });
+    });
+  }
+
+  showSelectDropdown();
+
+  /*
+        Returns step form
+
+  -----------------------------------*/
+
+  const buttonNext = document.querySelector('button[data-type="next-step"]'),
+        stepText = document.querySelector('.returnt-current-step'),
+        allSteps = document.querySelectorAll('[data-tab-step]'),
+        allStepsText = document.querySelector('.return-all-steps');
+
+  function showSteps(Step, currentStep) {
+
+    let currentTab = [...document.querySelector('[data-tab-step="current"]').children];
+
+    buttonNext.setAttribute('data-step', Step);
+
+    stepText.innerText = Step;
+    stepText.setAttribute('data-step', Step);
+
+    allSteps[+currentStep - 1].setAttribute('data-tab-step', 'prev');
+    allSteps[+currentStep].setAttribute('data-tab-step', 'current');
+
+    currentTab.forEach(child => {
+      if (child.getAttribute('data-tab-step') === 'current') {
+        child.parentElement.setAttribute('data-tab-step', 'current');
+      }
+    });
+
+  }
+
+  if (buttonNext) {
+    allStepsText.innerText = allSteps.length;
+
+    buttonNext.addEventListener('click', (e) => {
+      let stepNumber = buttonNext.getAttribute('data-step'),
+          nextStep = +stepNumber + 1;
+  
+          if (stepNumber == allSteps.length - 1) {
+            e.preventDefault();
+            showSteps(nextStep, stepNumber);
+  
+            buttonNext.innerText = 'Submit';
+          } else if (stepNumber == allSteps.length) {
+            e.preventSubmit();
+          } else {
+            e.preventDefault();
+            showSteps(nextStep, stepNumber);
+          }
+    });
+  }
+
 
 
   /*

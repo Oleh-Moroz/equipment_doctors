@@ -420,7 +420,7 @@
                         </div>
                     </div>
 
-                    <div class="returns-form-step">
+                    <div class="returns-form-step" data-tab-step="current">
                         <div class="account-orders-table account-rerurns-table">
                             <ul>
                                 <li>
@@ -579,7 +579,7 @@
                         </div>
                     </div>
 
-                    <div class="returns-form-step">
+                    <div class="returns-form-step" data-tab-step="next">
                        <div class="returns-form-group">
                            <div class="returns-form-title">
                                 <span>1.</span> Returned items
@@ -613,32 +613,31 @@
                             </div>
                         </div>
 
-                        <div class="returns-form-group">
+                        <div class="returns-form-group" data-tab-step="next">
                             <div class="returns-form-title">
                                 <span>3.</span> Shipping
                             </div>
 
                             <div class="returns-address-block">
-                                <div class="returns-address-block">
-                                    <div class="returns-adress_ico">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <use data-bg="stroke" href="#addresses"></use>
-                                        </svg>     
-                                    </div>
+                                <div class="returns-adress_ico">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <use data-bg="stroke" href="#addresses"></use>
+                                    </svg>     
+                                </div>
 
+                                <div class="returns-address-text-block">
                                     <div class="returns-address-empty-text">
                                         Add your address   
                                     </div>
-
+    
                                     <div class="returns-address">
                                         40 Wood Ave, Secaucus, NJ 07094, USA
                                     </div>
-
-                                    <button class="change-returns-address">
-                                        Change
-                                    </button>
-
                                 </div>
+
+                                <button class="change-returns-address">
+                                    Change
+                                </button>
                             </div>
 
                             <div class="return-address-form">
@@ -657,7 +656,7 @@
                                 <div class="form-group">
                                     <label for="returns-state">State</label>
                                     <div class="select-list">
-                                        <input class="select-active-item" name="returns-state" value="Alabama">
+                                        <input class="select-active-item" name="returns-state" value="">
                                         <ul>
                                             <li>Alabama</li>
                                             <li>Alaska</li>
@@ -690,23 +689,25 @@
 
                         </div>
 
-                        <div class="returns-form-group">
+                        <div class="returns-form-group" data-tab-step="next">
                             <div class="returns-form-title">
                                 <span>4.</span> Payment method
                             </div>
-                            <div class="form-group">
-                                <div class="select-list">
-                                    <input class="select-active-item" name="returns-payment" value="Visa  ****9879">
-                                    <ul>
-                                        <li>Visa  ****9879</li>
-                                        <li>Visa  ****9879</li>
-                                        <li>
-                                            <button>+Add new payment method</button>
-                                        </li>
-                                    </ul>
+                            <div class="returns-payment-block">
+                                <div class="form-group">
+                                    <div class="select-list">
+                                        <input class="select-active-item" name="returns-payment" value="Visa  ****9879">
+                                        <ul>
+                                            <li>Visa  ****9879</li>
+                                            <li>Visa  ****9879</li>
+                                            <li>
+                                                <button>+Add new payment method</button>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
+                                <p>* Selected automatically. Specified by the user when paying for the goods</p>
                             </div>
-                            <p>* Selected automatically. Specified by the user when paying for the goods</p>
                         </div>
 
                     </div>
@@ -714,7 +715,7 @@
                     <div class="account-container-footer">
                         <div class="button-group pop-up-button-group">
                             <button class="cancel-button" data-close="">Cancel</button>
-                            <button class="base-button">
+                            <button class="base-button" data-type="next-step" data-step="1">
                                 Next
                             </button>
                         </div>
