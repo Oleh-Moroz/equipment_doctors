@@ -13951,50 +13951,6 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-/*
-    Returns checkbox 
-
-----------------------------------------*/
-
-const mainReturnsCheckbox = document.querySelectorAll('.order-returs-header input[type="checkbox"]'),
-      seconndProductCheckbox = document.querySelectorAll('.returs-order-list li input[type="checkbox"]');
-
-  mainReturnsCheckbox.forEach(input => {
-    input.addEventListener('click', () => {
-     let parentReturnsCheckbox = input.parentElement,
-        parentReturnsSibling = parentReturnsCheckbox.nextElementSibling,
-        childReturnsCheckbox = parentReturnsSibling.querySelectorAll('li input[type="checkbox"]');
-
-      if (input.checked) {
-        childReturnsCheckbox.forEach(childInputs => {
-          childInputs.checked = true;
-        })
-      } else {
-        childReturnsCheckbox.forEach(childInputs => {
-          childInputs.checked = false;
-        })
-      }
-    });
-  });
-
-
-  seconndProductCheckbox.forEach(checkbox => {
-    checkbox.addEventListener('click', () => {
-      let parentReturnsCheckbox = checkbox.parentElement.parentElement,
-          checkboxArray = parentReturnsCheckbox.querySelectorAll('input[type="checkbox"]'),
-          checkboxCheckedArray = parentReturnsCheckbox.querySelectorAll('input[type="checkbox"]:checked'),
-          mainGroupCheckbox = parentReturnsCheckbox.previousElementSibling.querySelector('input[type="checkbox"]');
-
-      if (checkboxArray.length == checkboxCheckedArray.length) {
-        mainGroupCheckbox.checked = true;
-      } else {
-        mainGroupCheckbox.checked = false;
-      }
-
-    });
-  });
-
-
   /*
           Empty account page script
 
@@ -14127,8 +14083,8 @@ const mainReturnsCheckbox = document.querySelectorAll('.order-returs-header inpu
   function showSelectDropdown() {
     selectList.forEach(list => {
       const selectInput = list.querySelector('input'),
-            selectDropdown = list.querySelector('ul'),
-            selectDropdownItem = selectDropdown.querySelectorAll('li'); 
+        selectDropdown = list.querySelector('ul'),
+        selectDropdownItem = selectDropdown.querySelectorAll('li');
 
       selectInput.addEventListener('click', (e) => {
         e.preventDefault();
@@ -14148,8 +14104,8 @@ const mainReturnsCheckbox = document.querySelectorAll('.order-returs-header inpu
 
       window.addEventListener('click', function (e) {
         if (!selectDropdown.contains(e.target) && !selectInput.contains(e.target)) {
-            selectDropdown.classList.remove('show');
-            selectDropdown.parentElement.classList.remove('active');
+          selectDropdown.classList.remove('show');
+          selectDropdown.parentElement.classList.remove('active');
         }
       });
     });
@@ -14163,9 +14119,10 @@ const mainReturnsCheckbox = document.querySelectorAll('.order-returs-header inpu
   -----------------------------------*/
 
   const buttonNext = document.querySelector('button[data-type="next-step"]'),
-        stepText = document.querySelector('.returnt-current-step'),
-        allSteps = document.querySelectorAll('[data-tab-step]'),
-        allStepsText = document.querySelector('.return-all-steps');
+    stepText = document.querySelector('.returnt-current-step'),
+    allSteps = document.querySelectorAll('[data-tab-step]'),
+    allStepsText = document.querySelector('.return-all-steps'),
+    canselButton = document.querySelector('.cancel-button');
 
   function showSteps(Step, currentStep) {
 
@@ -14187,28 +14144,160 @@ const mainReturnsCheckbox = document.querySelectorAll('.order-returs-header inpu
 
   }
 
+  let returnsReason = document.querySelector('.returns-form-group textarea'),
+      returnsReasonValue = '',
+      returnsReasonText = document.querySelector('.reason-text'),
+      returnsAddressButton = document.querySelector('.change-returns-address'),
+      returnsAddressesList = document.querySelector('.returns-address-list'),
+      returnsAddressesText = document.querySelector('.returns-address-block');
+  
+  returnsReason.addEventListener('input', () => {
+    returnsReasonValue = returnsReason.value;
+ 
+    if (returnsReasonValue.length > 0) {
+      buttonNext.removeAttribute('disabled');
+    } else {
+      buttonNext.setAttribute('disabled', 'true');
+    }
+
+    return returnsReasonValue;
+  });
+
   if (buttonNext) {
     allStepsText.innerText = allSteps.length;
 
     buttonNext.addEventListener('click', (e) => {
       let stepNumber = buttonNext.getAttribute('data-step'),
-          nextStep = +stepNumber + 1;
-  
-          if (stepNumber == allSteps.length - 1) {
-            e.preventDefault();
-            showSteps(nextStep, stepNumber);
-  
-            buttonNext.innerText = 'Submit';
-          } else if (stepNumber == allSteps.length) {
-            e.preventSubmit();
-          } else {
-            e.preventDefault();
-            showSteps(nextStep, stepNumber);
-          }
+        nextStep = +stepNumber + 1;
+
+      if (returnsReasonValue.length > 0) {
+
+        returnsReason.style.display = 'none';
+        returnsReason.previousElementSibling.style.display = 'none';
+
+        returnsReasonText.style.display = 'flex';
+        
+        returnsReasonText.querySelector('p').innerText = returnsReasonValue;
+        
+        buttonNext.removeAttribute('disabled');
+      } else {
+        buttonNext.setAttribute('disabled', 'true');
+      }
+
+      returnsAddressesText.style.display = 'flex';
+      returnsAddressesList.style.display = 'none';
+      returnsAddressesText.querySelector('.returns-address-text-block .returns-address').innerText = returnsAddressesList.querySelector('input').value;
+
+      if (stepNumber == allSteps.length - 1) {
+        e.preventDefault();
+        showSteps(nextStep, stepNumber);
+
+        buttonNext.innerText = 'Submit';
+      } else if (stepNumber == allSteps.length) {
+        e.preventSubmit();
+      } else {
+        e.preventDefault();
+        showSteps(nextStep, stepNumber);
+      }
+    });
+
+    returnsAddressButton.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (returnsAddressButton.getAttribute('data-listener') == 'change') {
+
+        returnsAddressesList.style.display = 'block';
+        returnsAddressesText.style.display = 'none';
+
+        if (returnsAddressesText.parentElement.nextElementSibling.getAttribute('data-tab-step') == 'current') {
+          returnsAddressesText.parentElement.nextElementSibling.setAttribute('data-tab-step', 'next');
+
+          buttonNext.setAttribute('data-step', +stepText.innerText - 1);
+
+          stepText.innerText = +stepText.innerText - 1;
+          stepText.setAttribute('data-step', stepText.innerText - 1);
+          buttonNext.innerText = 'Next';
+        }
+
+      }
+    });
+
+    canselButton.addEventListener('click', () => {
+      buttonNext.setAttribute('data-step', '1');
+
+      stepText.innerText = '1';
+      stepText.setAttribute('data-step', '1');
+
+      buttonNext.innerText = 'Next';
+
+      allSteps.forEach(step => step.setAttribute('data-tab-step', 'next'))
+
+      allSteps[0].setAttribute('data-tab-step', 'current');
     });
   }
 
+  /*
+    Returns checkbox 
 
+----------------------------------------*/
+
+  const mainReturnsCheckbox = document.querySelectorAll('.order-returs-header input[type="checkbox"]'),
+        seconndProductCheckbox = document.querySelectorAll('.returs-order-list li input[type="checkbox"]');
+
+  mainReturnsCheckbox.forEach(input => {
+    input.addEventListener('click', () => {
+      let parentReturnsCheckbox = input.parentElement,
+        parentReturnsSibling = parentReturnsCheckbox.nextElementSibling,
+        childReturnsCheckbox = parentReturnsSibling.querySelectorAll('li input[type="checkbox"]');
+
+      if (input.checked) {
+        childReturnsCheckbox.forEach(childInputs => {
+          childInputs.checked = true;
+
+          buttonNext.removeAttribute('disabled');
+        })
+      } else {
+        childReturnsCheckbox.forEach(childInputs => {
+          childInputs.checked = false;
+
+          buttonNext.setAttribute('disabled', 'true');
+        })
+      }
+    });
+  });
+
+  seconndProductCheckbox.forEach(checkbox => {
+    checkbox.addEventListener('click', () => {
+      let parentReturnsCheckbox = checkbox.parentElement.parentElement,
+        checkboxArray = parentReturnsCheckbox.querySelectorAll('input[type="checkbox"]'),
+        checkboxCheckedArray = parentReturnsCheckbox.querySelectorAll('input[type="checkbox"]:checked'),
+        mainGroupCheckbox = parentReturnsCheckbox.previousElementSibling.querySelector('input[type="checkbox"]');
+
+
+        let checkboxChecked = [...seconndProductCheckbox].some(checkbox => {
+          if (checkbox.checked) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+
+
+     if (checkboxChecked) {
+        buttonNext.removeAttribute('disabled');
+      } else {
+        buttonNext.setAttribute('disabled', 'true');
+      }
+
+      if (checkboxArray.length == checkboxCheckedArray.length) {
+        mainGroupCheckbox.checked = true;
+      } else {
+        mainGroupCheckbox.checked = false;
+      }
+
+    });
+  });
+  
 
   /*
           Add listener for buttons
@@ -14252,28 +14341,6 @@ const mainReturnsCheckbox = document.querySelectorAll('.order-returs-header inpu
 
   addedListener();
 });
-/*
-  redirect 
-
-  --------------------------*/
-
- /* window.addEventListener('DOMContentLoaded', () => {
-    const oldLink = window.location.href.toString(),
-        pageLink = oldLink.split("build")[1],
-        newLink = `https://oleh-moroz.github.io/equipment_doctors/build${pageLink}`;
-
-    if (oldLink != newLink) {
-        console.log(newLink);
-        window.location.href = newLink;
-    }
-});*/
-
-/*
-    end redirect
-
-    -----------------------------*/
-
-
 const searchInput = document.querySelector('.header-search_input'),
     clearButton = document.querySelector('.clear_search-input'),
     searchDropdown = document.querySelector('.header-search-dropdown'),

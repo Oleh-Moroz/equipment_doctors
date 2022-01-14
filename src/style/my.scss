@@ -4069,7 +4069,8 @@ input:checked ~ label::before {
     }
 }
 
-input[type='submit']:disabled {
+input[type='submit']:disabled,
+button:disabled {
     opacity: .5;
     cursor: default;
 
@@ -5705,6 +5706,7 @@ input.error ~ .error-text {
 
 .returns-form-step {
     max-height: 70vh;
+    min-height: 65vh;
     overflow: hidden;
     overflow-y: auto;
 }
@@ -5769,7 +5771,7 @@ input.error ~ .error-text {
 }
 
 .returns-form-title {
-    width: 100%;
+    width: 90%;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -5965,6 +5967,10 @@ input.error ~ .error-text {
             &:hover {
                 background: #DECCB1;
                 color: #fff;
+
+                button {
+                    color: $white;
+                }
             }
         }
 
@@ -5981,10 +5987,14 @@ input.error ~ .error-text {
     }
 }
 
-.returns-adress-list {
+.returns-address-list {
     width: calc(100% - 16px);
     margin: 0 auto;
     padding: 10px 30px;
+
+    .form-group {
+        margin-top: 0;
+    }
 }
 
 .returns-payment-block {
@@ -6072,6 +6082,9 @@ input.error ~ .error-text {
     display: none;
 }
 
-.reason-text, .returns-address, .return-address-form, .returns-adress-list {
+.reason-text, 
+.returns-address-empty-text, 
+.returns-address-list, 
+.return-address-form {
     display: none;
 }

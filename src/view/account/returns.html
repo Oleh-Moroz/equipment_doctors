@@ -605,8 +605,8 @@
                             <div class="returns-form-title">
                                 <span>2.</span> Reason for return
                             </div>
-                            <label>Specify Reason for Return</label>
-                            <textarea></textarea>
+                            <label for="return-reason">Specify Reason for Return</label>
+                            <textarea name="return-reason"></textarea>
                             <div class="reason-text">
                                 <p></p>
                                 <button>Change</button>
@@ -635,8 +635,8 @@
                                     </div>
                                 </div>
 
-                                <button class="change-returns-address">
-                                    Change
+                                <button class="change-returns-address" data-listener="change">
+                                    +Add/change
                                 </button>
                             </div>
 
@@ -672,15 +672,15 @@
                                 </div>
                             </div>
 
-                            <div class="returns-adress-list">
+                            <div class="returns-address-list">
                                 <div class="form-group">
                                     <div class="select-list">
                                         <input class="select-active-item" name="returns-state" value="40 Wood Ave, Secaucus, NJ 07094, USA">
                                         <ul>
                                             <li>40 Wood Ave, Secaucus, NJ 07094, USA</li>
-                                            <li>40 Wood Ave, Secaucus, NJ 07094, USA</li>
+                                            <li>41 Wood Ave, Secaucus, NJ 07094, USA</li>
                                             <li>
-                                                <button>+Add new address</button>
+                                                <button data-listener="add">+Add new address</button>
                                             </li>
                                         </ul>
                                     </div>
@@ -699,9 +699,9 @@
                                         <input class="select-active-item" name="returns-payment" value="Visa  ****9879">
                                         <ul>
                                             <li>Visa  ****9879</li>
-                                            <li>Visa  ****9879</li>
+                                            <li>Visa  ****9877</li>
                                             <li>
-                                                <button>+Add new payment method</button>
+                                                <button data-listener="add">+Add new payment method</button>
                                             </li>
                                         </ul>
                                     </div>
@@ -715,7 +715,7 @@
                     <div class="account-container-footer">
                         <div class="button-group pop-up-button-group">
                             <button class="cancel-button" data-close="">Cancel</button>
-                            <button class="base-button" data-type="next-step" data-step="1">
+                            <button class="base-button" data-type="next-step" data-step="1" disabled="true">
                                 Next
                             </button>
                         </div>

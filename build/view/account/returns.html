@@ -20,12 +20,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap&v=0f7ca10e869566916083eacffda2d36f"
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css?v=0f7ca10e869566916083eacffda2d36f" />
-    <link href="../../css/main.min.css?v=0f7ca10e869566916083eacffda2d36f" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/86e4fa7ed4.js?v=0f7ca10e869566916083eacffda2d36f" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js?v=0f7ca10e869566916083eacffda2d36f"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link href="../../css/main.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/86e4fa7ed4.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <title>Equipment doctors</title>
 </head>
 <header>
@@ -1586,8 +1586,8 @@
                             <div class="returns-form-title">
                                 <span>2.</span> Reason for return
                             </div>
-                            <label>Specify Reason for Return</label>
-                            <textarea></textarea>
+                            <label for="return-reason">Specify Reason for Return</label>
+                            <textarea name="return-reason"></textarea>
                             <div class="reason-text">
                                 <p></p>
                                 <button>Change</button>
@@ -1616,8 +1616,8 @@
                                     </div>
                                 </div>
 
-                                <button class="change-returns-address">
-                                    Change
+                                <button class="change-returns-address" data-listener="change">
+                                    +Add/change
                                 </button>
                             </div>
 
@@ -1653,15 +1653,15 @@
                                 </div>
                             </div>
 
-                            <div class="returns-adress-list">
+                            <div class="returns-address-list">
                                 <div class="form-group">
                                     <div class="select-list">
                                         <input class="select-active-item" name="returns-state" value="40 Wood Ave, Secaucus, NJ 07094, USA">
                                         <ul>
                                             <li>40 Wood Ave, Secaucus, NJ 07094, USA</li>
-                                            <li>40 Wood Ave, Secaucus, NJ 07094, USA</li>
+                                            <li>41 Wood Ave, Secaucus, NJ 07094, USA</li>
                                             <li>
-                                                <button>+Add new address</button>
+                                                <button data-listener="add">+Add new address</button>
                                             </li>
                                         </ul>
                                     </div>
@@ -1680,9 +1680,9 @@
                                         <input class="select-active-item" name="returns-payment" value="Visa  ****9879">
                                         <ul>
                                             <li>Visa  ****9879</li>
-                                            <li>Visa  ****9879</li>
+                                            <li>Visa  ****9877</li>
                                             <li>
-                                                <button>+Add new payment method</button>
+                                                <button data-listener="add">+Add new payment method</button>
                                             </li>
                                         </ul>
                                     </div>
@@ -1696,7 +1696,7 @@
                     <div class="account-container-footer">
                         <div class="button-group pop-up-button-group">
                             <button class="cancel-button" data-close="">Cancel</button>
-                            <button class="base-button" data-type="next-step" data-step="1">
+                            <button class="base-button" data-type="next-step" data-step="1" disabled="true">
                                 Next
                             </button>
                         </div>
@@ -1831,7 +1831,7 @@
 
 
 </footer>
-<script src="../../js/main.min.js?v=0f7ca10e869566916083eacffda2d36f"></script>
+<script src="../../js/main.min.js"></script>
 </body>
 
 </html>
