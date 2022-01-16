@@ -624,7 +624,9 @@ window.addEventListener('DOMContentLoaded', () => {
       returnsReasonText = document.querySelector('.reason-text'),
       returnsAddressButton = document.querySelector('.change-returns-address'),
       returnsAddressesList = document.querySelector('.returns-address-list'),
-      returnsAddressesText = document.querySelector('.returns-address-block');
+      returnsAddressesText = document.querySelector('.returns-address-block'),
+      returnsAdressButtonAdd = returnsAddressesList.querySelector('button[data-listener="add"]'),
+      returnsAddressForm = document.querySelector('.return-address-form');
   
   returnsReason.addEventListener('input', () => {
     returnsReasonValue = returnsReason.value;
@@ -674,6 +676,22 @@ window.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         showSteps(nextStep, stepNumber);
       }
+
+      if (returnsAddressForm.getAttribute('data-form-status') == 'show') {
+        let newReturnsAddress = [...returnsAddressForm.querySelectorAll('input')]
+            .map(input => input.value)
+            .reduce((previousValue, currentValue) => `${previousValue}, ${currentValue}`);
+
+        returnsAddressForm.style.display = 'none';
+        returnsAddressForm.removeAttribute('data-form-status');
+
+        let newAddressItem = document.createElement('li');
+            newAddressItem.innerHTML = newReturnsAddress;
+
+            document.querySelector('.returns-address').innerText = newReturnsAddress;
+        returnsAddressesList.querySelector('ul').prepend(newAddressItem);
+        returnsAddressesList.querySelector('input').setAttribute('value', newReturnsAddress);
+      }
     });
 
     returnsAddressButton.addEventListener('click', (e) => {
@@ -696,6 +714,38 @@ window.addEventListener('DOMContentLoaded', () => {
 
       }
     });
+
+    returnsAdressButtonAdd.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      returnsAddressesList.style.display = 'none';
+
+      returnsAddressForm.style.display = 'flex';
+      returnsAddressForm.setAttribute('data-form-status', 'show');
+      buttonNext.setAttribute('disabled', 'true');
+    });
+
+
+      returnsAddressForm.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', () => {
+          if (returnsAddressForm.getAttribute('data-form-status') == 'show') {
+            let inputs = [...returnsAddressForm.querySelectorAll('input')].some(input => {
+              if (input.value.length > 0) {
+                return true;
+              } else {
+                return false;
+              }
+            });
+    
+            if (inputs) {
+                buttonNext.removeAttribute('disabled');
+            } else {
+                buttonNext.setAttribute('disabled', 'true');
+            }
+  
+          }
+        });
+      });
 
     canselButton.addEventListener('click', () => {
       buttonNext.setAttribute('data-step', '1');
