@@ -227,7 +227,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   --------------------------------*/
 
-  const tabs = document.querySelectorAll('.product-tab-row ul li'),
+  const tabs = document.querySelectorAll('.tab-row ul li'),
     tabsContent = document.querySelectorAll('.tab-content');
 
   for (let i = 0; i < tabs.length; i++) {
@@ -514,6 +514,13 @@ window.addEventListener('DOMContentLoaded', () => {
           item.parentElement.classList.add('show');
         }
       });
+
+      if (url == 'empty.html?url=wallets') {
+        let headerPageLink = document.querySelector('.base-button');
+        headerPageLink.innerText = 'Add payment method';
+        headerPageLink.setAttribute('href', '/view/account/wallets.html');
+      }
+          
     } else if (url == 'personal-info.html') {
       activeLink.forEach(item => {
         let hrefAttribute = item.getAttribute('href');
@@ -587,242 +594,38 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   showSelectDropdown();
+});
 
   /*
-        Returns step form
+          Walets page scripts
 
-  -----------------------------------*/
+  ------------------------------------------*/
 
-  const buttonNext = document.querySelector('button[data-type="next-step"]'),
-    stepText = document.querySelector('.returnt-current-step'),
-    allSteps = document.querySelectorAll('[data-tab-step]'),
-    allStepsText = document.querySelector('.return-all-steps'),
-    canselButton = document.querySelector('.cancel-button');
+  document.querySelectorAll('[data-listener="remove-payment"]').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.target.closest('.account-payment-item').remove();
 
-  function showSteps(Step, currentStep) {
+      let emptyWalletsList = document.querySelectorAll('.account-payment-item');
 
-    let currentTab = [...document.querySelector('[data-tab-step="current"]').children];
-
-    buttonNext.setAttribute('data-step', Step);
-
-    stepText.innerText = Step;
-    stepText.setAttribute('data-step', Step);
-
-    allSteps[+currentStep - 1].setAttribute('data-tab-step', 'prev');
-    allSteps[+currentStep].setAttribute('data-tab-step', 'current');
-
-    currentTab.forEach(child => {
-      if (child.getAttribute('data-tab-step') === 'current') {
-        child.parentElement.setAttribute('data-tab-step', 'current');
-      }
-    });
-
-  }
-
-  let returnsReason = document.querySelector('.returns-form-group textarea'),
-      returnsReasonValue = '',
-      returnsReasonText = document.querySelector('.reason-text'),
-      returnsAddressButton = document.querySelector('.change-returns-address'),
-      returnsAddressesList = document.querySelector('.returns-address-list'),
-      returnsAddressesText = document.querySelector('.returns-address-block'),
-      returnsAdressButtonAdd = returnsAddressesList.querySelector('button[data-listener="add"]'),
-      returnsAddressForm = document.querySelector('.return-address-form');
-  
-  returnsReason.addEventListener('input', () => {
-    returnsReasonValue = returnsReason.value;
- 
-    if (returnsReasonValue.length > 0) {
-      buttonNext.removeAttribute('disabled');
-    } else {
-      buttonNext.setAttribute('disabled', 'true');
-    }
-
-    return returnsReasonValue;
-  });
-
-  if (buttonNext) {
-    allStepsText.innerText = allSteps.length;
-
-    buttonNext.addEventListener('click', (e) => {
-      let stepNumber = buttonNext.getAttribute('data-step'),
-        nextStep = +stepNumber + 1;
-
-      if (returnsReasonValue.length > 0) {
-
-        returnsReason.style.display = 'none';
-        returnsReason.previousElementSibling.style.display = 'none';
-
-        returnsReasonText.style.display = 'flex';
-        
-        returnsReasonText.querySelector('p').innerText = returnsReasonValue;
-        
-        buttonNext.removeAttribute('disabled');
-      } else {
-        buttonNext.setAttribute('disabled', 'true');
-      }
-
-      returnsAddressesText.style.display = 'flex';
-      returnsAddressesList.style.display = 'none';
-      returnsAddressesText.querySelector('.returns-address-text-block .returns-address').innerText = returnsAddressesList.querySelector('input').value;
-
-      if (stepNumber == allSteps.length - 1) {
-        e.preventDefault();
-        showSteps(nextStep, stepNumber);
-
-        buttonNext.innerText = 'Submit';
-      } else if (stepNumber == allSteps.length) {
-        e.preventSubmit();
-      } else {
-        e.preventDefault();
-        showSteps(nextStep, stepNumber);
-      }
-
-      if (returnsAddressForm.getAttribute('data-form-status') == 'show') {
-        let newReturnsAddress = [...returnsAddressForm.querySelectorAll('input')]
-            .map(input => input.value)
-            .reduce((previousValue, currentValue) => `${previousValue}, ${currentValue}`);
-
-        returnsAddressForm.style.display = 'none';
-        returnsAddressForm.removeAttribute('data-form-status');
-
-        let newAddressItem = document.createElement('li');
-            newAddressItem.innerHTML = newReturnsAddress;
-
-            document.querySelector('.returns-address').innerText = newReturnsAddress;
-        returnsAddressesList.querySelector('ul').prepend(newAddressItem);
-        returnsAddressesList.querySelector('input').setAttribute('value', newReturnsAddress);
-      }
-    });
-
-    returnsAddressButton.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      if (returnsAddressButton.getAttribute('data-listener') == 'change') {
-
-        returnsAddressesList.style.display = 'block';
-        returnsAddressesText.style.display = 'none';
-
-        if (returnsAddressesText.parentElement.nextElementSibling.getAttribute('data-tab-step') == 'current') {
-          returnsAddressesText.parentElement.nextElementSibling.setAttribute('data-tab-step', 'next');
-
-          buttonNext.setAttribute('data-step', +stepText.innerText - 1);
-
-          stepText.innerText = +stepText.innerText - 1;
-          stepText.setAttribute('data-step', stepText.innerText - 1);
-          buttonNext.innerText = 'Next';
-        }
-
-      }
-    });
-
-    returnsAdressButtonAdd.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      returnsAddressesList.style.display = 'none';
-
-      returnsAddressForm.style.display = 'flex';
-      returnsAddressForm.setAttribute('data-form-status', 'show');
-      buttonNext.setAttribute('disabled', 'true');
-    });
-
-
-      returnsAddressForm.querySelectorAll('input').forEach(input => {
-        input.addEventListener('input', () => {
-          if (returnsAddressForm.getAttribute('data-form-status') == 'show') {
-            let inputs = [...returnsAddressForm.querySelectorAll('input')].some(input => {
-              if (input.value.length > 0) {
-                return true;
-              } else {
-                return false;
-              }
-            });
-    
-            if (inputs) {
-                buttonNext.removeAttribute('disabled');
-            } else {
-                buttonNext.setAttribute('disabled', 'true');
-            }
-  
-          }
-        });
-      });
-
-    canselButton.addEventListener('click', () => {
-      buttonNext.setAttribute('data-step', '1');
-
-      stepText.innerText = '1';
-      stepText.setAttribute('data-step', '1');
-
-      buttonNext.innerText = 'Next';
-
-      allSteps.forEach(step => step.setAttribute('data-tab-step', 'next'))
-
-      allSteps[0].setAttribute('data-tab-step', 'current');
-    });
-  }
-
-  /*
-    Returns checkbox 
-
-----------------------------------------*/
-
-  const mainReturnsCheckbox = document.querySelectorAll('.order-returs-header input[type="checkbox"]'),
-        seconndProductCheckbox = document.querySelectorAll('.returs-order-list li input[type="checkbox"]');
-
-  mainReturnsCheckbox.forEach(input => {
-    input.addEventListener('click', () => {
-      let parentReturnsCheckbox = input.parentElement,
-        parentReturnsSibling = parentReturnsCheckbox.nextElementSibling,
-        childReturnsCheckbox = parentReturnsSibling.querySelectorAll('li input[type="checkbox"]');
-
-      if (input.checked) {
-        childReturnsCheckbox.forEach(childInputs => {
-          childInputs.checked = true;
-
-          buttonNext.removeAttribute('disabled');
-        })
-      } else {
-        childReturnsCheckbox.forEach(childInputs => {
-          childInputs.checked = false;
-
-          buttonNext.setAttribute('disabled', 'true');
-        })
+      if (emptyWalletsList.length == 0) {
+        window.location = '/view/account/empty.html?url=wallets';
       }
     });
   });
 
-  seconndProductCheckbox.forEach(checkbox => {
-    checkbox.addEventListener('click', () => {
-      let parentReturnsCheckbox = checkbox.parentElement.parentElement,
-        checkboxArray = parentReturnsCheckbox.querySelectorAll('input[type="checkbox"]'),
-        checkboxCheckedArray = parentReturnsCheckbox.querySelectorAll('input[type="checkbox"]:checked'),
-        mainGroupCheckbox = parentReturnsCheckbox.previousElementSibling.querySelector('input[type="checkbox"]');
-
-
-        let checkboxChecked = [...seconndProductCheckbox].some(checkbox => {
-          if (checkbox.checked) {
-            return true;
-          } else {
-            return false;
-          }
-        });
-
-
-     if (checkboxChecked) {
-        buttonNext.removeAttribute('disabled');
-      } else {
-        buttonNext.setAttribute('disabled', 'true');
-      }
-
-      if (checkboxArray.length == checkboxCheckedArray.length) {
-        mainGroupCheckbox.checked = true;
-      } else {
-        mainGroupCheckbox.checked = false;
-      }
-
+  document.querySelectorAll('[data-listener="edit-payment"]').forEach(button => {
+    button.addEventListener('click', (e) => {
+      document.querySelector('.account-payment-list').style.display = 'none';
+      document.querySelector('.account-payment-form').style.display = 'block';
     });
   });
-  
+
+  document.querySelector('button[data-listener="add-payment"]').addEventListener('click', () => {
+    document.querySelector('.account-payment-list').style.display = 'none';
+
+    document.querySelector('.account-payment-form').style.display = 'block';
+  });
+
 
   /*
           Add listener for buttons
@@ -865,4 +668,3 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   addedListener();
-});

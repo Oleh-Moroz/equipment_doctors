@@ -5866,3 +5866,279 @@ input.error ~ .error-text {
 .return-address-form {
   display: none;
 }
+
+/* 
+    Wallets page
+
+---------------------------------------*/
+.account-payment-list {
+  min-height: 77vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  box-sizing: border-box;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.account-payment-item {
+  margin: 15px 20px;
+  -ms-flex: 0 0 35.7142857143%;
+      flex: 0 0 35.7142857143%;
+  max-width: 35.7142857143%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: relative;
+}
+.account-payment-item[data-payment-system=master] .payment-item-body {
+  background: url("../img/common/card-master.png") center/cover no-repeat;
+}
+.account-payment-item[data-payment-system=visa] .payment-item-body {
+  background: url("../img/common/card-visa.png") center/cover no-repeat;
+}
+
+.payment-item-header {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.payment-item-header .payment-item-buttons {
+  margin-left: auto;
+}
+.payment-item-header .payment-item-buttons button {
+  background: transparent;
+  padding: 5px;
+  border: none;
+}
+.payment-item-header .payment-main-checkbox {
+  position: absolute;
+  top: 60px;
+  left: 5%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  cursor: pointer;
+}
+.payment-item-header .payment-main-checkbox label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+  display: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  cursor: pointer;
+}
+.payment-item-header .payment-main-checkbox label::before {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  border: none;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  border-radius: 50%;
+  color: #BEA063;
+  margin-right: 10px;
+}
+.payment-item-header .payment-main-checkbox label span {
+  display: none;
+}
+.payment-item-header .payment-main-checkbox input[type=radio]:checked ~ label {
+  display: -ms-flexbox;
+  display: flex;
+}
+.payment-item-header .payment-main-checkbox input[type=radio]:checked ~ label::before {
+  content: "\f00c";
+}
+.payment-item-header .payment-main-checkbox input[type=radio]:checked ~ label span {
+  display: inline-block;
+}
+.payment-item-header .payment-main-checkbox input[type=radio] {
+  display: none;
+}
+
+.payment-item-body {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 16px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.02em;
+  color: #FDFDFD;
+  box-sizing: border-box;
+  padding: 165px 5% 25px;
+}
+.payment-item-body .payment-card-number {
+  margin-bottom: 10px;
+}
+.payment-item-body .payment-card-name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.payment-item-body .payment-card-date {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  color: #fff;
+  margin-left: auto;
+}
+
+.account-payment-form {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 22px 30px;
+  display: none;
+}
+.account-payment-form .tab-row ul {
+  list-style: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  margin-bottom: 1px;
+  background: #F8F8F8;
+  box-sizing: border-box;
+}
+.account-payment-form .tab-row ul li {
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 25px 30px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: #42474C;
+  transition: all 0.4s linear;
+  position: relative;
+}
+.account-payment-form .tab-row ul li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  transition: all 0.4s linear;
+  background: #BEA063;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+}
+.account-payment-form .tab-row ul li.active {
+  color: #BEA063;
+}
+.account-payment-form .tab-row ul li.active::after {
+  width: 100%;
+}
+
+.payment-form-wrap {
+  background: #F8F8F8;
+  box-sizing: border-box;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 22px 30px;
+}
+.payment-form-wrap form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.payment-form-wrap form .form-title {
+  width: 100%;
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 133%;
+  color: #221E1E;
+}
+.payment-form-wrap form .form-group {
+  min-width: 38%;
+  max-width: 38%;
+  margin: 0 20px 25px 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.payment-form-wrap form .form-group.apt-form-group {
+  max-width: 10%;
+  min-width: 10%;
+}
+.payment-form-wrap form .form-group.city-form-group {
+  max-width: 26%;
+  min-width: 26%;
+}
+.payment-form-wrap form .form-group label {
+  width: 100%;
+}
+.payment-form-wrap form .form-group .form-group {
+  max-width: 27%;
+  min-width: 27%;
+}
+.payment-form-wrap form .button-group {
+  width: 100%;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+.payment-form-wrap form .button-group button {
+  width: auto;
+}
+.payment-form-wrap form .button-group button.cancel-button {
+  background: #ccc;
+  border-radius: 6px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-right: 32px;
+  transition: all 0.4s linear;
+}

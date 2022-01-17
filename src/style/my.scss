@@ -6088,3 +6088,280 @@ input.error ~ .error-text {
 .return-address-form {
     display: none;
 }
+
+
+/* 
+    Wallets page
+
+---------------------------------------*/
+
+.account-payment-list {
+    min-height: 77vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.account-payment-item {
+    margin: 15px 20px;
+    flex: 0 0 calc(100% / 2.8); 
+    max-width: calc(100% / 2.8);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+
+    &[data-payment-system="master"] {
+        .payment-item-body {
+            background: url('../img/common/card-master.png') center/cover no-repeat;
+        }
+    }
+
+    &[data-payment-system="visa"] {
+        .payment-item-body {
+            background: url('../img/common/card-visa.png') center/cover no-repeat;
+        }
+    }
+}
+
+.payment-item-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .payment-item-buttons {
+        margin-left: auto;
+        
+        button {
+            background: transparent;
+            padding: 5px;
+            border: none;
+        }
+    }
+
+    .payment-main-checkbox {
+        position: absolute;
+        top: 60px;
+        left: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+
+        label {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 17px; 
+            color: $white;
+            display: none;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                border: none;
+                width: 32px;
+                height: 32px;
+                background: $white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                color: $gold;
+                margin-right: 10px;
+            }
+
+            span {
+                display: none;
+            }
+        }
+
+        input[type="radio"]:checked ~ label {
+            display: flex;
+
+            &::before {
+                content: "\f00c";
+            }
+
+            span {
+                display: inline-block;
+            }
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+    }
+}
+
+.payment-item-body {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 16px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+    color: #FDFDFD;
+    box-sizing: border-box;
+    padding: 165px 5% 25px;
+
+    .payment-card-number {
+        margin-bottom: 10px;
+    }
+
+    .payment-card-name {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $white;
+    }
+
+    .payment-card-date {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        color: $white;
+        margin-left: auto;
+    }
+}
+
+.account-payment-form {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 22px 30px;
+    display: none;
+
+    .tab-row {
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 1px;
+            background: #F8F8F8;
+            box-sizing: border-box;
+
+            li {
+                cursor: pointer;
+                box-sizing: border-box;
+                padding: 25px 30px;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 120%;
+                color: $black;
+                transition: all .4s linear;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 0;
+                    height: 2px;
+                    border-radius: 2px;
+                    transition: all .4s linear;
+                    background: $gold;
+                    position: absolute;
+                    left: 0;
+                    bottom: -1px;
+                }
+
+                &.active {
+                    color: $gold;
+                }
+
+                &.active::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.payment-form-wrap {
+    background: #F8F8F8;
+    box-sizing: border-box;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 22px 30px;
+
+    form {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        .form-title {
+            width: 100%;
+            margin-bottom: 20px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 133%;
+            color: $base-black;
+        }
+
+        .form-group {
+            min-width: 38%;
+            max-width: 38%;
+            margin: 0 20px 25px 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            &.apt-form-group {
+                max-width: 10%;
+                min-width: 10%;
+            }
+
+            &.city-form-group {
+                max-width: 26%;
+                min-width: 26%;
+            }
+
+            label {
+                width: 100%;
+            }
+
+            .form-group {
+                max-width: 27%;
+                min-width: 27%;
+            }
+        }
+
+        .button-group {
+            width: 100%;
+            justify-content: flex-end;
+            
+            button {
+                width: auto;
+            }
+
+            button.cancel-button {
+                background: #ccc;
+                border-radius: 6px;
+                display: inline-flex;
+                margin-right: 32px;
+                transition: all .4s linear;
+            }
+        }
+    }
+}
