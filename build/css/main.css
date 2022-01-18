@@ -3830,14 +3830,15 @@ input:checked ~ label::before {
   -ms-flex-pack: end;
       justify-content: flex-end;
 }
-.pop-up-button-group button.cancel-button {
+
+button.cancel-button {
   background: #CCCCCC;
   border-radius: 6px;
   max-width: 85px;
   margin-right: 32px;
   transition: all 0.4s linear;
 }
-.pop-up-button-group button.cancel-button:hover {
+button.cancel-button:hover {
   background: #a7a6a6;
 }
 
@@ -6027,13 +6028,15 @@ input.error ~ .error-text {
   margin-left: auto;
 }
 
-.account-payment-form {
+.account-payment-form,
+.account-payment-edit-form {
   width: 100%;
   box-sizing: border-box;
   padding: 22px 30px;
   display: none;
 }
-.account-payment-form .tab-row ul {
+.account-payment-form .tab-row ul,
+.account-payment-edit-form .tab-row ul {
   list-style: none;
   display: -ms-flexbox;
   display: flex;
@@ -6045,7 +6048,8 @@ input.error ~ .error-text {
   background: #F8F8F8;
   box-sizing: border-box;
 }
-.account-payment-form .tab-row ul li {
+.account-payment-form .tab-row ul li,
+.account-payment-edit-form .tab-row ul li {
   cursor: pointer;
   box-sizing: border-box;
   padding: 25px 30px;
@@ -6057,7 +6061,8 @@ input.error ~ .error-text {
   transition: all 0.4s linear;
   position: relative;
 }
-.account-payment-form .tab-row ul li::after {
+.account-payment-form .tab-row ul li::after,
+.account-payment-edit-form .tab-row ul li::after {
   content: "";
   display: block;
   width: 0;
@@ -6069,10 +6074,12 @@ input.error ~ .error-text {
   left: 0;
   bottom: -1px;
 }
-.account-payment-form .tab-row ul li.active {
+.account-payment-form .tab-row ul li.active,
+.account-payment-edit-form .tab-row ul li.active {
   color: #BEA063;
 }
-.account-payment-form .tab-row ul li.active::after {
+.account-payment-form .tab-row ul li.active::after,
+.account-payment-edit-form .tab-row ul li.active::after {
   width: 100%;
 }
 
@@ -6134,11 +6141,139 @@ input.error ~ .error-text {
 .payment-form-wrap form .button-group button {
   width: auto;
 }
-.payment-form-wrap form .button-group button.cancel-button {
-  background: #ccc;
-  border-radius: 6px;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  margin-right: 32px;
+
+/*
+    Personal Info Page
+
+------------------------------------------*/
+.account-personal-info-form-wrap {
+  box-sizing: border-box;
+  width: 70%;
+  box-sizing: border-box;
+  padding: 22px 30px;
+  min-height: 79vh;
+}
+.account-personal-info-form-wrap form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  -ms-flex-align: start;
+      align-items: flex-start;
+}
+.account-personal-info-form-wrap form .form-group {
+  margin: 0 3% 25px 0;
+  min-width: 48%;
+  position: relative;
+}
+.account-personal-info-form-wrap form .form-group:nth-child(2) {
+  margin-right: -3%;
+}
+.account-personal-info-form-wrap form .form-group::before {
+  content: "";
+  background: transparent;
+  width: 100%;
+  height: 42px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 5px;
+}
+.account-personal-info-form-wrap form .form-group.active::before {
+  display: none;
+}
+.account-personal-info-form-wrap form .form-group button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  color: #BEA063;
+}
+.account-personal-info-form-wrap form .form-group input {
+  background: #F8F8F8;
+  border: 1px solid #F8F8F8;
+}
+.account-personal-info-form-wrap form .form-group.active input {
+  background: #fff;
+}
+
+/*
+    Rcently viewed page
+
+-----------------------------------------*/
+.account-no-bg {
+  background: transparent;
+}
+.account-no-bg .account-container-header {
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+/*
+    Wish-list page
+
+---------------------------------------------------*/
+.wish-list-button {
+  text-align: center;
+}
+
+.wish-list-form-wrap {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 25px;
+  box-sizing: border-box;
+  padding: 25px 30px;
+  display: none;
+}
+.wish-list-form-wrap .wish-list-form {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.wish-list-form-wrap .wish-list-form .form-group {
+  margin: 0 auto 0 0;
+  min-width: 45%;
+}
+.wish-list-form-wrap .wish-list-form .wish-list-button-group button.cancel-button {
+  margin-right: 15px;
+}
+
+.wish-list-product-checkbox label {
+  content: "\f00c";
+  border: 2px solid #42474c;
+  width: 14px;
+  height: 14px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 3px;
   transition: all 0.4s linear;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #fff;
+  font-size: 10px;
+  cursor: pointer;
+}
+.wish-list-product-checkbox input:checked ~ label {
+  border: 2px solid #BEA063;
+  background: #BEA063;
+}
+.wish-list-product-checkbox input {
+  display: none;
+}
+.wish-list-product-checkbox label:before {
+  display: none;
 }

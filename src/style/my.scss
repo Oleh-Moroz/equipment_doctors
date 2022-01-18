@@ -3943,19 +3943,18 @@ input:checked ~ label::before {
 
 .pop-up-button-group {
     justify-content: flex-end;
+}
 
-    button.cancel-button {
-        background: #CCCCCC;
-        border-radius: 6px;
-        max-width: 85px;
-        margin-right: 32px;
-        transition: all .4s linear;
+button.cancel-button {
+    background: #CCCCCC;
+    border-radius: 6px;
+    max-width: 85px;
+    margin-right: 32px;
+    transition: all .4s linear;
 
-        &:hover {
-            background: #a7a6a6;
-        }
+    &:hover {
+        background: #a7a6a6;
     }
-    
 }
 
 .pop-up-quick-view {
@@ -6244,7 +6243,8 @@ input.error ~ .error-text {
     }
 }
 
-.account-payment-form {
+.account-payment-form, 
+.account-payment-edit-form {
     width: 100%;
     box-sizing: border-box;
     padding: 22px 30px;
@@ -6354,14 +6354,164 @@ input.error ~ .error-text {
             button {
                 width: auto;
             }
+        }
+    }
+}
 
-            button.cancel-button {
-                background: #ccc;
-                border-radius: 6px;
-                display: inline-flex;
-                margin-right: 32px;
-                transition: all .4s linear;
+
+/*
+    Personal Info Page
+
+------------------------------------------*/
+
+.account-personal-info-form-wrap {
+    box-sizing: border-box;
+    width: 70%;
+    box-sizing: border-box;
+    padding: 22px 30px;
+    min-height: 79vh;
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .form-group {
+            margin: 0 3% 25px 0;
+            min-width: 48%;
+            position: relative;
+
+            &:nth-child(2) {
+                margin-right: -3%;
+            }
+
+            &::before {
+                content: "";
+                background: transparent;
+                width: 100%;
+                height: 42px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                border-radius: 5px;
+            }
+
+            &.active::before {
+                display: none;
+            }
+
+            button {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                background: transparent;
+                color: $gold;
+            }
+            
+            input {
+                background: #F8F8F8;
+                border: 1px solid #F8F8F8;
+            }
+
+            &.active {
+                input{
+                    background: $white;
+                }
             }
         }
     }
+}
+
+
+/*
+    Rcently viewed page
+
+-----------------------------------------*/
+
+.account-no-bg {
+    background: transparent;
+
+    .account-container-header {
+        background: $white;
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
+}
+
+
+/*
+    Wish-list page
+
+---------------------------------------------------*/
+
+.wish-list-button {
+    text-align: center;
+}
+
+.wish-list-form-wrap {
+    width: 100%;
+    display: flex; 
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 25px;
+    box-sizing: border-box;
+    padding: 25px 30px;
+    display: none;
+
+    .wish-list-form {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .form-group {
+            margin: 0 auto 0 0;
+            min-width: 45%;
+        }
+
+        .wish-list-button-group {
+            button {
+                &.cancel-button {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+
+.wish-list-product-checkbox {
+    label {
+        content: "\f00c";
+        border: 2px solid #42474c;
+        width: 14px;
+        height: 14px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        border-radius: 3px;
+        transition: all .4s linear;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: #fff;
+        font-size: 10px;
+        cursor: pointer;
+    }
+
+    input:checked~label {
+        border: 2px solid $gold;
+        background: $gold;
+    }
+
+    input {
+        display: none;
+    }
+
+    label:before {
+        display: none;
+    }
+
 }

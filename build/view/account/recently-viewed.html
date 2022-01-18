@@ -991,52 +991,252 @@
     </div>
 
     <div class="content">
-        <div class="account-container">
+        <div class="account-container account-no-bg">
             <div class="account-container-header">
-                <h1>My information</h1>
+                <h1>Recently Viewed</h1>
             </div>  
 
-            <div class="account-personal-info-form-wrap">
-                <form>
-                    <div class="form-group">
-                        <label for="personal-first-name">First name</label>
-                        <input type="text" name="personal-first-name" value="John">
-                        <button data-listener="change">Change</button>
+            <div class="row row-wrap">
+                <div class="product__item">
+                    <div class="product-icon__row">
+                        <div class="product-icon__row-buttons">
+                            <button type="button" data-toggle="tooltip" title=""
+                                onclick="wishlist.add('id');$(this).addClass('read-heart');" tabindex="0"
+                                data-original-title="Add to wishlist">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
+                    <div class="image">
+                        <a href="../../view/product/product.html">
+                            <img src="../../img/content/product-item-1.png" loading="lazy"
+                                alt="Breking system for volvo l67" title="Breking system for volvo l67"
+                                class="img-responsive">
+                        </a>
+                    </div>
+                    <div class="caption">
+                        <span class="product-item_category">
+                            Breking system
+                        </span>
+                        <h4>
+                            <a href="../../view/product/product.html" title="Breking system for volvo l67">Breking system for volvo l6</a>
+                        </h4>
+                        <div class="caption-row">
+                            <div class="pice-wrap">
+                                <p class="price">
+                                    $1,725.00
+                                </p>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <span>4,6</span>
+                                <a href="#">Reviews</a>
+                            </div>
+                        </div>
+                        <div class="button-group">
+                            <button class="button-view" type="button" onclick="quick.view('#id');">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                    <use href="#quick-view-icon"></use>
+                                </svg>
+                                Quick view
+                            </button>
+                            <button type="button" onclick="cart.add('#id');">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                    <use href="#cart-icon"></use>
+                                </svg>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="payment-last-name">Last name</label>
-                        <input type="text" name="payment-last-name" value="Dou">
-                        <button data-listener="change">Change</button>
-                    </div>
+                <div class="product__item">
+                    <div class="product-icon__row">
+                        <span class="product-label product-label__sale">SALE</span>
 
-                    <div class="form-group">
-                        <label for="personal-email">Email address</label>
-                        <input type="email" name="personal-email" value="Email_example@example.com">
-                        <button data-listener="change">Change</button>
+                        <div class="product-icon__row-buttons">
+                            <button type="button" data-toggle="tooltip" title=""
+                                onclick="wishlist.add('id');$(this).addClass('read-heart');" tabindex="0"
+                                data-original-title="Add to wishlist">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
+                    <div class="image">
+                        <a href="#">
+                            <img src="../../img/content/product-item-1.png" loading="lazy"
+                                alt="Breking system for volvo l67" title="Breking system for volvo l67"
+                                class="img-responsive">
+                        </a>
+                    </div>
+                    <div class="caption">
+                        <span class="product-item_category">
+                            Breking system
+                        </span>
+                        <h4>
+                            <a href="#" title="Breking system for volvo l67">Breking system for volvo l6</a>
+                        </h4>
+                        <div class="caption-row">
+                            <div class="pice-wrap">
+                                <p class="price">
+                                    $1,725.00
+                                </p>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <span>4,6</span>
+                                <a href="#">Reviews</a>
+                            </div>
+                        </div>
+                        <div class="button-group">
+                            <button class="button-view" type="button" onclick="quick.view('#id');">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                    <use href="#quick-view-icon"></use>
+                                </svg>
+                                Quick view
+                            </button>
+                            <button type="button" onclick="cart.add('#id');">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                    <use href="#cart-icon"></use>
+                                </svg>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="form-group">
-                      <label for="personal-phone">Phone number</label>
-                      <input type="email" name="personal-phone" value="+103040340340">
-                      <button data-listener="change">Change</button>
+                <div class="product__item">
+                    <div class="product-icon__row">
+                        <div class="product-icon__row-buttons">
+                            <button type="button" data-toggle="tooltip" title=""
+                                onclick="wishlist.add('id');$(this).addClass('read-heart');" tabindex="0"
+                                data-original-title="Add to wishlist">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
+                    <div class="image">
+                        <a href="#">
+                            <img src="../../img/content/product-item-1.png" loading="lazy"
+                                alt="Breking system for volvo l67" title="Breking system for volvo l67"
+                                class="img-responsive">
+                        </a>
+                    </div>
+                    <div class="caption">
+                        <span class="product-item_category">
+                            Breking system
+                        </span>
+                        <h4>
+                            <a href="#" title="Breking system for volvo l67">Breking system for volvo l6</a>
+                        </h4>
+                        <div class="caption-row">
+                            <div class="pice-wrap">
+                                <p class="price">
+                                    $1,725.00
+                                </p>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <span>4,6</span>
+                                <a href="#">Reviews</a>
+                            </div>
+                        </div>
+                        <div class="button-group">
+                            <button class="button-view" type="button" onclick="quick.view('#id');">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                    <use href="#quick-view-icon"></use>
+                                </svg>
+                                Quick view
+                            </button>
+                            <button type="button" onclick="cart.add('#id');">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                    <use href="#cart-icon"></use>
+                                </svg>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="form-group">
-                      <label for="personal-password">Password</label>
-                      <input type="password" name="personal-password" value="1234777">
-                      <button data-listener="change">Change</button>
+                <div class="product__item">
+                    <div class="product-icon__row">
+                        <div class="product-icon__row-buttons">
+                            <button type="button" data-toggle="tooltip" title=""
+                                onclick="wishlist.add('id');$(this).addClass('read-heart');" tabindex="0"
+                                data-original-title="Add to wishlist">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
-                </form>
+                    <div class="image">
+                        <a href="#">
+                            <img src="../../img/content/product-item-1.png" loading="lazy"
+                                alt="Breking system for volvo l67" title="Breking system for volvo l67"
+                                class="img-responsive">
+                        </a>
+                    </div>
+                    <div class="caption">
+                        <span class="product-item_category">
+                            Breking system
+                        </span>
+                        <h4>
+                            <a href="#" title="Breking system for volvo l67">Breking system for volvo l6</a>
+                        </h4>
+                        <div class="caption-row">
+                            <div class="pice-wrap">
+                                <p class="price">
+                                    $1,725.00
+                                </p>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <span>4,6</span>
+                                <a href="#">Reviews</a>
+                            </div>
+                        </div>
+                        <div class="button-group">
+                            <button class="button-view" type="button" onclick="quick.view('#id');">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                    <use href="#quick-view-icon"></use>
+                                </svg>
+                                Quick view
+                            </button>
+                            <button type="button" onclick="cart.add('#id');">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                    <use href="#cart-icon"></use>
+                                </svg>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+                <!-- Start pagination -->
+                <div class="paginaton-row">
+	<nav class="navigation pagination" role="navigation">
+        <div class="nav-links">
+            <a class="prev page-numbers" href="#">
+                Previous
+            </a>
+            <span aria-current="page" class="page-numbers current" >1</span>
+            <a class="page-numbers" href="#">2</a>
+            <a class="page-numbers" href="#">3</a>
+            <span class="page-numbers dots">…</span>
+            <a class="page-numbers" href="#">31</a>
+            <a class="next page-numbers" href="#">
+                Next
+            </a>
+        </div>
+	</nav>    
+</div>
+                <!-- End pagination -->
         </div>
     </div>
   </div>
 </div>
 
-
-
-
+    
 <!-- Start footer -->
 <footer>
     <div class="container">

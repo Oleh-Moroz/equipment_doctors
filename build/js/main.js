@@ -13952,135 +13952,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   /*
-          Empty account page script
-
-  ------------------------------*/
-
-  const pageTitle = document.querySelector('.account-container-header h1'),
-    pageIco = document.querySelector('.accounts-empty-ico'),
-    pageText = document.querySelector('.account-empty-text'),
-    pageButton = document.querySelector('.account-container-header a'),
-    pageLink = window.location.href.toString().split("?url=")[1];
-
-  function changesEmpryContent(url) {
-    if (url == 'order') {
-      pageTitle.innerText = 'Orders';
-      pageText.innerHTML = `This window empty, because<br> you didn’d do any activities`;
-      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use href="#order-empty"></use>
-          </svg>`;
-    } else if (url == 'returns') {
-      pageTitle.innerText = 'Returned order detail';
-      pageText.innerHTML = `This window empty, because<br> you didn’d retun any items`;
-      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use href="#order-empty"></use>
-          </svg>`;
-      pageButton.innerText = 'Return Items';
-
-      pageButton.setAttribute('href', '/view/account/returns.html?url=new-return');
-    } else if (url == 'wallets') {
-      pageTitle.innerText = 'My wallets';
-      pageText.innerHTML = `This window empty, because<br> you didn’d add payment method`;
-      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use href="#order-wallets"></use>
-          </svg>`;
-    } else if (url == 'addresses') {
-      pageTitle.innerText = 'Delivery Addresses';
-      pageText.innerHTML = `This window empty, because<br> you didn’d add address`;
-      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use href="#order-addresses"></use>
-          </svg>`;
-    } else if (url == 'wish-list') {
-      pageTitle.innerText = 'Wish List';
-      pageText.innerHTML = `This window empty, because<br> you didn’d add it`;
-      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use href="#order-wish-list"></use>
-          </svg>`;
-    } else if (url == 'recently-viewed') {
-      pageTitle.innerText = 'Recently Viewed';
-      pageText.innerHTML = `This window empty, because<br> you didn’d view product`;
-      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use href="#order-recently-viewed"></use>
-          </svg>`;
-    } else if (url == 'new-return') {
-      document.querySelector('.pop-up-wrap').classList.add('active');
-    }
-  }
-
-  changesEmpryContent(pageLink);
-
-  /*
-      Account menu 
-
-  ------------------------------------------*/
-
-  const activeLink = document.querySelectorAll('.account-menu ul li ul li a'),
-    pageUrl = window.location.href.toString().split("/account/")[1];
-
-  function changesActiveItem(url) {
-    if (url == 'order.html' || url == 'empty.html?url=order') {
-      activeLink.forEach(item => {
-        let hrefAttribute = item.getAttribute('href');
-        if (hrefAttribute == '/view/account/order.html') {
-          item.parentElement.classList.add('show');
-        }
-      });
-    } else if (url == 'returns.html' || url == 'empty.html?url=returns') {
-      activeLink.forEach(item => {
-        let hrefAttribute = item.getAttribute('href');
-        if (hrefAttribute == '/view/account/empty.html?url=returns') {
-          item.parentElement.classList.add('show');
-        }
-      });
-    } else if (url == 'wallets.html' || url == 'empty.html?url=wallets') {
-      activeLink.forEach(item => {
-        let hrefAttribute = item.getAttribute('href');
-        if (hrefAttribute == '/view/account/empty.html?url=wallets') {
-          item.parentElement.classList.add('show');
-        }
-      });
-
-      if (url == 'empty.html?url=wallets') {
-        let headerPageLink = document.querySelector('.base-button');
-        headerPageLink.innerText = 'Add payment method';
-        headerPageLink.setAttribute('href', '/view/account/wallets.html');
-      }
-          
-    } else if (url == 'personal-info.html') {
-      activeLink.forEach(item => {
-        let hrefAttribute = item.getAttribute('href');
-        if (hrefAttribute == '/view/account/personal-info.html') {
-          item.parentElement.classList.add('show');
-        }
-      });
-    } else if (url == 'addresses.html' || url == 'empty.html?url=addresses') {
-      activeLink.forEach(item => {
-        let hrefAttribute = item.getAttribute('href');
-        if (hrefAttribute == '/view/account/empty.html?url=addresses') {
-          item.parentElement.classList.add('show');
-        }
-      });
-    } else if (url == 'wish-list.html' || url == 'empty.html?url=wish-list') {
-      activeLink.forEach(item => {
-        let hrefAttribute = item.getAttribute('href');
-        if (hrefAttribute == '/view/account/empty.html?url=wish-list') {
-          item.parentElement.classList.add('show');
-        }
-      });
-    } else if (url == 'recently-viewed.html' || url == 'empty.html?url=recently-viewed') {
-      activeLink.forEach(item => {
-        let hrefAttribute = item.getAttribute('href');
-        if (hrefAttribute == '/view/account/empty.html?url=recently-viewed') {
-          item.parentElement.classList.add('show');
-        }
-      });
-    }
-  }
-
-  changesActiveItem(pageUrl);
-
-
-  /*
     Select list 
 
   ---------------------------------------*/
@@ -14121,78 +13992,116 @@ window.addEventListener('DOMContentLoaded', () => {
   showSelectDropdown();
 });
 
-  /*
-          Walets page scripts
+/*
+        Walets page scripts
 
-  ------------------------------------------*/
+------------------------------------------*/
 
-  document.querySelectorAll('[data-listener="remove-payment"]').forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.target.closest('.account-payment-item').remove();
+document.querySelectorAll('[data-listener="remove-payment"]').forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.target.closest('.account-payment-item').remove();
 
-      let emptyWalletsList = document.querySelectorAll('.account-payment-item');
+    let emptyWalletsList = document.querySelectorAll('.account-payment-item');
 
-      if (emptyWalletsList.length == 0) {
-        window.location = '/view/account/empty.html?url=wallets';
-      }
-    });
+    if (emptyWalletsList.length == 0) {
+      window.location = '/view/account/empty.html?url=wallets';
+    }
   });
+});
 
-  document.querySelectorAll('[data-listener="edit-payment"]').forEach(button => {
-    button.addEventListener('click', (e) => {
-      document.querySelector('.account-payment-list').style.display = 'none';
-      document.querySelector('.account-payment-form').style.display = 'block';
-    });
-  });
-
-  document.querySelector('button[data-listener="add-payment"]').addEventListener('click', () => {
+document.querySelectorAll('[data-listener="edit-payment"]').forEach(button => {
+  button.addEventListener('click', (e) => {
     document.querySelector('.account-payment-list').style.display = 'none';
-
-    document.querySelector('.account-payment-form').style.display = 'block';
+    document.querySelector('.account-payment-edit-form').style.display = 'block';
+    document.querySelector('button[data-listener="add-payment"]').setAttribute('disabled', 'true');
   });
+});
+if(document.querySelector('button[data-listener="add-payment"]')) {
+  document.querySelector('button[data-listener="add-payment"]').addEventListener('click', (e) => {
+    e.target.setAttribute('disabled', 'true');
+  
+    document.querySelector('.account-payment-list').style.display = 'none';
+  
+    document.querySelector('.account-payment-form').style.display = 'block';
+  
+    document.querySelector('.account-payment-edit-form').style.display = 'none';
+  });
+}
 
-
-  /*
-          Add listener for buttons
-
-  ------------------------------*/
-
-  function addedListener() {
-    const quickViewButton = document.querySelectorAll('.button-view'),
-      addFeedbackButton = document.querySelector('.add-feedback'),
-      replyFeedbackButton = document.querySelectorAll('.reply-button button'),
-      returnButton = document.querySelector('.return-button');
-
-    if (addFeedbackButton) {
-      addFeedbackButton.addEventListener('click', () => {
-        openModal('#feedback-pop-up');
-      });
+document.querySelectorAll('.payment-form-wrap form input').forEach(input => {
+  input.addEventListener('input', () => {
+    if (input.value.length > 0) {
+      input.parentElement.parentElement.querySelector('.payment-form-wrap form .base-button').removeAttribute('disabled');
+    } else {
+      input.parentElement.parentElement.querySelector('.payment-form-wrap form .base-button').setAttribute('disabled', 'true');
     }
+  });
+});
 
-    if (quickViewButton) {
-      quickViewButton.forEach(button => {
-        button.addEventListener('click', () => {
-          quickView();
-        })
-      });
-    }
 
-    if (replyFeedbackButton) {
-      replyFeedbackButton.forEach(button => {
-        button.addEventListener('click', () => {
-          openModal('#reply-feedback');
-        });
-      })
-    }
+/*
+  Personal info form
 
-    if (returnButton) {
-      returnButton.addEventListener('click', () => {
-        document.querySelector('.pop-up-wrap').classList.add('active');
-      });
+-----------------------------------------*/
+
+document.querySelectorAll('.account-personal-info-form-wrap form button[data-listener="change"]').forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (button.parentElement.classList.contains('active')) {
+      /*e.preventSubmit();*/
+
+      button.parentElement.classList.remove('active');
+
+
+    } else {
+
+      button.parentElement.classList.add('active');
     }
+  });
+});
+
+
+/*
+        Add listener for buttons
+
+------------------------------*/
+
+function addedListener() {
+  const quickViewButton = document.querySelectorAll('.button-view'),
+    addFeedbackButton = document.querySelector('.add-feedback'),
+    replyFeedbackButton = document.querySelectorAll('.reply-button button'),
+    returnButton = document.querySelector('.return-button');
+
+  if (addFeedbackButton) {
+    addFeedbackButton.addEventListener('click', () => {
+      openModal('#feedback-pop-up');
+    });
   }
 
-  addedListener();
+  if (quickViewButton) {
+    quickViewButton.forEach(button => {
+      button.addEventListener('click', () => {
+        quickView();
+      })
+    });
+  }
+
+  if (replyFeedbackButton) {
+    replyFeedbackButton.forEach(button => {
+      button.addEventListener('click', () => {
+        openModal('#reply-feedback');
+      });
+    })
+  }
+
+  if (returnButton) {
+    returnButton.addEventListener('click', () => {
+      document.querySelector('.pop-up-wrap').classList.add('active');
+    });
+  }
+}
+
+addedListener();
 const searchInput = document.querySelector('.header-search_input'),
     clearButton = document.querySelector('.clear_search-input'),
     searchDropdown = document.querySelector('.header-search-dropdown'),
@@ -14333,3 +14242,139 @@ if (reenterPasswordInput) {
         }
     });
 }
+
+
+ /*
+          Empty account page script
+
+  ------------------------------*/
+
+  const pageTitle = document.querySelector('.account-container-header h1'),
+    pageIco = document.querySelector('.accounts-empty-ico'),
+    pageText = document.querySelector('.account-empty-text'),
+    pageButton = document.querySelector('.account-container-header a'),
+    pageLink = window.location.href.toString().split("?url=")[1];
+
+  function changesEmpryContent(url) {
+    if (url == 'order') {
+      pageTitle.innerText = 'Orders';
+      pageText.innerHTML = `This window empty, because<br> you didn’d do any activities`;
+      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use href="#order-empty"></use>
+          </svg>`;
+    } else if (url == 'returns') {
+      pageTitle.innerText = 'Returned order detail';
+      pageText.innerHTML = `This window empty, because<br> you didn’d retun any items`;
+      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use href="#order-empty"></use>
+          </svg>`;
+      pageButton.innerText = 'Return Items';
+
+      pageButton.setAttribute('href', '/view/account/returns.html?url=new-return');
+    } else if (url == 'wallets') {
+      pageTitle.innerText = 'My wallets';
+      pageText.innerHTML = `This window empty, because<br> you didn’d add payment method`;
+      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use href="#order-wallets"></use>
+          </svg>`;
+    } else if (url == 'addresses') {
+      pageTitle.innerText = 'Delivery Addresses';
+      pageText.innerHTML = `This window empty, because<br> you didn’d add address`;
+      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use href="#order-addresses"></use>
+          </svg>`;
+    } else if (url == 'wish-list') {
+      pageTitle.innerText = 'Wish List';
+      pageText.innerHTML = `This window empty, because<br> you didn’d add it`;
+      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use href="#order-wish-list"></use>
+          </svg>`;
+    } else if (url == 'recently-viewed') {
+      pageTitle.innerText = 'Recently Viewed';
+      pageText.innerHTML = `This window empty, because<br> you didn’d view product`;
+      pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use href="#order-recently-viewed"></use>
+          </svg>`;
+    } else if (url == 'new-return') {
+      document.querySelector('.pop-up-wrap').classList.add('active');
+    }
+  }
+
+  changesEmpryContent(pageLink);
+
+  /*
+      Account menu 
+
+  ------------------------------------------*/
+
+  const activeLink = document.querySelectorAll('.account-menu ul li ul li a'),
+    pageUrl = window.location.href.toString().split("/account/")[1];
+
+  function changesActiveItem(url) {
+    if (url == 'order.html' || url == 'empty.html?url=order') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/order.html') {
+          item.parentElement.classList.add('show');
+        }
+      });
+    } else if (url == 'returns.html' || url == 'empty.html?url=returns') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/empty.html?url=returns') {
+          item.parentElement.classList.add('show');
+        }
+      });
+    } else if (url == 'wallets.html' || url == 'empty.html?url=wallets') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/empty.html?url=wallets') {
+          item.parentElement.classList.add('show');
+        }
+      });
+
+      if (url == 'empty.html?url=wallets') {
+        let headerPageLink = document.querySelector('.base-button');
+        headerPageLink.innerText = 'Add payment method';
+        headerPageLink.setAttribute('href', '/view/account/wallets.html');
+      }
+
+    } else if (url == 'personal-info.html') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/personal-info.html') {
+          item.parentElement.classList.add('show');
+        }
+      });
+    } else if (url == 'addresses.html' || url == 'empty.html?url=addresses') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/empty.html?url=addresses') {
+          item.parentElement.classList.add('show');
+        }
+      });
+    } else if (url == 'wish-list.html' || url == 'empty.html?url=wish-list') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/empty.html?url=wish-list') {
+          item.parentElement.classList.add('show');
+        }
+
+        let headerPageLink = document.querySelector('.base-button');
+        headerPageLink.innerText = 'Create new List';
+        headerPageLink.setAttribute('href', '/view/account/wish-list.html');
+      });
+    } else if (url == 'recently-viewed.html' || url == 'empty.html?url=recently-viewed') {
+      activeLink.forEach(item => {
+        let hrefAttribute = item.getAttribute('href');
+        if (hrefAttribute == '/view/account/empty.html?url=recently-viewed') {
+          item.parentElement.classList.add('show');
+        }
+      });
+
+        let headerPageLink = document.querySelector('.base-button');
+        headerPageLink.setAttribute('href', '/view/account/recently-viewed.html');
+    }
+  }
+
+  changesActiveItem(pageUrl);

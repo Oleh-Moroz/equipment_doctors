@@ -1002,20 +1002,23 @@
                     <div class="account-payment-item" data-payment-system="master">
                         <div class="payment-item-header">
                             <div class="payment-main-checkbox">
-                                <input type="radio" id="primary-payment-ID-1" name="primary-payment" value="payment-first" checked="checked">
+                                <input type="radio" id="primary-payment-ID-1" name="primary-payment"
+                                    value="payment-first" checked="checked">
                                 <label for="primary-payment-ID-1"><span>Primary</span></label>
                             </div>
                             <div class="payment-item-buttons">
                                 <button data-listener="edit-payment">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <use href="#payment-edit"></use>
                                     </svg>
-                                    </button>
-                                    <button data-listener="remove-payment">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                </button>
+                                <button data-listener="remove-payment">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <use href="#payment-remove"></use>
-                                        </svg>                                    
-                                    </button>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                         <div class="payment-item-body">
@@ -1028,24 +1031,27 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="account-payment-item" data-payment-system="visa">
                         <div class="payment-item-header">
                             <div class="payment-main-checkbox">
-                                <input type="radio" id="primary-payment-ID-2" name="primary-payment" value="payment-second">
+                                <input type="radio" id="primary-payment-ID-2" name="primary-payment"
+                                    value="payment-second">
                                 <label for="primary-payment-ID-2"><span>Primary</span></label>
                             </div>
                             <div class="payment-item-buttons">
                                 <button data-listener="edit-payment">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <use href="#payment-edit"></use>
                                     </svg>
-                                    </button>
-                                    <button data-listener="remove-payment">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                </button>
+                                <button data-listener="remove-payment">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <use href="#payment-remove"></use>
-                                        </svg>                                    
-                                    </button>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                         <div class="payment-item-body">
@@ -1071,198 +1077,312 @@
                             </li>
                         </ul>
                     </div>
-                        <div class="payment-form-wrap">
-                            <div class="tab-content tab-show">
-                                <form>
-                                    <div class="form-title">General</div>
+                    <div class="payment-form-wrap">
+                        <div class="tab-content tab-show">
+                            <form>
+                                <div class="form-title">General</div>
 
 
-                                        <div class="form-group">
-                                            <label for="payment-first-name">First name</label>
-                                            <input type="text" name="payment-first-name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="payment-last-name">Last name</label>
-                                            <input type="text" name="payment-last-name">
-                                        </div>
+                                <div class="form-group">
+                                    <label for="payment-first-name">First name</label>
+                                    <input type="text" name="payment-first-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="payment-last-name">Last name</label>
+                                    <input type="text" name="payment-last-name">
+                                </div>
 
 
 
-                                        <div class="form-group">
-                                            <label for="payment-card-number">Card number</label>
-                                            <input type="text" name="payment-card-number">
-                                        </div>
+                                <div class="form-group">
+                                    <label for="payment-card-number">Card number</label>
+                                    <input type="text" name="payment-card-number">
+                                </div>
 
-                                        <div class="form-group">
-                                            <div class="form-group">
-                                                <label for="payment-months">MM</label>
-                                                <div class="select-list">
-                                                    <input class="select-active-item" name="payment-months" value="">
-                                                    <ul>
-                                                        <li>01</li>
-                                                        <li>02</li>
-                                                        <li>03</li>
-                                                        <li>04</li>
-                                                        <li>05</li>
-                                                        <li>06</li>
-                                                        <li>07</li>
-                                                        <li>08</li>
-                                                        <li>09</li>
-                                                        <li>10</li>
-                                                        <li>11</li>
-                                                        <li>12</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-    
-                                            <div class="form-group">
-                                                <label for="payment-year">YY</label>
-                                                <div class="select-list">
-                                                    <input class="select-active-item" name="payment-year" value="">
-                                                    <ul>
-                                                        <li>01</li>
-                                                        <li>02</li>
-                                                        <li>03</li>
-                                                        <li>04</li>
-                                                        <li>05</li>
-                                                        <li>06</li>
-                                                        <li>07</li>
-                                                        <li>08</li>
-                                                        <li>09</li>
-                                                        <li>10</li>
-                                                        <li>11</li>
-                                                        <li>12</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-    
-                                            <div class="form-group">
-                                                <label for="payment-cvv">CVV</label>
-                                                <input type="password" name="payment-cvv">
-                                            </div>
-                                        </div>
-                    
-                                    <div class="form-title">Billing Information</div>
-
+                                <div class="form-group">
                                     <div class="form-group">
-                                        <label for="payment-address-street">Street Address</label>
-                                        <input type="text" name="payment-address-street">
-                                    </div>
-                                    <div class="form-group apt-form-group">
-                                        <label for="payment-address-apt">Apt or unit </label>
-                                        <input type="text" name="payment-address-apt">
-                                    </div>
-                                    <div class="form-group city-form-group">
-                                        <label for="payment-address-city">City</label>
-                                        <input type="text" name="payment-address-city">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="payment-address-state">State</label>
+                                        <label for="payment-months">MM</label>
                                         <div class="select-list">
-                                            <input class="select-active-item" name="payment-address-state" value="">
+                                            <input class="select-active-item" name="payment-months" value="">
                                             <ul>
-                                                <li>Alabama</li>
-                                                <li>Alaska</li>
-                                                <li>Arizona</li>
-                                                <li>Arkansas</li>
-                                                <li>California</li>
+                                                <li>01</li>
+                                                <li>02</li>
+                                                <li>03</li>
+                                                <li>04</li>
+                                                <li>05</li>
+                                                <li>06</li>
+                                                <li>07</li>
+                                                <li>08</li>
+                                                <li>09</li>
+                                                <li>10</li>
+                                                <li>11</li>
+                                                <li>12</li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="form-group city-form-group">
-                                        <label for="payment-address-zip-code">Zip Code</label>
-                                        <input type="text" name="payment-address-zip-code">
+
+                                    <div class="form-group">
+                                        <label for="payment-year">YY</label>
+                                        <div class="select-list">
+                                            <input class="select-active-item" name="payment-year" value="">
+                                            <ul>
+                                                <li>01</li>
+                                                <li>02</li>
+                                                <li>03</li>
+                                                <li>04</li>
+                                                <li>05</li>
+                                                <li>06</li>
+                                                <li>07</li>
+                                                <li>08</li>
+                                                <li>09</li>
+                                                <li>10</li>
+                                                <li>11</li>
+                                                <li>12</li>
+                                            </ul>
+                                        </div>
                                     </div>
 
-                                    <div class="button-group">
-                                        <button class="cancel-button" data-close="">Cancel</button>
-                                        <button class="base-button" disabled="true">
-                                            Save Card
-                                        </button>
+                                    <div class="form-group">
+                                        <label for="payment-cvv">CVV</label>
+                                        <input type="password" name="payment-cvv">
                                     </div>
-                                </form>
-                            </div>
+                                </div>
 
-                            <div class="tab-content">
-                                <form>
-                                    <div class="form-title">General</div>
+                                <div class="form-title">Billing Information</div>
 
-
-                                        <div class="form-group">
-                                            <label for="payment-first-name">First name</label>
-                                            <input type="text" name="payment-first-name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="payment-last-name">Last name</label>
-                                            <input type="text" name="payment-last-name">
-                                        </div>
-
-
-
-                                        <div class="form-group">
-                                            <label for="payment-ebt-number">Issuer/CLIENT NEMBEr/SUF/CO</label>
-                                            <input type="text" name="payment-ebt-number">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="form-group">
-                                                <label for="payment-months">MM</label>
-                                                <div class="select-list">
-                                                    <input class="select-active-item" name="payment-months" value="">
-                                                    <ul>
-                                                        <li>01</li>
-                                                        <li>02</li>
-                                                        <li>03</li>
-                                                        <li>04</li>
-                                                        <li>05</li>
-                                                        <li>06</li>
-                                                        <li>07</li>
-                                                        <li>08</li>
-                                                        <li>09</li>
-                                                        <li>10</li>
-                                                        <li>11</li>
-                                                        <li>12</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-    
-                                            <div class="form-group">
-                                                <label for="payment-year">YY</label>
-                                                <div class="select-list">
-                                                    <input class="select-active-item" name="payment-year" value="">
-                                                    <ul>
-                                                        <li>01</li>
-                                                        <li>02</li>
-                                                        <li>03</li>
-                                                        <li>04</li>
-                                                        <li>05</li>
-                                                        <li>06</li>
-                                                        <li>07</li>
-                                                        <li>08</li>
-                                                        <li>09</li>
-                                                        <li>10</li>
-                                                        <li>11</li>
-                                                        <li>12</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-    
-                                            <div class="form-group">
-                                                <label for="payment-cvv">CVV</label>
-                                                <input type="password" name="payment-cvv">
-                                            </div>
-                                        </div>
-
-
-                                    <div class="button-group">
-                                        <button class="cancel-button" data-close="">Cancel</button>
-                                        <button class="base-button" disabled="true">
-                                            Save Card
-                                        </button>
+                                <div class="form-group">
+                                    <label for="payment-address-street">Street Address</label>
+                                    <input type="text" name="payment-address-street">
+                                </div>
+                                <div class="form-group apt-form-group">
+                                    <label for="payment-address-apt">Apt or unit </label>
+                                    <input type="text" name="payment-address-apt">
+                                </div>
+                                <div class="form-group city-form-group">
+                                    <label for="payment-address-city">City</label>
+                                    <input type="text" name="payment-address-city">
+                                </div>
+                                <div class="form-group">
+                                    <label for="payment-address-state">State</label>
+                                    <div class="select-list">
+                                        <input class="select-active-item" name="payment-address-state" value="">
+                                        <ul>
+                                            <li>Alabama</li>
+                                            <li>Alaska</li>
+                                            <li>Arizona</li>
+                                            <li>Arkansas</li>
+                                            <li>California</li>
+                                        </ul>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                                <div class="form-group city-form-group">
+                                    <label for="payment-address-zip-code">Zip Code</label>
+                                    <input type="text" name="payment-address-zip-code">
+                                </div>
+
+                                <div class="button-group">
+                                    <button class="cancel-button" data-close="">Cancel</button>
+                                    <button class="base-button" disabled="true">
+                                        Save Card
+                                    </button>
+                                </div>
+                            </form>
                         </div>
+
+                        <div class="tab-content">
+                            <form>
+                                <div class="form-title">General</div>
+
+
+                                <div class="form-group">
+                                    <label for="payment-first-name">First name</label>
+                                    <input type="text" name="payment-first-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="payment-last-name">Last name</label>
+                                    <input type="text" name="payment-last-name">
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label for="payment-ebt-number">Issuer/CLIENT NEMBEr/SUF/CO</label>
+                                    <input type="text" name="payment-ebt-number">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="payment-months">MM</label>
+                                        <div class="select-list">
+                                            <input class="select-active-item" name="payment-months" value="">
+                                            <ul>
+                                                <li>01</li>
+                                                <li>02</li>
+                                                <li>03</li>
+                                                <li>04</li>
+                                                <li>05</li>
+                                                <li>06</li>
+                                                <li>07</li>
+                                                <li>08</li>
+                                                <li>09</li>
+                                                <li>10</li>
+                                                <li>11</li>
+                                                <li>12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="payment-year">YY</label>
+                                        <div class="select-list">
+                                            <input class="select-active-item" name="payment-year" value="">
+                                            <ul>
+                                                <li>01</li>
+                                                <li>02</li>
+                                                <li>03</li>
+                                                <li>04</li>
+                                                <li>05</li>
+                                                <li>06</li>
+                                                <li>07</li>
+                                                <li>08</li>
+                                                <li>09</li>
+                                                <li>10</li>
+                                                <li>11</li>
+                                                <li>12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="payment-cvv">CVV</label>
+                                        <input type="password" name="payment-cvv">
+                                    </div>
+                                </div>
+
+
+                                <div class="button-group">
+                                    <button class="cancel-button" data-close="">Cancel</button>
+                                    <button class="base-button" disabled="true">
+                                        Save Card
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="account-payment-edit-form ">
+                    <div class="payment-form-wrap">
+                        <form>
+                            <div class="form-title">General</div>
+
+
+                            <div class="form-group">
+                                <label for="payment-first-name">First name</label>
+                                <input type="text" name="payment-first-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="payment-last-name">Last name</label>
+                                <input type="text" name="payment-last-name">
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="payment-card-number">Card number</label>
+                                <input type="text" name="payment-card-number">
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="payment-months">MM</label>
+                                    <div class="select-list">
+                                        <input class="select-active-item" name="payment-months" value="">
+                                        <ul>
+                                            <li>01</li>
+                                            <li>02</li>
+                                            <li>03</li>
+                                            <li>04</li>
+                                            <li>05</li>
+                                            <li>06</li>
+                                            <li>07</li>
+                                            <li>08</li>
+                                            <li>09</li>
+                                            <li>10</li>
+                                            <li>11</li>
+                                            <li>12</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="payment-year">YY</label>
+                                    <div class="select-list">
+                                        <input class="select-active-item" name="payment-year" value="">
+                                        <ul>
+                                            <li>01</li>
+                                            <li>02</li>
+                                            <li>03</li>
+                                            <li>04</li>
+                                            <li>05</li>
+                                            <li>06</li>
+                                            <li>07</li>
+                                            <li>08</li>
+                                            <li>09</li>
+                                            <li>10</li>
+                                            <li>11</li>
+                                            <li>12</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="payment-cvv">CVV</label>
+                                    <input type="password" name="payment-cvv">
+                                </div>
+                            </div>
+
+                            <div class="form-title">Billing Information</div>
+
+                            <div class="form-group">
+                                <label for="payment-address-street">Street Address</label>
+                                <input type="text" name="payment-address-street">
+                            </div>
+                            <div class="form-group apt-form-group">
+                                <label for="payment-address-apt">Apt or unit </label>
+                                <input type="text" name="payment-address-apt">
+                            </div>
+                            <div class="form-group city-form-group">
+                                <label for="payment-address-city">City</label>
+                                <input type="text" name="payment-address-city">
+                            </div>
+                            <div class="form-group">
+                                <label for="payment-address-state">State</label>
+                                <div class="select-list">
+                                    <input class="select-active-item" name="payment-address-state" value="">
+                                    <ul>
+                                        <li>Alabama</li>
+                                        <li>Alaska</li>
+                                        <li>Arizona</li>
+                                        <li>Arkansas</li>
+                                        <li>California</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group city-form-group">
+                                <label for="payment-address-zip-code">Zip Code</label>
+                                <input type="text" name="payment-address-zip-code">
+                            </div>
+
+                            <div class="button-group">
+                                <button class="cancel-button" data-close="">Cancel</button>
+                                <button class="base-button" disabled="true">
+                                    Save Card
+                                </button>
+                            </div>
+                        </form>
+                    </div>
 
                 </div>
             </div>
@@ -1273,11 +1393,16 @@
 <div class="hidden-svg" style="display: none;" loading="lazy">
     <svg xmlns="http://www.w3.org/2000/svg">
         <g id="payment-edit">
-            <path d="M8 13.3333H14" stroke="#BEA063" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M11 2.33316C11.2652 2.06794 11.6249 1.91895 12 1.91895C12.1857 1.91895 12.3696 1.95553 12.5412 2.0266C12.7128 2.09767 12.8687 2.20184 13 2.33316C13.1313 2.46448 13.2355 2.62038 13.3066 2.79196C13.3776 2.96354 13.4142 3.14744 13.4142 3.33316C13.4142 3.51888 13.3776 3.70277 13.3066 3.87435C13.2355 4.04594 13.1313 4.20184 13 4.33316L4.66667 12.6665L2 13.3332L2.66667 10.6665L11 2.33316Z" stroke="#BEA063" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 13.3333H14" stroke="#BEA063" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path
+                d="M11 2.33316C11.2652 2.06794 11.6249 1.91895 12 1.91895C12.1857 1.91895 12.3696 1.95553 12.5412 2.0266C12.7128 2.09767 12.8687 2.20184 13 2.33316C13.1313 2.46448 13.2355 2.62038 13.3066 2.79196C13.3776 2.96354 13.4142 3.14744 13.4142 3.33316C13.4142 3.51888 13.3776 3.70277 13.3066 3.87435C13.2355 4.04594 13.1313 4.20184 13 4.33316L4.66667 12.6665L2 13.3332L2.66667 10.6665L11 2.33316Z"
+                stroke="#BEA063" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </g>
 
-        <path id="payment-remove" d="M13.9987 4.00011H10.6654V2.88677C10.6497 2.45998 10.4655 2.05681 10.1531 1.76563C9.84066 1.47446 9.42553 1.31903 8.9987 1.33344H6.9987C6.57187 1.31903 6.15674 1.47446 5.84432 1.76563C5.5319 2.05681 5.34767 2.45998 5.33203 2.88677V4.00011H1.9987C1.82189 4.00011 1.65232 4.07034 1.52729 4.19537C1.40227 4.32039 1.33203 4.48996 1.33203 4.66677C1.33203 4.84358 1.40227 5.01315 1.52729 5.13818C1.65232 5.2632 1.82189 5.33344 1.9987 5.33344H2.66536V12.6668C2.66536 13.1972 2.87608 13.7059 3.25115 14.081C3.62622 14.4561 4.13493 14.6668 4.66536 14.6668H11.332C11.8625 14.6668 12.3712 14.4561 12.7462 14.081C13.1213 13.7059 13.332 13.1972 13.332 12.6668V5.33344H13.9987C14.1755 5.33344 14.3451 5.2632 14.4701 5.13818C14.5951 5.01315 14.6654 4.84358 14.6654 4.66677C14.6654 4.48996 14.5951 4.32039 14.4701 4.19537C14.3451 4.07034 14.1755 4.00011 13.9987 4.00011ZM6.66536 2.88677C6.66536 2.78011 6.80536 2.66677 6.9987 2.66677H8.9987C9.19203 2.66677 9.33203 2.78011 9.33203 2.88677V4.00011H6.66536V2.88677ZM11.9987 12.6668C11.9987 12.8436 11.9285 13.0132 11.8034 13.1382C11.6784 13.2632 11.5088 13.3334 11.332 13.3334H4.66536C4.48855 13.3334 4.31898 13.2632 4.19396 13.1382C4.06894 13.0132 3.9987 12.8436 3.9987 12.6668V5.33344H11.9987V12.6668Z" fill="#BEA063"/>
+        <path id="payment-remove"
+            d="M13.9987 4.00011H10.6654V2.88677C10.6497 2.45998 10.4655 2.05681 10.1531 1.76563C9.84066 1.47446 9.42553 1.31903 8.9987 1.33344H6.9987C6.57187 1.31903 6.15674 1.47446 5.84432 1.76563C5.5319 2.05681 5.34767 2.45998 5.33203 2.88677V4.00011H1.9987C1.82189 4.00011 1.65232 4.07034 1.52729 4.19537C1.40227 4.32039 1.33203 4.48996 1.33203 4.66677C1.33203 4.84358 1.40227 5.01315 1.52729 5.13818C1.65232 5.2632 1.82189 5.33344 1.9987 5.33344H2.66536V12.6668C2.66536 13.1972 2.87608 13.7059 3.25115 14.081C3.62622 14.4561 4.13493 14.6668 4.66536 14.6668H11.332C11.8625 14.6668 12.3712 14.4561 12.7462 14.081C13.1213 13.7059 13.332 13.1972 13.332 12.6668V5.33344H13.9987C14.1755 5.33344 14.3451 5.2632 14.4701 5.13818C14.5951 5.01315 14.6654 4.84358 14.6654 4.66677C14.6654 4.48996 14.5951 4.32039 14.4701 4.19537C14.3451 4.07034 14.1755 4.00011 13.9987 4.00011ZM6.66536 2.88677C6.66536 2.78011 6.80536 2.66677 6.9987 2.66677H8.9987C9.19203 2.66677 9.33203 2.78011 9.33203 2.88677V4.00011H6.66536V2.88677ZM11.9987 12.6668C11.9987 12.8436 11.9285 13.0132 11.8034 13.1382C11.6784 13.2632 11.5088 13.3334 11.332 13.3334H4.66536C4.48855 13.3334 4.31898 13.2632 4.19396 13.1382C4.06894 13.0132 3.9987 12.8436 3.9987 12.6668V5.33344H11.9987V12.6668Z"
+            fill="#BEA063" />
     </svg>
 </div>
 
