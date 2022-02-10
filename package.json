@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/utechcorp/ed-parts-store-frontend/src/master/"
+    "url": " git@github.com:Oleh-Moroz/equipment_doctors.git"
   },
   "dependencies": {
     "bootstrap": "^4.2.1",
