@@ -166,6 +166,7 @@ button, .base-button {
   letter-spacing: 0.5px;
   transition: all 0.4s linear;
   border: none;
+  font-family: "Fira Sans", sans-serif;
 }
 button:hover, .base-button:hover {
   cursor: pointer;
@@ -411,6 +412,16 @@ header .container .row {
   z-index: 4;
   height: auto;
 }
+.header-search .header-search-dropdown a, .header-search .header-search-dropdown button {
+  color: #221E1E;
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+  display: none;
+}
+.header-search .header-search-dropdown a:hover, .header-search .header-search-dropdown button:hover {
+  color: #BEA063;
+}
 .header-search .header-search-list ul {
   list-style: none;
 }
@@ -424,6 +435,7 @@ header .container .row {
   margin: 7px 0;
 }
 .header-search .header-search-list ul li a {
+  display: block;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -487,6 +499,29 @@ header .container .row {
 }
 .header-cart_link:hover svg * {
   fill: #BEA063;
+}
+.header-cart_link .cart-count {
+  display: none;
+  box-sizing: border-box;
+  padding: 0px 5px;
+  background: #BEA063;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  top: -21px;
+  left: 40%;
+  height: 21px;
+  min-width: 21px;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  max-width: 40px;
+}
+.header-cart_link .cart-count:not(:empty) {
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .header-account_wrap {
@@ -1938,6 +1973,9 @@ footer {
   background: rgba(220, 188, 120, 0.2);
   border-left: 2px solid #BEA063;
 }
+.category-navbar > ul > li.show div a {
+  color: #BEA063;
+}
 .category-navbar > ul > li.show div::after {
   color: #BEA063;
 }
@@ -1952,7 +1990,10 @@ footer {
 }
 
 .category-navbar > ul > li.show > ul {
-  display: block;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .category-navbar > ul > li > ul > li {
@@ -2867,6 +2908,10 @@ input:checked ~ label::before {
   color: #BEA063;
   background: rgba(220, 188, 120, 0.2);
   border-left: 2px solid #BEA063;
+}
+.col-menu ul li.show > div a,
+.account-menu ul li.show > div a {
+  color: #BEA063;
 }
 .col-menu ul li.show > div::after,
 .account-menu ul li.show > div::after {
@@ -4807,6 +4852,7 @@ input.error ~ .error-text {
   line-height: 29px;
   text-align: center;
   color: #42474C;
+  font-family: "Roboto", sans-serif;
 }
 
 .orders-filter-tabs ul {
@@ -6248,6 +6294,9 @@ input.error ~ .error-text {
   margin-right: 15px;
 }
 
+.wish-list-product-checkbox {
+  margin: 10px 0 -25px;
+}
 .wish-list-product-checkbox label {
   content: "\f00c";
   border: 2px solid #42474c;

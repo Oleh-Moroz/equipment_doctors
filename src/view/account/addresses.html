@@ -1,0 +1,105 @@
+@@include('../common/header-page.html')
+
+<!-- End header section-->
+<div class="container">
+    <div class="row row-wrap">
+        <div class="left-col">
+
+            @@include('account-menu.html')
+
+        </div>
+        <div class="content">
+            <div class="account-container">
+                <div class="account-container-header">
+                    <h1>Delivery Addresses</h1>
+
+                    <button class="base-button" data-listener="new-wishlist">Create new List</button>
+                </div>
+
+                <div class="payment-form-wrap">
+                    <form>
+                        <div class="form-title">General</div>
+
+
+                        <div class="form-group">
+                            <label for="payment-first-name">First name</label>
+                            <input type="text" name="payment-first-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="payment-last-name">Last name</label>
+                            <input type="text" name="payment-last-name">
+                        </div>
+
+
+
+                        <div class="form-title">Billing Information</div>
+
+                        <div class="form-group">
+                            <label for="payment-address-street">Street Address</label>
+                            <input type="text" name="payment-address-street">
+                        </div>
+                        <div class="form-group apt-form-group">
+                            <label for="payment-address-apt">Apt or unit </label>
+                            <input type="text" name="payment-address-apt">
+                        </div>
+                        <div class="form-group city-form-group">
+                            <label for="payment-address-city">City</label>
+                            <input type="text" name="payment-address-city">
+                        </div>
+                        <div class="form-group">
+                            <label for="payment-address-state">State</label>
+                            <div class="select-list">
+                                <input class="select-active-item" name="payment-address-state" value="">
+                                <ul>
+                                    <li>Alabama</li>
+                                    <li>Alaska</li>
+                                    <li>Arizona</li>
+                                    <li>Arkansas</li>
+                                    <li>California</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group city-form-group">
+                            <label for="payment-address-zip-code">Zip Code</label>
+                            <input type="text" name="payment-address-zip-code">
+                        </div>
+
+                        <div class="form-group city-form-group" style="max-width: 38%;min-width: 26%;">
+                            <label for="payment-address-contact-phone">Contact phone number</label>
+                            <input type="text" name="payment-address-contact-phone">
+                            <p style="margin-top: 15px;">We'll contact you in case anything comes up with your order.</p>
+                        </div>
+
+                        <div class="form-group city-form-group">
+
+                        </div>
+
+                        <div class="form-group city-form-group" style="max-width: 39%;min-width: 39%;">
+                            <label for="payment-address-contact-instruction">Delivey Instruction</label>
+                            <textarea name="payment-address-contact-instruction"></textarea>
+                        </div>
+                        <div class="form-group city-form-group" style="max-width: 39%;min-width: 39%;">
+
+                        </div>
+
+                        <div class="form-group city-form-group" style="display: flex">
+                            <input type="checkbox" name="payment-address-aprrow" id="payment-address-aprrow">
+                            <label for="payment-address-aprrow" style="width: 80%;">Set as my preferred delivery address
+                            </label>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="cancel-button" data-close="">Cancel</button>
+                            <button class="base-button" disabled="true">
+                                Save Address
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Start footer -->
+@@include('../common/footer-page.html')

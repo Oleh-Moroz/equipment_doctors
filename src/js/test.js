@@ -2,6 +2,7 @@ const searchInput = document.querySelector('.header-search_input'),
     clearButton = document.querySelector('.clear_search-input'),
     searchDropdown = document.querySelector('.header-search-dropdown'),
     searchForm = document.querySelector('.header-search_form'),
+    searchList = searchDropdown.querySelector('.header-search-list'),
     searchResults = searchDropdown.querySelector('.header-search-list ul');
 
 function openedSearchDropdown() {
@@ -15,6 +16,10 @@ function openedSearchDropdown() {
     } else {
         searchDropdown.classList.add('open');
     }
+
+    if (searchResults.children.length > 0) {
+      document.querySelector('.header-search-list > a').style.display = 'block';
+    }
 }
 
 function removedSearchDropdown() {
@@ -26,8 +31,10 @@ function removedSearchDropdown() {
         searchDropdown.classList.remove('open');
     }
     searchResults.querySelectorAll('li').forEach(item => {
-        item.remove()
+        item.remove();
     });
+
+    document.querySelector('.header-search-list > a').style.display = 'none';
 }
 
 searchForm.addEventListener('submit', (e) => {
@@ -154,13 +161,13 @@ if (reenterPasswordInput) {
   function changesEmpryContent(url) {
     if (url == 'order') {
       pageTitle.innerText = 'Orders';
-      pageText.innerHTML = `This window empty, because<br> you didn’d do any activities`;
+      pageText.innerHTML = `This window empty, because<br> you didn’t do any activities`;
       pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
             <use href="#order-empty"></use>
           </svg>`;
     } else if (url == 'returns') {
       pageTitle.innerText = 'Returned order detail';
-      pageText.innerHTML = `This window empty, because<br> you didn’d retun any items`;
+      pageText.innerHTML = `This window empty, because<br> you didn’t retun any items`;
       pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
             <use href="#order-empty"></use>
           </svg>`;
@@ -169,25 +176,25 @@ if (reenterPasswordInput) {
       pageButton.setAttribute('href', '/view/account/returns.html?url=new-return');
     } else if (url == 'wallets') {
       pageTitle.innerText = 'My wallets';
-      pageText.innerHTML = `This window empty, because<br> you didn’d add payment method`;
+      pageText.innerHTML = `This window empty, because<br> you didn’t add payment method`;
       pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
             <use href="#order-wallets"></use>
           </svg>`;
     } else if (url == 'addresses') {
       pageTitle.innerText = 'Delivery Addresses';
-      pageText.innerHTML = `This window empty, because<br> you didn’d add address`;
+      pageText.innerHTML = `This window empty, because<br> you didn’t add address`;
       pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
             <use href="#order-addresses"></use>
           </svg>`;
     } else if (url == 'wish-list') {
       pageTitle.innerText = 'Wish List';
-      pageText.innerHTML = `This window empty, because<br> you didn’d add it`;
+      pageText.innerHTML = `This window empty, because<br> you didn’t add it`;
       pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
             <use href="#order-wish-list"></use>
           </svg>`;
     } else if (url == 'recently-viewed') {
       pageTitle.innerText = 'Recently Viewed';
-      pageText.innerHTML = `This window empty, because<br> you didn’d view product`;
+      pageText.innerHTML = `This window empty, because<br> you didn’t view product`;
       pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
             <use href="#order-recently-viewed"></use>
           </svg>`;
@@ -247,6 +254,9 @@ if (reenterPasswordInput) {
         let hrefAttribute = item.getAttribute('href');
         if (hrefAttribute == '/view/account/empty.html?url=addresses') {
           item.parentElement.classList.add('show');
+
+          let headerPageLink = document.querySelector('.base-button');
+          headerPageLink.setAttribute('href', '/view/account/addresses.html');
         }
       });
     } else if (url == 'wish-list.html' || url == 'empty.html?url=wish-list') {
@@ -274,3 +284,11 @@ if (reenterPasswordInput) {
   }
 
   changesActiveItem(pageUrl);
+
+  const buttonAddNewWishList = document.querySelector('button[data-listener="new-wishlist"]'),
+        wishListForm = document.querySelector('.wish-list-form-wrap');
+
+  buttonAddNewWishList.addEventListener('click', (e) => {
+    e.target.setAttribute('disabled', '');
+    wishListForm.style.display = "flex";
+  });

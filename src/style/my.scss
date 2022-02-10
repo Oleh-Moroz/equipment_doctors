@@ -163,6 +163,7 @@ button, .base-button {
     letter-spacing: 0.5px;
     transition: all .4s linear;
     border: none;
+    font-family: "Fira Sans",sans-serif;
 
     &:hover {
         cursor: pointer;
@@ -417,6 +418,18 @@ header {
             z-index: 4;
             height: auto;
         }
+
+        a, button {
+            color: $base-black;
+            background: transparent;
+            border: none;
+            padding: 10px 0;
+            display: none;
+
+            &:hover {
+                color: $gold;
+            }
+        }
     }
 
     .header-search-list {
@@ -430,6 +443,7 @@ header {
                 margin: 7px 0;
 
                 a {
+                    display: block;
                     font-style: normal;
                     font-weight: 500;
                     font-size: 14px;
@@ -448,6 +462,7 @@ header {
                     color: $grey;
                     margin-right: 12px;
                 }
+
             }
         }
     }
@@ -516,6 +531,28 @@ header {
                fill: $gold;
             }
         }
+    }
+
+    .cart-count {
+        display: none;
+        box-sizing: border-box;
+        padding: 0px 5px;
+        background: $gold;
+        border-radius: 10px;
+        color: $white;
+        font-size: 12px;
+        position: absolute;
+        top: -21px;
+        left: 40%;
+        height: 21px;
+        min-width: 21px;
+        align-items: center;
+        justify-content: center;
+        max-width: 40px;
+    }
+
+    .cart-count:not(:empty) {
+        display: flex;
     }
 }
 
@@ -2021,6 +2058,10 @@ footer {
         background: rgba(220, 188, 120, 0.2);
         border-left: 2px solid $gold;
 
+        a {
+            color: $gold;
+        }
+
         &::after {
             color: $gold;
         }
@@ -2036,7 +2077,8 @@ footer {
   }
   
   .category-navbar > ul > li.show > ul{
-    display:block;
+    display: inline-flex;
+    flex-wrap: wrap;
   }
   
   .category-navbar > ul > li > ul > li{
@@ -2934,6 +2976,10 @@ input:checked ~ label::before {
         color: $gold;
         background: rgba(220,188,120,.2);
         border-left: 2px solid $gold;
+
+        a {
+            color: $gold;
+        }
 
         &::after {
             color: $gold;
@@ -4945,6 +4991,7 @@ input.error ~ .error-text {
         line-height: 29px;
         text-align: center;
         color: $black;
+        font-family: "Roboto",sans-serif;
     }
 
 }
@@ -6481,6 +6528,8 @@ input.error ~ .error-text {
 }
 
 .wish-list-product-checkbox {
+    margin: 10px 0 -25px;
+
     label {
         content: "\f00c";
         border: 2px solid #42474c;

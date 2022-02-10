@@ -72,7 +72,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   menuItem.forEach(item => {
-    item.addEventListener('click', () => {
+    item.addEventListener('mouseover', () => {
       menuItem.forEach(sibling => {
         if (sibling.classList.contains('show')) {
           sibling.classList.remove('show');
@@ -133,7 +133,7 @@ window.addEventListener('DOMContentLoaded', () => {
     contentWrap = document.querySelectorAll('.tab-content');
 
   for (let i = 0; i < colMenuWrap.length; i++) {
-    colMenuWrap[i].addEventListener('click', () => {
+    colMenuWrap[i].addEventListener('mouseover', () => {
       colMenuWrap.forEach((item) => {
         item.classList.remove('show');
       });

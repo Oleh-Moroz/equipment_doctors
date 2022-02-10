@@ -22,15 +22,15 @@
                 <div class="product-slider slider" id="popular-slide-num">
                     <div class="swiper-wrapper">
                         <div class="product__item swiper-slide">
+                            <div class="wish-list-product-checkbox">
+                                <input type="checkbox" id="wish-list-product-21" name="wish-list-product-21">
+                                <label for="wish-list-product-21">
+                                    <i class="fas fa-check"></i>
+                                </label>
+                            </div>
                             <div class="product-icon__row">
-                                <div class="wish-list-product-checkbox">
-                                    <input type="checkbox" id="wish-list-product-21" name="wish-list-product-21" value="id-21">
-                                    <label for="wish-list-product-21">
-                                    </label>
-                                </div>
                                 <div class="product-icon__row-buttons">
                                     <button type="button" data-toggle="tooltip" title=""
-                                        onclick="$(this).addClass('read-heart');" tabindex="0"
                                         data-original-title="Add to wishlist">
                                         <i class="fas fa-heart"></i>
                                     </button>
@@ -79,12 +79,13 @@
                         </div>
             
                         <div class="product__item swiper-slide">
+                            <div class="wish-list-product-checkbox">
+                                <input type="checkbox" id="wish-list" name="wish-list">
+                                <label for="wish-list">
+                                    <i class="fas fa-check"></i>
+                                </label>
+                            </div>
                             <div class="product-icon__row">
-                                <div class="wish-list-product-checkbox">
-                                    <input type="checkbox" id="wish-list-product-22" name="wish-list-product-22" value="id-22">
-                                    <label for="wish-list-product-22">
-                                    </label>
-                                </div>
                                 <div class="product-icon__row-buttons">
                                     <button class="wishlist-active" type="button" data-toggle="tooltip" title=""
                                         onclick="wishlist.add('id');$(this).addClass('read-heart');" tabindex="0"
@@ -140,14 +141,8 @@
             
                         <div class="product__item swiper-slide">
                             <div class="product-icon__row">
-                                <div class="wish-list-product-checkbox">
-                                    <input type="checkbox" id="wish-list-product-23" name="wish-list-product-23" value="id-23">
-                                    <label for="wish-list-product-23">
-                                    </label>
-                                </div>
                                 <div class="product-icon__row-buttons">
                                     <button type="button" data-toggle="tooltip" title=""
-                                        onclick="wishlist.add('id');$(this).addClass('read-heart');" tabindex="0"
                                         data-original-title="Add to wishlist">
                                         <i class="fas fa-heart"></i>
                                     </button>
@@ -197,14 +192,8 @@
             
                         <div class="product__item swiper-slide">
                             <div class="product-icon__row">
-                                <div class="wish-list-product-checkbox">
-                                    <input type="checkbox" id="wish-list-product-24" name="wish-list-product-24" value="id-24">
-                                    <label for="wish-list-product-24">
-                                    </label>
-                                </div>
                                 <div class="product-icon__row-buttons">
                                     <button type="button" data-toggle="tooltip" title=""
-                                        onclick="wishlist.add('id');$(this).addClass('read-heart');" tabindex="0"
                                         data-original-title="Add to wishlist">
                                         <i class="fas fa-heart"></i>
                                     </button>
@@ -251,8 +240,6 @@
                                 </div>
                             </div>
                         </div>
-            
-            
                     </div>
                     <button class="swiper-button-prev"><i class="fas fa-chevron-left"></i></button>
                     <button class="swiper-button-next"><i class="fas fa-chevron-right"></i></button>

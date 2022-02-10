@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OlehMoroz/gulp.git"
+    "url": "https://bitbucket.org/utechcorp/ed-parts-store-frontend/src/master/"
   },
   "dependencies": {
     "bootstrap": "^4.2.1",
