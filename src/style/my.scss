@@ -172,8 +172,6 @@ button, .base-button {
     }
 }
 
-/* Landing Page Style */
-
 body {
     min-width: 320px;
     max-width: 2400px;
@@ -236,6 +234,22 @@ body {
 
 .row-wrap {
     flex-wrap: wrap;
+}
+
+.lb-cancel {
+    background: url(../../img/common/loading.gif) no-repeat;
+}
+
+.lb-nav a.lb-prev {
+    background: url(../../img/common/prev.png) left 48% no-repeat;
+}
+
+.lb-nav a.lb-next {
+    background: url(../../img/common/next.png) right 48% no-repeat;
+}
+
+.lb-data .lb-close {
+    background: url(../../img/common/close.png) top right no-repeat;
 }
 
 
@@ -4318,6 +4332,22 @@ button:disabled {
             font-size: 14px;
             line-height: 143%;
         }
+
+        .clear_search-input {
+            left: auto;
+            right: 1px;
+            font-size: 18px;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            z-index: 1;
+            background: #fff;
+            transition: all .3s linear;
+            line-height: 114%;
+            padding: 7px 10px;
+            cursor: pointer;
+            color: $gold;
+        }
     }
 }
 
@@ -4360,6 +4390,11 @@ button:disabled {
             padding: 10px 25px;
             border-radius: 17.5px;
             background: $white;
+
+            &:hover {
+                background: $gold-hover;
+                color: $white;
+            }
         }
 
         &.active {
@@ -6031,6 +6066,16 @@ input.error ~ .error-text {
             background: transparent;  
         }
     }
+
+    &:hover {
+        input {
+            border: 1px solid $gold;
+        }
+
+        ul.show {
+            border: 1px solid $gold;
+        }
+    }
 }
 
 .returns-address-list {
@@ -6433,7 +6478,7 @@ input.error ~ .error-text {
                 margin-right: -3%;
             }
 
-            &::before {
+            /*&::before {
                 content: "";
                 background: transparent;
                 width: 100%;
@@ -6446,7 +6491,7 @@ input.error ~ .error-text {
 
             &.active::before {
                 display: none;
-            }
+            }*/
 
             button {
                 position: absolute;
@@ -6465,6 +6510,14 @@ input.error ~ .error-text {
                 input{
                     background: $white;
                 }
+            }
+        }
+
+        .account-container-footer {
+            margin-top: 30px;
+
+            button {
+                width: auto;
             }
         }
     }
@@ -6527,7 +6580,7 @@ input.error ~ .error-text {
     }
 }
 
-.wish-list-product-checkbox {
+.wish-list-product-checkbox, .wish-list-checkbox {
     margin: 10px 0 -25px;
 
     label {
@@ -6545,7 +6598,7 @@ input.error ~ .error-text {
         transition: all .4s linear;
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
-        color: #fff;
+        color: transparent;
         font-size: 10px;
         cursor: pointer;
     }
@@ -6553,6 +6606,7 @@ input.error ~ .error-text {
     input:checked~label {
         border: 2px solid $gold;
         background: $gold;
+        color: $white;
     }
 
     input {
@@ -6563,4 +6617,35 @@ input.error ~ .error-text {
         display: none;
     }
 
+}
+
+.wish-list-header {
+    width: 100%;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .wish-list-checkbox {
+        margin: 0 15px 0 0;
+    }
+
+    h3 {
+        font-family: Fira Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: $base-black;
+    }
+
+    .payment-item-buttons {
+        margin-left: auto;
+    }
+
+    button {
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+    }
 }

@@ -285,54 +285,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
-  /*
-
-    Pop up quickView
-
-  -------------------------------------*/
-
-  function quickView() {
-
-    const request = new XMLHttpRequest();
-
-    const viewPopUp = document.createElement('div'),
-      viewPopUpContent = document.createElement('div'),
-      viewPopUpClose = document.createElement('button');
-
-    viewPopUp.classList.add('pop-up-wrap', 'active', 'pop-up-quick-view');
-    viewPopUpContent.classList.add('pop-up-content');
-    viewPopUpClose.classList.add('close-pop-up');
-    viewPopUpClose.setAttribute('data-close', '');
-
-    document.body.append(viewPopUp);
-    viewPopUp.appendChild(viewPopUpContent);
-    viewPopUpContent.appendChild(viewPopUpClose);
-
-    viewPopUpClose.innerHTML = '<i class="far fa-times-circle" aria-hidden="true"></i>';
-
-    viewPopUpClose.addEventListener('click', () => {
-      viewPopUp.remove();
-    });
-
-    request.open('GET', '/view/product/product.html');
-
-    request.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        const doc = new DOMParser().parseFromString(this.responseText, "text/html"),
-          imageBlock = doc.querySelector('.image-product-block'),
-          textBlock = doc.querySelector('.text-product-block');
-
-        viewPopUpContent.appendChild(imageBlock);
-        viewPopUpContent.appendChild(textBlock);
-
-        productImageSlider('horizontal');
-      }
-    }
-
-    request.send(null);
-  }
-
   /*
     Product page slider
 
@@ -465,115 +417,159 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   showSelectDropdown();
-});
 
-/*
-        Walets page scripts
+  /*
 
-------------------------------------------*/
+    Pop up quickView
 
-document.querySelectorAll('[data-listener="remove-payment"]').forEach(button => {
-  button.addEventListener('click', (e) => {
-    e.target.closest('.account-payment-item').remove();
+  -------------------------------------*/
 
-    let emptyWalletsList = document.querySelectorAll('.account-payment-item');
+  function quickView() {
 
-    if (emptyWalletsList.length == 0) {
-      window.location = '/view/account/empty.html?url=wallets';
+    const request = new XMLHttpRequest();
+
+    const viewPopUp = document.createElement('div'),
+      viewPopUpContent = document.createElement('div'),
+      viewPopUpClose = document.createElement('button');
+
+    viewPopUp.classList.add('pop-up-wrap', 'active', 'pop-up-quick-view');
+    viewPopUpContent.classList.add('pop-up-content');
+    viewPopUpClose.classList.add('close-pop-up');
+    viewPopUpClose.setAttribute('data-close', '');
+
+    document.body.append(viewPopUp);
+    viewPopUp.appendChild(viewPopUpContent);
+    viewPopUpContent.appendChild(viewPopUpClose);
+
+    viewPopUpClose.innerHTML = '<i class="far fa-times-circle" aria-hidden="true"></i>';
+
+    viewPopUpClose.addEventListener('click', () => {
+      viewPopUp.remove();
+    });
+
+    request.open('GET', '/view/product/product.html');
+
+    request.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        const doc = new DOMParser().parseFromString(this.responseText, "text/html"),
+          imageBlock = doc.querySelector('.image-product-block'),
+          textBlock = doc.querySelector('.text-product-block');
+
+        viewPopUpContent.appendChild(imageBlock);
+        viewPopUpContent.appendChild(textBlock);
+
+        productImageSlider('horizontal');
+      }
     }
+
+    request.send(null);
+  }
+
+  /*
+          Walets page scripts
+
+  ------------------------------------------*/
+
+  document.querySelectorAll('[data-listener="remove-payment"]').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.target.closest('.account-payment-item').remove();
+
+      let emptyWalletsList = document.querySelectorAll('.account-payment-item');
+
+      if (emptyWalletsList.length == 0) {
+        window.location = '/view/account/empty.html?url=wallets';
+      }
+    });
   });
-});
 
-document.querySelectorAll('[data-listener="edit-payment"]').forEach(button => {
-  button.addEventListener('click', (e) => {
-    document.querySelector('.account-payment-list').style.display = 'none';
-    document.querySelector('.account-payment-edit-form').style.display = 'block';
-    document.querySelector('button[data-listener="add-payment"]').setAttribute('disabled', 'true');
+  document.querySelectorAll('[data-listener="edit-payment"]').forEach(button => {
+    button.addEventListener('click', (e) => {
+      document.querySelector('.account-payment-list').style.display = 'none';
+      document.querySelector('.account-payment-edit-form').style.display = 'block';
+      document.querySelector('button[data-listener="add-payment"]').setAttribute('disabled', 'true');
+    });
   });
-});
-if(document.querySelector('button[data-listener="add-payment"]')) {
-  document.querySelector('button[data-listener="add-payment"]').addEventListener('click', (e) => {
-    e.target.setAttribute('disabled', 'true');
-  
-    document.querySelector('.account-payment-list').style.display = 'none';
-  
-    document.querySelector('.account-payment-form').style.display = 'block';
-  
-    document.querySelector('.account-payment-edit-form').style.display = 'none';
-  });
-}
+  if (document.querySelector('button[data-listener="add-payment"]')) {
+    document.querySelector('button[data-listener="add-payment"]').addEventListener('click', (e) => {
+      e.target.setAttribute('disabled', 'true');
 
-document.querySelectorAll('.payment-form-wrap form input').forEach(input => {
-  input.addEventListener('input', () => {
-    if (input.value.length > 0) {
-      input.parentElement.parentElement.querySelector('.payment-form-wrap form .base-button').removeAttribute('disabled');
-    } else {
-      input.parentElement.parentElement.querySelector('.payment-form-wrap form .base-button').setAttribute('disabled', 'true');
-    }
-  });
-});
+      document.querySelector('.account-payment-list').style.display = 'none';
 
+      document.querySelector('.account-payment-form').style.display = 'block';
 
-/*
-  Personal info form
-
------------------------------------------*/
-
-document.querySelectorAll('.account-personal-info-form-wrap form button[data-listener="change"]').forEach(button => {
-  button.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (button.parentElement.classList.contains('active')) {
-      /*e.preventSubmit();*/
-
-      button.parentElement.classList.remove('active');
-
-
-    } else {
-
-      button.parentElement.classList.add('active');
-    }
-  });
-});
-
-
-/*
-        Add listener for buttons
-
-------------------------------*/
-
-function addedListener() {
-  const quickViewButton = document.querySelectorAll('.button-view'),
-    addFeedbackButton = document.querySelector('.add-feedback'),
-    replyFeedbackButton = document.querySelectorAll('.reply-button button'),
-    returnButton = document.querySelector('.return-button');
-
-  if (addFeedbackButton) {
-    addFeedbackButton.addEventListener('click', () => {
-      openModal('#feedback-pop-up');
+      document.querySelector('.account-payment-edit-form').style.display = 'none';
     });
   }
 
-  if (quickViewButton) {
-    quickViewButton.forEach(button => {
-      button.addEventListener('click', () => {
-        quickView();
-      })
+  document.querySelectorAll('.payment-form-wrap form input').forEach(input => {
+    input.addEventListener('input', () => {
+      if (input.value.length > 0) {
+        input.parentElement.parentElement.querySelector('.payment-form-wrap form .base-button').removeAttribute('disabled');
+      } else {
+        input.parentElement.parentElement.querySelector('.payment-form-wrap form .base-button').setAttribute('disabled', 'true');
+      }
     });
-  }
+  });
 
-  if (replyFeedbackButton) {
-    replyFeedbackButton.forEach(button => {
-      button.addEventListener('click', () => {
-        openModal('#reply-feedback');
+
+  /*
+    Personal info form
+
+  -----------------------------------------*/
+
+  const pesonalInfoInputs = document.querySelectorAll('.account-personal-info-form-wrap input');
+
+  if (pesonalInfoInputs) {
+    pesonalInfoInputs.forEach(input => {
+      input.addEventListener('input', () => {
+        document.querySelector('.account-container-footer button[data-name="change"]').removeAttribute('disabled');
       });
-    })
-  }
-
-  if (returnButton) {
-    returnButton.addEventListener('click', () => {
-      document.querySelector('.pop-up-wrap').classList.add('active');
     });
   }
-}
 
-addedListener();
+
+
+
+  /*
+          Add listener for buttons
+
+  ------------------------------*/
+
+  function addedListener() {
+    const quickViewButton = document.querySelectorAll('.button-view'),
+      addFeedbackButton = document.querySelector('.add-feedback'),
+      replyFeedbackButton = document.querySelectorAll('.reply-button button'),
+      returnButton = document.querySelector('.return-button');
+
+    if (addFeedbackButton) {
+      addFeedbackButton.addEventListener('click', () => {
+        openModal('#feedback-pop-up');
+      });
+    }
+
+    if (quickViewButton) {
+      quickViewButton.forEach(button => {
+        button.addEventListener('click', () => {
+          quickView();
+        });
+      });
+    }
+
+    if (replyFeedbackButton) {
+      replyFeedbackButton.forEach(button => {
+        button.addEventListener('click', () => {
+          openModal('#reply-feedback');
+        });
+      })
+    }
+
+    if (returnButton) {
+      returnButton.addEventListener('click', () => {
+        document.querySelector('.pop-up-wrap').classList.add('active');
+      });
+    }
+  }
+
+  addedListener();
+
+});

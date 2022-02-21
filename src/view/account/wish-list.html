@@ -80,8 +80,8 @@
             
                         <div class="product__item swiper-slide">
                             <div class="wish-list-product-checkbox">
-                                <input type="checkbox" id="wish-list" name="wish-list">
-                                <label for="wish-list">
+                                <input type="checkbox" id="wish-list-product-22" name="wish-list-product-22">
+                                <label for="wish-list-product-22">
                                     <i class="fas fa-check"></i>
                                 </label>
                             </div>
@@ -140,6 +140,12 @@
                         </div>
             
                         <div class="product__item swiper-slide">
+                            <div class="wish-list-product-checkbox">
+                                <input type="checkbox" id="wish-list-product-23" name="wish-list-product-23">
+                                <label for="wish-list-product-23">
+                                    <i class="fas fa-check"></i>
+                                </label>
+                            </div>
                             <div class="product-icon__row">
                                 <div class="product-icon__row-buttons">
                                     <button type="button" data-toggle="tooltip" title=""
@@ -191,6 +197,12 @@
                         </div>
             
                         <div class="product__item swiper-slide">
+                            <div class="wish-list-product-checkbox">
+                                <input type="checkbox" id="wish-list-product-24" name="wish-list-product-24">
+                                <label for="wish-list-product-24">
+                                    <i class="fas fa-check"></i>
+                                </label>
+                            </div>
                             <div class="product-icon__row">
                                 <div class="product-icon__row-buttons">
                                     <button type="button" data-toggle="tooltip" title=""
@@ -259,7 +271,7 @@
 
                     <div class="wish-list-button-group">
                         <button class="cancel-button" data-close="">Cancel</button>
-                        <button class="base-button">
+                        <button class="base-button" data-toogle="create-wishlist">
                             Save
                         </button>
                     </div>
@@ -274,7 +286,7 @@
     const popularSwiper = new Swiper(document.getElementById('popular-slide-num'), {
         slidesPerView: 3,
         spaceBetween: 30,
-        loop: true,
+        loop: false,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -285,6 +297,17 @@
         },
     });
 </script>
+
+<div class="hidden-svg" style="display: none;" loading="lazy">
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <g id="payment-edit">
+            <path d="M8 13.3333H14" stroke="#BEA063" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M11 2.33316C11.2652 2.06794 11.6249 1.91895 12 1.91895C12.1857 1.91895 12.3696 1.95553 12.5412 2.0266C12.7128 2.09767 12.8687 2.20184 13 2.33316C13.1313 2.46448 13.2355 2.62038 13.3066 2.79196C13.3776 2.96354 13.4142 3.14744 13.4142 3.33316C13.4142 3.51888 13.3776 3.70277 13.3066 3.87435C13.2355 4.04594 13.1313 4.20184 13 4.33316L4.66667 12.6665L2 13.3332L2.66667 10.6665L11 2.33316Z" stroke="#BEA063" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+
+        <path id="payment-remove" d="M13.9987 4.00011H10.6654V2.88677C10.6497 2.45998 10.4655 2.05681 10.1531 1.76563C9.84066 1.47446 9.42553 1.31903 8.9987 1.33344H6.9987C6.57187 1.31903 6.15674 1.47446 5.84432 1.76563C5.5319 2.05681 5.34767 2.45998 5.33203 2.88677V4.00011H1.9987C1.82189 4.00011 1.65232 4.07034 1.52729 4.19537C1.40227 4.32039 1.33203 4.48996 1.33203 4.66677C1.33203 4.84358 1.40227 5.01315 1.52729 5.13818C1.65232 5.2632 1.82189 5.33344 1.9987 5.33344H2.66536V12.6668C2.66536 13.1972 2.87608 13.7059 3.25115 14.081C3.62622 14.4561 4.13493 14.6668 4.66536 14.6668H11.332C11.8625 14.6668 12.3712 14.4561 12.7462 14.081C13.1213 13.7059 13.332 13.1972 13.332 12.6668V5.33344H13.9987C14.1755 5.33344 14.3451 5.2632 14.4701 5.13818C14.5951 5.01315 14.6654 4.84358 14.6654 4.66677C14.6654 4.48996 14.5951 4.32039 14.4701 4.19537C14.3451 4.07034 14.1755 4.00011 13.9987 4.00011ZM6.66536 2.88677C6.66536 2.78011 6.80536 2.66677 6.9987 2.66677H8.9987C9.19203 2.66677 9.33203 2.78011 9.33203 2.88677V4.00011H6.66536V2.88677ZM11.9987 12.6668C11.9987 12.8436 11.9285 13.0132 11.8034 13.1382C11.6784 13.2632 11.5088 13.3334 11.332 13.3334H4.66536C4.48855 13.3334 4.31898 13.2632 4.19396 13.1382C4.06894 13.0132 3.9987 12.8436 3.9987 12.6668V5.33344H11.9987V12.6668Z" fill="#BEA063"></path>
+    </svg>
+</div>
 
     
 <!-- Start footer -->

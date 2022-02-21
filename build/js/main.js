@@ -13810,54 +13810,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
-  /*
-
-    Pop up quickView
-
-  -------------------------------------*/
-
-  function quickView() {
-
-    const request = new XMLHttpRequest();
-
-    const viewPopUp = document.createElement('div'),
-      viewPopUpContent = document.createElement('div'),
-      viewPopUpClose = document.createElement('button');
-
-    viewPopUp.classList.add('pop-up-wrap', 'active', 'pop-up-quick-view');
-    viewPopUpContent.classList.add('pop-up-content');
-    viewPopUpClose.classList.add('close-pop-up');
-    viewPopUpClose.setAttribute('data-close', '');
-
-    document.body.append(viewPopUp);
-    viewPopUp.appendChild(viewPopUpContent);
-    viewPopUpContent.appendChild(viewPopUpClose);
-
-    viewPopUpClose.innerHTML = '<i class="far fa-times-circle" aria-hidden="true"></i>';
-
-    viewPopUpClose.addEventListener('click', () => {
-      viewPopUp.remove();
-    });
-
-    request.open('GET', '/view/product/product.html');
-
-    request.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        const doc = new DOMParser().parseFromString(this.responseText, "text/html"),
-          imageBlock = doc.querySelector('.image-product-block'),
-          textBlock = doc.querySelector('.text-product-block');
-
-        viewPopUpContent.appendChild(imageBlock);
-        viewPopUpContent.appendChild(textBlock);
-
-        productImageSlider('horizontal');
-      }
-    }
-
-    request.send(null);
-  }
-
   /*
     Product page slider
 
@@ -13990,118 +13942,162 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   showSelectDropdown();
-});
 
-/*
-        Walets page scripts
+  /*
 
-------------------------------------------*/
+    Pop up quickView
 
-document.querySelectorAll('[data-listener="remove-payment"]').forEach(button => {
-  button.addEventListener('click', (e) => {
-    e.target.closest('.account-payment-item').remove();
+  -------------------------------------*/
 
-    let emptyWalletsList = document.querySelectorAll('.account-payment-item');
+  function quickView() {
 
-    if (emptyWalletsList.length == 0) {
-      window.location = '/view/account/empty.html?url=wallets';
+    const request = new XMLHttpRequest();
+
+    const viewPopUp = document.createElement('div'),
+      viewPopUpContent = document.createElement('div'),
+      viewPopUpClose = document.createElement('button');
+
+    viewPopUp.classList.add('pop-up-wrap', 'active', 'pop-up-quick-view');
+    viewPopUpContent.classList.add('pop-up-content');
+    viewPopUpClose.classList.add('close-pop-up');
+    viewPopUpClose.setAttribute('data-close', '');
+
+    document.body.append(viewPopUp);
+    viewPopUp.appendChild(viewPopUpContent);
+    viewPopUpContent.appendChild(viewPopUpClose);
+
+    viewPopUpClose.innerHTML = '<i class="far fa-times-circle" aria-hidden="true"></i>';
+
+    viewPopUpClose.addEventListener('click', () => {
+      viewPopUp.remove();
+    });
+
+    request.open('GET', '/view/product/product.html');
+
+    request.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        const doc = new DOMParser().parseFromString(this.responseText, "text/html"),
+          imageBlock = doc.querySelector('.image-product-block'),
+          textBlock = doc.querySelector('.text-product-block');
+
+        viewPopUpContent.appendChild(imageBlock);
+        viewPopUpContent.appendChild(textBlock);
+
+        productImageSlider('horizontal');
+      }
     }
+
+    request.send(null);
+  }
+
+  /*
+          Walets page scripts
+
+  ------------------------------------------*/
+
+  document.querySelectorAll('[data-listener="remove-payment"]').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.target.closest('.account-payment-item').remove();
+
+      let emptyWalletsList = document.querySelectorAll('.account-payment-item');
+
+      if (emptyWalletsList.length == 0) {
+        window.location = '/view/account/empty.html?url=wallets';
+      }
+    });
   });
-});
 
-document.querySelectorAll('[data-listener="edit-payment"]').forEach(button => {
-  button.addEventListener('click', (e) => {
-    document.querySelector('.account-payment-list').style.display = 'none';
-    document.querySelector('.account-payment-edit-form').style.display = 'block';
-    document.querySelector('button[data-listener="add-payment"]').setAttribute('disabled', 'true');
+  document.querySelectorAll('[data-listener="edit-payment"]').forEach(button => {
+    button.addEventListener('click', (e) => {
+      document.querySelector('.account-payment-list').style.display = 'none';
+      document.querySelector('.account-payment-edit-form').style.display = 'block';
+      document.querySelector('button[data-listener="add-payment"]').setAttribute('disabled', 'true');
+    });
   });
-});
-if(document.querySelector('button[data-listener="add-payment"]')) {
-  document.querySelector('button[data-listener="add-payment"]').addEventListener('click', (e) => {
-    e.target.setAttribute('disabled', 'true');
-  
-    document.querySelector('.account-payment-list').style.display = 'none';
-  
-    document.querySelector('.account-payment-form').style.display = 'block';
-  
-    document.querySelector('.account-payment-edit-form').style.display = 'none';
-  });
-}
+  if (document.querySelector('button[data-listener="add-payment"]')) {
+    document.querySelector('button[data-listener="add-payment"]').addEventListener('click', (e) => {
+      e.target.setAttribute('disabled', 'true');
 
-document.querySelectorAll('.payment-form-wrap form input').forEach(input => {
-  input.addEventListener('input', () => {
-    if (input.value.length > 0) {
-      input.parentElement.parentElement.querySelector('.payment-form-wrap form .base-button').removeAttribute('disabled');
-    } else {
-      input.parentElement.parentElement.querySelector('.payment-form-wrap form .base-button').setAttribute('disabled', 'true');
-    }
-  });
-});
+      document.querySelector('.account-payment-list').style.display = 'none';
 
+      document.querySelector('.account-payment-form').style.display = 'block';
 
-/*
-  Personal info form
-
------------------------------------------*/
-
-document.querySelectorAll('.account-personal-info-form-wrap form button[data-listener="change"]').forEach(button => {
-  button.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (button.parentElement.classList.contains('active')) {
-      /*e.preventSubmit();*/
-
-      button.parentElement.classList.remove('active');
-
-
-    } else {
-
-      button.parentElement.classList.add('active');
-    }
-  });
-});
-
-
-/*
-        Add listener for buttons
-
-------------------------------*/
-
-function addedListener() {
-  const quickViewButton = document.querySelectorAll('.button-view'),
-    addFeedbackButton = document.querySelector('.add-feedback'),
-    replyFeedbackButton = document.querySelectorAll('.reply-button button'),
-    returnButton = document.querySelector('.return-button');
-
-  if (addFeedbackButton) {
-    addFeedbackButton.addEventListener('click', () => {
-      openModal('#feedback-pop-up');
+      document.querySelector('.account-payment-edit-form').style.display = 'none';
     });
   }
 
-  if (quickViewButton) {
-    quickViewButton.forEach(button => {
-      button.addEventListener('click', () => {
-        quickView();
-      })
+  document.querySelectorAll('.payment-form-wrap form input').forEach(input => {
+    input.addEventListener('input', () => {
+      if (input.value.length > 0) {
+        input.parentElement.parentElement.querySelector('.payment-form-wrap form .base-button').removeAttribute('disabled');
+      } else {
+        input.parentElement.parentElement.querySelector('.payment-form-wrap form .base-button').setAttribute('disabled', 'true');
+      }
     });
-  }
+  });
 
-  if (replyFeedbackButton) {
-    replyFeedbackButton.forEach(button => {
-      button.addEventListener('click', () => {
-        openModal('#reply-feedback');
+
+  /*
+    Personal info form
+
+  -----------------------------------------*/
+
+  const pesonalInfoInputs = document.querySelectorAll('.account-personal-info-form-wrap input');
+
+  if (pesonalInfoInputs) {
+    pesonalInfoInputs.forEach(input => {
+      input.addEventListener('input', () => {
+        document.querySelector('.account-container-footer button[data-name="change"]').removeAttribute('disabled');
       });
-    })
-  }
-
-  if (returnButton) {
-    returnButton.addEventListener('click', () => {
-      document.querySelector('.pop-up-wrap').classList.add('active');
     });
   }
-}
 
-addedListener();
+
+
+
+  /*
+          Add listener for buttons
+
+  ------------------------------*/
+
+  function addedListener() {
+    const quickViewButton = document.querySelectorAll('.button-view'),
+      addFeedbackButton = document.querySelector('.add-feedback'),
+      replyFeedbackButton = document.querySelectorAll('.reply-button button'),
+      returnButton = document.querySelector('.return-button');
+
+    if (addFeedbackButton) {
+      addFeedbackButton.addEventListener('click', () => {
+        openModal('#feedback-pop-up');
+      });
+    }
+
+    if (quickViewButton) {
+      quickViewButton.forEach(button => {
+        button.addEventListener('click', () => {
+          quickView();
+        });
+      });
+    }
+
+    if (replyFeedbackButton) {
+      replyFeedbackButton.forEach(button => {
+        button.addEventListener('click', () => {
+          openModal('#reply-feedback');
+        });
+      })
+    }
+
+    if (returnButton) {
+      returnButton.addEventListener('click', () => {
+        document.querySelector('.pop-up-wrap').classList.add('active');
+      });
+    }
+  }
+
+  addedListener();
+
+});
 const searchInput = document.querySelector('.header-search_input'),
     clearButton = document.querySelector('.clear_search-input'),
     searchDropdown = document.querySelector('.header-search-dropdown'),
@@ -14174,9 +14170,11 @@ clearButton.addEventListener('click', () => {
 
 --------------------------------------*/
 const searchArticleInput = document.querySelector('.article-search_input'),
-    searchArticleForm = document.querySelector('.search-block_form');
+      searchArticleForm = document.querySelector('.search-block_form');
     
 if (searchArticleInput) {
+    const clearArticleSearchButton = searchArticleForm.querySelector('.clear_search-input');
+
     searchArticleForm.addEventListener('submit', (e) => {
         e.preventDefault();
     
@@ -14186,6 +14184,18 @@ if (searchArticleInput) {
         } else {
             window.location.href = `/view/blog/blog-no-result.html`;
         }
+    });
+
+    searchArticleInput.addEventListener('input', () => {
+      if (searchArticleInput.value > 0) {
+        clearArticleSearchButton.style.cssText = 'color: #bea063; opacity: 1; visibility: visible;';
+      }
+    });
+
+    clearArticleSearchButton.addEventListener('click', () => {
+      searchArticleInput.value = '';
+
+      clearArticleSearchButton.style.cssText = '';
     });
 }
 
@@ -14395,4 +14405,82 @@ if (reenterPasswordInput) {
   buttonAddNewWishList.addEventListener('click', (e) => {
     e.target.setAttribute('disabled', '');
     wishListForm.style.display = "flex";
+  });
+
+
+  /*
+      Test wishlist 
+
+  ------------------------------------------*/
+
+  const createWishlistButton = document.querySelector('button[data-toogle="create-wishlist"]'),
+        wishlistName = document.querySelector('.wish-list-form input');
+
+  let wishlistSliderId = 0;
+
+
+  createWishlistButton.addEventListener('click', () => {
+    wishlistSliderId += 1;
+
+    const wishlistNameRow = document.createElement('div'),
+          newWishlistBlock = document.createElement('div'),
+          newWishlistWrap = document.createElement('div'),
+          newWishlistSlider = document.createElement('div');
+
+    let wishlistCheckbox = document.querySelectorAll('.wish-list-product-checkbox input:checked'),
+        newWishlistName = wishlistName.value;
+
+        if (newWishlistName && wishlistCheckbox.length > 0) {
+          wishlistNameRow.classList.add('row', 'row-wrap', 'wish-list-wrap');
+          newWishlistBlock.classList.add('wish-list-wrap');
+          newWishlistWrap.classList.add('product-slider');
+          newWishlistWrap.setAttribute('id', `wishlist-slider-${wishlistSliderId}`);
+          newWishlistSlider.classList.add('swiper-wrapper');
+
+          wishlistNameRow.innerHTML = `
+            <div class="wish-list-header">
+              <div class="wish-list-checkbox">
+                <input type="checkbox" id="wish-list-${wishlistSliderId}" name="wish-list-${wishlistSliderId}">
+                <label for="wish-list-${wishlistSliderId}">
+                  <i class="fas fa-check"></i>
+                </label>
+              </div>
+              <h3>${newWishlistName}</h3>
+              <div class="payment-item-buttons">
+                <button data-listener="edit-wishlist">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#payment-edit"></use>
+                    </svg>
+                </button>
+                <button data-listener="remove-wishlist">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#payment-remove"></use>
+                    </svg>
+                </button>
+              </div>
+            </div>`;
+
+          document.querySelector('.account-container').appendChild(wishlistNameRow);
+          wishlistNameRow.appendChild(newWishlistBlock);
+          newWishlistBlock.appendChild(newWishlistWrap);
+          newWishlistWrap.appendChild(newWishlistSlider);
+
+          for (let checkbox of wishlistCheckbox) {
+            newWishlistSlider.appendChild(checkbox.parentNode.parentNode);
+            checkbox.checked = false;
+          }
+
+          wishListForm.style.display = 'none';
+          wishlistName.value = '';
+        }
+
+        buttonAddNewWishList.removeAttribute('disabled');
+
+        const listWprap = document.querySelectorAll('.swiper-wrapper');
+
+        listWprap.forEach(list => {
+          if (list.children.length == 0) {
+            list.closest('.wish-list-wrap').remove();
+          }
+        });
   });

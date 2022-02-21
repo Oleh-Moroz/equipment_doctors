@@ -70,9 +70,11 @@ clearButton.addEventListener('click', () => {
 
 --------------------------------------*/
 const searchArticleInput = document.querySelector('.article-search_input'),
-    searchArticleForm = document.querySelector('.search-block_form');
+      searchArticleForm = document.querySelector('.search-block_form');
     
 if (searchArticleInput) {
+    const clearArticleSearchButton = searchArticleForm.querySelector('.clear_search-input');
+
     searchArticleForm.addEventListener('submit', (e) => {
         e.preventDefault();
     
@@ -82,6 +84,18 @@ if (searchArticleInput) {
         } else {
             window.location.href = `/view/blog/blog-no-result.html`;
         }
+    });
+
+    searchArticleInput.addEventListener('input', () => {
+      if (searchArticleInput.value > 0) {
+        clearArticleSearchButton.style.cssText = 'color: #bea063; opacity: 1; visibility: visible;';
+      }
+    });
+
+    clearArticleSearchButton.addEventListener('click', () => {
+      searchArticleInput.value = '';
+
+      clearArticleSearchButton.style.cssText = '';
     });
 }
 
@@ -291,4 +305,82 @@ if (reenterPasswordInput) {
   buttonAddNewWishList.addEventListener('click', (e) => {
     e.target.setAttribute('disabled', '');
     wishListForm.style.display = "flex";
+  });
+
+
+  /*
+      Test wishlist 
+
+  ------------------------------------------*/
+
+  const createWishlistButton = document.querySelector('button[data-toogle="create-wishlist"]'),
+        wishlistName = document.querySelector('.wish-list-form input');
+
+  let wishlistSliderId = 0;
+
+
+  createWishlistButton.addEventListener('click', () => {
+    wishlistSliderId += 1;
+
+    const wishlistNameRow = document.createElement('div'),
+          newWishlistBlock = document.createElement('div'),
+          newWishlistWrap = document.createElement('div'),
+          newWishlistSlider = document.createElement('div');
+
+    let wishlistCheckbox = document.querySelectorAll('.wish-list-product-checkbox input:checked'),
+        newWishlistName = wishlistName.value;
+
+        if (newWishlistName && wishlistCheckbox.length > 0) {
+          wishlistNameRow.classList.add('row', 'row-wrap', 'wish-list-wrap');
+          newWishlistBlock.classList.add('wish-list-wrap');
+          newWishlistWrap.classList.add('product-slider');
+          newWishlistWrap.setAttribute('id', `wishlist-slider-${wishlistSliderId}`);
+          newWishlistSlider.classList.add('swiper-wrapper');
+
+          wishlistNameRow.innerHTML = `
+            <div class="wish-list-header">
+              <div class="wish-list-checkbox">
+                <input type="checkbox" id="wish-list-${wishlistSliderId}" name="wish-list-${wishlistSliderId}">
+                <label for="wish-list-${wishlistSliderId}">
+                  <i class="fas fa-check"></i>
+                </label>
+              </div>
+              <h3>${newWishlistName}</h3>
+              <div class="payment-item-buttons">
+                <button data-listener="edit-wishlist">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#payment-edit"></use>
+                    </svg>
+                </button>
+                <button data-listener="remove-wishlist">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#payment-remove"></use>
+                    </svg>
+                </button>
+              </div>
+            </div>`;
+
+          document.querySelector('.account-container').appendChild(wishlistNameRow);
+          wishlistNameRow.appendChild(newWishlistBlock);
+          newWishlistBlock.appendChild(newWishlistWrap);
+          newWishlistWrap.appendChild(newWishlistSlider);
+
+          for (let checkbox of wishlistCheckbox) {
+            newWishlistSlider.appendChild(checkbox.parentNode.parentNode);
+            checkbox.checked = false;
+          }
+
+          wishListForm.style.display = 'none';
+          wishlistName.value = '';
+        }
+
+        buttonAddNewWishList.removeAttribute('disabled');
+
+        const listWprap = document.querySelectorAll('.swiper-wrapper');
+
+        listWprap.forEach(list => {
+          if (list.children.length == 0) {
+            list.closest('.wish-list-wrap').remove();
+          }
+        });
   });
