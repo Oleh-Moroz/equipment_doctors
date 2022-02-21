@@ -13743,7 +13743,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   lightbox.option({
     'resizeDuration': 150,
-    'wrapAround': true
+    'wrapAround': false
   });
 
 
