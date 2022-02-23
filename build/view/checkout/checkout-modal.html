@@ -1,4 +1,4 @@
-<div class="pop-up-wrap active pop-up-quick-view">
+<div class="pop-up-wrap pop-up-checkout"><!-- active -->
     <div class="pop-up-content">
         <div class="pop-up-header">
             <div class="pop-up-header_title">
@@ -53,10 +53,23 @@
                                 $1,725.00
                             </div>
                             <div class="pop-up-checkout_table-col mini-checkout_product-quantity">
-                                Price
+                                <div class="checkout-spinner">
+                                    <button data-type="minus">
+                                        -
+                                    </button>
+                                    <input type="text" value="1" size="1">
+                                    <button data-type="plus">
+                                        + 
+                                    </button>
+                                </div>
                             </div>
                             <div class="pop-up-checkout_table-col mini-checkout_product-total">
-                                Price
+                                $3,500.00
+                            </div>
+                            <div class="checkout-remove-item">
+                                <button data-listener="remove">
+                                    <i class="far fa-times" aria-hidden="true"></i>
+                                </button>
                             </div>
                         </li>
                     </ul>
@@ -64,6 +77,28 @@
             </div>
         </div>
         
+        <div class="pop-up-footer" >
+            <div class="row">
+                <div class="total-value-block">
+                    <div class="total-text">
+                        Final Price:
+                    </div>
+                    <div class="total-value">
+                        $5,225.00
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button class="base-buton" data-listener="checkout-return">
+                    <i class="fas fa-angle-left"></i>
+                    Return to shopping
+                </button>
+                <button class="base-buton" data-listener="checkout-continue">
+                    Go to checkout
+                    <i class="fas fa-angle-right"></i>
+                </button>
+            </div>
+        </div>
 
     </div>
 </div>

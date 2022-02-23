@@ -149,7 +149,7 @@ input[type="color"].form-control {
 button, .base-button {
     outline: none;
     box-sizing: border-box;
-    padding: 12px 10px;
+    padding: 12px 21px;
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
@@ -3814,7 +3814,7 @@ input:checked ~ label::before {
 
     .pop-up-form {
         box-sizing: border-box;
-        padding: 24px 30px;
+        padding: 24px 70px;
     }
 }
 
@@ -4670,6 +4670,7 @@ button:disabled {
     }
 
     .media-login-item {
+        min-width: 40%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -4732,7 +4733,7 @@ button:disabled {
     .row {
         .form-group {
             margin: 25px 5% 25px 0;
-            min-width: 75%;
+            min-width: 67%;
         }
 
         .button-group {
@@ -4769,7 +4770,7 @@ button:disabled {
 
 .form-text-margin-top {
     margin: 25px auto 0;
-    max-width: 80%;
+    max-width: 76%;
 }
 
 .error-text {
@@ -6647,5 +6648,19 @@ input.error ~ .error-text {
         padding: 0;
         border-radius: 0;
         background: transparent;
+    }
+}
+
+
+/*
+
+    Checkout style
+
+--------------------------------------*/
+
+.pop-up-checkout {
+    .pop-up-content {
+        max-width: 990px;
+        flex-wrap: wrap;
     }
 }
