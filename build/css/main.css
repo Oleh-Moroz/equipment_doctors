@@ -3614,6 +3614,7 @@ input:checked ~ label::before {
   height: 100%;
 }
 .caption-vendor-info .product-vendor-logo a img {
+  max-width: 320px;
   height: 100%;
 }
 
@@ -4317,6 +4318,8 @@ button:disabled:hover {
   margin: 0 2px;
   overflow: hidden;
   transition: all 0.4s linear;
+  min-width: 52px;
+  text-align: center;
 }
 .paginaton-row nav .nav-links a:hover, .paginaton-row nav .nav-links span:hover {
   background: #DCBC78;
@@ -4329,6 +4332,9 @@ button:disabled:hover {
 .paginaton-row nav .nav-links span.current {
   color: #fff;
   background: #BEA063;
+}
+.paginaton-row nav .nav-links .prev, .paginaton-row nav .nav-links .next {
+  min-width: 90px;
 }
 
 /* 
@@ -6217,8 +6223,11 @@ input.error ~ .error-text {
   width: 100%;
 }
 .payment-form-wrap form .form-group .form-group {
-  max-width: 27%;
-  min-width: 27%;
+  max-width: 30%;
+  min-width: 30%;
+}
+.payment-form-wrap form .form-group .form-group:last-child {
+  margin-right: -20px;
 }
 .payment-form-wrap form .button-group {
   width: 100%;

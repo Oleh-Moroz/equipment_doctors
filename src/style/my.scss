@@ -3732,6 +3732,7 @@ input:checked ~ label::before {
             height: 100%;
 
             img {
+                max-width: 320px;
                 height: 100%;
             }
         }
@@ -4442,6 +4443,8 @@ button:disabled {
                 margin: 0 2px;
                 overflow: hidden;
                 transition: all .4s linear;
+                min-width: 52px;
+                text-align: center;
 
                 &:hover {
                     background: $gold-hover;
@@ -4457,6 +4460,10 @@ button:disabled {
             span.current {
                 color: $white;
                 background: $gold;
+            }
+
+            .prev, .next {
+                min-width: 90px;
             }
         }
     }
@@ -6435,8 +6442,12 @@ input.error ~ .error-text {
             }
 
             .form-group {
-                max-width: 27%;
-                min-width: 27%;
+                max-width: 30%;
+                min-width: 30%;
+
+                &:last-child {
+                    margin-right: -20px;
+                }
             }
         }
 

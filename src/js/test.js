@@ -160,6 +160,20 @@ if (reenterPasswordInput) {
     });
 }
 
+/* 
+  Checkout
+
+-------------------------*/
+
+const addCheckoutButtons = document.querySelectorAll('button[data-toggle="add-to-cart"]'),
+      checkoutModal = document.querySelector('.pop-up-checkout');
+
+      addCheckoutButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          checkoutModal.classList.add('active');
+        });
+      });
+
 
  /*
           Empty account page script
