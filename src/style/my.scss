@@ -4400,6 +4400,7 @@ button:disabled {
 
         &.active {
             a {
+                min-width: 80px;
                 background: $gold;
                 color: $white;
             }
