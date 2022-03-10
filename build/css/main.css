@@ -4270,6 +4270,7 @@ button:disabled:hover {
   color: #fff;
 }
 .blog-category-tabs li.active a {
+  min-width: 80px;
   background: #BEA063;
   color: #fff;
 }
@@ -6420,8 +6421,46 @@ input.error ~ .error-text {
     Checkout style
 
 --------------------------------------*/
+.pop-up-checkout .pop-up-header_title {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: #42474C;
+}
+.pop-up-checkout .pop-up-header_title div {
+  margin-left: 5px;
+}
 .pop-up-checkout .pop-up-content {
   max-width: 990px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+.pop-up-checkout .pop-up-body {
+  padding: 0 30px;
+}
+.pop-up-checkout .pop-up-checkout_table-header {
+  background: #F8F8F8;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 143%;
+  color: #42474C;
+}
+.pop-up-checkout .pop-up-checkout_table .pop-up-checkout_table-col {
+  box-sizing: border-box;
+  padding: 16px 25px;
 }

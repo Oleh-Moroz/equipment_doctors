@@ -6671,8 +6671,49 @@ input.error ~ .error-text {
 --------------------------------------*/
 
 .pop-up-checkout {
+    .pop-up-header {
+        &_title {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 120%;
+            color: $black;
+
+            div {
+                margin-left: 5px;
+            }
+        }
+    }
+
     .pop-up-content {
         max-width: 990px;
         flex-wrap: wrap;
+    }
+
+    .pop-up-body {
+        padding: 0 30px;
+    }
+
+    .pop-up-checkout_table {
+        &-header {
+            background: #F8F8F8;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 143%;
+            color: $black;            
+        }
+
+        .pop-up-checkout_table-col {
+            box-sizing: border-box;
+            padding: 16px 25px;
+        }
     }
 }
