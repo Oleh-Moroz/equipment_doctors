@@ -14275,6 +14275,45 @@ const addCheckoutButtons = document.querySelectorAll('button[data-toggle="add-to
       });
 
 
+/*
+
+      Address page script
+
+  ------------------------------------*/
+
+const addressInputs = document.querySelectorAll('.address-list_item .form-group input'),
+      saveAddressButton = document.querySelector('button[data-toggle="save-address"]'),
+      addressTextArea = document.querySelectorAll('.address-list_item .form-group textarea');
+
+if (saveAddressButton) {
+  saveAddressButton.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    location.href = '/view/account/addresses-list.html';
+  });
+}
+
+if (addressInputs.length > 0) {
+  document.querySelector('.cancel-button').addEventListener('click', () => {
+    location.reload();
+  });
+
+  addressInputs.forEach(item => {
+    item.addEventListener('input', () => {
+      document.querySelector('.address-list_item .button-group').style.display = "flex";
+    });
+  });
+
+  addressTextArea.forEach(item => {
+    item.addEventListener('input', () => {
+      document.querySelector('.address-list_item .button-group').style.display = "flex";
+    });
+  });
+}
+
+
+
+
  /*
           Empty account page script
 
@@ -14416,10 +14455,12 @@ const addCheckoutButtons = document.querySelectorAll('button[data-toggle="add-to
   const buttonAddNewWishList = document.querySelector('button[data-listener="new-wishlist"]'),
         wishListForm = document.querySelector('.wish-list-form-wrap');
 
+if (buttonAddNewWishList) {
   buttonAddNewWishList.addEventListener('click', (e) => {
     e.target.setAttribute('disabled', '');
     wishListForm.style.display = "flex";
   });
+}
 
 
   /*
@@ -14430,71 +14471,73 @@ const addCheckoutButtons = document.querySelectorAll('button[data-toggle="add-to
   const createWishlistButton = document.querySelector('button[data-toogle="create-wishlist"]'),
         wishlistName = document.querySelector('.wish-list-form input');
 
-  let wishlistSliderId = 0;
+        if (createWishlistButton) {
+          let wishlistSliderId = 0;
 
 
-  createWishlistButton.addEventListener('click', () => {
-    wishlistSliderId += 1;
-
-    const wishlistNameRow = document.createElement('div'),
-          newWishlistBlock = document.createElement('div'),
-          newWishlistWrap = document.createElement('div'),
-          newWishlistSlider = document.createElement('div');
-
-    let wishlistCheckbox = document.querySelectorAll('.wish-list-product-checkbox input:checked'),
-        newWishlistName = wishlistName.value;
-
-        if (newWishlistName && wishlistCheckbox.length > 0) {
-          wishlistNameRow.classList.add('row', 'row-wrap', 'wish-list-wrap');
-          newWishlistBlock.classList.add('wish-list-wrap');
-          newWishlistWrap.classList.add('product-slider');
-          newWishlistWrap.setAttribute('id', `wishlist-slider-${wishlistSliderId}`);
-          newWishlistSlider.classList.add('swiper-wrapper');
-
-          wishlistNameRow.innerHTML = `
-            <div class="wish-list-header">
-              <div class="wish-list-checkbox">
-                <input type="checkbox" id="wish-list-${wishlistSliderId}" name="wish-list-${wishlistSliderId}">
-                <label for="wish-list-${wishlistSliderId}">
-                  <i class="fas fa-check"></i>
-                </label>
-              </div>
-              <h3>${newWishlistName}</h3>
-              <div class="payment-item-buttons">
-                <button data-listener="edit-wishlist">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use href="#payment-edit"></use>
-                    </svg>
-                </button>
-                <button data-listener="remove-wishlist">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use href="#payment-remove"></use>
-                    </svg>
-                </button>
-              </div>
-            </div>`;
-
-          document.querySelector('.account-container').appendChild(wishlistNameRow);
-          wishlistNameRow.appendChild(newWishlistBlock);
-          newWishlistBlock.appendChild(newWishlistWrap);
-          newWishlistWrap.appendChild(newWishlistSlider);
-
-          for (let checkbox of wishlistCheckbox) {
-            newWishlistSlider.appendChild(checkbox.parentNode.parentNode);
-            checkbox.checked = false;
-          }
-
-          wishListForm.style.display = 'none';
-          wishlistName.value = '';
+          createWishlistButton.addEventListener('click', () => {
+            wishlistSliderId += 1;
+        
+            const wishlistNameRow = document.createElement('div'),
+                  newWishlistBlock = document.createElement('div'),
+                  newWishlistWrap = document.createElement('div'),
+                  newWishlistSlider = document.createElement('div');
+        
+            let wishlistCheckbox = document.querySelectorAll('.wish-list-product-checkbox input:checked'),
+                newWishlistName = wishlistName.value;
+        
+                if (newWishlistName && wishlistCheckbox.length > 0) {
+                  wishlistNameRow.classList.add('row', 'row-wrap', 'wish-list-wrap');
+                  newWishlistBlock.classList.add('wish-list-wrap');
+                  newWishlistWrap.classList.add('product-slider');
+                  newWishlistWrap.setAttribute('id', `wishlist-slider-${wishlistSliderId}`);
+                  newWishlistSlider.classList.add('swiper-wrapper');
+        
+                  wishlistNameRow.innerHTML = `
+                    <div class="wish-list-header">
+                      <div class="wish-list-checkbox">
+                        <input type="checkbox" id="wish-list-${wishlistSliderId}" name="wish-list-${wishlistSliderId}">
+                        <label for="wish-list-${wishlistSliderId}">
+                          <i class="fas fa-check"></i>
+                        </label>
+                      </div>
+                      <h3>${newWishlistName}</h3>
+                      <div class="payment-item-buttons">
+                        <button data-listener="edit-wishlist">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use href="#payment-edit"></use>
+                            </svg>
+                        </button>
+                        <button data-listener="remove-wishlist">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use href="#payment-remove"></use>
+                            </svg>
+                        </button>
+                      </div>
+                    </div>`;
+        
+                  document.querySelector('.account-container').appendChild(wishlistNameRow);
+                  wishlistNameRow.appendChild(newWishlistBlock);
+                  newWishlistBlock.appendChild(newWishlistWrap);
+                  newWishlistWrap.appendChild(newWishlistSlider);
+        
+                  for (let checkbox of wishlistCheckbox) {
+                    newWishlistSlider.appendChild(checkbox.parentNode.parentNode);
+                    checkbox.checked = false;
+                  }
+        
+                  wishListForm.style.display = 'none';
+                  wishlistName.value = '';
+                }
+        
+                buttonAddNewWishList.removeAttribute('disabled');
+        
+                const listWprap = document.querySelectorAll('.swiper-wrapper');
+        
+                listWprap.forEach(list => {
+                  if (list.children.length == 0) {
+                    list.closest('.wish-list-wrap').remove();
+                  }
+                });
+          });
         }
-
-        buttonAddNewWishList.removeAttribute('disabled');
-
-        const listWprap = document.querySelectorAll('.swiper-wrapper');
-
-        listWprap.forEach(list => {
-          if (list.children.length == 0) {
-            list.closest('.wish-list-wrap').remove();
-          }
-        });
-  });

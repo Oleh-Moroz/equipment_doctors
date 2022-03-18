@@ -811,6 +811,129 @@ footer {
   color: #fff;
 }
 
+.address-list_item {
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  padding: 15px 30px;
+}
+.address-list_item form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.address-list_item .form-col {
+  -ms-flex: 0 0 30%;
+      flex: 0 0 30%;
+  max-width: 30%;
+  margin-right: 2%;
+}
+.address-list_item .form-col:last-child {
+  margin-right: 0;
+}
+.address-list_item .form-group {
+  margin: 0 0 25px;
+}
+.address-list_item .form-group input[type=email],
+.address-list_item .form-group input[type=password],
+.address-list_item .form-group input[type=text],
+.address-list_item .form-group textarea {
+  background: #F8F8F8;
+  border: 1px solid #F8F8F8;
+}
+.address-list_item .form-group input[type=email]:focus, .address-list_item .form-group input[type=email]:hover,
+.address-list_item .form-group input[type=password]:focus,
+.address-list_item .form-group input[type=password]:hover,
+.address-list_item .form-group input[type=text]:focus,
+.address-list_item .form-group input[type=text]:hover,
+.address-list_item .form-group textarea:focus,
+.address-list_item .form-group textarea:hover {
+  background: #fff;
+  border: 1px solid #BEA063;
+}
+.address-list_item .form-group .select-list input {
+  background: #F8F8F8;
+  border: 1px solid #F8F8F8;
+}
+.address-list_item .form-group .select-list input:focus, .address-list_item .form-group .select-list input:hover {
+  background: #fff;
+  border: 1px solid #BEA063;
+}
+.address-list_item .form-group_row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+}
+.address-list_item .form-group_row .form-group {
+  -ms-flex: 0 0 48%;
+      flex: 0 0 48%;
+  max-width: 48%;
+  margin: 0 4% 25px 0;
+}
+.address-list_item .form-group_row .form-group:last-child {
+  margin: 0 0 25px 0;
+}
+.address-list_item .button-group {
+  width: 100%;
+  display: none;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+.address-list_item .button-group button[data-toggle=save-address] {
+  width: auto;
+}
+
+.address-checkbox_row {
+  width: 100%;
+  margin-bottom: 25px;
+}
+.address-checkbox_row input {
+  display: none;
+}
+.address-checkbox_row label {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  color: #221E1E;
+}
+.address-checkbox_row label::before {
+  content: "";
+  border: 2px solid #42474c;
+  width: 14px;
+  height: 14px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 3px;
+  transition: all 0.4s linear;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #fff;
+  font-size: 10px;
+  margin-right: 15px;
+}
+.address-checkbox_row input:checked ~ label::before {
+  content: "\f00c";
+  border: 2px solid #bea063;
+  background: #bea063;
+}
+
 .copyright-text {
   margin-left: 8%;
 }
@@ -3671,7 +3794,7 @@ input:checked ~ label::before {
   -ms-flex-pack: justify;
       justify-content: space-between;
   box-sizing: border-box;
-  padding: 24px 30px;
+  padding: 24px 30px 15px;
   border-bottom: 1px solid #F8F8F8;
 }
 .pop-up-content .pop-up-header .pop-up-title {
@@ -3690,7 +3813,7 @@ input:checked ~ label::before {
 }
 .pop-up-content .pop-up-form {
   box-sizing: border-box;
-  padding: 24px 70px;
+  padding: 24px 30px;
 }
 
 .form-stars-chekbox-title {
@@ -4584,8 +4707,8 @@ button:disabled:hover {
   color: #BEA063;
 }
 .account-form .row .form-group {
-  margin: 25px 5% 25px 0;
-  min-width: 67%;
+  margin: 0 5% 0 0;
+  min-width: 72%;
 }
 .account-form .row .button-group {
   margin-top: 27px;
@@ -4618,7 +4741,7 @@ button:disabled:hover {
 }
 
 .form-text-margin-top {
-  margin: 25px auto 0;
+  margin: 15px auto 0;
   max-width: 76%;
 }
 

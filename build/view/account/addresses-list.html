@@ -1042,7 +1042,7 @@
 
         </div>
         <div class="content">
-            <div class="account-container">
+            <div class="account-container account-no-bg">
                 <div class="account-container-header">
                     <h1>Delivery Addresses</h1>
 
@@ -1050,86 +1050,153 @@
                 </div>
 
                 <div class="address-list">
-                    
-                </div>
-
-                <div class="payment-form-wrap">
-                    <form>
-                        <div class="form-title">General</div>
-
-                        <div class="form-group">
-                            <label for="payment-first-name">First name</label>
-                            <input type="text" name="payment-first-name">
+                    <div class="address-list_item">
+                        <div class="address-checkbox_row">
+                            <input type="radio" id="default-adress-1" name="default-adress" value="default-adress-1" checked>
+                            <label for="default-adress-1">Set as my preferred delivery address</label>
                         </div>
-                        <div class="form-group">
-                            <label for="payment-last-name">Last name</label>
-                            <input type="text" name="payment-last-name">
-                        </div>
-
-                        <div class="form-title">Billing Information</div>
-
-                        <div class="form-group">
-                            <label for="payment-address-street">Street Address</label>
-                            <input type="text" name="payment-address-street">
-                        </div>
-                        <div class="form-group apt-form-group">
-                            <label for="payment-address-apt">Apt or unit </label>
-                            <input type="text" name="payment-address-apt">
-                        </div>
-                        <div class="form-group city-form-group">
-                            <label for="payment-address-city">City</label>
-                            <input type="text" name="payment-address-city">
-                        </div>
-                        <div class="form-group">
-                            <label for="payment-address-state">State</label>
-                            <div class="select-list">
-                                <input class="select-active-item" name="payment-address-state" value="">
-                                <ul>
-                                    <li>Alabama</li>
-                                    <li>Alaska</li>
-                                    <li>Arizona</li>
-                                    <li>Arkansas</li>
-                                    <li>California</li>
-                                </ul>
+                        <form>
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="payment-first-name">First name</label>
+                                    <input type="text" name="payment-first-name" value="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="payment-last-name">Last name</label>
+                                    <input type="text" name="payment-last-name" value="Dou">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group city-form-group">
-                            <label for="payment-address-zip-code">Zip Code</label>
-                            <input type="text" name="payment-address-zip-code">
-                        </div>
+    
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="payment-address-street">Street Address</label>
+                                    <input type="text" name="payment-address-street" value="Dou">
+                                </div>
+                                <div class="form-group_row">
+                                    <div class="form-group apt-form-group">
+                                        <label for="payment-address-apt">Apt or unit </label>
+                                        <input type="text" name="payment-address-apt" value="1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="payment-address-state">State</label>
+                                        <div class="select-list">
+                                            <input class="select-active-item" name="payment-address-state" value="Alabama">
+                                            <ul>
+                                                <li>Alabama</li>
+                                                <li>Alaska</li>
+                                                <li>Arizona</li>
+                                                <li>Arkansas</li>
+                                                <li>California</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-col">
+                                <div class="form-group city-form-group">
+                                    <label for="payment-address-city">City</label>
+                                    <input type="text" name="payment-address-city" value="Dou">
+                                </div>
+                                <div class="form-group_row">
+                                    <div class="form-group city-form-group">
+                                        <label for="payment-address-zip-code">Zip Code</label>
+                                        <input type="text" name="payment-address-zip-code" value="123">
+                                    </div>
+                                    <div class="form-group city-form-group">
+                                        <label for="payment-address-contact-phone">Contact phone number</label>
+                                        <input type="text" name="payment-address-contact-phone" value="+103040340340">
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-group city-form-group" style="max-width: 50%;min-width: 50%;">
+                                <label for="payment-address-contact-instruction">Delivey Instruction</label>
+                                <textarea name="payment-address-contact-instruction"></textarea>
+                            </div>
+    
+                            <div class="button-group">
+                                <button class="cancel-button" data-close="">Cancel</button>
+                                <button class="base-button" data-toggle="save-address">
+                                    Save Address
+                                </button>
+                            </div>
+                        </form>
+                    </div>
 
-                        <div class="form-group city-form-group" style="max-width: 38%;min-width: 26%;">
-                            <label for="payment-address-contact-phone">Contact phone number</label>
-                            <input type="text" name="payment-address-contact-phone">
-                            <p style="margin-top: 15px;">We'll contact you in case anything comes up with your order.</p>
+                    <div class="address-list_item">
+                        <div class="address-checkbox_row">
+                            <input type="radio" id="default-adress-2" name="default-adress" value="default-adress-2">
+                            <label for="default-adress-2">Set as my preferred delivery address</label>
                         </div>
-
-                        <div class="form-group city-form-group">
-
-                        </div>
-
-                        <div class="form-group city-form-group" style="max-width: 39%;min-width: 39%;">
-                            <label for="payment-address-contact-instruction">Delivey Instruction</label>
-                            <textarea name="payment-address-contact-instruction"></textarea>
-                        </div>
-
-                        <div class="form-group city-form-group" style="max-width: 39%;min-width: 39%;">
-
-                        </div>
-
-                        <div class="form-group city-form-group" style="display: flex">
-                            <input type="checkbox" name="payment-address-aprrow" id="payment-address-aprrow">
-                            <label for="payment-address-aprrow" style="width: 80%;">Set as my preferred delivery address
-                            </label>
-                        </div>
-
-                        <div class="button-group">
-                            <button class="cancel-button" data-close="">Cancel</button>
-                            <button class="base-button" data-toggle="save-address" disabled="true">
-                                Save Address
-                            </button>
-                        </div>
-                    </form>
+                        <form>
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="payment-first-name">First name</label>
+                                    <input type="text" name="payment-first-name" value="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="payment-last-name">Last name</label>
+                                    <input type="text" name="payment-last-name" value="Dou">
+                                </div>
+                            </div>
+    
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="payment-address-street">Street Address</label>
+                                    <input type="text" name="payment-address-street" value="Dou">
+                                </div>
+                                <div class="form-group_row">
+                                    <div class="form-group apt-form-group">
+                                        <label for="payment-address-apt">Apt or unit </label>
+                                        <input type="text" name="payment-address-apt" value="1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="payment-address-state">State</label>
+                                        <div class="select-list">
+                                            <input class="select-active-item" name="payment-address-state" value="Alabama">
+                                            <ul>
+                                                <li>Alabama</li>
+                                                <li>Alaska</li>
+                                                <li>Arizona</li>
+                                                <li>Arkansas</li>
+                                                <li>California</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-col">
+                                <div class="form-group city-form-group">
+                                    <label for="payment-address-city">City</label>
+                                    <input type="text" name="payment-address-city" value="Dou">
+                                </div>
+                                <div class="form-group_row">
+                                    <div class="form-group city-form-group">
+                                        <label for="payment-address-zip-code">Zip Code</label>
+                                        <input type="text" name="payment-address-zip-code" value="123">
+                                    </div>
+                                    <div class="form-group city-form-group">
+                                        <label for="payment-address-contact-phone">Contact phone number</label>
+                                        <input type="text" name="payment-address-contact-phone" value="+103040340340">
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-group city-form-group" style="max-width: 50%;min-width: 50%;">
+                                <label for="payment-address-contact-instruction">Delivey Instruction</label>
+                                <textarea name="payment-address-contact-instruction"></textarea>
+                            </div>
+    
+                            <div class="button-group">
+                                <button class="cancel-button" data-close="">Cancel</button>
+                                <button class="base-button" data-toggle="save-address">
+                                    Save Address
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
