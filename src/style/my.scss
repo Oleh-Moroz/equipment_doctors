@@ -1679,6 +1679,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
         
         button {
             width: 47%;
@@ -3401,7 +3402,7 @@ input:checked ~ label::before {
         justify-content: flex-start;
         button {
             margin-right: 40px;
-            max-width: 140px;
+            max-width: 160px;
 
             &.button-wishlist {
                 background: transparent;
@@ -3412,6 +3413,92 @@ input:checked ~ label::before {
                     color: $white;
                     background: $gold-hover;
                     border: 1px solid $gold-hover;
+                }
+            }
+        }
+    }
+}
+
+.wishlist-modal {
+    position: absolute;
+    background: #fff;
+    bottom: 120%;
+    left: 0;
+    min-width: 365px;
+    border-radius: 6px 6px 0 0;
+    box-sizing: border-box;
+    padding: 15px 0;
+    box-shadow: 0 -3px 7px rgb(0 0 0 / 10%);
+    transition: all .4s linear;
+    opacity: 0;
+    transform: translateY(15px);
+    visibility: hidden;
+
+    &.active {
+        opacity: 1;
+        transform: translateY(0px);
+        visibility: visible; 
+    }
+
+    a {
+        display: block;
+        width: 100%;
+    }
+
+    .wishlist-modal_header {
+        width: 100%;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0 30px 15px;
+        border-bottom: 1px solid #f8f8f8;
+
+        .wishlist-modal_row {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .wishlist-modal_caption {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px 30px 0;
+        
+        input {
+            max-width: 100%;
+            min-width: 100%;
+            width: 100%;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 6px;
+            transition: all .4s linear;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 143%;
+            color: #000;
+            padding: 10px 17px;
+
+            &:hover {
+                border: 1px solid #bea063;
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 20px; 
+
+            a {
+                transition: all .4s linear;
+            
+                &:hover {
+                    color: $gold;
                 }
             }
         }

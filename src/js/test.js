@@ -211,7 +211,16 @@ if (addressInputs.length > 0) {
   });
 }
 
+const buttonWishlistModal = document.querySelector('.button-wishlist'),
+      WishlistModal = document.querySelectorAll('.wishlist-modal');
 
+if (buttonWishlistModal) {
+  buttonWishlistModal.addEventListener('click', () => {
+    WishlistModal.forEach(modal => {
+      modal.classList.toggle('active');
+    });
+  });
+}
 
 
  /*
