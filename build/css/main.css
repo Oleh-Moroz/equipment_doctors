@@ -3897,6 +3897,10 @@ input:checked ~ label::before {
   padding: 24px 30px;
 }
 
+.pop-up-content .pop-up-form_padding-top {
+  padding-top: 0;
+}
+
 .form-stars-chekbox-title {
   font-style: normal;
   font-weight: 500;
@@ -4047,6 +4051,37 @@ input:checked ~ label::before {
   color: #DCBC78;
 }
 
+.checkbox-form-group input {
+  display: none;
+}
+.checkbox-form-group label {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+}
+.checkbox-form-group label::before {
+  content: "";
+  border: 2px solid #42474c;
+  width: 14px;
+  height: 14px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 3px;
+  transition: all 0.4s linear;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #fff;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
 .subscribe-checkbox {
   font-style: normal;
   font-weight: normal;
@@ -4092,6 +4127,7 @@ input:checked ~ label::before {
 }
 
 .pop-up-button-group {
+  margin-top: 40px;
   -ms-flex-pack: end;
       justify-content: flex-end;
 }
