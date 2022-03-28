@@ -826,12 +826,12 @@ footer {
       flex-wrap: wrap;
 }
 .address-list_item .form-col {
-  -ms-flex: 0 0 30%;
-      flex: 0 0 30%;
-  max-width: 30%;
+  -ms-flex: 31.8333333333%;
+      flex: 31.8333333333%;
+  max-width: 31.8333333333%;
   margin-right: 2%;
 }
-.address-list_item .form-col:last-child {
+.address-list_item .form-col:nth-child(3) {
   margin-right: 0;
 }
 .address-list_item .form-group {
@@ -887,6 +887,10 @@ footer {
 }
 .address-list_item .button-group button[data-toggle=save-address] {
   width: auto;
+}
+.address-list_item.active .button-group {
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .address-checkbox_row {
@@ -4831,6 +4835,10 @@ button:disabled:hover {
   margin-top: 27px;
 }
 
+.pop-up-form_no-padding-bottom {
+  padding-bottom: 10px;
+}
+
 .registration-form form {
   display: -ms-flexbox;
   display: flex;
@@ -4859,7 +4867,7 @@ button:disabled:hover {
 
 .form-text-margin-top {
   margin: 15px auto 0;
-  max-width: 76%;
+  max-width: 66%;
 }
 
 .error-text {
@@ -4880,6 +4888,15 @@ input.error ~ .error-text {
   display: block;
   opacity: 1;
   bottom: -22px;
+}
+
+.verification-code_form {
+  padding: 24px 0 !important;
+  max-width: 66%;
+  margin: 0 auto;
+}
+.verification-code_form .form-group {
+  min-width: 60%;
 }
 
 /* 

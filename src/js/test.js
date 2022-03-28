@@ -200,13 +200,23 @@ if (addressInputs.length > 0) {
 
   addressInputs.forEach(item => {
     item.addEventListener('input', () => {
-      document.querySelector('.address-list_item .button-group').style.display = "flex";
+      document.querySelectorAll('.address-list_item').forEach(list => {
+        if (list.classList.contains('active')) {
+          list.classList.remove('active');
+        }
+      });
+      item.closest('.address-list_item').classList.add('active');
     });
   });
 
   addressTextArea.forEach(item => {
     item.addEventListener('input', () => {
-      document.querySelector('.address-list_item .button-group').style.display = "flex";
+      document.querySelectorAll('.address-list_item').forEach(list => {
+        if (list.classList.contains('active')) {
+          list.classList.remove('active');
+        }
+      });
+      item.closest('.address-list_item').classList.add('active');
     });
   });
 }

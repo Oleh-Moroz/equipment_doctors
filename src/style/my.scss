@@ -864,11 +864,11 @@ footer {
     }
 
     .form-col {
-        flex: 0 0 30%;
-        max-width: 30%;
+        flex: calc((100% / 3) - 1.5%);
+        max-width: calc((100% / 3) - 1.5%);
         margin-right: 2%;
 
-        &:last-child {
+        &:nth-child(3) {
             margin-right: 0;
         }
     }
@@ -923,6 +923,12 @@ footer {
 
         button[data-toggle="save-address"] {
             width: auto;
+        }
+    }
+
+    &.active {
+        .button-group {
+            display: flex;
         }
     }
 }
@@ -5000,6 +5006,10 @@ button:disabled {
     }
 }
 
+.pop-up-form_no-padding-bottom {
+    padding-bottom: 10px;
+}
+
 .registration-form {
     form {
         display: flex;
@@ -5028,7 +5038,7 @@ button:disabled {
 
 .form-text-margin-top {
     margin: 15px auto 0;
-    max-width: 76%;
+    max-width: 66%;
 }
 
 .error-text {
@@ -5049,6 +5059,16 @@ input.error ~ .error-text {
     display: block;
     opacity: 1;
     bottom: -22px;
+}
+
+.verification-code_form {
+    padding: 24px 0 !important;
+    max-width: 66%;
+    margin: 0 auto;
+
+    .form-group {
+        min-width: 60%;
+    }
 }
 
 
