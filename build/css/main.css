@@ -829,7 +829,7 @@ footer {
   -ms-flex: 31.8333333333%;
       flex: 31.8333333333%;
   max-width: 31.8333333333%;
-  margin-right: 2%;
+  margin-right: 2.25%;
 }
 .address-list_item .form-col:nth-child(3) {
   margin-right: 0;
@@ -4831,6 +4831,9 @@ button:disabled:hover {
   margin: 0 5% 0 0;
   min-width: 72%;
 }
+.account-form .row .form-group_resend {
+  min-width: 65%;
+}
 .account-form .row .button-group {
   margin-top: 27px;
 }
@@ -6459,8 +6462,8 @@ input.error ~ .error-text {
   color: #221E1E;
 }
 .payment-form-wrap form .form-group {
-  min-width: 38%;
-  max-width: 38%;
+  min-width: 36%;
+  max-width: 36%;
   margin: 0 20px 25px 0;
   display: -ms-flexbox;
   display: flex;
@@ -6474,8 +6477,8 @@ input.error ~ .error-text {
   min-width: 10%;
 }
 .payment-form-wrap form .form-group.city-form-group {
-  max-width: 26%;
-  min-width: 26%;
+  max-width: 24%;
+  min-width: 24%;
 }
 .payment-form-wrap form .form-group label {
   width: 100%;

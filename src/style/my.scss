@@ -866,7 +866,7 @@ footer {
     .form-col {
         flex: calc((100% / 3) - 1.5%);
         max-width: calc((100% / 3) - 1.5%);
-        margin-right: 2%;
+        margin-right: 2.25%;
 
         &:nth-child(3) {
             margin-right: 0;
@@ -5000,6 +5000,10 @@ button:disabled {
             min-width: 72%;
         }
 
+        .form-group_resend {
+            min-width: 65%;
+        }
+
         .button-group {
             margin-top: 27px;
         }
@@ -6691,8 +6695,8 @@ input.error ~ .error-text {
         }
 
         .form-group {
-            min-width: 38%;
-            max-width: 38%;
+            min-width: 36%;
+            max-width: 36%;
             margin: 0 20px 25px 0;
             display: flex;
             flex-direction: row;
@@ -6704,8 +6708,8 @@ input.error ~ .error-text {
             }
 
             &.city-form-group {
-                max-width: 26%;
-                min-width: 26%;
+                max-width: 24%;
+                min-width: 24%;
             }
 
             label {
