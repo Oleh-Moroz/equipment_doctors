@@ -400,7 +400,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
       selectDropdownItem.forEach(item => {
         item.addEventListener('click', () => {
-          selectInput.value = item.innerText;
+          selectDropdownItem.forEach(list => list.classList.remove('active'));
+          selectInput.setAttribute('value', item.innerText);
           item.classList.add('active');
           selectDropdown.classList.toggle('show');
           selectDropdown.parentElement.classList.toggle('active');

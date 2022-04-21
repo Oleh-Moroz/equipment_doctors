@@ -183,7 +183,8 @@ addCheckoutButtons.forEach(button => {
 
 const addressInputs = document.querySelectorAll('.address-list_item .form-group input'),
   saveAddressButton = document.querySelector('button[data-toggle="save-address"]'),
-  addressTextArea = document.querySelectorAll('.address-list_item .form-group textarea');
+  addressTextArea = document.querySelectorAll('.address-list_item .form-group textarea'),
+  selectList = document.querySelectorAll('.select-list');
 
 if (saveAddressButton) {
   saveAddressButton.addEventListener('click', (e) => {
@@ -217,6 +218,20 @@ if (addressInputs.length > 0) {
         }
       });
       item.closest('.address-list_item').classList.add('active');
+    });
+  });
+
+  selectList.forEach(listItem => {
+
+    listItem.addEventListener('click', (e) => {
+      if (e.target.closest('ul li')) {
+        document.querySelectorAll('.address-list_item').forEach(list => {
+          if (list.classList.contains('active')) {
+            list.classList.remove('active');
+          }
+        });
+        listItem.closest('.address-list_item').classList.add('active');
+      }
     });
   });
 }
