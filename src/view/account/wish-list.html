@@ -12,12 +12,34 @@
     <div class="content">
         <div class="account-container account-no-bg">
             <div class="account-container-header">
-                <h1>Wish List</h1>
+                <h1>Wishlist</h1>
 
                 <button class="base-button" data-listener="new-wishlist">Create new List</button>
             </div>  
 
             <div class="wish-list-wrap">
+
+                <div class="wish-list-header">
+                    <div class="wish-list-checkbox">
+                      <input type="checkbox" id="wish-list-1" name="wish-list-1">
+                      <label for="wish-list-1">
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                      </label>
+                    </div>
+                    <h3>Default wishlist</h3>
+                    <div class="payment-item-buttons">
+                      <button data-listener="edit-wishlist">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <use href="#payment-edit"></use>
+                          </svg>
+                      </button>
+                      <button data-listener="remove-wishlist">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <use href="#payment-remove"></use>
+                          </svg>
+                      </button>
+                    </div>
+                  </div>
             
                 <div class="product-slider slider" id="popular-slide-num">
                     <div class="swiper-wrapper">

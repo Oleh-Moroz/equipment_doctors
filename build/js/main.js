@@ -14583,3 +14583,19 @@ if (document.querySelector('.cancel-button')) {
     location.reload();
   });
 }
+
+/*
+
+  Wishlist page
+
+-----------------------*/
+
+document.querySelectorAll('button[data-listener="remove-wishlist"]').forEach(item => {
+  item.addEventListener('click', (e) => {
+    let target = e.target.parentElement;
+  
+    let list = target.parentNode.closest('.wish-list-wrap');
+  
+    list.remove();
+  });
+});

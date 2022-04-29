@@ -20,12 +20,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap&v=429044191bea39a1ae393772b4c78a3f"
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap&v=f2fade75bc1e800619eb5a4907fbaae5"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css?v=429044191bea39a1ae393772b4c78a3f" />
-    <link href="../../css/main.min.css?v=429044191bea39a1ae393772b4c78a3f" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/86e4fa7ed4.js?v=429044191bea39a1ae393772b4c78a3f" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js?v=429044191bea39a1ae393772b4c78a3f"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css?v=f2fade75bc1e800619eb5a4907fbaae5" />
+    <link href="../../css/main.min.css?v=f2fade75bc1e800619eb5a4907fbaae5" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/86e4fa7ed4.js?v=f2fade75bc1e800619eb5a4907fbaae5" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js?v=f2fade75bc1e800619eb5a4907fbaae5"></script>
     <title>Equipment doctors</title>
 </head>
 <header>
@@ -1045,12 +1045,34 @@
     <div class="content">
         <div class="account-container account-no-bg">
             <div class="account-container-header">
-                <h1>Wish List</h1>
+                <h1>Wishlist</h1>
 
                 <button class="base-button" data-listener="new-wishlist">Create new List</button>
             </div>  
 
             <div class="wish-list-wrap">
+
+                <div class="wish-list-header">
+                    <div class="wish-list-checkbox">
+                      <input type="checkbox" id="wish-list-1" name="wish-list-1">
+                      <label for="wish-list-1">
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                      </label>
+                    </div>
+                    <h3>Default wishlist</h3>
+                    <div class="payment-item-buttons">
+                      <button data-listener="edit-wishlist">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <use href="#payment-edit"></use>
+                          </svg>
+                      </button>
+                      <button data-listener="remove-wishlist">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <use href="#payment-remove"></use>
+                          </svg>
+                      </button>
+                    </div>
+                  </div>
             
                 <div class="product-slider slider" id="popular-slide-num">
                     <div class="swiper-wrapper">
@@ -1464,7 +1486,7 @@
 
 
 </footer>
-<script src="../../js/main.min.js?v=429044191bea39a1ae393772b4c78a3f"></script>
+<script src="../../js/main.min.js?v=f2fade75bc1e800619eb5a4907fbaae5"></script>
 </body>
 
 </html>
