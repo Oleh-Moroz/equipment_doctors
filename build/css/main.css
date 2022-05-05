@@ -187,6 +187,7 @@ body {
   width: 100%;
   z-index: 1;
   position: relative;
+  padding-top: 85px;
 }
 body::after {
   content: "";
@@ -263,13 +264,39 @@ header {
   padding: 21px 0;
   border-bottom: 1px solid #CCCCCC;
   z-index: 2;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all 0.4s linear;
 }
 header .container .row {
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: justify;
       justify-content: space-between;
+}
+header .logo_wrap a img, header a span {
+  transition: all 0.4s linear;
+}
+header.header-fixed {
+  padding: 5px 0;
+}
+header.header-fixed .header-contact a {
+  font-size: 20px;
+  margin: 0 15px 0 100px;
+}
+header.header-fixed .base-button, header.header-fixed button, header.header-fixed a, header.header-fixed a span {
+  font-size: 12px;
+}
+header.header-fixed .header-search form input {
+  padding: 5px 40px;
+}
+header.header-fixed .header-category_button {
+  padding: 9px 10px;
+}
+header.header-fixed .logo_wrap a img {
+  height: 30px;
+  width: auto;
 }
 
 .logo_wrap {
@@ -965,7 +992,9 @@ footer {
   max-width: 77.7777777778%;
   box-sizing: border-box;
   padding-left: 15px;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 45px;
 }
 .content .page-description-block {
   max-width: 95%;
@@ -1637,7 +1666,7 @@ footer {
   position: relative;
 }
 .button-group button {
-  width: 47%;
+  width: 49%;
   -ms-flex-pack: center;
       justify-content: center;
 }
@@ -1716,6 +1745,7 @@ footer {
 
 .popular-wrap,
 .brands-wrap {
+  width: 100%;
   max-width: 100%;
 }
 .popular-wrap .row,
@@ -1953,10 +1983,13 @@ footer {
   font-weight: 900;
   color: #CCCCCC;
   font-size: 11px;
-  margin-left: 7px;
+  margin-left: 15px;
   transition: all 0.4s linear;
   -webkit-transform: rotate(0);
           transform: rotate(0);
+}
+.accordion-has-children .accordion__list .accordion-has-children li {
+  padding: 0 8px 0 30px;
 }
 .accordion-has-children .accordion__list .accordion-has-children.accordion-is-open .filter__label {
   color: #BEA063;
@@ -1970,7 +2003,7 @@ footer {
   padding: 0;
 }
 .accordion-has-children .accordion__list li.accordion-has-children .filter__label {
-  padding: 8px 8px 8px 25px;
+  padding: 8px 8px 8px 15px;
 }
 .accordion-has-children .accordion__list li.accordion-has-children .accordion__list {
   margin: 1px 0;
@@ -1993,6 +2026,10 @@ footer {
 }
 .accordion-has-children .accordion__list li.accordion-has-children.accordion-is-open .filter__label {
   background: #F8F8F8;
+  margin: 0;
+}
+.accordion-has-children .accordion__list li.accordion-has-children.accordion-is-open .filter__label a {
+  margin: 0;
 }
 .accordion-has-children .accordion__list li.accordion-has-children.accordion-is-open .accordion__list {
   padding-top: 10px;
@@ -2012,6 +2049,10 @@ footer {
 }
 .accordion-has-children.accordion-is-open > .accordion__list {
   max-height: 1000px;
+}
+
+.accordion-has-children:has(> ul) {
+  background: red;
 }
 
 .main-filter .accordion-has-children .accordion__list li.accordion-has-children.accordion-is-open .accordion__list {
@@ -2640,11 +2681,12 @@ input:checked ~ label::before {
   -ms-flex-direction: column;
       flex-direction: column;
   background: #fff;
-  width: 100%;
+  width: auto;
+  min-width: 100%;
   position: absolute;
-  left: 0;
+  right: 0;
   padding: 8px 11px;
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px 0 8px 8px;
   transition: all 0.4s linear;
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
@@ -2993,8 +3035,8 @@ input:checked ~ label::before {
   color: #42474C;
   margin-bottom: 25px;
 }
-.col-menu ul li > div,
-.account-menu ul li > div {
+.col-menu ul li > a,
+.account-menu ul li > a {
   width: 100%;
   box-sizing: border-box;
   padding: 12px 10px 12px 24px;
@@ -3016,8 +3058,8 @@ input:checked ~ label::before {
   margin-right: -1px;
   cursor: pointer;
 }
-.col-menu ul li > div::after,
-.account-menu ul li > div::after {
+.col-menu ul li > a::after,
+.account-menu ul li > a::after {
   content: "\f054";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -3026,8 +3068,8 @@ input:checked ~ label::before {
   margin-left: auto;
   transition: all 0.4s linear;
 }
-.col-menu ul li > div .category-navbar-logo,
-.account-menu ul li > div .category-navbar-logo {
+.col-menu ul li > a .category-navbar-logo,
+.account-menu ul li > a .category-navbar-logo {
   max-width: 80px;
   box-sizing: border-box;
   padding: 15px;
@@ -3042,22 +3084,22 @@ input:checked ~ label::before {
   -ms-flex-pack: center;
       justify-content: center;
 }
-.col-menu ul li > div .category-navbar-logo img,
-.account-menu ul li > div .category-navbar-logo img {
+.col-menu ul li > a .category-navbar-logo img,
+.account-menu ul li > a .category-navbar-logo img {
   max-width: 100%;
 }
-.col-menu ul li.show > div,
-.account-menu ul li.show > div {
+.col-menu ul li.show > a,
+.account-menu ul li.show > a {
   color: #BEA063;
   background: rgba(220, 188, 120, 0.2);
   border-left: 2px solid #BEA063;
 }
-.col-menu ul li.show > div a,
-.account-menu ul li.show > div a {
+.col-menu ul li.show > a a,
+.account-menu ul li.show > a a {
   color: #BEA063;
 }
-.col-menu ul li.show > div::after,
-.account-menu ul li.show > div::after {
+.col-menu ul li.show > a::after,
+.account-menu ul li.show > a::after {
   color: #BEA063;
 }
 
@@ -3180,6 +3222,7 @@ input:checked ~ label::before {
 
   ------------------------------------------*/
 .product-col-left {
+  width: 100%;
   max-width: calc(40% - 8px);
   -ms-flex: 0 0 calc(40% - 8px);
       flex: 0 0 calc(40% - 8px);
@@ -3198,6 +3241,7 @@ input:checked ~ label::before {
 }
 
 .product-thumb-slider {
+  min-height: 365px;
   max-height: 365px;
   overflow: hidden;
   -ms-flex: 0 0 15%;
@@ -3447,8 +3491,8 @@ input:checked ~ label::before {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
   width: 100%;
   list-style: none;
 }
@@ -3492,6 +3536,12 @@ input:checked ~ label::before {
 .product-content .tab-content {
   width: 97%;
   margin: 35px 0 40px 15px;
+}
+.product-content .tab-content .description-wrap {
+  margin-bottom: 30px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
 }
 .product-content .tab-content h3 {
   font-style: normal;
@@ -3725,7 +3775,7 @@ input:checked ~ label::before {
   margin-bottom: 20px;
 }
 .product-content .row-testimonial .add-feedback {
-  width: 186px;
+  width: 217px;
 }
 
 .testimonial-item {
@@ -3824,6 +3874,10 @@ input:checked ~ label::before {
 .caption-vendor-info .product-vendor-logo a img {
   max-width: 320px;
   height: 100%;
+}
+
+.row-wrap .popular-wrap .product-slider .product__item {
+  width: calc(25% - 20px);
 }
 
 @media screen and (max-width: 1537px) {
@@ -4880,19 +4934,18 @@ button:disabled:hover {
   line-height: 133%;
   color: #DE3618;
   margin-top: 10px;
-  display: none;
   position: absolute;
-  bottom: -10px;
-  opacity: 0;
   transition: all 0.4s linear;
-}
-
-input.error ~ .error-text {
   display: block;
   opacity: 1;
   bottom: -22px;
 }
 
+/*input.error ~ .error-text {
+    display: block;
+    opacity: 1;
+    bottom: -22px;
+}*/
 .verification-code_form {
   padding: 24px 0 !important;
   max-width: 66%;
@@ -5027,26 +5080,24 @@ input.error ~ .error-text {
 .account-menu ul li ul li.show a .account-menu-ico,
 .account-menu ul li ul li.show button .account-menu-ico {
   background: #fff;
-}
-.account-menu ul li ul li.show a .account-menu-ico svg *[data-bg=fill],
-.account-menu ul li ul li.show button .account-menu-ico svg *[data-bg=fill] {
-  fill: #BEA063 !important;
-}
-.account-menu ul li ul li.show a .account-menu-ico svg *[data-bg=stroke],
-.account-menu ul li ul li.show button .account-menu-ico svg *[data-bg=stroke] {
-  stroke: #BEA063 !important;
+  /*svg *[data-bg="fill"] {
+      fill: $gold !important;
+  }
+
+  svg *[data-bg="stroke"] {
+      stroke: $gold !important;
+  }*/
 }
 .account-menu ul li ul li a:hover .account-menu-ico,
 .account-menu ul li ul li button:hover .account-menu-ico {
   background: #fff;
-}
-.account-menu ul li ul li a:hover .account-menu-ico svg *[data-bg=fill],
-.account-menu ul li ul li button:hover .account-menu-ico svg *[data-bg=fill] {
-  fill: #BEA063 !important;
-}
-.account-menu ul li ul li a:hover .account-menu-ico svg *[data-bg=stroke],
-.account-menu ul li ul li button:hover .account-menu-ico svg *[data-bg=stroke] {
-  stroke: #BEA063 !important;
+  /*svg *[data-bg="fill"] {
+      fill: $gold !important;
+  }
+
+  svg *[data-bg="stroke"] {
+      stroke: $gold !important;
+  }*/
 }
 .account-menu > ul > li:last-child {
   margin-top: 50px;
@@ -6723,4 +6774,41 @@ input.error ~ .error-text {
 .pop-up-checkout .pop-up-checkout_table .pop-up-checkout_table-col {
   box-sizing: border-box;
   padding: 16px 25px;
+}
+
+.alert {
+  position: fixed;
+  top: 35px;
+  z-index: -10;
+  width: auto;
+  background: #bea063;
+  color: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 10px 3% 15px;
+  transition: all 0.8s linear;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 12px;
+  text-align: center;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.alert.alert-dismissible {
+  top: 35px;
+  opacity: 1;
+  visibility: visible;
+  z-index: 999999999999999;
+}
+.alert a {
+  color: #fff;
+}
+.alert button {
+  padding: 0 8px;
+  top: 0;
+  font-size: 26px !important;
+  position: relative;
+  top: 3px;
+  margin-left: 10px;
 }

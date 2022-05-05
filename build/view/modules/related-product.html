@@ -237,13 +237,19 @@
 </div>
 
 <script>
-    const relatedSwiper = new Swiper(document.getElementById('related-slide-num'), {
-        slidesPerView: 4,
-        spaceBetween: 30,
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
+    const relatedSwiper = document.getElementById('related-slide-num');
+
+    if (relatedSwiper.querySelectorAll('.product__item').length > 3) {
+        new Swiper(relatedSwiper, {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    } else {
+        relatedSwiper.querySelectorAll('.slider_button').forEach(button => button.remove());
+    }
 </script>

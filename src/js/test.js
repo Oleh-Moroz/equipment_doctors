@@ -498,3 +498,18 @@ document.querySelectorAll('button[data-listener="remove-wishlist"]').forEach(ite
     list.remove();
   });
 });
+
+
+document.querySelectorAll('.product-icon__row button').forEach(item => {
+  item.addEventListener('click', () => {
+    document.querySelector('.alert').classList.add('alert-dismissible');
+
+    setTimeout(() => {
+      document.querySelector('.alert').classList.remove('alert-dismissible');
+    }, 5000);
+
+    document.querySelector('button[data-dismiss="alert"]').addEventListener('click', () => {
+      document.querySelector('.alert').classList.remove('alert-dismissible');
+    })
+  });
+});

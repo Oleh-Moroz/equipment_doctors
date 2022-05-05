@@ -237,13 +237,19 @@
 </div>
 
 <script>
-    const popularSwiper = new Swiper(document.getElementById('category-popular-slide-num'), {
-        slidesPerView: 4,
-        spaceBetween: 30,
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
+    const popularSwiper = document.getElementById('category-popular-slide-num');
+
+    if (popularSwiper.querySelectorAll('.product__item').length > 3) {
+        new Swiper(popularSwiper, {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    } else {
+        popularSwiper.querySelectorAll('.slider_button').forEach(button => button.remove());
+    }
 </script>

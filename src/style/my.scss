@@ -185,6 +185,7 @@ body {
     width: 100%;
     z-index: 1;
     position: relative;
+    padding-top: 85px;
 
     &::after {
         content: "";
@@ -264,12 +265,45 @@ header {
     padding: 21px 0;
     border-bottom: 1px solid #CCCCCC;
     z-index: 2;
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: all .4s linear;
 
     .container {
         .row {
           align-items: center;
           justify-content: space-between;
+        }
+    }
+
+    .logo_wrap a img, a span {
+        transition: all .4s linear;
+    }
+
+    &.header-fixed {
+        padding: 5px 0;
+
+        .header-contact a {
+            font-size: 20px;
+            margin: 0 15px 0 100px;
+        }
+
+        .base-button, button, a, a span {
+            font-size: 12px;
+        }
+
+        .header-search form input {
+            padding: 5px 40px;
+        }
+
+        .header-category_button {
+            padding: 9px 10px;
+        }
+
+        .logo_wrap a img {
+            height: 30px;
+            width: auto;
         }
     }
 }
@@ -1006,7 +1040,9 @@ footer {
     max-width: calc(100% - (100% / 4.5));
     box-sizing: border-box;
     padding-left: 15px;
-    position: relative;
+    position: sticky;
+    top: 45px;
+
 
     .page-description-block {
         max-width: 95%;
@@ -1688,7 +1724,7 @@ footer {
         position: relative;
         
         button {
-            width: 47%;
+            width: 49%;
             justify-content: center;
 
             svg {
@@ -1772,6 +1808,7 @@ footer {
 
     .popular-wrap, 
     .brands-wrap {
+        width: 100%;
         max-width: 100%;
 
         .row {
@@ -2012,10 +2049,14 @@ footer {
                     font-weight: 900;
                     color: $grey;
                     font-size: 11px;
-                    margin-left: 7px;
+                    margin-left: 15px;
                     transition: all .4s linear;
                     transform: rotate(0);
                 }
+            }
+
+            li {
+                padding: 0 8px 0 30px;
             }
 
             &.accordion-is-open {
@@ -2037,7 +2078,7 @@ footer {
             padding: 0;
 
             .filter__label {
-                padding: 8px 8px 8px 25px;
+                padding: 8px 8px 8px 15px;
             }
 
             .accordion__list {
@@ -2067,6 +2108,11 @@ footer {
         li.accordion-has-children.accordion-is-open {
             .filter__label {
                 background: #F8F8F8;
+                margin: 0;
+
+                a {
+                    margin: 0;
+                }
             }
 
             .accordion__list {
@@ -2092,6 +2138,10 @@ footer {
     &.accordion-is-open > .accordion__list {
         max-height: 1000px;
     }
+}
+
+.accordion-has-children:has(>ul) {
+    background: red;
 }
 
 .main-filter {
@@ -2731,11 +2781,12 @@ input:checked ~ label::before {
     justify-content: flex-start;
     flex-direction: column;
     background: #fff;
-    width: 100%;
+    width: auto;
+    min-width: 100%;
     position: absolute;
-    left: 0;
+    right: 0;
     padding: 8px 11px;
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px 0 8px 8px;
     transition: all .4s linear;
     transform: translateY(-5px);
     opacity: 0;
@@ -3068,7 +3119,7 @@ input:checked ~ label::before {
         margin-bottom: 25px;
     }
 
-    ul li>div {
+    ul li>a {
         width: 100%;
         box-sizing: border-box;
         padding: 12px 10px 12px 24px;
@@ -3115,7 +3166,7 @@ input:checked ~ label::before {
         }
     }
 
-    ul li.show>div {
+    ul li.show>a {
         color: $gold;
         background: rgba(220,188,120,.2);
         border-left: 2px solid $gold;
@@ -3266,6 +3317,7 @@ input:checked ~ label::before {
     ------------------------------------------*/
 
 .product-col-left {
+    width: 100%;
     max-width: calc(40% - 8px);
     flex: 0 0 calc(40% - 8px);
     background: $white;
@@ -3279,6 +3331,7 @@ input:checked ~ label::before {
 }
 
 .product-thumb-slider {
+    min-height: 365px;
     max-height: 365px;
     overflow: hidden;
     flex: 0 0 15%;
@@ -3536,7 +3589,7 @@ input:checked ~ label::before {
     ul {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         width: 100%;
         list-style: none;
 
@@ -3585,6 +3638,13 @@ input:checked ~ label::before {
     .tab-content {
         width: 97%;
         margin: 35px 0 40px 15px;
+
+        .description-wrap {
+            margin-bottom: 30px;
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 30px;
+        }
 
         h3 {
             font-style: normal;
@@ -3839,7 +3899,7 @@ input:checked ~ label::before {
         margin-bottom: 20px; 
 
         .add-feedback {
-            width: 186px;
+            width: 217px;
         }
     }
 }
@@ -3953,6 +4013,10 @@ input:checked ~ label::before {
         }
     }
 }
+
+.row-wrap .popular-wrap .product-slider  .product__item {
+    width: calc(25% - 20px);
+} 
 
 @media screen and (max-width: 1537px) {
     .caption-vendor-info {
@@ -5052,18 +5116,18 @@ button:disabled {
     line-height: 133%;
     color: #DE3618;
     margin-top: 10px;
-    display: none;
     position: absolute;
-    bottom: -10px;
-    opacity: 0;
     transition: all .4s linear;
-}
-
-input.error ~ .error-text {
     display: block;
     opacity: 1;
     bottom: -22px;
 }
+
+/*input.error ~ .error-text {
+    display: block;
+    opacity: 1;
+    bottom: -22px;
+}*/
 
 .verification-code_form {
     padding: 24px 0 !important;
@@ -5209,26 +5273,26 @@ input.error ~ .error-text {
     ul li ul li.show button .account-menu-ico {
         background: $white;
 
-        svg *[data-bg="fill"] {
+        /*svg *[data-bg="fill"] {
             fill: $gold !important;
         }
 
         svg *[data-bg="stroke"] {
             stroke: $gold !important;
-        }
+        }*/
     }
 
     ul li ul li a:hover .account-menu-ico,
     ul li ul li button:hover .account-menu-ico {
         background: $white;
 
-        svg *[data-bg="fill"] {
+        /*svg *[data-bg="fill"] {
             fill: $gold !important;
         }
 
         svg *[data-bg="stroke"] {
             stroke: $gold !important;
-        }
+        }*/
     }
 
     > ul {
@@ -6989,5 +7053,44 @@ input.error ~ .error-text {
             box-sizing: border-box;
             padding: 16px 25px;
         }
+    }
+}
+
+.alert {
+    position: fixed;
+    top: 35px;
+    z-index: -10;
+    width: auto;
+    background: #bea063;
+    color: #fff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 10px 3% 15px;
+    transition: all .8s linear;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 12px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &.alert-dismissible {
+        top: 35px;
+        opacity: 1;
+        visibility: visible;
+        z-index: 999999999999999;
+    }
+
+    a {
+        color: #fff;
+    }
+
+    button {
+        padding: 0 8px;
+        top: 0;
+        font-size: 26px!important;
+        position: relative;
+        top: 3px;
+        margin-left: 10px;
     }
 }

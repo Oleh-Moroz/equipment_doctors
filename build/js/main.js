@@ -13655,21 +13655,26 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   const colMenuWrap = document.querySelectorAll('.col-menu ul li'),
-    contentWrap = document.querySelectorAll('.tab-content');
+        contentWrap = document.querySelectorAll('.tab-content');
 
   for (let i = 0; i < colMenuWrap.length; i++) {
     colMenuWrap[i].addEventListener('mouseover', () => {
+      let tabId = colMenuWrap[i].getAttribute('data-id');
+      
       colMenuWrap.forEach((item) => {
         item.classList.remove('show');
       });
 
-      contentWrap.forEach((item) => {
-        item.classList.remove('tab-show');
-      });
-
       colMenuWrap[i].classList.add('show');
 
-      contentWrap[i].classList.add('tab-show');
+      contentWrap.forEach((item) => {  
+        if (item.getAttribute('data-id') != tabId ) {
+          item.classList.remove('tab-show');
+        } else {
+          item.classList.add('tab-show');
+        }
+
+      });
     });
   }
 
@@ -13992,7 +13997,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   /*
-          Walets page scripts
+          Wallets page scripts
 
   ------------------------------------------*/
 
@@ -14098,6 +14103,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
   addedListener();
 
+});
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 0) {
+    document.querySelector('header').classList.add('header-fixed');
+  } else {
+    document.querySelector('header').classList.remove('header-fixed');
+  }
 });
 const searchInput = document.querySelector('.header-search_input'),
   clearButton = document.querySelector('.clear_search-input'),
@@ -14597,5 +14610,20 @@ document.querySelectorAll('button[data-listener="remove-wishlist"]').forEach(ite
     let list = target.parentNode.closest('.wish-list-wrap');
   
     list.remove();
+  });
+});
+
+
+document.querySelectorAll('.product-icon__row button').forEach(item => {
+  item.addEventListener('click', () => {
+    document.querySelector('.alert').classList.add('alert-dismissible');
+
+    setTimeout(() => {
+      document.querySelector('.alert').classList.remove('alert-dismissible');
+    }, 5000);
+
+    document.querySelector('button[data-dismiss="alert"]').addEventListener('click', () => {
+      document.querySelector('.alert').classList.remove('alert-dismissible');
+    })
   });
 });

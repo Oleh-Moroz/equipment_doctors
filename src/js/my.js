@@ -130,21 +130,26 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   const colMenuWrap = document.querySelectorAll('.col-menu ul li'),
-    contentWrap = document.querySelectorAll('.tab-content');
+        contentWrap = document.querySelectorAll('.tab-content');
 
   for (let i = 0; i < colMenuWrap.length; i++) {
     colMenuWrap[i].addEventListener('mouseover', () => {
+      let tabId = colMenuWrap[i].getAttribute('data-id');
+      
       colMenuWrap.forEach((item) => {
         item.classList.remove('show');
       });
 
-      contentWrap.forEach((item) => {
-        item.classList.remove('tab-show');
-      });
-
       colMenuWrap[i].classList.add('show');
 
-      contentWrap[i].classList.add('tab-show');
+      contentWrap.forEach((item) => {  
+        if (item.getAttribute('data-id') != tabId ) {
+          item.classList.remove('tab-show');
+        } else {
+          item.classList.add('tab-show');
+        }
+
+      });
     });
   }
 
@@ -467,7 +472,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   /*
-          Walets page scripts
+          Wallets page scripts
 
   ------------------------------------------*/
 
@@ -573,4 +578,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
   addedListener();
 
+});
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 0) {
+    document.querySelector('header').classList.add('header-fixed');
+  } else {
+    document.querySelector('header').classList.remove('header-fixed');
+  }
 });
