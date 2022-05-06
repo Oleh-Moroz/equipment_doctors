@@ -6795,7 +6795,6 @@ button:disabled:hover {
   visibility: visible;
   z-index: 999999999999999;
   width: auto;
-  background: #bea063;
   color: #fff;
   border-radius: 8px;
   box-sizing: border-box;
@@ -6818,9 +6817,15 @@ button:disabled:hover {
 }
 .alert button {
   padding: 0 8px;
-  top: 0;
   font-size: 26px !important;
   position: relative;
   top: 3px;
   margin-left: 10px;
+  background: transparent;
+}
+.alert.alert-success {
+  background: #bea063;
+}
+.alert.alert-danger {
+  background: #DE3618;
 }

@@ -7079,7 +7079,6 @@ button:disabled {
     visibility: visible;
     z-index: 999999999999999;
     width: auto;
-    background: #bea063;
     color: #fff;
     border-radius: 8px;
     box-sizing: border-box;
@@ -7103,10 +7102,18 @@ button:disabled {
 
     button {
         padding: 0 8px;
-        top: 0;
         font-size: 26px!important;
         position: relative;
         top: 3px;
         margin-left: 10px;
+        background: transparent;
+    }
+
+    &.alert-success {
+        background: #bea063;
+    }
+
+    &.alert-danger {
+        background: #DE3618;
     }
 }
