@@ -2001,6 +2001,10 @@ footer {
     .accordion__list {
         li {
             padding: 0 8px 0 25px;
+
+            &.active a {
+                color: $gold;
+            }
         }
 
         li a {
@@ -2027,6 +2031,10 @@ footer {
                 line-height: 150%;
                 color: #97A0A9;
             }
+        }
+
+        li.active a {
+            color: $gold;
         }
 
         .accordion-has-children {
@@ -2101,6 +2109,11 @@ footer {
                             color: $gold;
                         }
                     }
+
+                    &.active a {
+                        color: $gold;
+                    }
+            
                 }
             }
         }
@@ -2125,6 +2138,10 @@ footer {
 
         }
     }
+}
+
+.filter__label.accordion-active {
+    color: $gold;
 }
 
 .accordion-has-children {

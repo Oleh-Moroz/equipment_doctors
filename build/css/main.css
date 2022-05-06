@@ -1939,6 +1939,9 @@ footer {
 .accordion-has-children .accordion__list li {
   padding: 0 8px 0 25px;
 }
+.accordion-has-children .accordion__list li.active a {
+  color: #BEA063;
+}
 .accordion-has-children .accordion__list li a {
   font-style: normal;
   font-weight: 500;
@@ -1964,6 +1967,9 @@ footer {
   font-size: 16px;
   line-height: 150%;
   color: #97A0A9;
+}
+.accordion-has-children .accordion__list li.active a {
+  color: #BEA063;
 }
 .accordion-has-children .accordion__list .accordion-has-children .filter__label {
   font-style: normal;
@@ -2024,6 +2030,9 @@ footer {
 .accordion-has-children .accordion__list li.accordion-has-children .accordion__list li a:hover {
   color: #BEA063;
 }
+.accordion-has-children .accordion__list li.accordion-has-children .accordion__list li.active a {
+  color: #BEA063;
+}
 .accordion-has-children .accordion__list li.accordion-has-children.accordion-is-open .filter__label {
   background: #F8F8F8;
   margin: 0;
@@ -2037,6 +2046,10 @@ footer {
   max-height: 270px !important;
   overflow: hidden;
   /*overflow-y: auto;*/
+}
+
+.filter__label.accordion-active {
+  color: #BEA063;
 }
 
 .accordion-has-children {
