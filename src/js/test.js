@@ -526,22 +526,11 @@ document.querySelectorAll('.product-icon__row button').forEach(item => {
     header.append(block);
 
     setTimeout(() => {
-      document.querySelector('.alert').classList.add('alert-active');
-    }, 100);
-
-    setTimeout(() => {
-      document.querySelector('.alert').classList.remove('alert-active');
-    }, 5000);
-
-    setTimeout(() => {
       document.querySelector('.alert').remove();
     }, 6000);
 
     document.querySelector('button[data-dismiss="alert"]').addEventListener('click', () => {
-      document.querySelector('.alert').classList.remove('alert-active');
-      setTimeout(() => {
         document.querySelector('.alert').remove();
-      }, 1000);
     })
   });
 });

@@ -6791,7 +6791,9 @@ button:disabled:hover {
 .alert {
   position: fixed;
   top: 35px;
-  z-index: -10;
+  opacity: 1;
+  visibility: visible;
+  z-index: 999999999999999;
   width: auto;
   background: #bea063;
   color: #fff;
@@ -6799,19 +6801,17 @@ button:disabled:hover {
   box-sizing: border-box;
   padding: 10px 3% 15px;
   transition: all 0.8s linear;
-  opacity: 0;
-  visibility: hidden;
   font-size: 12px;
   text-align: center;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-}
-.alert.alert-active {
-  top: 35px;
-  opacity: 1;
-  visibility: visible;
-  z-index: 999999999999999;
+  /*&.alert-active {
+      top: 35px;
+      opacity: 1;
+      visibility: visible;
+      z-index: 999999999999999;
+  }*/
 }
 .alert a {
   color: #fff;
