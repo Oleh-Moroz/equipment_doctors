@@ -4947,11 +4947,10 @@ button:disabled:hover {
   line-height: 133%;
   color: #DE3618;
   margin-top: 10px;
-  position: absolute;
+  position: relative;
   transition: all 0.4s linear;
   display: block;
   opacity: 1;
-  bottom: -22px;
 }
 
 /*input.error ~ .error-text {
@@ -6808,7 +6807,7 @@ button:disabled:hover {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-.alert.alert-dismissible {
+.alert.alert-active {
   top: 35px;
   opacity: 1;
   visibility: visible;

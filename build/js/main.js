@@ -14616,14 +14616,46 @@ document.querySelectorAll('button[data-listener="remove-wishlist"]').forEach(ite
 
 document.querySelectorAll('.product-icon__row button').forEach(item => {
   item.addEventListener('click', () => {
-    document.querySelector('.alert').classList.add('alert-dismissible');
+    const header = document.querySelector('header');
+
+    const alertBlock = `
+        <div class="alert alert-success">
+          <i class="fa fa-check-circle"></i> 
+          You must 
+          <a href="https://demo.opencart.com/index.php?route=account/login">login</a> 
+          or 
+          <a href="https://demo.opencart.com/index.php?route=account/register">create an account</a> 
+          to save 
+          <a href="https://demo.opencart.com/index.php?route=product/product&amp;product_id=42">Apple Cinema 30"</a> 
+          to your 
+          <a href="https://demo.opencart.com/index.php?route=account/wishlist">wish list</a>! 
+          <button type="button" class="close" data-dismiss="alert">×</button>
+        </div>
+    `;
+
+    const block = document.createElement('div');
+
+    block.innerHTML = alertBlock;
+
+    header.append(block);
 
     setTimeout(() => {
-      document.querySelector('.alert').classList.remove('alert-dismissible');
+      document.querySelector('.alert').classList.add('alert-active');
+    }, 100);
+
+    setTimeout(() => {
+      document.querySelector('.alert').classList.remove('alert-active');
     }, 5000);
 
+    setTimeout(() => {
+      document.querySelector('.alert').remove();
+    }, 6000);
+
     document.querySelector('button[data-dismiss="alert"]').addEventListener('click', () => {
-      document.querySelector('.alert').classList.remove('alert-dismissible');
+      document.querySelector('.alert').classList.remove('alert-active');
+      setTimeout(() => {
+        document.querySelector('.alert').remove();
+      }, 1000);
     })
   });
 });
