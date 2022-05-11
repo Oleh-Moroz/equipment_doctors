@@ -7220,7 +7220,7 @@ button:disabled:hover {
 .checkout-wrap form .checkout-left_col .checkout-step_block .checkout-step_body .return-address-form .pop-up-button-group {
   margin-top: 15px;
 }
-.checkout-wrap form .checkout-left_col .checkout-step_block .checkout-step_body .return-address-form .pop-up-button-group button {
+.checkout-wrap form .checkout-left_col .checkout-step_block .checkout-step_body .return-address-form .pop-up-button-group input {
   padding: 12px 43px;
 }
 .checkout-wrap form .checkout-left_col .checkout-step_block .checkout-step_footer {
