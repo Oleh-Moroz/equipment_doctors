@@ -1,0 +1,370 @@
+@@include('../common/header-page.html')
+<!-- End header section-->
+<div class="container">
+    <div class="row">
+        <div class="checkout-wrap">
+            <form>
+                <div class="checkout-left_col">
+                    <div class="checkout-step_block active-step">
+                        <h3>Make out order</h3>
+    
+                        <div class="checkout-step_body">
+                            <div class="checkout-contact_tabs">
+                                <div class="checkout-tab-row tab-row">
+                                    <ul>
+                                        <li class="active">
+                                            I’m a new customer
+                                        </li>
+                                        <li>
+                                            I’m a regular customer
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="checkout-content">
+                                    <div class="tab-content tab-show">
+                                        <div class="form-group">
+                                            <label for="personal-first-name">First name</label>
+                                            <input type="text" name="personal-first-name" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="personal-last-name">Last name</label>
+                                            <input type="text" name="personal-last-name" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="personal-email">Email</label>
+                                            <input type="email" name="personal-email" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="personal-phone-number">Phone number</label>
+                                            <input type="text" name="personal-phone-number" value="">
+                                        </div>
+                                    </div>
+                    
+                                    <div class="tab-content">
+                                        <div class="checkout-login_col">
+                                            <div class="form-group">
+                                                <label for="personal-email">Email</label>
+                                                <input type="email" name="personal-email" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="personal-phone-number">Password</label>
+                                                <input type="password" name="personal-phone-number" value="">
+                                            </div> 
+                                            <div class="forgot-link">
+                                                <a href="/view/account/forgot-password.html">Forgot a password?</a>
+                                            </div>
+                                            <div class="button-group pop-up-button-group">
+                                                <input type="submit" class="base-button" value="Sign In">
+                                            </div>
+                                        </div>
+                                        <div class="checkout-login_col">
+                                            <div class="media-login-row">
+                                                <a class="media-login-item" href="#">
+                                                    <img src="../../img/common/google-ico.svg" alt="google login ico">
+                                                    Sign in with Google
+                                                </a>
+                                                <a class="media-login-item" href="#">
+                                                    <img src="../../img/common/facebook-ico.svg" alt="facebook login ico">
+                                                    Sign in with Facebook
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="checkout-step_footer">
+                            <button data-listener="next-step" disabled>
+                                Continue >
+                            </button>
+                        </div>
+                    </div> 
+    
+                    <div class="checkout-step_block">
+                        <h3>Your orders</h3>
+
+                        <div class="checkout-step_body">
+
+                            <div class="pop-up-body">
+                                    <div class="pop-up-checkout_table">
+                                        <div class="pop-up-checkout_table-header">
+                                            <div class="pop-up-checkout_table-col">
+                                                Product:
+                                            </div>
+                                            <div class="pop-up-checkout_table-col">
+                        
+                                            </div>
+                                            <div class="pop-up-checkout_table-col">
+                                                Track:
+                                            </div>
+                                            <div class="pop-up-checkout_table-col">
+                                                Price per one item:
+                                            </div>
+                                            <div class="pop-up-checkout_table-col">
+                                                Quantity:
+                                            </div>
+                                            <div class="pop-up-checkout_table-col">
+                                                Price
+                                            </div>
+                                        </div>
+                                        <div class="pop-up-checkout_table-body">
+                                            <ul>
+                                                <li>
+                                                    <div class="pop-up-checkout_table-col mini-checkout_product-image">
+                                                        <a href="#">
+                                                            <img src="/img/content/product-1.png" alt="" loading="lazy"> 
+                                                        </a>
+                                                    </div>
+                                                    <div class="pop-up-checkout_table-col mini-checkout_product-name">
+                                                        <a href="#">
+                                                            Breking system for volvo l67
+                                                        </a>
+                                                    </div>
+                                                    <div class="pop-up-checkout_table-col mini-checkout_product-model">
+                                                        <a href="#">
+                                                            Volvo l67
+                                                        </a>
+                                                    </div>
+                                                    <div class="pop-up-checkout_table-col mini-checkout_product-price">
+                                                        $1,725.00
+                                                    </div>
+                                                    <div class="pop-up-checkout_table-col mini-checkout_product-quantity">
+                                                        <div class="checkout-spinner">
+                                                            <button data-type="minus">
+                                                                -
+                                                            </button>
+                                                            <input type="text" value="1" size="1">
+                                                            <button data-type="plus">
+                                                                + 
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pop-up-checkout_table-col mini-checkout_product-total">
+                                                        $3,500.00
+                                                    </div>
+                                                    <div class="checkout-remove-item">
+                                                        <button data-listener="remove">
+                                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                            
+                            <div class="pop-up-footer" >
+                                <div class="row">
+                                    <div class="total-value-block">
+                                        <div class="total-text">
+                                            Final Price:
+                                        </div>
+                                        <div class="total-value">
+                                            $5,225.00
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+    
+                        <div class="checkout-step_footer">
+                            <button data-listener="next-step">
+                                Continue >
+                            </button>
+                        </div>
+                    </div> 
+    
+                    <div class="checkout-step_block">
+                        <h3>Shipping Address</h3>
+    
+                        <div class="checkout-step_body">
+                            <div class="returns-address-block" style="display: flex;">
+                                <div class="returns-adress_ico">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <use data-bg="stroke" href="#addresses"></use>
+                                    </svg>
+                                </div>
+
+                                <div class="returns-address-text-block">
+                                    <div class="returns-address-empty-text">
+                                        Add your address
+                                    </div>
+
+                                    <div class="returns-address">40 Wood Ave, Secaucus, NJ 07094, USA</div>
+                                </div>
+
+                                <button class="change-returns-address" data-listener="change">
+                                    +Add/change
+                                </button>
+                            </div>
+                        </div>
+    
+                        <div class="checkout-step_footer">
+                            <button data-listener="next-step">
+                                Continue >
+                            </button>
+                        </div>
+                    </div> 
+    
+                    <div class="checkout-step_block">
+                        <h3>Pick the best Shipping Method</h3>
+    
+                        <div class="checkout-step_body">
+                            <ul class="chechout-shipping_list">
+                                <li>
+                                    <input type="radio" id="shipping-method-1" name="shipping-method" value="Sunrise Wholesale" checked>
+                                    <label for="shipping-method-1">Sunrise Wholesale</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="shipping-method-2" name="shipping-method" value="BryBelly">
+                                    <label for="shipping-method-2">BryBelly</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="shipping-method-3" name="shipping-method" value="National Dropshippers">
+                                    <label for="shipping-method-3">National Dropshippers</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="shipping-method-4" name="shipping-method" value="ASI Partner">
+                                    <label for="shipping-method-4">ASI Partner</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="shipping-method-5" name="shipping-method" value="TeleDynamics">
+                                    <label for="shipping-method-5">TeleDynamics</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="shipping-method-6" name="shipping-method" value="ParkFlyers">
+                                    <label for="shipping-method-6">ParkFlyers</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="shipping-method-7" name="shipping-method" value="Buy 2 Bee">
+                                    <label for="shipping-method-7">Buy 2 Bee</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="shipping-method-8" name="shipping-method" value="Wholesale Fashion Square">
+                                    <label for="shipping-method-8">Wholesale Fashion Square</label>
+                                </li>
+                            </ul>
+                        </div>
+    
+                        <div class="checkout-step_footer">
+                            <button data-listener="next-step">
+                                Continue >
+                            </button>
+                        </div>
+                    </div> 
+    
+                    <div class="checkout-step_block">
+                        <h3>Payment Method</h3>
+    
+                        <div class="checkout-step_body">
+                            <ul class="chechout-payment_list">
+                                <li>
+                                    <input type="radio" id="payment-method-1" name="payment-method" value="Debit/Credit Card" checked>
+                                    <label for="payment-method-1">Debit/Credit Card</label>
+                                    <div class="payment-description">
+                                        <div class="account-payment-list">
+                                            <div class="account-payment-item" data-payment-system="master">
+                                                <div class="payment-item-body">
+                                                    <div class="payment-card-number">
+                                                        **** **** **** 0329
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="payment-card-name">Devon Lane</div>
+                                                        <div class="payment-card-date">03/24</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                        
+                                            <div class="account-payment-item" data-payment-system="visa">
+                                                <div class="payment-item-body">
+                                                    <div class="payment-card-number">
+                                                        **** **** **** 0329
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="payment-card-name">Devon Lane</div>
+                                                        <div class="payment-card-date">03/24</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="change-payment-item" data-listener="change">
+                                            +Add/change
+                                        </button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <input type="radio" id="payment-method-2" name="payment-method" value="Continue with Square">
+                                    <label for="payment-method-2"><img src="/img/common/pay-image-1.svg" alt="Square" loading="lazy">Continue with Square</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="payment-method-3" name="payment-method" value="Continue with PayPal">
+                                    <label for="payment-method-3"><img src="/img/common/pay-image-2.svg" alt="PayPal" loading="lazy">Continue with PayPal</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="payment-method-4" name="payment-method" value="Google Pay Wallet">
+                                    <label for="payment-method-4"><img src="/img/common/pay-image-3.svg" alt="Google Pay" loading="lazy">Google Pay Wallet</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="payment-method-5" name="payment-method" value="Apple Pay Wallet">
+                                    <label for="payment-method-5"><img src="/img/common/pay-image-4.svg" alt="Apple Pay" loading="lazy">Apple Pay Wallet</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="call-me-block">
+                            <input type="checkbox" for="call-me" name="call-me" id="call-me" checked>
+                            <label for="call-me">Don’t call my</label>
+                        </div>
+                    </div> 
+                </div>
+    
+                <div class="checkout-right_col">
+                    <div class="checkout-total_block">
+                        <h3>Total</h3>
+                        <div class="checkout-total_row">
+                            <div>
+                                3 items in total
+                            </div>
+                            <div class="checkout-total_value">
+                                $5,225.00
+                            </div>
+                        </div>
+                        <div class="checkout-total_row">
+                            <div>
+                                Cost of delivery
+                            </div>
+                            <div class="checkout-total_value">
+                                Free
+                            </div>
+                        </div>
+                        <div class="checkout-total_footer">
+                            <div class="checkout-total_row">
+                                <div>
+                                    To pay
+                                </div>
+                                <div class="checkout-total_value">
+                                    $5,225.00
+                                </div>
+                            </div>
+
+                            <div class="checkout-total_button">
+                                <button class="base-button" disabled>Сonfirm Order</button>
+                            </div>
+                            <div class="checkout-info_text">
+                                <p>Receiving an order from $ 5,000 only with a documents</p>
+                                <p>By confirming the order, I accept the terms of the <a href="#">privacy policy</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Start footer -->
+@@include('../common/footer-page.html')

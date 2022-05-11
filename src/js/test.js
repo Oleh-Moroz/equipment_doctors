@@ -172,6 +172,10 @@ addCheckoutButtons.forEach(button => {
   button.addEventListener('click', () => {
     checkoutModal.classList.add('active');
   });
+
+  document.querySelector('button[data-listener="checkout-return"]').addEventListener('click', () => {
+    checkoutModal.classList.remove('active');
+  });
 });
 
 
@@ -492,9 +496,9 @@ if (document.querySelector('.cancel-button')) {
 document.querySelectorAll('button[data-listener="remove-wishlist"]').forEach(item => {
   item.addEventListener('click', (e) => {
     let target = e.target.parentElement;
-  
+
     let list = target.parentNode.closest('.wish-list-wrap');
-  
+
     list.remove();
   });
 });
@@ -530,7 +534,67 @@ document.querySelectorAll('.product-icon__row button').forEach(item => {
     }, 6000);
 
     document.querySelector('button[data-dismiss="alert"]').addEventListener('click', () => {
-        document.querySelector('.alert').remove();
+      document.querySelector('.alert').remove();
     })
   });
 });
+
+/*
+  Checkout page 
+
+----------------------*/
+
+function openCheckoutTabs(button) {
+  const allButtons = document.querySelectorAll(button);
+
+  allButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      document.querySelectorAll('.checkout-step_block').forEach(item => {
+        item.classList.remove('active-step');
+      });
+
+      const parentElement = e.target.closest('.checkout-step_block');
+
+      parentElement.classList.add('checked-step');
+
+      const changeButton = document.createElement('button');
+
+      changeButton.setAttribute('data-listener', 'change-step');
+      changeButton.innerText = 'Change';
+      parentElement.append(changeButton);
+
+      changeButton.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        document.querySelectorAll('.active-step').forEach(item => {
+          item.classList.remove('active-step');
+        });
+
+        parentElement.classList.add('active-step');
+      });
+
+
+      parentElement.nextElementSibling.classList.add('active-step');
+
+      if (parentElement.nextElementSibling.nextElementSibling == null) {
+        document.querySelector('.checkout-total_button button').removeAttribute('disabled');
+      }
+
+    });
+  });
+}
+
+function removedDisabled(input) {
+  const allInputs = document.querySelectorAll(input);
+
+  allInputs.forEach(input => {
+    input.addEventListener('input', () => {
+      input.closest('.checkout-step_block').querySelector('button[data-listener="next-step"]').removeAttribute('disabled');
+    });
+  });
+}
+
+openCheckoutTabs('button[data-listener="next-step"]');
+removedDisabled('.checkout-content input');
