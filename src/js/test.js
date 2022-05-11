@@ -504,6 +504,12 @@ document.querySelectorAll('button[data-listener="remove-wishlist"]').forEach(ite
 });
 
 
+/*
+
+  Notice
+
+-----------------------*/
+
 document.querySelectorAll('.product-icon__row button').forEach(item => {
   item.addEventListener('click', () => {
     const header = document.querySelector('header');
@@ -596,5 +602,55 @@ function removedDisabled(input) {
   });
 }
 
+function checkoutAddAddresse(button) {
+  const changeButton = document.querySelector(button);
+
+  changeButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('.returns-address-block').style.display = 'none';
+    document.querySelector('.returns-address-list').style.display = 'block';
+  });
+
+  checkoutAddressesList();
+}
+
+function checkoutAddressesList() {
+    const list = document.querySelector('.returns-address-list .select-list');
+
+    list.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (e.target.tagName == 'LI') {
+        document.querySelector('.returns-address-block .returns-address').innerHTML =  e.target.innerHTML; 
+        
+        document.querySelector('.returns-address-block').style.display = 'flex';
+        document.querySelector('.returns-address-list').style.display = 'none';
+      }
+
+      if (e.target.getAttribute('data-listener') == 'add') {
+        document.querySelector('.returns-address-list').style.display = 'none';
+        document.querySelector('.return-address-form').style.display = 'flex';
+      }
+    });
+}
+
+function checkoutAddNewPayment(button) {
+  const addButton = document.querySelector(button);
+
+  addButton.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    console.log(addButton);
+
+    document.querySelector('.payment-description .payment-form-wrap').style.display = 'flex';
+    document.querySelector('.payment-description .account-payment-list').style.display = 'none';
+
+    e.target.style.display = 'none';
+  })
+}
+
+
 openCheckoutTabs('button[data-listener="next-step"]');
 removedDisabled('.checkout-content input');
+checkoutAddAddresse('.returns-address-block button[data-listener="change"]');
+checkoutAddNewPayment('.payment-description button[data-listener="change"]');

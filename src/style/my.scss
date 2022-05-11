@@ -7114,7 +7114,7 @@ button:disabled {
                     position: relative;
 
                     .pop-up-checkout_table-col { 
-                        padding: 0 25px;
+                        padding: 0 10px;
                     }
 
                     .mini-checkout_product-image {
@@ -7252,7 +7252,7 @@ button:disabled {
 }
 
 .alert {
-    font-family: "Fira Sans",sans-serif;
+    font-family: "Fira Sans", sans-serif;
     position: fixed;
     top: 35px;
     opacity: 1;
@@ -7278,6 +7278,9 @@ button:disabled {
 
     a {
         color: #fff;
+        font-family: "Fira Sans",sans-serif;
+        font-size: 14px;
+        text-decoration: underline;
     }
 
     button {
@@ -7332,6 +7335,8 @@ button:disabled {
 
                 .checkout-step_body {
                     width: 100%;
+                    box-sizing: border-box;
+                    padding-right: 10%;
 
                     .checkout-contact_tabs {
                         background: #F8F8F8;
@@ -7476,11 +7481,79 @@ button:disabled {
                             }
                         }
                     }
+
+                    .returns-address-block {
+                        width: 100%;
+                        margin: 30px 0;
+                    }
+
+                    .returns-address-list {
+                        margin: 30px 0;
+                        padding: 20px 0;
+
+                        ul {
+                            position: relative;
+                        }
+                    }
+
+                    .return-address-form {
+                        width: 100%;
+                        padding: 0;
+
+                        .returns-address-block {
+                            .returns-address-empty-text {
+                                display: block;
+                            }
+                        }
+
+                        .form-group {
+                            min-width: 33%;
+                        }
+
+                        .form-group:nth-child(2) {
+                            min-width: 33%;
+                            max-width: 33%;
+                        }
+
+                        .form-group:nth-child(3) {
+                            min-width: 10%;
+                            max-width: 10%;
+                        }
+
+                        p {
+                            width: 100%;
+                            font-family: 'Fira Sans';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 12px;
+                            line-height: 133%;
+                            color: #97A0A9;
+                            margin-top: 10px;  
+                        }
+
+                        .form-group-textarea {
+                            width: 100%;
+
+                            textarea {
+                                min-height: 125px;
+                            }
+                        }
+
+                        .pop-up-button-group {
+                            margin-top: 15px;
+
+                            button {
+                                padding: 12px 43px;
+                            }
+                        }
+                    }
                 }
 
                 .checkout-step_footer {
                     display: flex;
                     justify-content: flex-end;
+                    box-sizing: border-box;
+                    padding-right: 10%;
                 }
 
                 button[data-listener="change-step"] {
@@ -7491,6 +7564,10 @@ button:disabled {
                     padding: 0;
                     background: transparent;
                     color: $gold;
+                }
+
+                .returns-address-list {
+
                 }
             }
         }
@@ -7668,6 +7745,80 @@ button:disabled {
                         background: #fff;
                         color: #BEA063;
                     }
+
+                    .payment-form-wrap {
+                        display: -ms-flexbox;
+                        display: flex;
+                        -ms-flex-align: start;
+                        align-items: flex-start;
+                        -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                        padding: 22px 0;
+
+                        .form-group {
+                            min-width: 45%;
+                            max-width: 45%;
+                            margin: 0 20px 25px 0;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -ms-flex-direction: row;
+                            flex-direction: row;
+                            -ms-flex-wrap: wrap;
+                            flex-wrap: wrap;
+
+                            .form-group {
+                                max-width: 29%;
+                                min-width: 29%;
+                                margin: 0 10px 25px 0;
+                            }
+
+                            &.apt-form-group {
+                                max-width: 14%;
+                                min-width: 14%;
+                            }
+
+                            &.city-form-group {
+                                max-width: 29%;
+                                min-width: 29%;
+                            }
+                        }
+
+                        .form-title {
+                            width: 100%;
+                            margin-bottom: 20px;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 12px;
+                            line-height: 133%;
+                            color: #221e1e;
+                        }
+
+                        input {
+                            display: block;
+                        }
+
+                        label {
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 12px;
+                            line-height: 133%;
+                            color: #42474c;
+                            margin-bottom: 10px;
+
+                            &::before {
+                                display: none;
+                            }
+                        }
+
+                        .button-group {
+                            width: 100%;
+
+                            button {
+                                width: auto;
+                                padding: 12px 45px;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -7723,10 +7874,10 @@ button:disabled {
 
         .payment-description {
             max-height: 0;
-            overflow: hidden;
             transition: all .4s linear;
             opacity: 0;
             visibility: hidden;
+            overflow: visible;
 
             .account-payment-list {
                 min-height: 0;
@@ -7738,7 +7889,7 @@ button:disabled {
 
                 .payment-item-body {
                     font-size: 19px;
-                    padding: 90px 5% 25px;
+                    padding: 80px 5% 25px;
                 }
             }
 

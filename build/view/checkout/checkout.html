@@ -1123,7 +1123,7 @@
                                 </button>
                             </div>
 
-                            <div class="returns-address-list" style="display: block;">
+                            <div class="returns-address-list">
                                 <div class="form-group">
                                     <div class="select-list">
                                         <input class="select-active-item" name="returns-state" value="40 Wood Ave, Secaucus, NJ 07094, USA">
@@ -1138,7 +1138,25 @@
                                 </div>
                             </div>
 
-                            <div class="return-address-form" data-form-status="show" style="display: flex;">
+                            <div class="return-address-form">
+                                <div class="returns-address-block" style="display: flex;">
+                                    <div class="returns-adress_ico">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <use data-bg="stroke" href="#addresses"></use>
+                                        </svg>
+                                    </div>
+    
+                                    <div class="returns-address-text-block">
+                                        <div class="returns-address-empty-text">
+                                            Add your address
+                                        </div>
+                                    </div>
+    
+                                    <button class="change-returns-address" data-listener="change">
+                                        +Add/change
+                                    </button>
+                                </div>
+
                                 <div class="form-group">
                                     <label for="returns-street">Street Address</label>
                                     <input type="text" name="returns-street">
@@ -1167,6 +1185,18 @@
                                 <div class="form-group">
                                     <label for="returns-zip-code">Zip Code</label>
                                     <input type="text" name="returns-zip-code">
+                                </div>
+                                <div class="form-group">
+                                    <label for="personal-contact-phone-number">Contact phone number</label>
+                                    <input type="text" name="personal-contact-phone-number" value="">
+                                </div>
+                                <p>We'll contact you in case anything comes up with your order.</p>
+                                <div class="form-group form-group-textarea">
+                                    <label for="personal-delivey-instruction">Delivey Instruction</label>
+                                    <textarea type="text" name="personal-delivey-instruction" value=""></textarea>
+                                </div>
+                                <div class="button-group pop-up-button-group">
+                                    <input type="submit" class="base-button" value="Save">
                                 </div>
                             </div>
                         </div>
@@ -1262,6 +1292,110 @@
                                         <button class="change-payment-item" data-listener="change">
                                             +Add/change
                                         </button>
+
+                                        <div class="payment-form-wrap" style="display: none;">
+                                            <div class="form-group">
+                                                <label for="payment-first-name">First name</label>
+                                                <input type="text" name="payment-first-name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="payment-last-name">Last name</label>
+                                                <input type="text" name="payment-last-name">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="payment-card-number">Card number</label>
+                                                <input type="text" name="payment-card-number">
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <label for="payment-months">MM</label>
+                                                    <div class="select-list">
+                                                        <input class="select-active-item" name="payment-months" value="">
+                                                        <ul>
+                                                            <li>01</li>
+                                                            <li>02</li>
+                                                            <li>03</li>
+                                                            <li>04</li>
+                                                            <li>05</li>
+                                                            <li>06</li>
+                                                            <li>07</li>
+                                                            <li>08</li>
+                                                            <li>09</li>
+                                                            <li>10</li>
+                                                            <li>11</li>
+                                                            <li>12</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="form-group">
+                                                    <label for="payment-year">YY</label>
+                                                    <div class="select-list">
+                                                        <input class="select-active-item" name="payment-year" value="">
+                                                        <ul>
+                                                            <li>01</li>
+                                                            <li>02</li>
+                                                            <li>03</li>
+                                                            <li>04</li>
+                                                            <li>05</li>
+                                                            <li>06</li>
+                                                            <li>07</li>
+                                                            <li>08</li>
+                                                            <li>09</li>
+                                                            <li>10</li>
+                                                            <li>11</li>
+                                                            <li>12</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="form-group">
+                                                    <label for="payment-cvv">CVV</label>
+                                                    <input type="password" name="payment-cvv">
+                                                </div>
+                                            </div>
+                
+                                            <div class="form-title">Billing Information</div>
+                
+                                            <div class="form-group">
+                                                <label for="payment-address-street">Street Address</label>
+                                                <input type="text" name="payment-address-street">
+                                            </div>
+                                            <div class="form-group apt-form-group">
+                                                <label for="payment-address-apt">Apt or unit </label>
+                                                <input type="text" name="payment-address-apt">
+                                            </div>
+                                            <div class="form-group city-form-group">
+                                                <label for="payment-address-city">City</label>
+                                                <input type="text" name="payment-address-city">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="payment-address-state">State</label>
+                                                <div class="select-list">
+                                                    <input class="select-active-item" name="payment-address-state" value="">
+                                                    <ul>
+                                                        <li>Alabama</li>
+                                                        <li>Alaska</li>
+                                                        <li>Arizona</li>
+                                                        <li>Arkansas</li>
+                                                        <li>California</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="form-group city-form-group">
+                                                <label for="payment-address-zip-code">Zip Code</label>
+                                                <input type="text" name="payment-address-zip-code">
+                                            </div>
+                
+                                            <div class="button-group">
+                                                <button class="base-button">
+                                                    Save Card
+                                                </button>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </li>
                                 <li>
