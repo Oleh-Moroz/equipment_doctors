@@ -174,6 +174,10 @@ button:hover, .base-button:hover {
   color: #fff;
   background: #DCBC78;
 }
+button i, .base-button i {
+  margin-left: 5px;
+  font-size: 11px;
+}
 
 body {
   min-width: 320px;
@@ -7183,6 +7187,10 @@ button:disabled:hover {
 .checkout-wrap form .checkout-left_col .checkout-step_block .checkout-step_body .returns-address-list ul {
   position: relative;
 }
+.checkout-wrap form .checkout-left_col .checkout-step_block .checkout-step_body .returns-address-list ul li button {
+  width: 100%;
+  height: 100%;
+}
 .checkout-wrap form .checkout-left_col .checkout-step_block .checkout-step_body .return-address-form {
   width: 100%;
   padding: 0;
@@ -7341,6 +7349,10 @@ button:disabled:hover {
 .checkout-wrap form .checkout-step_body .pop-up-footer .row {
   padding: 24px 10px 15px;
 }
+.checkout-wrap form .checkout-step_body .pop-up-checkout_table-body ul li {
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
 .checkout-wrap form .checkout-step_body .pop-up-checkout_table-col {
   padding: 16px 10px;
   -ms-flex: 0 0 19%;
@@ -7349,6 +7361,9 @@ button:disabled:hover {
 }
 .checkout-wrap form .checkout-step_body .pop-up-checkout_table-col:last-child, .checkout-wrap form .checkout-step_body .pop-up-checkout_table-col.mini-checkout_product-price {
   text-align: center;
+  -ms-flex: 0 0 14%;
+      flex: 0 0 14%;
+  max-width: 14%;
 }
 .checkout-wrap form .checkout-step_body .returns-address-block {
   margin: 15px auto;
@@ -7664,4 +7679,108 @@ button:disabled:hover {
 .account-col ul {
   list-style: none;
   padding: 0;
+}
+
+/*
+
+    Thank page style
+
+--------------------------------*/
+.thank-page_wrap {
+  width: 90%;
+  max-width: 510px;
+  margin: 5% auto;
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 40px 20px 50px;
+  text-align: center;
+}
+.thank-page_wrap .thank-page_icon {
+  margin-bottom: 8px;
+  transition: all 0.4s linear;
+  -webkit-animation: order-ico 2s ease-out;
+          animation: order-ico 2s ease-out;
+}
+.thank-page_wrap .thank-page_icon.error-icon svg path {
+  fill: #DE3618;
+}
+.thank-page_wrap .thank-order_block {
+  margin-bottom: 32px;
+}
+.thank-page_wrap .thank-order_block h3 {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: center;
+  color: #42474C;
+}
+.thank-page_wrap .thank-order_block h2 {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 123%;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: #221E1E;
+}
+.thank-page_wrap .thank-order_description {
+  margin-bottom: 15px;
+}
+.thank-page_wrap .thank-order_description p {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  text-align: center;
+  color: #42474C;
+}
+.thank-page_wrap .thank-order_info {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 133%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #42474C;
+}
+.thank-page_wrap .thank-order_info a {
+  color: #BEA063;
+}
+.thank-page_wrap .button-group {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin: 30px auto 0;
+}
+
+@-webkit-keyframes order-ico {
+  0% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes order-ico {
+  0% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }

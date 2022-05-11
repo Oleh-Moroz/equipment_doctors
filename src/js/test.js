@@ -635,7 +635,7 @@ function checkoutAddressesList() {
 
         document.querySelector('.return-address-form .change-returns-address').addEventListener('click', (e) => {
           e.preventDefault();
-          
+
           document.querySelector('.return-address-form').style.display = 'none';
           document.querySelector('.returns-address-block').style.display = 'flex';
         });
@@ -663,3 +663,23 @@ openCheckoutTabs('button[data-listener="next-step"]');
 removedDisabled('.checkout-content input');
 checkoutAddAddresse('.returns-address-block button[data-listener="change"]');
 checkoutAddNewPayment('.payment-description button[data-listener="change"]');
+
+
+/*
+  Thank you page
+
+----------------------------*/
+
+function changesActiveItem() {
+  const url = window.location.href.toString().split("/checkout/")[1];
+  if (url == 'thank-you-page.html?generated') {
+    document.querySelector('.thank-order_description').innerHTML = '<p>The order is generated. You indicated in the order that you would not be called. Our manager will soon start collecting your order</p>';
+  }
+  if (url == 'thank-you-page.html?error') {
+    document.querySelector('.thank-page_icon').classList.add('error-icon');
+    document.querySelector('.thank-order_description').innerHTML = '<p>There were some problems with the formation of your order.</p>';
+    document.querySelector('.thank-order_info').innerHTML = 'Please <a href="https://oleh-moroz.github.io/equipment_doctors/build/view/info/contact.html">contact us</a> or place an order on a new one.';
+  }
+}
+
+changesActiveItem();
