@@ -7408,7 +7408,6 @@ button:disabled:hover {
   transition: all 0.4s linear;
   padding-bottom: 3px;
   padding-right: 1px;
-  line-height: 1.2em;
 }
 .checkout-wrap form .checkout-step_body .chechout-shipping_list li input:checked ~ label::before,
 .checkout-wrap form .checkout-step_body .chechout-payment_list li input:checked ~ label::before {
