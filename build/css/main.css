@@ -7343,6 +7343,12 @@ button:disabled:hover {
 }
 .checkout-wrap form .checkout-step_body .pop-up-checkout_table-col {
   padding: 16px 10px;
+  -ms-flex: 0 0 19%;
+      flex: 0 0 19%;
+  max-width: 19%;
+}
+.checkout-wrap form .checkout-step_body .pop-up-checkout_table-col:last-child, .checkout-wrap form .checkout-step_body .pop-up-checkout_table-col.mini-checkout_product-price {
+  text-align: center;
 }
 .checkout-wrap form .checkout-step_body .returns-address-block {
   margin: 15px auto;

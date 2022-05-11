@@ -7683,6 +7683,12 @@ button:disabled {
 
             .pop-up-checkout_table-col {
                 padding: 16px 10px;
+                flex: 0 0 19%;
+                max-width: 19%;
+
+                &:last-child, &.mini-checkout_product-price {
+                    text-align: center;
+                }
             }
 
             .returns-address-block {

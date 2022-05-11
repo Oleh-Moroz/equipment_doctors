@@ -630,6 +630,15 @@ function checkoutAddressesList() {
       if (e.target.getAttribute('data-listener') == 'add') {
         document.querySelector('.returns-address-list').style.display = 'none';
         document.querySelector('.return-address-form').style.display = 'flex';
+
+        document.querySelector('.return-address-form .change-returns-address').innerText = 'Cancel';
+
+        document.querySelector('.return-address-form .change-returns-address').addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          document.querySelector('.return-address-form').style.display = 'none';
+          document.querySelector('.returns-address-block').style.display = 'flex';
+        });
       }
     });
 }
