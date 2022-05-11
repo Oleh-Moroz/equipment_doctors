@@ -200,6 +200,53 @@
                                     +Add/change
                                 </button>
                             </div>
+
+                            <div class="returns-address-list" style="display: block;">
+                                <div class="form-group">
+                                    <div class="select-list">
+                                        <input class="select-active-item" name="returns-state" value="40 Wood Ave, Secaucus, NJ 07094, USA">
+                                        <ul class="">
+                                            <li>40 Wood Ave, Secaucus, NJ 07094, USA</li>
+                                            <li>41 Wood Ave, Secaucus, NJ 07094, USA</li>
+                                            <li>
+                                                <button data-listener="add">+Add new address</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="return-address-form" data-form-status="show" style="display: flex;">
+                                <div class="form-group">
+                                    <label for="returns-street">Street Address</label>
+                                    <input type="text" name="returns-street">
+                                </div>
+                                <div class="form-group">
+                                    <label for="returns-apt">Apt or unit </label>
+                                    <input type="text" name="returns-apt">
+                                </div>
+                                <div class="form-group">
+                                    <label for="returns-city">City</label>
+                                    <input type="text" name="returns-city">
+                                </div>
+                                <div class="form-group">
+                                    <label for="returns-state">State</label>
+                                    <div class="select-list">
+                                        <input class="select-active-item" name="returns-state" value="">
+                                        <ul>
+                                            <li>Alabama</li>
+                                            <li>Alaska</li>
+                                            <li>Arizona</li>
+                                            <li>Arkansas</li>
+                                            <li>California</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="returns-zip-code">Zip Code</label>
+                                    <input type="text" name="returns-zip-code">
+                                </div>
+                            </div>
                         </div>
     
                         <div class="checkout-step_footer">
@@ -297,19 +344,19 @@
                                 </li>
                                 <li>
                                     <input type="radio" id="payment-method-2" name="payment-method" value="Continue with Square">
-                                    <label for="payment-method-2"><img src="/img/common/pay-image-1.svg" alt="Square" loading="lazy">Continue with Square</label>
+                                    <label for="payment-method-2"><img src="../../img/common/pay-image-1.svg" alt="Square" loading="lazy">Continue with Square</label>
                                 </li>
                                 <li>
                                     <input type="radio" id="payment-method-3" name="payment-method" value="Continue with PayPal">
-                                    <label for="payment-method-3"><img src="/img/common/pay-image-2.svg" alt="PayPal" loading="lazy">Continue with PayPal</label>
+                                    <label for="payment-method-3"><img src="../../img/common/pay-image-2.svg" alt="PayPal" loading="lazy">Continue with PayPal</label>
                                 </li>
                                 <li>
                                     <input type="radio" id="payment-method-4" name="payment-method" value="Google Pay Wallet">
-                                    <label for="payment-method-4"><img src="/img/common/pay-image-3.svg" alt="Google Pay" loading="lazy">Google Pay Wallet</label>
+                                    <label for="payment-method-4"><img src="../../img/common/pay-image-3.svg" alt="Google Pay" loading="lazy">Google Pay Wallet</label>
                                 </li>
                                 <li>
                                     <input type="radio" id="payment-method-5" name="payment-method" value="Apple Pay Wallet">
-                                    <label for="payment-method-5"><img src="/img/common/pay-image-4.svg" alt="Apple Pay" loading="lazy">Apple Pay Wallet</label>
+                                    <label for="payment-method-5"><img src="../../img/common/pay-image-4.svg" alt="Apple Pay" loading="lazy">Apple Pay Wallet</label>
                                 </li>
                             </ul>
                         </div>
