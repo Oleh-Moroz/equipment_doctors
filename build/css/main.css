@@ -2985,8 +2985,8 @@ input:checked ~ label::before {
 
 .tab-content {
   display: none;
-  -ms-flex-align: start;
-      align-items: flex-start;
+  -ms-flex-align: stretch;
+      align-items: stretch;
   -ms-flex-pack: start;
       justify-content: flex-start;
   -ms-flex-wrap: wrap;
@@ -7646,9 +7646,9 @@ button:disabled:hover {
 }
 
 .checkout-step_block {
-  display: none;
-  opacity: 0;
-  visibility: hidden;
+  display: block;
+  opacity: 1;
+  visibility: visible;
   transition: all 0.4s linear;
 }
 .checkout-step_block .checkout-step_body {
