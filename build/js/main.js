@@ -14129,6 +14129,8 @@ window.addEventListener('scroll', () => {
     document.querySelector('header').classList.remove('header-fixed');
   }
 });
+
+$(document).ready(function() { $(".select-list select").select2(); });
 const searchInput = document.querySelector('.header-search_input'),
   clearButton = document.querySelector('.clear_search-input'),
   searchDropdown = document.querySelector('.header-search-dropdown'),
