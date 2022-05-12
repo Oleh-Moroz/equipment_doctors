@@ -243,19 +243,19 @@ body {
 }
 
 .lb-cancel {
-    background: url(../../img/common/loading.gif) no-repeat;
+    background: url(../img/common/loading.gif) no-repeat;
 }
 
 .lb-nav a.lb-prev {
-    background: url(../../img/common/prev.png) left 48% no-repeat;
+    background: url(../img/common/prev.png) left 48% no-repeat;
 }
 
 .lb-nav a.lb-next {
-    background: url(../../img/common/next.png) right 48% no-repeat;
+    background: url(../img/common/next.png) right 48% no-repeat;
 }
 
 .lb-data .lb-close {
-    background: url(../../img/common/close.png) top right no-repeat;
+    background: url(../img/common/close.png) top right no-repeat;
 }
 
 
@@ -8092,7 +8092,7 @@ button:disabled {
         }
 
         &::before {
-            content: url("../../img/common/check-all.svg");
+            content: url("../img/common/check-all.svg");
             position: absolute;
             left: 5px;
             top: 50%;
