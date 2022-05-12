@@ -13628,7 +13628,24 @@ window.addEventListener('DOMContentLoaded', () => {
       `;
 
       item.parentElement.classList.add('category-more-child');
+
     }
+
+    /*let menuItem = item.parentElement.closest('.tab-content').querySelectorAll('.menu__grid-item');
+
+    if (menuItem.length > 6) {
+      let height = 0;
+
+      menuItem.forEach(item => {
+        height += item.offsetHeight;
+
+        return height;
+      });
+
+      item.parentElement.closest('.tab-content').style.cssText = `flex-direction: column; max-height: ${height / 2}px;`;
+    }*/
+
+    item.parentElement.closest('.menu__grid-item').style.cssText = `order: -${childNodes.length}`;
 
     btnShowMore.addEventListener('click', () => {
       if (!item.parentElement.classList.contains('category-more-child-active')) {
@@ -14716,7 +14733,7 @@ function removedDisabled(input) {
   });
 }
 
-function checkoutAddAddresse(button) {
+function checkoutAddAddresses(button) {
   const changeButton = document.querySelector(button);
 
   changeButton.addEventListener('click', (e) => {
@@ -14772,19 +14789,12 @@ function checkoutAddNewPayment(button) {
   })
 }
 
-
-openCheckoutTabs('button[data-listener="next-step"]');
-removedDisabled('.checkout-content input');
-checkoutAddAddresse('.returns-address-block button[data-listener="change"]');
-checkoutAddNewPayment('.payment-description button[data-listener="change"]');
-
-
 /*
   Thank you page
 
 ----------------------------*/
 
-function changesActiveItem() {
+function thanYouRedirect() {
   const url = window.location.href.toString().split("/checkout/")[1];
   if (url == 'thank-you-page.html?generated') {
     document.querySelector('.thank-order_description').innerHTML = '<p>The order is generated. You indicated in the order that you would not be called. Our manager will soon start collecting your order</p>';
@@ -14796,4 +14806,9 @@ function changesActiveItem() {
   }
 }
 
-changesActiveItem();
+thanYouRedirect();
+
+openCheckoutTabs('button[data-listener="next-step"]');
+removedDisabled('.checkout-content input');
+checkoutAddAddresses('.returns-address-block button[data-listener="change"]');
+checkoutAddNewPayment('.payment-description button[data-listener="change"]');

@@ -4388,6 +4388,7 @@ button.cancel-button {
         max-width: 820px;
         position: relative;
         overflow: visible;
+        max-height: none;
 
         .image-product-block {
             max-width: 50%;
@@ -4401,6 +4402,14 @@ button.cancel-button {
     
             .product-thumb-slider {
                 max-width: 100%;
+                max-height: 100%;
+                overflow: hidden;
+            }
+
+            .product-thumb-slider {
+                margin-top: 20px;
+                min-height: 80px;
+                max-height: 80px;
             }
         }
     
@@ -4421,6 +4430,16 @@ button.cancel-button {
             background: transparent;
             color: $gold;
             font-size: 20px;
+
+            i {
+                font-size: 20px;
+            }
+        }
+
+        .product-caption .button-group button {
+            margin-right: 40px;
+            max-width: none;
+            width: auto;
         }
     }
 }
@@ -5770,6 +5789,22 @@ button:disabled {
                 border: 1px solid #c4c4c4;
             }
         }
+
+        &[data-status="rejected"] {
+            color: #de3618;
+
+            &::before {
+                content: "\f00d";
+                font-family: "Font Awesome 5 Free"; 
+                font-weight: 900;
+                border: 2px solid transparent;
+                text-align: center;
+            }
+    
+            &::after {
+                border: 1px solid #c4c4c4;
+            }
+        }
         
 
         &:last-child {
@@ -5872,6 +5907,40 @@ button:disabled {
                 object-fit: cover;
             }
         }
+    }
+}
+
+.order-total {
+    box-sizing: border-box;
+    padding: 0 8px 0 15px;
+    border-top: 1px solid #f8f8f8;
+
+    .order-total_row {
+        width: calc(100% - 42px);
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        margin: 13px auto;
+        font-family: "Fira Sans";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: #42474c;
+
+        .order-total_value {
+            color: $gold;
+        }
+    }
+
+    .order-total_footer {
+        box-sizing: border-box;
+        padding: 10px 0;
+        margin: 30px auto 0;
+        background: #f8f8f8;
     }
 }
 
