@@ -9339,4 +9339,8 @@ button:disabled {
     .content .row {
         flex-wrap: wrap;
     }
+
+    .product__item .image {
+        max-height: 140px; 
+    }
 }

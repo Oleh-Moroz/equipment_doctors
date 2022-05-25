@@ -8939,4 +8939,8 @@ button {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
+
+  .product__item .image {
+    max-height: 140px;
+  }
 }
