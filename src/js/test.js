@@ -605,57 +605,63 @@ function removedDisabled(input) {
 function checkoutAddAddresses(button) {
   const changeButton = document.querySelector(button);
 
-  changeButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    document.querySelector('.returns-address-block').style.display = 'none';
-    document.querySelector('.returns-address-list').style.display = 'block';
-  });
-
-  checkoutAddressesList();
+  if (changeButton) {
+    changeButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector('.returns-address-block').style.display = 'none';
+      document.querySelector('.returns-address-list').style.display = 'block';
+    });
+  
+    checkoutAddressesList();
+  }
 }
 
 function checkoutAddressesList() {
     const list = document.querySelector('.returns-address-list .select-list');
 
-    list.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      if (e.target.tagName == 'LI') {
-        document.querySelector('.returns-address-block .returns-address').innerHTML =  e.target.innerHTML; 
-        
-        document.querySelector('.returns-address-block').style.display = 'flex';
-        document.querySelector('.returns-address-list').style.display = 'none';
-      }
-
-      if (e.target.getAttribute('data-listener') == 'add') {
-        document.querySelector('.returns-address-list').style.display = 'none';
-        document.querySelector('.return-address-form').style.display = 'flex';
-
-        document.querySelector('.return-address-form .change-returns-address').innerText = 'Cancel';
-
-        document.querySelector('.return-address-form .change-returns-address').addEventListener('click', (e) => {
-          e.preventDefault();
-
-          document.querySelector('.return-address-form').style.display = 'none';
+    if (list) {
+      list.addEventListener('click', (e) => {
+        e.preventDefault();
+  
+        if (e.target.tagName == 'LI') {
+          document.querySelector('.returns-address-block .returns-address').innerHTML =  e.target.innerHTML; 
+          
           document.querySelector('.returns-address-block').style.display = 'flex';
-        });
-      }
-    });
+          document.querySelector('.returns-address-list').style.display = 'none';
+        }
+  
+        if (e.target.getAttribute('data-listener') == 'add') {
+          document.querySelector('.returns-address-list').style.display = 'none';
+          document.querySelector('.return-address-form').style.display = 'flex';
+  
+          document.querySelector('.return-address-form .change-returns-address').innerText = 'Cancel';
+  
+          document.querySelector('.return-address-form .change-returns-address').addEventListener('click', (e) => {
+            e.preventDefault();
+  
+            document.querySelector('.return-address-form').style.display = 'none';
+            document.querySelector('.returns-address-block').style.display = 'flex';
+          });
+        }
+      });
+    }
 }
 
 function checkoutAddNewPayment(button) {
   const addButton = document.querySelector(button);
 
-  addButton.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    console.log(addButton);
-
-    document.querySelector('.payment-description .payment-form-wrap').style.display = 'flex';
-    document.querySelector('.payment-description .account-payment-list').style.display = 'none';
-
-    e.target.style.display = 'none';
-  })
+  if (addButton) {
+    addButton.addEventListener('click', (e) => {
+      e.preventDefault();
+  
+      console.log(addButton);
+  
+      document.querySelector('.payment-description .payment-form-wrap').style.display = 'flex';
+      document.querySelector('.payment-description .account-payment-list').style.display = 'none';
+  
+      e.target.style.display = 'none';
+    })
+  }
 }
 
 /*

@@ -681,8 +681,8 @@
                                         <select class="selected-state">
                                             <option value="AL">40 Wood Ave, Secaucus, NJ 07094, USA</option>
                                             <option value="WY">41 Wood Ave, Secaucus, NJ 07094, USA</option>
-                                            <option value="button"><button data-listener="add">+Add new address</button></option>
                                         </select>
+                                        <button data-listener="add">+Add new address</button>
                                     </div>
                                 </div>
                             </div>
@@ -824,7 +824,7 @@
             returnsAddressesText.style.display = 'flex';
             returnsAddressesList.style.display = 'none';
             returnsAddressesText.querySelector('.returns-address-text-block .returns-address').innerText =
-                returnsAddressesList.querySelector('input').value;
+                returnsAddressesList.querySelector('select').value;
 
             if (stepNumber == allSteps.length - 1) {
                 e.preventDefault();
@@ -850,8 +850,8 @@
                 newAddressItem.innerHTML = newReturnsAddress;
 
                 document.querySelector('.returns-address').innerText = newReturnsAddress;
-                returnsAddressesList.querySelector('ul').prepend(newAddressItem);
-                returnsAddressesList.querySelector('input').setAttribute('value', newReturnsAddress);
+                /*returnsAddressesList.querySelector('ul').prepend(newAddressItem);
+                returnsAddressesList.querySelector('input').setAttribute('value', newReturnsAddress);*/
             }
         });
 
@@ -877,16 +877,17 @@
             }
         });
 
-        returnsAdressButtonAdd.addEventListener('click', (e) => {
-            e.preventDefault();
+        if (returnsAdressButtonAdd) {
+            returnsAdressButtonAdd.addEventListener('click', (e) => {
+                e.preventDefault();
 
-            returnsAddressesList.style.display = 'none';
+                returnsAddressesList.style.display = 'none';
 
-            returnsAddressForm.style.display = 'flex';
-            returnsAddressForm.setAttribute('data-form-status', 'show');
-            buttonNext.setAttribute('disabled', 'true');
-        });
-
+                returnsAddressForm.style.display = 'flex';
+                returnsAddressForm.setAttribute('data-form-status', 'show');
+                buttonNext.setAttribute('disabled', 'true');
+            });
+        }
 
         returnsAddressForm.querySelectorAll('input').forEach(input => {
             input.addEventListener('input', () => {

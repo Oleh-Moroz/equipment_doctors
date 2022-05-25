@@ -186,8 +186,8 @@
 
 <script>
     const newsSwiper = new Swiper(document.getElementById('news-slide-num'), {
-        slidesPerView: 3,
-        spaceBetween: 30,
+        slidesPerView: 1.3,
+        spaceBetween: 8,
         loop: true,
         navigation: {
             nextEl: '.swiper-button-next',
@@ -197,5 +197,11 @@
             delay: 5000,
             pauseOnMouseEnter: true,
         },
+        breakpoints: {
+            780: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            }
+        }
     });
 </script>

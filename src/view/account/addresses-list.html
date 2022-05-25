@@ -87,7 +87,7 @@
                     </form>
                 </div>
 
-                    <div class="address-list_item">
+                <div class="address-list_item">
                         <div class="address-checkbox_row">
                             <input type="radio" id="default-adress-1" name="default-adress" value="default-adress-1" checked>
                             <label for="default-adress-1">Set as my preferred delivery address</label>
@@ -156,8 +156,51 @@
                                 </button>
                             </div>
                         </form>
-                    </div>
                 </div>
+
+
+                <div class="address-list_item">
+                    <form action="" method="post" enctype="multipart/form-data" id="form-address-">
+                        <div class="address-list_item-header">
+                            <div class="address-checkbox_row">
+                                <input type="radio" id="default-adress-1" name="default-adress" value="default-adress-1" checked="">
+                                <label for="default-adress-1">Set as my preferred delivery address</label>
+                            </div>
+
+                            <div class="address-item_buttons">
+                                <a href="" class="btn btn-info">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <use href="#payment-edit"></use>
+                                    </svg>
+                                </a>
+                                <a href="" data-toggle="tooltip" title="Delete" class="btn btn-danger" onclick="return confirm('Are you sure?')">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <use href="#payment-remove"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="order-info-row">
+                            <div class="order-info-col-title">
+                                Name: <br>
+                                Street address: <br>
+                                Apt or unit: <br>
+                                City/ Steate/ Zip code: <br>
+                                Country: 
+                            </div>
+                            <div class="order-info-col-value">
+                                Oleh Moroz<br>
+                                123<br>
+                                23<br>
+                                33, Alabama 22<br>
+                                United States
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>

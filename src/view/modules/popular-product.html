@@ -242,8 +242,8 @@
 
 <script>
     const popularSwiper = new Swiper(document.getElementById('popular-slide-num'), {
-        slidesPerView: 3,
-        spaceBetween: 30,
+        slidesPerView: 2.2,
+        spaceBetween: 8,
         loop: true,
         navigation: {
             nextEl: '.swiper-button-next',
@@ -253,5 +253,11 @@
             delay: 5000,
             pauseOnMouseEnter: true,
         },
+        breakpoints: {
+            780: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            }
+        }
     });
 </script>

@@ -191,13 +191,23 @@
 
     if (crossSwiper.querySelectorAll('.product__item').length > 3) {
         new Swiper(crossSwiper, {
-            slidesPerView: 4,
-            spaceBetween: 30,
+            slidesPerView: 2.2,
+            spaceBetween: 8,
             loop: true,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+            breakpoints: {
+                780: {
+                    slidesPerView: 3,
+                    spaceBetween: 8,
+                },
+                1242: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                }
+            }
         });
     } else {
         crossSwiper.querySelectorAll('.slider_button').forEach(button => button.remove());

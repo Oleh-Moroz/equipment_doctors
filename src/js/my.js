@@ -405,7 +405,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   ---------------------------------------*/
 
-  const selectList = document.querySelectorAll('.select-list');
+  /*const selectList = document.querySelectorAll('.select-list');
 
   function showSelectDropdown() {
     selectList.forEach(list => {
@@ -439,7 +439,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  showSelectDropdown();
+  showSelectDropdown();*/
 
   /*
 
