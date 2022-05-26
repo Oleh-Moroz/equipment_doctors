@@ -1955,6 +1955,7 @@ footer {
   border-radius: 8px;
   box-sizing: border-box;
   padding: 26px 6px 30px 21px;
+  transition: all 0.4s linear;
 }
 .product-filter ul,
 .col-menu ul,
@@ -9032,6 +9033,14 @@ button {
   .vendor-row {
     margin-top: 0px;
   }
+
+  .col-menu.col-menu_category {
+    z-index: 1;
+  }
+
+  .tab-content.tab-show {
+    display: none;
+  }
 }
 @media screen and (max-width: 800px) {
   .row-wrap .product__item {
@@ -9099,5 +9108,27 @@ button {
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
+  }
+
+  .float-row {
+    width: 100%;
+  }
+
+  .product-col-left {
+    width: 100%;
+    max-width: 100%;
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+    margin: 8px 0;
+  }
+
+  .product-col-right {
+    max-width: 100%;
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+  }
+
+  .page-banner {
+    padding: 40px 0;
   }
 }

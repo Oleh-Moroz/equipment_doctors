@@ -211,5 +211,27 @@
         });
     } else {
         crossSwiper.querySelectorAll('.slider_button').forEach(button => button.remove());
+
+        if (document.documentElement.clientWidth < 1160) {
+            new Swiper(crossSwiper, {
+                slidesPerView: 2.2,
+                spaceBetween: 8,
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    780: {
+                        slidesPerView: 3,
+                        spaceBetween: 8,
+                    },
+                    1242: {
+                        slidesPerView: 4,
+                        spaceBetween: 30,
+                    }
+                }
+            });
+        }
     }
 </script>

@@ -241,15 +241,56 @@
 
     if (popularSwiper.querySelectorAll('.product__item').length > 3) {
         new Swiper(popularSwiper, {
-            slidesPerView: 4,
-            spaceBetween: 30,
+            slidesPerView: 2.2,
+            spaceBetween: 8,
             loop: true,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+            autoplay: {
+                delay: 5000,
+                pauseOnMouseEnter: true,
+            },
+            breakpoints: {
+                780: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1242: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                }
+            }
         });
     } else {
         popularSwiper.querySelectorAll('.slider_button').forEach(button => button.remove());
+
+        if (document.documentElement.clientWidth < 1160) {
+
+            new Swiper(popularSwiper, {
+                slidesPerView: 2.2,
+                spaceBetween: 8,
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                    pauseOnMouseEnter: true,
+                },
+                breakpoints: {
+                    780: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1242: {
+                        slidesPerView: 4,
+                        spaceBetween: 30,
+                    }
+                }
+            });
+        }
     }
 </script>

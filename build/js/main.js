@@ -14965,10 +14965,12 @@ function createMobMenu() {
         document.querySelector('.mob-right_menu').append(document.querySelector('.product-filter'));
     }
 
-    if (document.querySelector('.col-menu')) {
-        document.querySelector('.mob-right_menu').append(document.querySelector('.col-menu'));
-    } else if (document.querySelector('.col-menu.col-menu_category')) {
-        document.querySelector('.content').append(document.querySelector('.col-menu.col-menu_category'));
+    if (document.querySelector('.col-menu.col-menu_category')) {
+        document.querySelector('.content').prepend(document.querySelector('.col-menu.col-menu_category'));
+
+        document.querySelectorAll('.col-menu.col-menu_category ul li').forEach(item => {
+            item.addEventListener('click', moveCategoryMenu);
+        });
     }
 }
 
@@ -15002,12 +15004,16 @@ function moveBackElements() {
         document.querySelector('.left-col').prepend(document.querySelector('.product-filter'));
     }
 
-    if (document.querySelector('.col-menu')) {
-        document.querySelector('.left-col').prepend(document.querySelector('.col-menu'));
-    }
-
     if (document.querySelector('.col-menu.col-menu_category')) {
         document.querySelector('.left-col').prepend(document.querySelector('.col-menu.col-menu_category'));
+
+        document.querySelectorAll('.col-menu.col-menu_category ul li').forEach(item => {
+            item.removeEventListener('click', moveCategoryMenu);
+        });
+
+        document.querySelector('.col-menu.col-menu_category').style.cssText = `
+            transform: translateX(0%);
+        `;
     }
 
     if (document.querySelector('.adversing-banner-one')) {
@@ -15018,3 +15024,18 @@ function moveBackElements() {
         document.querySelector('.adversing-banner-one').after(document.querySelector('.adversing-banner-two'));
     }
 }
+
+const moveCategoryMenu = (e) => {
+    if (e.target.tagName == "A" || e.target.tagName == "DIV") {
+        e.preventDefault();
+        document.querySelector('.col-menu.col-menu_category').style.cssText = `
+            transform: translateX(-110%);
+            position: absolute;
+        `;
+
+        document.querySelector('.tab-content.tab-show').style.cssText = `
+            visibility: visible;
+            display: flex;
+        `;
+    }
+};
