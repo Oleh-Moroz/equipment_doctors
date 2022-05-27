@@ -9427,6 +9427,18 @@ button:disabled {
     .tab-content.tab-show {
         display: none;
     }
+
+    .content > button {
+        color: $gold;
+        background: transparent;
+        padding: 15px 0;
+        margin: 20px 0 -5px;
+
+        i {
+            margin-right: 5px;
+            margin-top: -1px;
+        }
+    }
 }
 
 @media screen and (max-width: 800px) {

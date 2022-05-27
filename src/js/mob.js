@@ -64,6 +64,10 @@ function headerMenu() {
         document.querySelector('.filter_button').classList.toggle('active');
         document.querySelector('.mob-right_menu').classList.toggle('active');
     });
+
+    if (document.querySelector('.mob-right_menu').childNodes.length < 1) {
+        filterButton.style.display = 'none';
+    }
 };
 
 function removeHeaderMenu() {
@@ -215,5 +219,27 @@ const moveCategoryMenu = (e) => {
             visibility: visible;
             display: flex;
         `;
+
+        const buttonPrevios = document.createElement('button');
+
+        buttonPrevios.innerHTML = `
+            <i class="fas fa-chevron-left"></i> All Categories
+        `;
+
+        document.querySelector('.content').prepend(buttonPrevios);
+
+        buttonPrevios.addEventListener('click', () => {
+            document.querySelector('.col-menu.col-menu_category').style.cssText = `
+                transform: translateX(0%);
+                position: relative;
+            `;
+
+            document.querySelector('.tab-content.tab-show').style.cssText = `
+                visibility: hidden;
+                display: none;
+            `;
+
+            buttonPrevios.remove();
+        });
     }
 };
