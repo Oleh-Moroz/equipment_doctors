@@ -13845,11 +13845,16 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     let swiperImage = new Swiper(document.getElementById('product-image-slider'), {
       spaceBetween: 10,
-      direction: direction,
+      direction: 'horizontal',
       mousewheel: true,
       thumbs: {
         swiper: swiperThumb,
       },
+      breakpoints: {
+        980: {
+          direction: direction,
+        }
+      }
     });
   }
 
@@ -14974,6 +14979,7 @@ function createMobMenu() {
 
         document.querySelectorAll('.col-menu.col-menu_category ul li').forEach(item => {
             item.addEventListener('click', moveCategoryMenu);
+            item.classList.remove('show');
         });
     }
 }

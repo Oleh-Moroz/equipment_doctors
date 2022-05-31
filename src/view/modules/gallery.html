@@ -37,13 +37,19 @@
 
 <script>
     const popularSwiper = new Swiper(document.getElementById('gallery-slide-num'), {
-        slidesPerView: 3,
-        spaceBetween: 30,
+        slidesPerView: 1,
+        spaceBetween: 0,
         loop: true,
         delay: 5000,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        breakpoints: {
+            780: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            }
+        }
     });
 </script>

@@ -152,6 +152,7 @@ function createMobMenu() {
 
         document.querySelectorAll('.col-menu.col-menu_category ul li').forEach(item => {
             item.addEventListener('click', moveCategoryMenu);
+            item.classList.remove('show');
         });
     }
 }

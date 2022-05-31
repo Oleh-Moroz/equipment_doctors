@@ -320,11 +320,16 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     let swiperImage = new Swiper(document.getElementById('product-image-slider'), {
       spaceBetween: 10,
-      direction: direction,
+      direction: 'horizontal',
       mousewheel: true,
       thumbs: {
         swiper: swiperThumb,
       },
+      breakpoints: {
+        980: {
+          direction: direction,
+        }
+      }
     });
   }
 
