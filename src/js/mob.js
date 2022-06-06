@@ -176,6 +176,10 @@ function moveElements() {
     if (document.querySelector('.adversing-banner-two')) {
         document.querySelector('.brands-wrap').after(document.querySelector('.adversing-banner-two'));
     }
+
+    if (document.querySelector('.checkout-wrap')) {
+        document.querySelector('.header-cart').style.display = 'none';
+    }
 }
 
 function moveBackElements() {

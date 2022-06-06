@@ -13583,6 +13583,10 @@ window.addEventListener('DOMContentLoaded', () => {
       categoryMenu.style.setProperty('border', '1px solid #CCCCCC');
       categoryMenu.classList.add('active');
     });
+
+    menuItem.forEach(item => item.classList.remove('active', 'show'));
+
+    menuItem[0].classList.add('active', 'show');
   }
 
   openMenu(categoryButton);
@@ -14124,6 +14128,14 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   addedListener();
+
+  /*
+   Remove style attribute from part description
+  ---------------------------------------------------*/
+
+  if (document.querySelectorAll('.product-content .tab-content')) {
+    document.querySelectorAll('.product-content .tab-content *').forEach(element => element.removeAttribute('style'));
+  }
 
 });
 
@@ -15002,6 +15014,10 @@ function moveElements() {
 
     if (document.querySelector('.adversing-banner-two')) {
         document.querySelector('.brands-wrap').after(document.querySelector('.adversing-banner-two'));
+    }
+
+    if (document.querySelector('.checkout-wrap')) {
+        document.querySelector('.header-cart').style.display = 'none';
     }
 }
 
