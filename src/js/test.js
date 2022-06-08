@@ -87,8 +87,10 @@ if (searchArticleInput) {
   });
 
   searchArticleInput.addEventListener('input', () => {
-    if (searchArticleInput.value > 0) {
+    if (searchArticleInput.value.length > 0) {
       clearArticleSearchButton.style.cssText = 'color: #bea063; opacity: 1; visibility: visible;';
+    } else {
+      clearArticleSearchButton.style.cssText = '';
     }
   });
 

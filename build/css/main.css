@@ -2006,6 +2006,7 @@ footer {
   transition: all 0.4s linear;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+  margin-left: 15px;
 }
 
 .accordion-has-children.accordion-is-open > .filter__label::after {
@@ -4567,6 +4568,8 @@ button:disabled:hover {
       align-items: flex-start;
   -ms-flex-pack: justify;
       justify-content: space-between;
+  background: transparent;
+  padding: 0;
 }
 
 .asset-item {
@@ -8723,10 +8726,12 @@ button:disabled:hover {
   .menu-bar_button.active span:first-child {
     -webkit-transform: rotate(45deg) translate(5px, 5px);
             transform: rotate(45deg) translate(5px, 5px);
+    background: #BEA063;
   }
   .menu-bar_button.active span:last-child {
     -webkit-transform: rotate(-45deg) translate(3px, -3px);
             transform: rotate(-45deg) translate(3px, -3px);
+    background: #BEA063;
   }
   .menu-bar_button.active span:nth-child(2) {
     width: 0;
@@ -8881,11 +8886,17 @@ button:disabled:hover {
     transition: all 0.4s ease-out;
   }
 
+  .header-search_form {
+    /*right: -100%;
+    position: absolute;*/
+    transition: all 0.4s linear;
+  }
+
   .header-search .search-active {
     width: 100vw;
-    right: -11vw;
-    top: 0;
-    position: absolute;
+    right: 0%;
+    position: fixed;
+    top: 15px;
     background: #fff;
     box-shadow: none;
   }
@@ -8898,16 +8909,19 @@ button:disabled:hover {
 
   .header-search .header-search-dropdown {
     width: 100vw;
-    right: -11vw;
+    right: -100%;
     border: none;
     box-shadow: none;
     margin-top: 30px;
     background: #f6f6f6;
+    position: fixed;
+    transition: all 0.4s linear;
   }
   .header-search .header-search-dropdown.open-no-results, .header-search .header-search-dropdown.open {
     min-height: 100vh;
     border: none;
     box-shadow: none;
+    right: 0;
   }
 
   .header-search .open-no-results .header-search-no-result {
@@ -9012,9 +9026,10 @@ button {
   }
 
   .product-icon__row {
-    margin-bottom: -35px;
+    margin-bottom: -45px;
     z-index: 1;
     position: relative;
+    padding: 5px;
   }
 
   .product-label {
@@ -9094,11 +9109,12 @@ button {
         flex: 1 0 calc(50% - 8px);
     max-width: calc(50% - 8px);
     margin: 0 4px 8px;
+    padding: 5px 5px 10px;
   }
 
   .brand-item .vendor-image, .vendor-item .vendor-image {
-    max-height: 70px;
-    min-height: 70px;
+    max-height: 105px;
+    min-height: 105px;
   }
 
   .brand-item .vendor-image a img, .vendor-item .vendor-image a img {
@@ -9116,7 +9132,16 @@ button {
   }
 
   .news__item .product-icon__row {
-    margin-bottom: -31px;
+    margin-bottom: -10px;
+  }
+  .news__item .product-icon__row .product-label__cate {
+    background: transparent;
+    padding: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #42474C;
   }
 
   .news-slider .slider-button {
@@ -9533,6 +9558,15 @@ button {
     -ms-flex: 0 0 100%;
         flex: 0 0 100%;
     margin: 15px 0 15px 0;
+    background: #fff;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin: 8px auto;
+    padding: 8px 12px;
+  }
+  .asset-item .asset-ico svg {
+    width: 30px;
+    height: 30px;
   }
 
   .about-asset-row {
@@ -9541,7 +9575,7 @@ button {
   }
 
   .asset-item h5 {
-    margin: -40px 0 40px 70px;
+    margin: -30px 0 25px 43px;
   }
 
   .about-us-footer-block p {
@@ -9930,5 +9964,44 @@ button {
         flex-direction: row;
     -ms-flex-pack: justify;
         justify-content: space-between;
+  }
+
+  .tab-content .col3 ul li a span {
+    color: #BEA063;
+  }
+
+  .content-banner {
+    margin: 15px auto;
+    padding: 35px 0;
+  }
+
+  .news-wrap .title-row {
+    margin: 0px 0 30px;
+  }
+
+  .gallery-wrap .gallery__item a img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 265px;
+  }
+
+  .search-block form button.article-search_button {
+    padding: 6px;
+  }
+  .search-block form button.article-search_button i {
+    color: #BEA063;
+    font-size: 20px;
+  }
+
+  .vendor-col-menu ul li div {
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+  }
+  .vendor-col-menu ul li div::after {
+    margin-left: auto;
+  }
+
+  .returns-address-text-block .returns-address {
+    font-size: 18px;
   }
 }

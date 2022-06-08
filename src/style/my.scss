@@ -2058,6 +2058,7 @@ footer {
     font-size: 24px;
     transition: all .4s linear;
     transform: rotate(90deg);
+    margin-left: 15px;
 }
 
 
@@ -4712,6 +4713,8 @@ button:disabled {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    background: transparent;
+    padding: 0;
 }
 
 .asset-item {
@@ -9118,11 +9121,13 @@ button:disabled {
 
         &.active {
             span:first-child {
-                transform: rotate(45deg) translate(5px, 5px)
+                transform: rotate(45deg) translate(5px, 5px);
+                background: $gold;
             }
 
             span:last-child {
                 transform: rotate(-45deg) translate(3px, -3px);
+                background: $gold;
             }
 
             span:nth-child(2) {
@@ -9291,11 +9296,17 @@ button:disabled {
         transition: all .4s ease-out;
     }
 
+    .header-search_form {
+        /*right: -100%;
+        position: absolute;*/
+        transition: all .4s linear;
+    }
+
     .header-search .search-active {
         width: 100vw;
-        right: -11vw;
-        top: 0;
-        position: absolute;
+        right: 0%;
+        position: fixed;
+        top: 15px;
         background: #fff;
         box-shadow: none;
 
@@ -9309,17 +9320,20 @@ button:disabled {
 
     .header-search .header-search-dropdown {
         width: 100vw;
-        right: -11vw;
+        right: -100%;
         border: none;
         box-shadow: none;
         margin-top: 30px;
         background: #f6f6f6;
+        position: fixed;
+        transition: all .4s linear;
 
         &.open-no-results,
         &.open {
             min-height: 100vh;
             border: none;
             box-shadow: none;
+            right: 0;
         }
     }
 
@@ -9422,9 +9436,10 @@ button:disabled {
     }
 
     .product-icon__row {
-        margin-bottom: -35px;
+        margin-bottom: -45px;
         z-index: 1;
         position: relative;
+        padding: 5px;
     }
 
     .product-label {
@@ -9502,11 +9517,12 @@ button:disabled {
         flex: 1 0 calc((100% / 2) - 8px);
         max-width: calc((100% / 2) - 8px);
         margin: 0 4px 8px;
+        padding: 5px 5px 10px;
     }
 
     .brand-item .vendor-image, .vendor-item .vendor-image {
-        max-height: 70px;
-        min-height: 70px;
+        max-height: 105px;
+        min-height: 105px;
     }
 
     .brand-item .vendor-image a img, .vendor-item .vendor-image a img {
@@ -9525,7 +9541,17 @@ button:disabled {
 
     .news__item {
         .product-icon__row {
-            margin-bottom: -31px;
+            margin-bottom: -10px;
+
+            .product-label__cate {
+                background: transparent;
+                padding: 0;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+                color: #42474C;
+            }
         }
     }
 
@@ -9913,6 +9939,18 @@ button:disabled {
     .asset-item {
         flex: 0 0 100%;
         margin: 15px 0 15px 0;
+        background: #fff;
+        border-radius: 6px;
+        box-sizing: border-box;
+        margin: 8px auto;
+        padding: 8px 12px;
+    
+        .asset-ico {
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
     }
 
     .about-asset-row {
@@ -9920,7 +9958,7 @@ button:disabled {
     }
 
     .asset-item h5 {
-        margin: -40px 0 40px 70px;
+        margin: -30px 0 25px 43px;
     }
 
     .about-us-footer-block p {
@@ -10270,5 +10308,49 @@ button:disabled {
         max-width: 100%;
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .tab-content .col3 ul li a span {
+        color: $gold;
+    }
+
+    .content-banner {
+        margin: 15px auto;
+        padding: 35px 0;
+    }
+
+    .news-wrap {
+        .title-row {
+            margin: 0px 0 30px;
+        }
+    }
+
+    .gallery-wrap .gallery__item a img {
+        width: 100%;
+        object-fit: cover;
+        max-height: 265px;
+    }
+
+    .search-block form  button.article-search_button {
+        padding: 6px;
+
+        i {
+            color: $gold;
+            font-size: 20px;
+        }
+    }
+
+    .vendor-col-menu ul li div {
+        justify-content: flex-start;
+
+        &::after {
+            margin-left: auto;
+        }
+    }
+
+    .returns-address-text-block {
+        .returns-address {
+            font-size: 18px;
+        }
     }
 }
