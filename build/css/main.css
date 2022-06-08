@@ -10004,4 +10004,47 @@ button {
   .returns-address-text-block .returns-address {
     font-size: 18px;
   }
+
+  .thank-page_wrap {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    text-align: left;
+  }
+
+  .thank-page_wrap .thank-page_icon {
+    margin-bottom: 15px;
+    margin-right: 15px;
+    max-width: 20%;
+  }
+
+  .thank-page_wrap .thank-order_block {
+    margin-bottom: 20px;
+    max-width: 74%;
+    margin-top: 14px;
+  }
+  .thank-page_wrap .thank-order_block h3, .thank-page_wrap .thank-order_block h2 {
+    text-align: left;
+  }
+  .thank-page_wrap .thank-order_block h2 {
+    font-weight: 600;
+  }
+
+  .thank-page_wrap .thank-order_description p {
+    text-align: left;
+    width: 100%;
+  }
+
+  .thank-page_wrap .button-group {
+    width: 100%;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    margin: 15px auto 0;
+  }
+
+  .thank-page_wrap .thank-order_info {
+    text-align: left;
+  }
 }
