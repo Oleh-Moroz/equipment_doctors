@@ -2240,7 +2240,7 @@ footer {
     }
 
     &.accordion-is-open > .accordion__list {
-        max-height: 1000px;
+        max-height: 2000px;
     }
 }
 
@@ -3893,7 +3893,7 @@ input:checked ~ label::before {
         .base-button {
             outline: 0;
             box-sizing: border-box;
-            padding: 12px 10px;
+            padding: 12px 20px;
             text-align: center;
             background: $gold;
             color: $white;
@@ -8942,6 +8942,18 @@ button:disabled {
     .product-content .row-testimonial {
         width: 100%;
     }
+
+    .accordion-has-children .accordion__list li a span {
+        margin-left: 15px;
+    }
+
+    .accordion-has-children .accordion__list li.accordion-has-children .filter__label {
+        padding: 8px 8px 8px 8px;
+    }
+
+    .accordion-has-children .accordion__list .accordion-has-children li {
+        padding: 0 8px 0 15px;
+    }
 }
 
 @media screen and (max-width: 1160px) {
@@ -9306,9 +9318,13 @@ button:disabled {
         width: 100vw;
         right: 0%;
         position: fixed;
-        top: 15px;
+        top: 20px;
         background: #fff;
         box-shadow: none;
+
+        button {
+            left: 5px;
+        }
 
         input {
             display: block;
@@ -9770,6 +9786,19 @@ button:disabled {
             display: none;
         }
     }
+
+    .product-caption .rating a {
+        display: inline-block;
+    }
+
+    .product-content .tab-content {
+        width: 100%;
+        margin: 35px 0 40px;
+    }
+
+    .title-row {
+        margin: 20px 0 20px;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -9929,6 +9958,7 @@ button:disabled {
         margin-right: 0;
         margin-top: 15px;
         margin-bottom: 15px;
+        display: block;
         width: 100%;
     }
 
@@ -10008,7 +10038,7 @@ button:disabled {
     .news-subscribe-form-block .container .row h4 {
         font-style: normal;
         font-weight: 500;
-        font-size: 28px;
+        font-size: 24px;
         line-height: 114%;
         letter-spacing: 0.5px;
     }
@@ -10064,9 +10094,23 @@ button:disabled {
 
     .checkout-step_body .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-total, 
     .pop-up-checkout .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-total {
-        flex: 0 0 75%;
-        max-width: 75%;
+        flex: 0 0 52%;
+        max-width: 52%;
         text-align: right;
+    }
+
+    .checkout-step_body .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-quantity,
+    .pop-up-checkout .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-quantity {
+        flex: 0 0 48%;
+        max-width: 48%;
+        padding: 0 0;
+    }
+
+    .checkout-step_body .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-quantity,
+    .pop-up-checkout .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-quantity {
+        .checkout-spinner {
+            justify-content: flex-end;
+        }
     }
 
     .checkout-step_body .pop-up-checkout_table-body ul li .checkout-remove-item, .pop-up-checkout .pop-up-checkout_table-body ul li .checkout-remove-item {
@@ -10394,5 +10438,64 @@ button:disabled {
 
     .thank-page_wrap .thank-order_info {
         text-align: left;
+    }
+
+    .cart-wrap {
+        .pop-up-footer {
+            padding: 0px 0px 0px;
+
+            .row {
+                margin: 25px 0 0;
+            }
+        }
+    }
+
+    .checkout-wrap .checkout-left_col .checkout-step_block .checkout-step_body .checkout-content {
+        padding: 0 5%;
+    }
+
+    .checkout-wrap .checkout-left_col .checkout-step_block .checkout-step_body .checkout-content .checkout-step_footer {
+        padding: 20px 5% 20px;
+        margin: 25px -6% 0;
+    }
+
+    .article-content {
+        .label-wrap {
+            .product-label {
+                background: 0 0;
+                padding: 0;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+                color: #42474c;
+            }
+        }
+    }
+
+    .article-content h1 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 120%;
+        margin: 16px 0;
+    }
+
+    .article-content h2, .article-content h3, .article-content h4 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 133%;
+        text-transform: uppercase;
+        margin: 16px 0;
+    }
+
+    .subscribe-news-form input[type="submit"],
+    .subscribe-news-form button {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 114%;
+        letter-spacing: 0.5px;
     }
 }

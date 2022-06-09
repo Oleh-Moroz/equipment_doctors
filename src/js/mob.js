@@ -36,7 +36,7 @@ function headerMenu() {
     filterButton.innerHTML = `
         <button class="filter_button">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <use href="#filter-ico"></use>
+                <use xlink:href="#filter-ico"></use>
             </svg>
         </button>
     `;
@@ -106,7 +106,7 @@ function createMobMenu() {
                     <li>
                         <a href="${document.querySelector('.logo_wrap a').getAttribute('href')}">
                             <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <use href="#home"></use>
+                                <use xlink:href="#home"></use>
                             </svg>
                             Home
                         </a>
@@ -114,7 +114,7 @@ function createMobMenu() {
                     <li>
                         <a href="${document.querySelector('.header-category_button').getAttribute('href')}">
                             <svg width="16px" height="14px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <use href="#category"></use>
+                                <use xlink:href="#category"></use>
                             </svg>
                             All category
                         </a>

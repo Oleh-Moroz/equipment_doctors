@@ -14420,13 +14420,13 @@ function changesEmpryContent(url) {
     pageTitle.innerText = 'Orders';
     pageText.innerHTML = `This window empty, because<br> you didn’t do any activities`;
     pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use href="#order-empty"></use>
+            <use xlink:href="#order-empty"></use>
           </svg>`;
   } else if (url == 'returns') {
     pageTitle.innerText = 'Returned order detail';
     pageText.innerHTML = `This window empty, because<br> you didn’t retun any items`;
     pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use href="#order-empty"></use>
+            <use xlink:href="#order-empty"></use>
           </svg>`;
     pageButton.innerText = 'Return Items';
 
@@ -14435,25 +14435,25 @@ function changesEmpryContent(url) {
     pageTitle.innerText = 'My wallets';
     pageText.innerHTML = `This window empty, because<br> you didn’t add payment method`;
     pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use href="#order-wallets"></use>
+            <use xlink:href="#order-wallets"></use>
           </svg>`;
   } else if (url == 'addresses') {
     pageTitle.innerText = 'Delivery Addresses';
     pageText.innerHTML = `This window empty, because<br> you didn’t add address`;
     pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use href="#order-addresses"></use>
+            <use xlink:href="#order-addresses"></use>
           </svg>`;
   } else if (url == 'wish-list') {
     pageTitle.innerText = 'Wish List';
     pageText.innerHTML = `This window empty, because<br> you didn’t add it`;
     pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use href="#order-wish-list"></use>
+            <use xlink:href="#order-wish-list"></use>
           </svg>`;
   } else if (url == 'recently-viewed') {
     pageTitle.innerText = 'Recently Viewed';
     pageText.innerHTML = `This window empty, because<br> you didn’t view product`;
     pageIco.innerHTML = `<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use href="#order-recently-viewed"></use>
+            <use xlink:href="#order-recently-viewed"></use>
           </svg>`;
   } else if (url == 'new-return') {
     document.querySelector('.pop-up-wrap').classList.add('active');
@@ -14595,12 +14595,12 @@ if (createWishlistButton) {
                       <div class="payment-item-buttons">
                         <button data-listener="edit-wishlist">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <use href="#payment-edit"></use>
+                                <use xlink:href="#payment-edit"></use>
                             </svg>
                         </button>
                         <button data-listener="remove-wishlist">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <use href="#payment-remove"></use>
+                                <use xlink:href="#payment-remove"></use>
                             </svg>
                         </button>
                       </div>
@@ -14877,7 +14877,7 @@ function headerMenu() {
     filterButton.innerHTML = `
         <button class="filter_button">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <use href="#filter-ico"></use>
+                <use xlink:href="#filter-ico"></use>
             </svg>
         </button>
     `;
@@ -14947,7 +14947,7 @@ function createMobMenu() {
                     <li>
                         <a href="${document.querySelector('.logo_wrap a').getAttribute('href')}">
                             <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <use href="#home"></use>
+                                <use xlink:href="#home"></use>
                             </svg>
                             Home
                         </a>
@@ -14955,7 +14955,7 @@ function createMobMenu() {
                     <li>
                         <a href="${document.querySelector('.header-category_button').getAttribute('href')}">
                             <svg width="16px" height="14px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <use href="#category"></use>
+                                <use xlink:href="#category"></use>
                             </svg>
                             All category
                         </a>
