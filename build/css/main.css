@@ -10025,7 +10025,7 @@ button {
   .gallery-wrap .gallery__item a img {
     width: 100%;
     object-fit: cover;
-    max-height: 265px;
+    max-height: 235px;
   }
 
   .search-block form button.article-search_button {
@@ -10137,9 +10137,21 @@ button {
   .subscribe-news-form input[type=submit],
 .subscribe-news-form button {
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 14px;
     line-height: 114%;
     letter-spacing: 0.5px;
+  }
+
+  .gallery-wrap {
+    margin: 15px 0;
+  }
+
+  .article-content p {
+    margin-bottom: 15px;
+  }
+
+  .news-slider {
+    width: 104%;
   }
 }
