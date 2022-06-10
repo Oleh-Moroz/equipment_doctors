@@ -8954,6 +8954,15 @@ button:disabled {
     .accordion-has-children .accordion__list .accordion-has-children li {
         padding: 0 8px 0 15px;
     }
+
+    .checkout-step_body .pop-up-checkout_table-body ul li .pop-up-checkout_table-col, .pop-up-checkout .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-price,
+    .checkout-step_body .pop-up-checkout_table-body ul li .pop-up-checkout_table-col, .pop-up-checkout .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-total {
+        font-size: 16px;
+    }
+
+    .checkout-step_body .pop-up-checkout_table .pop-up-checkout_table-col, .pop-up-checkout .pop-up-checkout_table .pop-up-checkout_table-col {
+        padding: 16px 5px;
+    }
 }
 
 @media screen and (max-width: 1160px) {
@@ -10074,35 +10083,51 @@ button:disabled {
         max-width: 25%;
     }
 
+    .pop-up-checkout .pop-up-checkout_table-body ul li .mini-checkout_product-image,
+    .checkout-wrap form .checkout-step_body .pop-up-checkout_table-col.mini-checkout_product-image {
+        flex: 0 0 20%;
+        max-width: 20%;
+        padding: 0;
+    }
+
     .checkout-step_body .pop-up-checkout_table .pop-up-checkout_table-col:nth-child(2), .pop-up-checkout .pop-up-checkout_table .pop-up-checkout_table-col:nth-child(2) {
-        flex: 0 0 70%;
-        max-width: 70%;
+        flex: 0 0 80%;
+        max-width: 80%;
     }
 
     .checkout-step_body .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-model, 
     .pop-up-checkout .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-model {
-        flex: 0 0 75%;
-        max-width: 75%;
-        margin-left: 25%;
+        flex: 0 0 80%;
+        max-width: 80%;
+        margin-left: 20%;
         margin-bottom: 10px;
     }
-
-    .checkout-step_body .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-price, 
+ 
     .pop-up-checkout .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-price {
         display: none;
     }
 
+    .checkout-step_body .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-price {
+        display: block;
+        flex: 0 0 50%;
+        max-width: 50%;
+        text-align: right;
+        padding: 0 10px;
+        font-size: 18px;
+    }
+
     .checkout-step_body .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-total, 
     .pop-up-checkout .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-total {
-        flex: 0 0 52%;
-        max-width: 52%;
+        flex: 0 0 50%;
+        max-width: 50%;
         text-align: right;
+        font-size: 18px;
     }
 
     .checkout-step_body .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-quantity,
     .pop-up-checkout .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-quantity {
-        flex: 0 0 48%;
-        max-width: 48%;
+        flex: 0 0 50%;
+        max-width: 50%;
         padding: 0 0;
     }
 
@@ -10271,10 +10296,6 @@ button:disabled {
 
     .checkout-wrap .checkout-left_col .checkout-step_block.checked-step {
         padding: 25px 20px;
-    }
-
-    .checkout-step_body .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-model {
-        margin-left: 31%;
     }
 
     .checkout-step_body .pop-up-checkout_table-body ul li .pop-up-checkout_table-col.mini-checkout_product-total {
@@ -10509,5 +10530,47 @@ button:disabled {
 
     .news-slider {
         width: 104%;
+    }
+
+    .checkout-step_body .pop-up-footer .row, .pop-up-checkout .pop-up-footer .row {
+        padding: 15px 15px 15px;
+    }
+
+    .checkout-total_footer .button-row .base-button {
+        padding: 12px 5px;
+    }
+
+    /*
+        Account styles
+
+    ----------------------------------*/
+
+    .pop-up-content {
+        width: 100%;
+    }
+
+    .account-form .media-login-item {
+        min-width: 45%;
+        max-width: 45%;
+        padding: 9px 5px;
+        margin: 1px 4px;
+    }
+        
+    .pop-up-content .pop-up-form {
+        box-sizing: border-box;
+        padding: 24px 15px;
+    }
+
+    .form-group {
+        margin: 15px auto;
+    }
+
+    .pop-up-button-group {
+        margin-top: 20px;
+    }
+
+    .account-form .form-text {
+        text-align: left;
+        padding-left: 10%;
     }
 }
