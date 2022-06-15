@@ -90,50 +90,124 @@ function createMobMenu() {
     menuBlock.classList.add('mob-left_menu');
     categoryMenu.classList.add('mob-right_menu');
 
-    menuBlock.innerHTML = `
-        <div class="mob-left_menu-wrap">
+
+    const accountUrl = window.location.href.toString().split("/view/")[1];
+            
+    let userBlock = '',
+        userAccountMenu = '',
+        menuWrap = '';
+
+    if (window.location.toString().includes("account") && !window.location.toString().includes("account/login") && !window.location.toString().includes("account/forgot") && !window.location.toString().includes("account/registration")) {
+        const userInfo = document.querySelector('.user-info'),
+              accountMenu = document.querySelectorAll('.account-menu ul li ul li');
+        
+        userBlock = userInfo.outerHTML;
+
+        accountMenu.forEach(item => {
+            userAccountMenu += item.outerHTML;
+        });
+
+        menuWrap = `
+            <ul>
+                <li class="menu-title">
+                    General
+                </li>
+                <li>
+                    <a href="${document.querySelector('.logo_wrap a').getAttribute('href')}">
+                        <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="#home"></use>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="${document.querySelector('.header-category_button').getAttribute('href')}">
+                        <svg width="16px" height="14px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="#category"></use>
+                        </svg>
+                        All category
+                    </a>
+                </li>
+                
+                ${userAccountMenu}
+
+                <li>
+                    ${document.querySelectorAll('.singin-dropdown li.list-dropdown ul li')[1].innerHTML}
+                </li>
+            </ul>
+
+            <ul>
+                ${document.querySelectorAll('.footer-menu_list')[2].innerHTML}
+            </ul>
+
+            <ul>
+                ${document.querySelectorAll('.footer-menu_list')[0].innerHTML}
+            </ul>
+
+            <ul>
+                ${document.querySelectorAll('.footer-menu_list')[1].innerHTML}
+            </ul>
+        `;
+    } else {
+        userBlock = `
             <div class="mob-left_menu-title">
                 Welcome to<br>
                 EQUIPMENT DOCTORS<br>
                 ${document.querySelector('.header-contact').innerHTML}
             </div>
+        `;
+
+        menuWrap = `
+            <ul>
+                <li class="menu-title">
+                    General
+                </li>
+                <li>
+                    <a href="${document.querySelector('.logo_wrap a').getAttribute('href')}">
+                        <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="#home"></use>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="${document.querySelector('.header-category_button').getAttribute('href')}">
+                        <svg width="16px" height="14px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="#category"></use>
+                        </svg>
+                        All category
+                    </a>
+                </li>
+                    ${document.querySelector('.header-account_wishlist ul ul').innerHTML}
+                <li>
+                    ${document.querySelectorAll('.singin-dropdown li')[0].innerHTML}
+                </li>
+
+                <li>
+                    ${document.querySelectorAll('.singin-dropdown li.list-dropdown ul li')[0].innerHTML}
+                </li>
+            </ul>
+
+            <ul>
+                ${document.querySelectorAll('.footer-menu_list')[2].innerHTML}
+            </ul>
+
+            <ul>
+                ${document.querySelectorAll('.footer-menu_list')[0].innerHTML}
+            </ul>
+
+            <ul>
+                ${document.querySelectorAll('.footer-menu_list')[1].innerHTML}
+            </ul>
+        `;
+    }
+
+    menuBlock.innerHTML = `
+        <div class="mob-left_menu-wrap">
+            ${userBlock}
             <div class="mob-left_menu-account"></div>
             <div class="mob-left_menu-list">
-                <ul>
-                    <li class="menu-title">
-                        General
-                    </li>
-                    <li>
-                        <a href="${document.querySelector('.logo_wrap a').getAttribute('href')}">
-                            <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="#home"></use>
-                            </svg>
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${document.querySelector('.header-category_button').getAttribute('href')}">
-                            <svg width="16px" height="14px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="#category"></use>
-                            </svg>
-                            All category
-                        </a>
-                    </li>
-                    ${document.querySelector('.header-account_wishlist ul ul').innerHTML}
-                    ${document.querySelector('.singin-dropdown ul').innerHTML}
-                </ul>
-
-                <ul>
-                    ${document.querySelectorAll('.footer-menu_list')[2].innerHTML}
-                </ul>
-
-                <ul>
-                    ${document.querySelectorAll('.footer-menu_list')[0].innerHTML}
-                </ul>
-
-                <ul>
-                    ${document.querySelectorAll('.footer-menu_list')[1].innerHTML}
-                </ul>
+                ${menuWrap}
             </div>
         </div>
     `;

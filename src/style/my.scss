@@ -4131,6 +4131,9 @@ input:checked ~ label::before {
     height: 40vh;
     overflow: hidden;
     margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 
     .product-vendor-logo {
         height: 55%;
@@ -4139,8 +4142,9 @@ input:checked ~ label::before {
             height: 100%;
 
             img {
+                width: auto;
                 max-width: 320px;
-                height: 100%;
+                max-height: 100%;
             }
         }
     }
@@ -9276,6 +9280,18 @@ button:disabled {
         }
     }
 
+    .mob-left_menu-list ul li a svg {
+        width: 16px;
+    }
+
+    .mob-left_menu-list ul li a svg *[data-bg="stroke"] {
+        stroke: #42474c;
+    }
+
+    .mob-left_menu-list ul li a svg *[data-bg="fill"] {
+        fill: #42474c;
+    }
+
     .mob-right_menu {
         width: 100%;
         background: #F6F6F6;
@@ -9807,6 +9823,77 @@ button:disabled {
 
     .title-row {
         margin: 20px 0 20px;
+    }
+
+    .content .payment-form-wrap .tab-content.tab-show {
+        display: flex;
+    }
+
+    .wish-list-checkbox, .wish-list-product-checkbox {
+        z-index: 2;
+        position: relative;
+    }
+
+    .wish-list-checkbox label, .wish-list-product-checkbox label {
+        background: #fff;
+    }
+
+    .mob-left_menu-wrap {
+        .user-info {
+            width: 100%;
+            border-bottom: 1px solid #f8f8f8;
+            box-sizing: border-box;
+            padding: 0 0 10px 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            .user-image {
+                width: 34px;
+                height: 34px;
+                background: #f8f8f8;
+                border-radius: 50%;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 5px;
+            }
+
+            .user-content {
+                width: calc(100% - 39px);
+
+                .user-name {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 120%;
+                    color: #221E1E;  
+                    margin-top: 5px;                  
+                }
+
+                .user-mail {
+                    margin-top: 10px;
+                    margin-left: -34px;
+                    display: block;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 133%;
+                    width: calc(100% + 34px);
+                }
+
+                p {
+                    width: calc(100% + 34px);
+                    margin-left: -34px;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 133%;
+                    color: #97A0A9;
+                }
+            }
+        }
     }
 }
 
@@ -10550,10 +10637,10 @@ button:disabled {
     }
 
     .account-form .media-login-item {
-        min-width: 45%;
-        max-width: 45%;
+        min-width: 47%;
+        max-width: 47%;
         padding: 9px 5px;
-        margin: 1px 4px;
+        margin: 1px 1%;
     }
         
     .pop-up-content .pop-up-form {
@@ -10572,5 +10659,445 @@ button:disabled {
     .account-form .form-text {
         text-align: left;
         padding-left: 10%;
+    }
+
+    .account-form .form-text.form-text-margin-top {
+        max-width: 90%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .verification-code_form {
+        padding: 24px 0!important;
+        max-width: 90%;
+    }
+
+    .account-form .row .form-group_resend {
+        min-width: 70%;
+    }
+
+    .form-group .resend-code {
+        top: 0;
+    }
+
+    .registration-form .form-group {
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .registration-form .form-group:nth-child(2n) {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .registration-form .form-group:nth-child(1) {
+        max-width: calc(50% - 5px);
+        width: calc(50% - 5px);
+        margin-right: 5px;
+    }
+
+    .registration-form .form-group:nth-child(2) {
+        max-width: calc(50% - 5px);
+        width: calc(50% - 5px);
+        margin-right: 0;
+        margin-left: 5px;
+    }
+
+    .pop-up-button-group .form-text {
+        padding-left: 0%;
+    }
+
+    .account-container {
+        flex: 1 0 100%;
+        max-width: 100%;
+        margin: 15px 0;
+        border-radius: 8px;
+    }
+
+    .account-container-header {
+        width: 100%;
+        padding: 12px 15px 10px;
+    }
+
+    .accounts-empty-block .account-empty-text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 29px;
+        text-align: center;
+    }
+
+    .accounts-empty-block {
+        margin: 68px auto 57px;
+    }
+
+    .orders-filter-tabs ul li {
+        margin: 0 auto;
+    }
+
+    .orders-filter-tabs ul li a {
+        box-sizing: border-box;
+        padding: 0px 5px 20px;
+        flex-direction: column;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+
+    .orders-filter-tabs ul {
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .orders-filter-tabs {
+        width: 100%;
+    }
+
+    .status-circle-block {
+        display: none;
+    }
+
+    .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col {
+        margin-right: 2%;
+        order: 1;
+    }
+
+    .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col:nth-child(3) {
+        margin-right: 2%;
+    }
+
+    .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col:last-child {
+        margin: auto 1% auto 0;
+        order: 0;
+        min-width: 20%;
+    }
+
+    .account-orders-table .accordion__list .accordion-has-children .order-info-header::after {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-image-block img:nth-child(2), .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-image-block img:nth-child(3) {
+        margin-left: -20px;
+    }
+
+    .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-image-block {
+        justify-content: flex-start; 
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-image-block img:nth-child(3) {
+        margin-right: 0px;
+    }
+
+    .account-orders-table .accordion__list .accordion-has-children .order-info-header {
+        padding: 10px 5px 10px 5px;
+        overflow-x: auto;
+    }
+
+    .account-orders-table .accordion__list .accordion-has-children .order-info-header::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+      
+    .account-orders-table .accordion__list .accordion-has-children .order-info-header::-webkit-scrollbar-track {
+        background: rgba(190, 160, 99, 0.2);
+        border-radius: 4px;
+    }
+      
+    .account-orders-table .accordion__list .accordion-has-children .order-info-header::-webkit-scrollbar-thumb {
+        width: 3px;
+        height: 3px;
+        background: #BEA063;
+        border-radius: 4px;
+    }
+
+    .order-info-col .price {
+        font-family: Roboto,sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col-title {
+        font-size: 11px;
+    }
+
+    .account-orders-table .order-info-expansion-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .account-orders-table .order-info-expansion {
+        flex-direction: column-reverse;
+    }
+
+    .account-orders-table .order-info-expansion-col.order-info-left-col {
+        margin: 25px auto;
+        width: 95%;
+    }
+
+    .account-orders-table .order-info-expansion-col.order-info-right-col {
+        margin: 25px auto 0;
+        width: 95%;
+    }
+
+    .order-total .order-total_row {
+        width: 95%;
+    }
+
+    .order-product-item li .row {
+        justify-content: flex-start;
+
+        .quantity-block {
+            margin-left: 5%;
+        }
+    }
+
+    .orders-filter-tabs ul li a .status-circle-block {
+        display: flex;
+    }
+
+    .account-orders-table .returns-list .accordion-has-children .order-info-header {
+        flex-wrap: wrap;
+    }
+
+    
+    .account-orders-table .returns-list .accordion-has-children .order-info-header .order-info-col { 
+        flex: 0 0 48%;
+        max-width: 48%;
+        margin: 8px 2% 7px 0;
+    }
+
+    .account-orders-table .returns-list .accordion-has-children .order-info-header .order-info-col:nth-child(2n) { 
+        text-align: right;
+    }
+
+    .account-orders-table .returns-list .accordion-has-children .order-info-header .order-info-col:last-child { 
+        order: 2;
+        flex: 0 0 92%;
+        max-width: 92%;
+    }
+
+    .accordion-has-children .accordion__list li {
+        padding: 0 8px 0 20px;
+    }
+
+    .report-text {
+        font-size: 14px;
+    }
+
+    .accordion-has-children.accordion-is-open>.accordion__list.order-info-expansion {
+        overflow-y: hidden !important;
+    }
+
+    .returns-pop-up .content {
+        flex: 1 0 100vw;
+        max-width: 100vw;
+        padding-left: 0;
+        margin-left: -10px;
+        margin-top: 14px;
+    }
+
+    .returns-pop-up .content form {
+        border-radius: 8px 8px 0 0;
+        padding-bottom: 50px;
+    }
+
+    .returns-form-group textarea {
+        max-width: 81%;
+        min-width: 81%;
+    }
+
+    .return-address-form .form-group:first-child {
+        min-width: 75%;
+        max-width: 75%;
+    }
+
+    .return-address-form .form-group:nth-child(2) {
+        min-width: 21%;
+        max-width: 21%;
+    }
+
+    .return-address-form .form-group:nth-child(3),
+    .return-address-form .form-group:nth-child(5) {
+        min-width: 45%;
+        margin: 25px 5% 0 0;
+        max-width: 45%;
+    }
+
+    .return-address-form .form-group:nth-child(4) {
+        min-width: 50%;
+        margin: 25px 0% 0 0;
+        max-width: 50%;
+    }
+
+    .items-for-returns .order-status-name,
+    .return-report-block .order-status-name, 
+    .return-payment-method .order-status-name {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 133%;
+    }
+
+    .returns-item-detail .order-status-list .order-status-process {
+        flex: 0 0 20%;
+        max-width: 20%;
+        text-align: right;
+    }
+
+    .account-payment-item {
+        margin: 15px 10px;
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+
+    .payment-item-body {
+        padding: 60px 5% 10px;
+    }
+
+    .payment-item-body .payment-card-number {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: 0.02em;
+        border-radius: 5px;
+    }
+
+    .payment-item-header .payment-main-checkbox label::before {
+        width: 20px;
+        height: 20px;
+    }
+
+    .payment-form-wrap {
+        padding: 22px 15px;
+    }
+
+    .payment-form-wrap form .form-group {
+        min-width: 48%;
+        max-width: 48%;
+        margin: 0 2% 25px 0;
+    }
+
+    .payment-form-wrap form .form-group:nth-child(4),
+    .payment-form-wrap form .form-group:nth-child(5) {
+        min-width: 98%;
+        max-width: 98%;
+    }
+
+    .payment-form-wrap form .form-group .form-group {
+        max-width: 32%;
+        min-width: 32%;
+    }
+
+    .payment-form-wrap form .form-group.apt-form-group {
+        max-width: 28%;
+        min-width: 28%;
+    }
+
+    .payment-form-wrap form .form-group.city-form-group {
+        max-width: 48%;
+        min-width: 48%;
+    }
+
+    .payment-form-wrap form .form-group:nth-child(7) {
+        min-width: 68%;
+        max-width: 68%;
+    }
+
+    .account-payment-edit-form .tab-row ul li, .account-payment-form .tab-row ul li {
+        padding: 10px 10px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #42474C;
+    }
+
+    .account-personal-info-form-wrap {
+        padding: 22px 15px;
+        width: 100%;
+    }
+
+    .account-personal-info-form-wrap form .form-group {
+        min-width: 100%;
+    }
+
+    .account-container-footer {
+        padding: 15px 0px;
+    }
+
+    .payment-form-wrap form .form-group:nth-child(10),
+    .payment-form-wrap form .form-group:nth-child(12),
+    .payment-form-wrap form .form-group:nth-child(14) {
+        min-width: 98% !important;
+        max-width: 98% !important;
+    }
+
+    .address-list_item .form-col {
+        flex: 100%;
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .wish-list-button {
+        margin: 20px 0;
+        text-align: right;
+    }
+
+    .wish-list-form-wrap {
+        width: 106%;
+        padding: 15px;
+        margin: 25px -3%;
+    }
+
+    .wish-list-form-wrap .wish-list-button-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wish-list-form-wrap .wish-list-button-group .cancel-button {
+        background: #fff;
+        font-size: 0;
+        content: url('../img/common/wish-list-trash.svg');
+    }
+
+    .wish-list-form-wrap .wish-list-form .form-group {
+        min-width: 65%;
+    }
+
+    .payment-form-wrap form {
+        width: 100%;
+    }
+
+    .order-info-row {
+        .order-info-col-title, .order-info-col-value {
+            width: 50%;
+            font-size: 14px;
+        }
+    }
+
+    .address-list_item .form-group_row  { 
+        flex-wrap: wrap;
+    }
+
+    .address-list_item .form-group_row .form-group {
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
+
+    .address-list_item .form-group_row .form-group.apt-form-group {
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
+
+    .address-list_item .form-group.city-form-group{
+        max-width: 100% !important;
+        min-width: 100% !important;
     }
 }

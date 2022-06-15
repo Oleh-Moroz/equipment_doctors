@@ -384,9 +384,6 @@ function changesActiveItem(url) {
         item.parentElement.classList.add('show');
       }
     });
-
-    let headerPageLink = document.querySelector('.base-button');
-    headerPageLink.setAttribute('href', '/view/account/recently-viewed.html');
   }
 }
 
