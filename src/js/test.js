@@ -66,9 +66,10 @@ clearButton.addEventListener('click', () => {
 
 
 /* 
-    Test search article
+  Test search article
 
---------------------------------------*/
+  --------------------------------------*/
+
 const searchArticleInput = document.querySelector('.article-search_input'),
   searchArticleForm = document.querySelector('.search-block_form');
 
@@ -103,9 +104,10 @@ if (searchArticleInput) {
 
 
 /*
-    Test forgot password
+  Test forgot password
 
-----------------------------------------------*/
+  ----------------------------------------------*/
+
 const forgotEmailInput = document.querySelector('input[data-name="forgot-email"]'),
   verificationInput = document.querySelector('input[data-name="verification-code"]'),
   resendButton = document.querySelector('.resend-code'),
@@ -162,10 +164,11 @@ if (reenterPasswordInput) {
   });
 }
 
+
 /* 
   Checkout
 
--------------------------*/
+  -------------------------*/
 
 const addCheckoutButtons = document.querySelectorAll('button[data-toggle="add-to-cart"]'),
   checkoutModal = document.querySelector('.pop-up-checkout');
@@ -183,7 +186,7 @@ addCheckoutButtons.forEach(button => {
 
 /*
 
-      Address page script
+  Address page script
 
   ------------------------------------*/
 
@@ -255,9 +258,9 @@ if (buttonWishlistModal) {
 
 
 /*
-         Empty account page script
+  Empty account page script
 
- ------------------------------*/
+  ------------------------------*/
 
 const pageTitle = document.querySelector('.account-container-header h1'),
   pageIco = document.querySelector('.accounts-empty-ico'),
@@ -312,10 +315,11 @@ function changesEmpryContent(url) {
 
 changesEmpryContent(pageLink);
 
-/*
-    Account menu 
 
-------------------------------------------*/
+/*
+  Account menu 
+
+  ------------------------------------------*/
 
 const activeLink = document.querySelectorAll('.account-menu ul li ul li a'),
   pageUrl = window.location.href.toString().split("/account/")[1];
@@ -401,9 +405,9 @@ if (buttonAddNewWishList) {
 
 
 /*
-    Test wishlist 
+  Test wishlist 
 
-------------------------------------------*/
+  ------------------------------------------*/
 
 const createWishlistButton = document.querySelector('button[data-toogle="create-wishlist"]'),
   wishlistName = document.querySelector('.wish-list-form input');
@@ -479,18 +483,18 @@ if (createWishlistButton) {
   });
 }
 
-
 if (document.querySelector('.cancel-button')) {
   document.querySelector('.cancel-button').addEventListener('click', () => {
     location.reload();
   });
 }
 
+
 /*
 
   Wishlist page
 
------------------------*/
+  -----------------------*/
 
 document.querySelectorAll('button[data-listener="remove-wishlist"]').forEach(item => {
   item.addEventListener('click', (e) => {
@@ -504,10 +508,9 @@ document.querySelectorAll('button[data-listener="remove-wishlist"]').forEach(ite
 
 
 /*
-
   Notice
 
------------------------*/
+  -----------------------*/
 
 document.querySelectorAll('.product-icon__row button').forEach(item => {
   item.addEventListener('click', () => {
@@ -544,10 +547,11 @@ document.querySelectorAll('.product-icon__row button').forEach(item => {
   });
 });
 
+
 /*
   Checkout page 
 
-----------------------*/
+  ----------------------*/
 
 function openCheckoutTabs(button) {
   const allButtons = document.querySelectorAll(button);
@@ -610,40 +614,40 @@ function checkoutAddAddresses(button) {
       document.querySelector('.returns-address-block').style.display = 'none';
       document.querySelector('.returns-address-list').style.display = 'block';
     });
-  
+
     checkoutAddressesList();
   }
 }
 
 function checkoutAddressesList() {
-    const list = document.querySelector('.returns-address-list .select-list');
+  const list = document.querySelector('.returns-address-list .select-list');
 
-    if (list) {
-      list.addEventListener('click', (e) => {
-        e.preventDefault();
-  
-        if (e.target.tagName == 'LI') {
-          document.querySelector('.returns-address-block .returns-address').innerHTML =  e.target.innerHTML; 
-          
+  if (list) {
+    list.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (e.target.tagName == 'LI') {
+        document.querySelector('.returns-address-block .returns-address').innerHTML = e.target.innerHTML;
+
+        document.querySelector('.returns-address-block').style.display = 'flex';
+        document.querySelector('.returns-address-list').style.display = 'none';
+      }
+
+      if (e.target.getAttribute('data-listener') == 'add') {
+        document.querySelector('.returns-address-list').style.display = 'none';
+        document.querySelector('.return-address-form').style.display = 'flex';
+
+        document.querySelector('.return-address-form .change-returns-address').innerText = 'Cancel';
+
+        document.querySelector('.return-address-form .change-returns-address').addEventListener('click', (e) => {
+          e.preventDefault();
+
+          document.querySelector('.return-address-form').style.display = 'none';
           document.querySelector('.returns-address-block').style.display = 'flex';
-          document.querySelector('.returns-address-list').style.display = 'none';
-        }
-  
-        if (e.target.getAttribute('data-listener') == 'add') {
-          document.querySelector('.returns-address-list').style.display = 'none';
-          document.querySelector('.return-address-form').style.display = 'flex';
-  
-          document.querySelector('.return-address-form .change-returns-address').innerText = 'Cancel';
-  
-          document.querySelector('.return-address-form .change-returns-address').addEventListener('click', (e) => {
-            e.preventDefault();
-  
-            document.querySelector('.return-address-form').style.display = 'none';
-            document.querySelector('.returns-address-block').style.display = 'flex';
-          });
-        }
-      });
-    }
+        });
+      }
+    });
+  }
 }
 
 function checkoutAddNewPayment(button) {
@@ -652,21 +656,22 @@ function checkoutAddNewPayment(button) {
   if (addButton) {
     addButton.addEventListener('click', (e) => {
       e.preventDefault();
-  
+
       console.log(addButton);
-  
+
       document.querySelector('.payment-description .payment-form-wrap').style.display = 'flex';
       document.querySelector('.payment-description .account-payment-list').style.display = 'none';
-  
+
       e.target.style.display = 'none';
     })
   }
 }
 
+
 /*
   Thank you page
 
-----------------------------*/
+  ----------------------------*/
 
 function thanYouRedirect() {
   const url = window.location.href.toString().split("/checkout/")[1];

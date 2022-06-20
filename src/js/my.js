@@ -41,9 +41,11 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /*  Category menu 
-    
-  ---------------------------*/
+
+  /*  
+    Category menu 
+      
+    ---------------------------*/
 
   const categoryMenu = document.querySelector("#category-menu"),
     categoryButton = document.querySelector("#category-menu_button"),
@@ -88,11 +90,10 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
 
-
   /* 
-  Category page menu 
+    Category page menu 
 
-  --------------------------------*/
+    --------------------------------*/
 
   const categoryChild = document.querySelectorAll('.category-page_menu__child');
 
@@ -109,20 +110,6 @@ window.addEventListener('DOMContentLoaded', () => {
       item.parentElement.classList.add('category-more-child');
 
     }
-
-    /*let menuItem = item.parentElement.closest('.tab-content').querySelectorAll('.menu__grid-item');
-
-    if (menuItem.length > 6) {
-      let height = 0;
-
-      menuItem.forEach(item => {
-        height += item.offsetHeight;
-
-        return height;
-      });
-
-      item.parentElement.closest('.tab-content').style.cssText = `flex-direction: column; max-height: ${height / 2}px;`;
-    }*/
 
     item.parentElement.closest('.menu__grid-item').style.cssText = `order: -${childNodes.length}`;
 
@@ -151,20 +138,20 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   const colMenuWrap = document.querySelectorAll('.col-menu ul li'),
-        contentWrap = document.querySelectorAll('.tab-content');
+    contentWrap = document.querySelectorAll('.tab-content');
 
   for (let i = 0; i < colMenuWrap.length; i++) {
     colMenuWrap[i].addEventListener('mouseover', () => {
       let tabId = colMenuWrap[i].getAttribute('data-id');
-      
+
       colMenuWrap.forEach((item) => {
         item.classList.remove('show');
       });
 
       colMenuWrap[i].classList.add('show');
 
-      contentWrap.forEach((item) => {  
-        if (item.getAttribute('data-id') != tabId ) {
+      contentWrap.forEach((item) => {
+        if (item.getAttribute('data-id') != tabId) {
           item.classList.remove('tab-show');
         } else {
           item.classList.add('tab-show');
@@ -176,9 +163,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   /*
-  Slider dots
+    Slider dots
 
-  ----------------------------------- */
+    ----------------------------------- */
 
   function sliderDotsChanger() {
     let dots, observerConfig, dotsObserver;
@@ -237,10 +224,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   sliderDotsChanger();
 
-  /* 
-  Lightbox
 
-  --------------------------------*/
+  /* 
+    Lightbox
+
+    --------------------------------*/
 
   lightbox.option({
     'resizeDuration': 150,
@@ -249,9 +237,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   /* 
-  Tabs
+    Tabs
 
-  --------------------------------*/
+    --------------------------------*/
 
   const tabs = document.querySelectorAll('.tab-row ul li'),
     tabsContent = document.querySelectorAll('.tab-content');
@@ -272,10 +260,11 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /*
-  Pop up
 
-  -----------------------------*/
+  /*
+    Pop up
+
+    -----------------------------*/
 
   const modalCloseBtn = document.querySelectorAll('[data-close]'),
     popUps = document.querySelectorAll('.pop-up-wrap');
@@ -311,10 +300,11 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
   /*
     Product page slider
 
-  --------------------------------------*/
+    --------------------------------------*/
   function productImageSlider(direction) {
     let swiperThumb = new Swiper(document.getElementById('product-thumb-slider'), {
       spaceBetween: 10,
@@ -340,9 +330,10 @@ window.addEventListener('DOMContentLoaded', () => {
   productImageSlider('vertical');
 
 
-  /* Contact form checked Privacy Policy
+  /* 
+    Contact form checked Privacy Policy
 
-  --------------------------------------------*/
+    --------------------------------------------*/
 
   const checkboxPolicy = document.querySelector('#checked-policy'),
     formButton = document.querySelector('.button-group input[type="submit"]');
@@ -375,7 +366,7 @@ window.addEventListener('DOMContentLoaded', () => {
   /* 
     Order tabs filter
 
-  --------------------------------------*/
+    --------------------------------------*/
 
   const filterTabs = document.querySelectorAll('.orders-filter-tabs ul li a'),
     filterItem = document.querySelectorAll('.account-orders-table .accordion__list > li');
@@ -409,52 +400,11 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  /*
-    Select list 
-
-  ---------------------------------------*/
-
-  /*const selectList = document.querySelectorAll('.select-list');
-
-  function showSelectDropdown() {
-    selectList.forEach(list => {
-      const selectInput = list.querySelector('input'),
-        selectDropdown = list.querySelector('ul'),
-        selectDropdownItem = selectDropdown.querySelectorAll('li');
-
-      selectInput.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        selectDropdown.parentElement.classList.toggle('active');
-        selectDropdown.classList.toggle('show');
-      });
-
-      selectDropdownItem.forEach(item => {
-        item.addEventListener('click', () => {
-          selectDropdownItem.forEach(list => list.classList.remove('active'));
-          selectInput.setAttribute('value', item.innerText);
-          item.classList.add('active');
-          selectDropdown.classList.toggle('show');
-          selectDropdown.parentElement.classList.toggle('active');
-        });
-      });
-
-      window.addEventListener('click', function (e) {
-        if (!selectDropdown.contains(e.target) && !selectInput.contains(e.target)) {
-          selectDropdown.classList.remove('show');
-          selectDropdown.parentElement.classList.remove('active');
-        }
-      });
-    });
-  }
-
-  showSelectDropdown();*/
 
   /*
-
     Pop up quickView
 
-  -------------------------------------*/
+    -------------------------------------*/
 
   function quickView() {
 
@@ -497,10 +447,11 @@ window.addEventListener('DOMContentLoaded', () => {
     request.send(null);
   }
 
-  /*
-          Wallets page scripts
 
-  ------------------------------------------*/
+  /*
+    Wallets page scripts
+
+    ------------------------------------------*/
 
   document.querySelectorAll('[data-listener="remove-payment"]').forEach(button => {
     button.addEventListener('click', (e) => {
@@ -547,7 +498,7 @@ window.addEventListener('DOMContentLoaded', () => {
   /*
     Personal info form
 
-  -----------------------------------------*/
+    -----------------------------------------*/
 
   const pesonalInfoInputs = document.querySelectorAll('.account-personal-info-form-wrap input');
 
@@ -560,12 +511,10 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
 
-
-
   /*
-          Add listener for buttons
+    Add listener for buttons
 
-  ------------------------------*/
+    ------------------------------*/
 
   function addedListener() {
     const quickViewButton = document.querySelectorAll('.button-view'),
@@ -600,13 +549,22 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.pop-up-wrap').classList.add('active');
       });
     }
+
+    if (document.querySelector('.pay-order_button')) {
+      document.querySelectorAll('.pay-order_button').forEach(button => {
+        button.addEventListener('click', () => {
+          document.querySelector('.pop-up-wrap').classList.add('active');
+        });
+      });
+    }
   }
 
   addedListener();
 
   /*
-   Remove style attribute from part description
-  ---------------------------------------------------*/
+    Remove style attribute from part description
+    
+    ---------------------------------------------------*/
 
   if (document.querySelectorAll('.product-content .tab-content')) {
     document.querySelectorAll('.product-content .tab-content *').forEach(element => element.removeAttribute('style'));
@@ -622,4 +580,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-$(document).ready(function() { $(".select-list select").select2(); });
+$(document).ready(function () {
+  $(".select-list select").select2();
+});

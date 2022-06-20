@@ -13566,9 +13566,11 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /*  Category menu 
-    
-  ---------------------------*/
+
+  /*  
+    Category menu 
+      
+    ---------------------------*/
 
   const categoryMenu = document.querySelector("#category-menu"),
     categoryButton = document.querySelector("#category-menu_button"),
@@ -13613,11 +13615,10 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
 
-
   /* 
-  Category page menu 
+    Category page menu 
 
-  --------------------------------*/
+    --------------------------------*/
 
   const categoryChild = document.querySelectorAll('.category-page_menu__child');
 
@@ -13634,20 +13635,6 @@ window.addEventListener('DOMContentLoaded', () => {
       item.parentElement.classList.add('category-more-child');
 
     }
-
-    /*let menuItem = item.parentElement.closest('.tab-content').querySelectorAll('.menu__grid-item');
-
-    if (menuItem.length > 6) {
-      let height = 0;
-
-      menuItem.forEach(item => {
-        height += item.offsetHeight;
-
-        return height;
-      });
-
-      item.parentElement.closest('.tab-content').style.cssText = `flex-direction: column; max-height: ${height / 2}px;`;
-    }*/
 
     item.parentElement.closest('.menu__grid-item').style.cssText = `order: -${childNodes.length}`;
 
@@ -13676,20 +13663,20 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   const colMenuWrap = document.querySelectorAll('.col-menu ul li'),
-        contentWrap = document.querySelectorAll('.tab-content');
+    contentWrap = document.querySelectorAll('.tab-content');
 
   for (let i = 0; i < colMenuWrap.length; i++) {
     colMenuWrap[i].addEventListener('mouseover', () => {
       let tabId = colMenuWrap[i].getAttribute('data-id');
-      
+
       colMenuWrap.forEach((item) => {
         item.classList.remove('show');
       });
 
       colMenuWrap[i].classList.add('show');
 
-      contentWrap.forEach((item) => {  
-        if (item.getAttribute('data-id') != tabId ) {
+      contentWrap.forEach((item) => {
+        if (item.getAttribute('data-id') != tabId) {
           item.classList.remove('tab-show');
         } else {
           item.classList.add('tab-show');
@@ -13701,9 +13688,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   /*
-  Slider dots
+    Slider dots
 
-  ----------------------------------- */
+    ----------------------------------- */
 
   function sliderDotsChanger() {
     let dots, observerConfig, dotsObserver;
@@ -13762,10 +13749,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   sliderDotsChanger();
 
-  /* 
-  Lightbox
 
-  --------------------------------*/
+  /* 
+    Lightbox
+
+    --------------------------------*/
 
   lightbox.option({
     'resizeDuration': 150,
@@ -13774,9 +13762,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   /* 
-  Tabs
+    Tabs
 
-  --------------------------------*/
+    --------------------------------*/
 
   const tabs = document.querySelectorAll('.tab-row ul li'),
     tabsContent = document.querySelectorAll('.tab-content');
@@ -13797,10 +13785,11 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /*
-  Pop up
 
-  -----------------------------*/
+  /*
+    Pop up
+
+    -----------------------------*/
 
   const modalCloseBtn = document.querySelectorAll('[data-close]'),
     popUps = document.querySelectorAll('.pop-up-wrap');
@@ -13836,10 +13825,11 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
   /*
     Product page slider
 
-  --------------------------------------*/
+    --------------------------------------*/
   function productImageSlider(direction) {
     let swiperThumb = new Swiper(document.getElementById('product-thumb-slider'), {
       spaceBetween: 10,
@@ -13865,9 +13855,10 @@ window.addEventListener('DOMContentLoaded', () => {
   productImageSlider('vertical');
 
 
-  /* Contact form checked Privacy Policy
+  /* 
+    Contact form checked Privacy Policy
 
-  --------------------------------------------*/
+    --------------------------------------------*/
 
   const checkboxPolicy = document.querySelector('#checked-policy'),
     formButton = document.querySelector('.button-group input[type="submit"]');
@@ -13900,7 +13891,7 @@ window.addEventListener('DOMContentLoaded', () => {
   /* 
     Order tabs filter
 
-  --------------------------------------*/
+    --------------------------------------*/
 
   const filterTabs = document.querySelectorAll('.orders-filter-tabs ul li a'),
     filterItem = document.querySelectorAll('.account-orders-table .accordion__list > li');
@@ -13934,52 +13925,11 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  /*
-    Select list 
-
-  ---------------------------------------*/
-
-  /*const selectList = document.querySelectorAll('.select-list');
-
-  function showSelectDropdown() {
-    selectList.forEach(list => {
-      const selectInput = list.querySelector('input'),
-        selectDropdown = list.querySelector('ul'),
-        selectDropdownItem = selectDropdown.querySelectorAll('li');
-
-      selectInput.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        selectDropdown.parentElement.classList.toggle('active');
-        selectDropdown.classList.toggle('show');
-      });
-
-      selectDropdownItem.forEach(item => {
-        item.addEventListener('click', () => {
-          selectDropdownItem.forEach(list => list.classList.remove('active'));
-          selectInput.setAttribute('value', item.innerText);
-          item.classList.add('active');
-          selectDropdown.classList.toggle('show');
-          selectDropdown.parentElement.classList.toggle('active');
-        });
-      });
-
-      window.addEventListener('click', function (e) {
-        if (!selectDropdown.contains(e.target) && !selectInput.contains(e.target)) {
-          selectDropdown.classList.remove('show');
-          selectDropdown.parentElement.classList.remove('active');
-        }
-      });
-    });
-  }
-
-  showSelectDropdown();*/
 
   /*
-
     Pop up quickView
 
-  -------------------------------------*/
+    -------------------------------------*/
 
   function quickView() {
 
@@ -14022,10 +13972,11 @@ window.addEventListener('DOMContentLoaded', () => {
     request.send(null);
   }
 
-  /*
-          Wallets page scripts
 
-  ------------------------------------------*/
+  /*
+    Wallets page scripts
+
+    ------------------------------------------*/
 
   document.querySelectorAll('[data-listener="remove-payment"]').forEach(button => {
     button.addEventListener('click', (e) => {
@@ -14072,7 +14023,7 @@ window.addEventListener('DOMContentLoaded', () => {
   /*
     Personal info form
 
-  -----------------------------------------*/
+    -----------------------------------------*/
 
   const pesonalInfoInputs = document.querySelectorAll('.account-personal-info-form-wrap input');
 
@@ -14085,12 +14036,10 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
 
-
-
   /*
-          Add listener for buttons
+    Add listener for buttons
 
-  ------------------------------*/
+    ------------------------------*/
 
   function addedListener() {
     const quickViewButton = document.querySelectorAll('.button-view'),
@@ -14125,13 +14074,22 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.pop-up-wrap').classList.add('active');
       });
     }
+
+    if (document.querySelector('.pay-order_button')) {
+      document.querySelectorAll('.pay-order_button').forEach(button => {
+        button.addEventListener('click', () => {
+          document.querySelector('.pop-up-wrap').classList.add('active');
+        });
+      });
+    }
   }
 
   addedListener();
 
   /*
-   Remove style attribute from part description
-  ---------------------------------------------------*/
+    Remove style attribute from part description
+    
+    ---------------------------------------------------*/
 
   if (document.querySelectorAll('.product-content .tab-content')) {
     document.querySelectorAll('.product-content .tab-content *').forEach(element => element.removeAttribute('style'));
@@ -14147,7 +14105,9 @@ window.addEventListener('scroll', () => {
   }
 });
 
-$(document).ready(function() { $(".select-list select").select2(); });
+$(document).ready(function () {
+  $(".select-list select").select2();
+});
 const searchInput = document.querySelector('.header-search_input'),
   clearButton = document.querySelector('.clear_search-input'),
   searchDropdown = document.querySelector('.header-search-dropdown'),
@@ -14216,9 +14176,10 @@ clearButton.addEventListener('click', () => {
 
 
 /* 
-    Test search article
+  Test search article
 
---------------------------------------*/
+  --------------------------------------*/
+
 const searchArticleInput = document.querySelector('.article-search_input'),
   searchArticleForm = document.querySelector('.search-block_form');
 
@@ -14253,9 +14214,10 @@ if (searchArticleInput) {
 
 
 /*
-    Test forgot password
+  Test forgot password
 
-----------------------------------------------*/
+  ----------------------------------------------*/
+
 const forgotEmailInput = document.querySelector('input[data-name="forgot-email"]'),
   verificationInput = document.querySelector('input[data-name="verification-code"]'),
   resendButton = document.querySelector('.resend-code'),
@@ -14312,10 +14274,11 @@ if (reenterPasswordInput) {
   });
 }
 
+
 /* 
   Checkout
 
--------------------------*/
+  -------------------------*/
 
 const addCheckoutButtons = document.querySelectorAll('button[data-toggle="add-to-cart"]'),
   checkoutModal = document.querySelector('.pop-up-checkout');
@@ -14333,7 +14296,7 @@ addCheckoutButtons.forEach(button => {
 
 /*
 
-      Address page script
+  Address page script
 
   ------------------------------------*/
 
@@ -14405,9 +14368,9 @@ if (buttonWishlistModal) {
 
 
 /*
-         Empty account page script
+  Empty account page script
 
- ------------------------------*/
+  ------------------------------*/
 
 const pageTitle = document.querySelector('.account-container-header h1'),
   pageIco = document.querySelector('.accounts-empty-ico'),
@@ -14462,10 +14425,11 @@ function changesEmpryContent(url) {
 
 changesEmpryContent(pageLink);
 
-/*
-    Account menu 
 
-------------------------------------------*/
+/*
+  Account menu 
+
+  ------------------------------------------*/
 
 const activeLink = document.querySelectorAll('.account-menu ul li ul li a'),
   pageUrl = window.location.href.toString().split("/account/")[1];
@@ -14551,9 +14515,9 @@ if (buttonAddNewWishList) {
 
 
 /*
-    Test wishlist 
+  Test wishlist 
 
-------------------------------------------*/
+  ------------------------------------------*/
 
 const createWishlistButton = document.querySelector('button[data-toogle="create-wishlist"]'),
   wishlistName = document.querySelector('.wish-list-form input');
@@ -14629,18 +14593,18 @@ if (createWishlistButton) {
   });
 }
 
-
 if (document.querySelector('.cancel-button')) {
   document.querySelector('.cancel-button').addEventListener('click', () => {
     location.reload();
   });
 }
 
+
 /*
 
   Wishlist page
 
------------------------*/
+  -----------------------*/
 
 document.querySelectorAll('button[data-listener="remove-wishlist"]').forEach(item => {
   item.addEventListener('click', (e) => {
@@ -14654,10 +14618,9 @@ document.querySelectorAll('button[data-listener="remove-wishlist"]').forEach(ite
 
 
 /*
-
   Notice
 
------------------------*/
+  -----------------------*/
 
 document.querySelectorAll('.product-icon__row button').forEach(item => {
   item.addEventListener('click', () => {
@@ -14694,10 +14657,11 @@ document.querySelectorAll('.product-icon__row button').forEach(item => {
   });
 });
 
+
 /*
   Checkout page 
 
-----------------------*/
+  ----------------------*/
 
 function openCheckoutTabs(button) {
   const allButtons = document.querySelectorAll(button);
@@ -14760,40 +14724,40 @@ function checkoutAddAddresses(button) {
       document.querySelector('.returns-address-block').style.display = 'none';
       document.querySelector('.returns-address-list').style.display = 'block';
     });
-  
+
     checkoutAddressesList();
   }
 }
 
 function checkoutAddressesList() {
-    const list = document.querySelector('.returns-address-list .select-list');
+  const list = document.querySelector('.returns-address-list .select-list');
 
-    if (list) {
-      list.addEventListener('click', (e) => {
-        e.preventDefault();
-  
-        if (e.target.tagName == 'LI') {
-          document.querySelector('.returns-address-block .returns-address').innerHTML =  e.target.innerHTML; 
-          
+  if (list) {
+    list.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (e.target.tagName == 'LI') {
+        document.querySelector('.returns-address-block .returns-address').innerHTML = e.target.innerHTML;
+
+        document.querySelector('.returns-address-block').style.display = 'flex';
+        document.querySelector('.returns-address-list').style.display = 'none';
+      }
+
+      if (e.target.getAttribute('data-listener') == 'add') {
+        document.querySelector('.returns-address-list').style.display = 'none';
+        document.querySelector('.return-address-form').style.display = 'flex';
+
+        document.querySelector('.return-address-form .change-returns-address').innerText = 'Cancel';
+
+        document.querySelector('.return-address-form .change-returns-address').addEventListener('click', (e) => {
+          e.preventDefault();
+
+          document.querySelector('.return-address-form').style.display = 'none';
           document.querySelector('.returns-address-block').style.display = 'flex';
-          document.querySelector('.returns-address-list').style.display = 'none';
-        }
-  
-        if (e.target.getAttribute('data-listener') == 'add') {
-          document.querySelector('.returns-address-list').style.display = 'none';
-          document.querySelector('.return-address-form').style.display = 'flex';
-  
-          document.querySelector('.return-address-form .change-returns-address').innerText = 'Cancel';
-  
-          document.querySelector('.return-address-form .change-returns-address').addEventListener('click', (e) => {
-            e.preventDefault();
-  
-            document.querySelector('.return-address-form').style.display = 'none';
-            document.querySelector('.returns-address-block').style.display = 'flex';
-          });
-        }
-      });
-    }
+        });
+      }
+    });
+  }
 }
 
 function checkoutAddNewPayment(button) {
@@ -14802,21 +14766,22 @@ function checkoutAddNewPayment(button) {
   if (addButton) {
     addButton.addEventListener('click', (e) => {
       e.preventDefault();
-  
+
       console.log(addButton);
-  
+
       document.querySelector('.payment-description .payment-form-wrap').style.display = 'flex';
       document.querySelector('.payment-description .account-payment-list').style.display = 'none';
-  
+
       e.target.style.display = 'none';
     })
   }
 }
 
+
 /*
   Thank you page
 
-----------------------------*/
+  ----------------------------*/
 
 function thanYouRedirect() {
   const url = window.location.href.toString().split("/checkout/")[1];
@@ -14848,7 +14813,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const windowWidth = document.documentElement.clientWidth;
 
-        if (windowWidth <= 1160 ) {
+        if (windowWidth <= 1160) {
             headerMenu();
         } else {
             removeHeaderMenu();
@@ -14910,7 +14875,7 @@ function headerMenu() {
 
 function removeHeaderMenu() {
     const menuButton = document.querySelector('.menu-bar_button'),
-          filterButton = document.querySelector('.filter_button');
+        filterButton = document.querySelector('.filter_button');
 
     if (menuButton || filterButton) {
         menuButton.parentElement.remove();
@@ -14923,22 +14888,19 @@ function removeHeaderMenu() {
 
 function createMobMenu() {
     const menuBlock = document.createElement('div'),
-          categoryMenu = document.createElement('div');
+        categoryMenu = document.createElement('div');
 
     menuBlock.classList.add('mob-left_menu');
     categoryMenu.classList.add('mob-right_menu');
 
-
-    const accountUrl = window.location.href.toString().split("/view/")[1];
-            
     let userBlock = '',
         userAccountMenu = '',
         menuWrap = '';
 
     if (window.location.toString().includes("account") && !window.location.toString().includes("account/login") && !window.location.toString().includes("account/forgot") && !window.location.toString().includes("account/registration")) {
         const userInfo = document.querySelector('.user-info'),
-              accountMenu = document.querySelectorAll('.account-menu ul li ul li');
-        
+            accountMenu = document.querySelectorAll('.account-menu ul li ul li');
+
         userBlock = userInfo.outerHTML;
 
         accountMenu.forEach(item => {
@@ -15070,13 +15032,13 @@ function createMobMenu() {
 }
 
 function removeMobMenu() {
-    if (document.querySelector('header .mob-left_menu')) { 
+    if (document.querySelector('header .mob-left_menu')) {
         document.querySelector('header .mob-left_menu').remove();
         document.querySelector('header .mob-right_menu').remove();
     }
 }
 
-function moveElements() { 
+function moveElements() {
     if (document.querySelector('.main-slider')) {
         document.querySelector('.slider-wrap').after(document.querySelector('.header-category_wrap'));
     }
@@ -15095,7 +15057,7 @@ function moveElements() {
 
     if (document.querySelector('#checkout-wrap')) {
         const footerTotalBlock = document.createElement('div'),
-             totalButton = document.createElement('button');
+            totalButton = document.createElement('button');
 
         footerTotalBlock.classList.add('footer-total_block');
 

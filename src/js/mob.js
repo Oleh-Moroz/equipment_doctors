@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const windowWidth = document.documentElement.clientWidth;
 
-        if (windowWidth <= 1160 ) {
+        if (windowWidth <= 1160) {
             headerMenu();
         } else {
             removeHeaderMenu();
@@ -72,7 +72,7 @@ function headerMenu() {
 
 function removeHeaderMenu() {
     const menuButton = document.querySelector('.menu-bar_button'),
-          filterButton = document.querySelector('.filter_button');
+        filterButton = document.querySelector('.filter_button');
 
     if (menuButton || filterButton) {
         menuButton.parentElement.remove();
@@ -85,22 +85,19 @@ function removeHeaderMenu() {
 
 function createMobMenu() {
     const menuBlock = document.createElement('div'),
-          categoryMenu = document.createElement('div');
+        categoryMenu = document.createElement('div');
 
     menuBlock.classList.add('mob-left_menu');
     categoryMenu.classList.add('mob-right_menu');
 
-
-    const accountUrl = window.location.href.toString().split("/view/")[1];
-            
     let userBlock = '',
         userAccountMenu = '',
         menuWrap = '';
 
     if (window.location.toString().includes("account") && !window.location.toString().includes("account/login") && !window.location.toString().includes("account/forgot") && !window.location.toString().includes("account/registration")) {
         const userInfo = document.querySelector('.user-info'),
-              accountMenu = document.querySelectorAll('.account-menu ul li ul li');
-        
+            accountMenu = document.querySelectorAll('.account-menu ul li ul li');
+
         userBlock = userInfo.outerHTML;
 
         accountMenu.forEach(item => {
@@ -232,13 +229,13 @@ function createMobMenu() {
 }
 
 function removeMobMenu() {
-    if (document.querySelector('header .mob-left_menu')) { 
+    if (document.querySelector('header .mob-left_menu')) {
         document.querySelector('header .mob-left_menu').remove();
         document.querySelector('header .mob-right_menu').remove();
     }
 }
 
-function moveElements() { 
+function moveElements() {
     if (document.querySelector('.main-slider')) {
         document.querySelector('.slider-wrap').after(document.querySelector('.header-category_wrap'));
     }
@@ -257,7 +254,7 @@ function moveElements() {
 
     if (document.querySelector('#checkout-wrap')) {
         const footerTotalBlock = document.createElement('div'),
-             totalButton = document.createElement('button');
+            totalButton = document.createElement('button');
 
         footerTotalBlock.classList.add('footer-total_block');
 
