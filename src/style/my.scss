@@ -1095,6 +1095,16 @@ footer {
     .page-description-block {
         max-width: 95%;
     }
+
+    .row > h1 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 114%;
+        letter-spacing: .5px;
+        color: #42474c;
+        margin: 15px 5% 30px 0;
+    }
 }
 
 .main-slider {
@@ -3034,6 +3044,7 @@ input:checked~label::before {
     border-radius: 8px;
     position: relative;
     z-index: 3;
+    white-space: nowrap;
 
     &::after {
         content: "\f078";
@@ -4357,6 +4368,7 @@ input:checked~label::before {
     justify-content: flex-start;
 
     .product-vendor-logo {
+        margin: 15px 0;
         height: 55%;
 
         a {
@@ -4373,6 +4385,14 @@ input:checked~label::before {
 
 .row-wrap .popular-wrap .product-slider .product__item {
     width: calc(25% - 20px);
+}
+
+.account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col:first-child {
+    min-width: 70px;
+}
+
+.checkout-total_button {
+    margin-top: 15px;
 }
 
 @media screen and (max-width: 1537px) {
@@ -8761,32 +8781,38 @@ button:disabled {
     }
 }
 
-.checkout-wrap form#squareup_card_details_form {
+.checkout-wrap form#squareup_card_details_form,
+.payment-form-wrap form#squareup_card_details_form {
     flex-direction: column;
     margin: 0 auto;
 }
 
-.checkout-wrap form#squareup_card_details_form fieldset {
+.checkout-wrap form#squareup_card_details_form fieldset,
+.payment-form-wrap form#squareup_card_details_form fieldset {
     border: none;
 }
 
-.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details {
+.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details,
+.payment-form-wrap form#squareup_card_details_form fieldset#hide-card-details {
     display: flex;
     flex-wrap: wrap;
 }
 
-.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group {
+.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group,
+.payment-form-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group {
     margin: 10px 5% 15px 0;
     max-width: 45%;
 }
 
-.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:first-child {
+.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:first-child,
+.payment-form-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:first-child {
     margin: 20px 5% 15px 0;
     width: 100%;
     max-width: 100%;
 }
 
-.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:nth-child(5) {
+.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:nth-child(5),
+.payment-form-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:nth-child(5) {
     max-width: 100%;
     width: 100%;
     display: flex;
@@ -8795,26 +8821,31 @@ button:disabled {
     align-items: flex-start;
 }
 
-.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:nth-child(5) div {
+.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:nth-child(5) div,
+.payment-form-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:nth-child(5) div {
     width: auto;
 }
 
-.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:nth-child(5) label {
+.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:nth-child(5) label,
+.payment-form-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:nth-child(5) label {
     margin-bottom: 0;
     margin-left: 10px;
 }
 
-.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:nth-child(5) input {
+.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:nth-child(5) input,
+.payment-form-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:nth-child(5) input {
     margin-top: 0;
     width: 17px;
     height: 17px;
 }
 
-.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group div {
+.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group div,
+.payment-form-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group div {
     width: 100%;
 }
 
-.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group iframe {
+.checkout-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group iframe,
+.payment-form-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group iframe {
     max-width: 100%;
     min-width: 100%;
     width: 100%;
@@ -8832,7 +8863,8 @@ button:disabled {
     height: 42px;
 }
 
-.checkout-wrap form#squareup_card_details_form .buttons input[type="button"] {
+.checkout-wrap form#squareup_card_details_form .buttons input[type="button"],
+.payment-form-wrap form#squareup_card_details_form .buttons input[type="button"] {
     outline: 0;
     box-sizing: border-box;
     padding: 12px 10px;
@@ -8855,20 +8887,25 @@ button:disabled {
     cursor: pointer;
 }
 
-.checkout-wrap form#squareup_card_details_form .buttons input[type="button"]:hover {
+.checkout-wrap form#squareup_card_details_form .buttons input[type="button"]:hover,
+.payment-form-wrap form#squareup_card_details_form .buttons input[type="button"]:hover {
     background: #dcbc78;
 }
 
-.checkout-wrap form#squareup_card_details_form fieldset#sq-walletbox .form-group a:hover {
+.checkout-wrap form#squareup_card_details_form fieldset#sq-walletbox .form-group a:hover,
+.payment-form-wrap form#squareup_card_details_form fieldset#sq-walletbox .form-group a:hover {
     color: #dcbc78;
 }
 
-.checkout-wrap form#squareup_card_details_form fieldset .form-group div.col-sm-10 {
+.checkout-wrap form#squareup_card_details_form fieldset .form-group div.col-sm-10,
+.payment-form-wrap form#squareup_card_details_form fieldset .form-group div.col-sm-10 {
     width: 95%;
 }
 
 .checkout-wrap form#squareup_card_details_form fieldset .form-group select,
-.checkout-wrap form#squareup_card_details_form fieldset .form-group select#squareup_select_card {
+.checkout-wrap form#squareup_card_details_form fieldset .form-group select#squareup_select_card,
+.payment-form-wrap form#squareup_card_details_form fieldset .form-group select,
+.payment-form-wrap form#squareup_card_details_form fieldset .form-group select#squareup_select_card {
     max-width: 100%;
     min-width: 100%;
     width: 100%;
@@ -8886,6 +8923,22 @@ button:disabled {
     cursor: pointer;
     height: auto;
     min-height: 42px;
+}
+
+.payment-form-wrap form#squareup_card_details_form fieldset:nth-child(2) .form-group {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.pop-up-content .payment-form-wrap{
+    max-height: 95vh;
+    overflow: hidden;
+    overflow-y: auto;
+    border-radius: 8px;
+}
+
+.payment-form-wrap form#squareup_card_details_form fieldset#hide-card-details .form-group:nth-child(5) .control-label {
+    width: 85%;
 }
 
 .preload {
@@ -8953,6 +9006,21 @@ button:disabled {
             }
         }
     }
+}
+
+.price-wrap {
+    .price-tax {
+        font-family: Roboto,sans-serif;
+        font-style: normal;
+        color: #deccb1;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 167%;
+    }
+}
+
+.product-caption-price .price-wrap .price-tax {
+    font-size: 24px;
 }
 
 
@@ -10089,6 +10157,10 @@ button:disabled {
 }
 
 @media screen and (max-width: 800px) {
+    body {
+        min-width: 275px;
+    }
+
     .row-wrap .product__item {
         width: calc((100% / 2) - 8px);
         margin: 0 8px 8px 0;
@@ -10971,6 +11043,13 @@ button:disabled {
     .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col {
         margin-right: 2%;
         order: 1;
+        min-width: 25%;
+    }
+
+    .order-info {
+        .base-button, button {
+            padding: 12px 9px;
+        }
     }
 
     .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col:nth-child(3) {
@@ -10986,6 +11065,7 @@ button:disabled {
     .account-orders-table .accordion__list .accordion-has-children .order-info-header::after {
         order: 2;
         margin-left: auto;
+        margin-top: 17px;
     }
 
     .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-image-block img:nth-child(2),
@@ -11313,5 +11393,53 @@ button:disabled {
     .address-list_item .form-group.city-form-group {
         max-width: 100% !important;
         min-width: 100% !important;
+    }
+
+    .base-button, button {
+        padding: 12px 16px;
+    }
+
+    .payment-item-body {
+        border-radius: 5px;
+    }
+
+    .account-payment-list {
+        min-height: auto;
+    }
+
+    .account-form .row .form-group {
+        margin: 0 2% 0 0;
+        min-width: 69%;
+    }
+
+    .account-form .row .button-group {
+        .base-button, button {
+            padding: 12px 21px;
+        }
+    }
+
+    .pop-up-button-group {
+        .base-button, button {
+            padding: 12px 21px;
+        }
+    }
+
+    .order-returs-header {
+        padding: 12px 5% 20px;
+    }
+
+    .modal-returns {
+        .account-container-footer {
+            padding: 0px 5% 15px;
+        }
+    }
+
+    .returs-order-list li label .order-info-col .order-info-image-block {
+        max-width: 65px;
+    }
+
+    .product__item .caption .button-group button svg {
+        width: 30px !important;
+        height: 30px !important;
     }
 }
