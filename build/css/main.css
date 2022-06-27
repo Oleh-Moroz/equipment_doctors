@@ -8650,6 +8650,11 @@ button:disabled:hover {
   color: #de3618;
 }
 
+.caption .button-group button svg * {
+  fill: #fff;
+  stroke: #BEA063;
+}
+
 /*
     Media screen 1540px 
 
@@ -9404,6 +9409,7 @@ button {
     margin-top: -60px;
   }
   .caption .button-group button svg * {
+    fill: #BEA063;
     stroke: #BEA063;
   }
 

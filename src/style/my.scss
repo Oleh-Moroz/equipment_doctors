@@ -9034,6 +9034,13 @@ button:disabled {
     color: #de3618;
 }
 
+.caption .button-group button {
+    svg * {
+        fill: #fff;
+        stroke: $gold;
+    }
+}
+
 /*
     Media screen 1540px 
 
@@ -9806,6 +9813,7 @@ button:disabled {
         margin-top: -60px;
 
         svg * {
+            fill: $gold;
             stroke: $gold;
         }
     }
