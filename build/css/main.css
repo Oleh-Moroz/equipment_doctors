@@ -1512,7 +1512,9 @@ footer {
 }
 
 .hidden-svg {
-  display: none;
+  display: block !important;
+  overflow: hidden;
+  height: 0;
 }
 
 /*
