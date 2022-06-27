@@ -2245,7 +2245,7 @@ footer {
   color: #BEA063;
 }
 .accordion-has-children .accordion__list li a span {
-  margin-left: 5px;
+  margin-left: 10px;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -4204,7 +4204,7 @@ input:checked ~ label::before {
 }
 
 .caption-vendor-info {
-  height: 40vh;
+  /*height: 40vh;*/
   overflow: hidden;
   margin: auto 0;
   display: -ms-flexbox;
@@ -4232,7 +4232,7 @@ input:checked ~ label::before {
 }
 
 .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col:first-child {
-  min-width: 70px;
+  min-width: 120px;
 }
 
 .checkout-total_button {
@@ -4240,9 +4240,9 @@ input:checked ~ label::before {
 }
 
 @media screen and (max-width: 1537px) {
-  .caption-vendor-info {
-    height: 25vh;
-  }
+  /*.caption-vendor-info {
+      height: 25vh;
+  }*/
 }
 .float-row {
   max-width: 100%;
@@ -4466,6 +4466,7 @@ input:checked ~ label::before {
 }
 .form-group .resend-code {
   position: absolute;
+  top: 0;
   right: 0;
   bottom: 1px;
   background: transparent;
@@ -7490,7 +7491,7 @@ button:disabled:hover {
 .alert {
   font-family: "Fira Sans", sans-serif;
   position: fixed;
-  top: 35px;
+  top: 95px;
   opacity: 1;
   visibility: visible;
   z-index: 999999999999999;
@@ -8637,6 +8638,14 @@ button:disabled:hover {
 
 .product-caption-price .price-wrap .price-tax {
   font-size: 24px;
+}
+
+.account-form-wrap .registration-form .button-group a.base-button {
+  margin: 0 auto;
+}
+
+.form-group label span {
+  color: #de3618;
 }
 
 /*
@@ -11100,5 +11109,48 @@ button {
   .product__item .caption .button-group button svg {
     width: 30px !important;
     height: 30px !important;
+  }
+
+  .account-payment-edit-form, .account-payment-form {
+    padding: 22px 10px;
+  }
+
+  .accordion-has-children .accordion__list li a span {
+    margin-left: 5px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+
+  .product__item .image {
+    margin: 12px auto 5px;
+  }
+
+  .caption .rating {
+    right: 3px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .product__item .caption .button-group button svg {
+    width: 25px !important;
+    height: 25px !important;
+  }
+
+  .old-price {
+    font-size: 11px;
+  }
+
+  .price {
+    font-size: 13px;
+  }
+
+  .product-item_category {
+    font-size: 9px;
+  }
+
+  .caption .rating {
+    right: 0px;
   }
 }

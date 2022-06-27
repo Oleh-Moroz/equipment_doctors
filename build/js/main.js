@@ -13561,8 +13561,10 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   accordion.forEach(item => {
-    item.addEventListener('click', () => {
-      openAccordion(item);
+    item.addEventListener('click', (e) => {
+      if (e.target.tagName != 'BUTTON') {
+        openAccordion(item);
+      }
     });
   });
 
