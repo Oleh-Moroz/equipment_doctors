@@ -9039,7 +9039,7 @@ button {
     position: fixed;
     left: -100%;
     top: 55px;
-    height: calc(100vh - 55px);
+    height: calc(100vh - 125px);
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
