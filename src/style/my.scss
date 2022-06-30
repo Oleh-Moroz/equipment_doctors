@@ -11063,12 +11063,17 @@ button:disabled {
         margin-right: 2%;
         order: 1;
         min-width: 25%;
+        overflow: hidden;
     }
 
     .order-info {
         .base-button, button {
             padding: 12px 9px;
         }
+    }
+
+    .order-button-row .feedback-button {
+        margin-right: auto;
     }
 
     .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col:nth-child(3) {
