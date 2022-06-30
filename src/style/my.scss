@@ -9804,10 +9804,15 @@ button:disabled {
         padding: 0;
         margin-left: auto;
         margin-top: -60px;
+        margin-right: -11px;
 
         svg * {
             stroke: $gold;
         }
+    }
+
+    .wish-list-header .wish-list-checkbox {
+        margin: 0 15px 0 14px;
     }
 
     .button-show-all {
@@ -10104,7 +10109,11 @@ button:disabled {
 
     .wish-list-checkbox label,
     .wish-list-product-checkbox label {
-        background: #fff;
+        background: transparent;
+    }
+
+    .product__item .wish-list-product-checkbox label {
+        margin-left: 7px;
     }
 
     .mob-left_menu-wrap {
