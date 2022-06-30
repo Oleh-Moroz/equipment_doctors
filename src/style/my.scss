@@ -11072,6 +11072,11 @@ button:disabled {
         }
     }
 
+    .order-button-row {
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
     .order-button-row .feedback-button {
         margin-right: auto;
     }

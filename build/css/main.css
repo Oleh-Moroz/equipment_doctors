@@ -10724,6 +10724,13 @@ button {
     padding: 12px 9px;
   }
 
+  .order-button-row {
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: start;
+        align-items: flex-start;
+  }
+
   .order-button-row .feedback-button {
     margin-right: auto;
   }
