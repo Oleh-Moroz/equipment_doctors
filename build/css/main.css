@@ -10733,6 +10733,7 @@ button {
 
   .order-button-row .feedback-button {
     margin-right: auto;
+    margin-bottom: 10px;
   }
 
   .account-orders-table .accordion__list .accordion-has-children .order-info-header .order-info-col:nth-child(3) {
